@@ -1,0 +1,51 @@
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1500;
+// $maxWidthContainerPersonal: 1830;
+
+// *Colors*
+:root{
+}
+// *------*
+
+
+// *! Fonts*
+$fontSize: 16px;
+// *!------*
+
+// *? Border*
+$border-25: 25px;
+$border-20: 20px;
+// *?------*
+
+// *! Transition *
+$transition-2: all ease-out .2s;
+$transition-3: all ease-out .3s;
+// *!------*
+
+
+// *? Media rules*
+$mouse-device: '(hover: hover) and (pointer: fine)';
+$ui-mobile: 'screen and (max-width: 650px)';
+$ui-tablet: 'screen and (max-width: 910px)';
+
+// *! z-indexs* 
+$layer-back: -1;
+$layer-base: 2;
+$layer-ui: 3; //header, footer, menu
+$layer-modal: 4;
+// *!------*
+
+// ? bootstrap icon class
+.bootsrtap-icon{
+     display: inline-block;
+     font-family: bootstrap-icons !important;
+     font-style: normal;
+     font-weight: normal !important;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+     vertical-align: -.125em;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
