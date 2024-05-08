@@ -2,28 +2,53 @@ $minWidth: 320px;
 $maxWidth: 1920px;
 $maxWidthContainer: 1440;
 // $maxWidthContainerPersonal: 1830;
-
 // *Colors*
+$colorsMap: (  
+               'black': '#030303',
+               'white':'#FBFBFB',
+               'gray-txt': '#66605B',
+               'gray-inputs': '#B9B9B9', 
+               'gray-stroke': '#DADADA',
+               'gray-bg-illustr': '#F0F0F0',
+               'violet':'#5E60CE',
+               'yellow':'#F6C679',
+               'yellow-light': '#F6D39B',
+               'violet-light': '#D6D6FF',
+               'green': '#92EDC1',
+               'green-light': '#DFF5F0',
+               'dark-violet': '#2A2B87', 
+               'violet-hover': '#8C8EEA',
+               'red-error': '#E31B1B',
+               'transparent': 'transparent');
+               
 :root{
+     @each $name, $color in $colorsMap {
+          --color-#{$name}: #{$color}
+     }
 }
+
 // *------*
 
 
 // *! Fonts*
 $ff-exo: 'Exo 2';
 $fontSize: 16px;
+$fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24);
 // *!------*
 
 // *? Border*
-$border-25: 25px;
-$border-20: 20px;
+$borderMap: ('10','15','20','25','30','100');
 // *?------*
 
 // *! Transition *
+$transitionMap: ( '2': '.2', '3': '.3');
 $transition-2: all ease-out .2s;
 $transition-3: all ease-out .3s;
 // *!------*
 
+//* Break-points*
+$breakPointsMap: ('xs':576,'sm':576,'md':768,'lg':992,'xl':1200,'xxl':1400);
+// *------*
 
 // *? Media rules*
 $mouse-device: '(hover: hover) and (pointer: fine)';
@@ -49,4 +74,12 @@ $layer-modal: 4;
      vertical-align: -.125em;
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
+}
+
+.hover-no{
+     pointer-events: none;
+}
+
+.cursor-pointer{
+     cursor: pointer
 }

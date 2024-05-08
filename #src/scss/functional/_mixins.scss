@@ -87,3 +87,17 @@
 		-o-transition-delay: #{$transition-delay};
 			transition-delay: #{$transition-delay};
 }
+
+
+@mixin hover($prop, $val){
+	@media (hover: hover) and (pointer: fine) {
+		&:hover{
+			#{$prop}: $val;
+		}
+	}
+	@media (hover: none) {
+		&:active{
+			#{$prop}: $val;
+		}
+	}
+}

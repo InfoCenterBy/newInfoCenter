@@ -1,24 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-     @@include('./html-comp/_head.html',{
-          "title":"ui",
-          'style-path': 'href="css/pages/ui-page.css"'
-     })
-<body class="ui-page d-flex flex-row align-items-start px-2 pt-5">
-     <div class="ui-nav border-1 border p-2 d-none d-md-block ">
-          <nav class="">
-               <ol>
-                    <li>
-                         <a href="#1">name</a>
-                    </li>
-               </ol>
-          </nav>
+@@include('./html-comp/_head.html',{
+"title":"ui",
+})
+<!-- 'style-path': 'href="css/pages/ui-page.css"' -->
+
+<body class="ui-page px-2 pt-1">
+
+     <div class="d-flex flex-row align-items-start" id="app">
+          <div class="ui-nav border-1 border p-2 d-none d-md-block mt-5 sticky-top">
+               <nav class="">
+                    <ol>
+                         <li v-for="(value, key) in uiElem" :key="key">
+                              <a :href="'#' + key" class="mt-2">{{value.slice(1)}}</a>
+                         </li>
+                    </ol>
+               </nav>
+          </div>
+          <div class="ui-content ms-md-3 ms-0 w-100">
+               <section v-for="(value, key) in uiElem" :key="key" :id="key">
+                    <h1 class="h1 mt-5">{{value.slice(1)}}</h1>
+                    <div class="" v-html="htmlData[value]"></div>
+               </section>
+          </div>
      </div>
-     <div class="ui-content ms-md-3 ms-0 w-100">
-          <section id="1">
-               <h1 class="h1">name</h1>
-          </section>
-     </div>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script type="application/javascript">
+          const vueApp = new Vue({
+               el: '#app',
+               components: {
+               },
+               data() {
+                    return {
+                         uiElem: [
+                              '_header',
+                              // '_buttons',
+                              // '_links',
+                              // '_bread-crumbs',
+                              // '_inputs',
+                              // '_heading',
+                              // '_pagination',
+                              // '_questions',
+                              // '_cookie'
+                         ],
+                         htmlData: {}
+                    }
+               },
+               watch: {},
+               methods: {
+                    async loadHtml(key) {
+                         try {
+                              const location = window.location
+                              const response = location.host == "infocenterby.github.io" ? await fetch(`https://raw.githubusercontent.com/InfoCenterBy/newInfoCenter/gh-pages/html-comp/${key}.html`) : await fetch(`html-comp/${key}.html`);
+
+                              if (!response.ok) {
+                                   throw new Error('Failed to load HTML file');
+                              }
+
+                              const htmlContent = await response.text();
+                              this.$set(this.htmlData, key, htmlContent);
+                         } catch (error) {
+                              console.error(error);
+                         }
+                    },
+                    async loadHtmlFiles() {
+                         await Promise.all(this.uiElem.map(key => this.loadHtml(key)));
+                    }
+               },
+               computed: {},
+               mounted() {
+                    this.loadHtmlFiles();
+                    document.querySelectorAll('.close-alert').forEach((element) => {
+                         element.addEventListener('click', () => {
+                              var alertNode = document.querySelector('#alertCookie');
+                              alertNode.classList.remove('show')
+                         });
+                    });
+               },
+          })
+     </script>
      <script src="js/script.min.js"></script>
 </body>
+
 </html>
