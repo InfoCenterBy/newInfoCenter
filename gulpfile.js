@@ -68,7 +68,8 @@ function css() {
 			.pipe(
 				scss({
 					outputStyle: 'expanded',
-				})
+					errLogToConsole: true,
+				}).on('error', scss.logError)
 			)
 			// .pipe(group_media())
 			.pipe(

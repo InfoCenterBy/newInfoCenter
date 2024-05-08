@@ -4,27 +4,29 @@ $maxWidthContainer: 1440;
 // $maxWidthContainerPersonal: 1830;
 // *Colors*
 $colorsMap: (  
-               'black': '#030303',
-               'white':'#FBFBFB',
-               'gray-txt': '#66605B',
-               'gray-inputs': '#B9B9B9', 
-               'gray-stroke': '#DADADA',
-               'gray-bg-illustr': '#F0F0F0',
-               'violet':'#5E60CE',
-               'yellow':'#F6C679',
-               'yellow-light': '#F6D39B',
-               'violet-light': '#D6D6FF',
-               'green': '#92EDC1',
-               'green-light': '#DFF5F0',
-               'dark-violet': '#2A2B87', 
-               'violet-hover': '#8C8EEA',
-               'red-error': '#E31B1B',
-               'transparent': 'transparent');
-               
+     'black': '#030303',
+     'white':'#FBFBFB',
+     'gray-txt': '#66605B',
+     'gray-inputs': '#B9B9B9', 
+     'gray-stroke': '#DADADA',
+     'gray-bg-illustr': '#F0F0F0',
+     'violet':'#5E60CE',
+     'yellow':'#F6C679',
+     'yellow-light': '#F6D39B',
+     'violet-light': '#D6D6FF',
+     'green': '#92EDC1',
+     'green-light': '#DFF5F0',
+     'dark-violet': '#2A2B87', 
+     'violet-hover': '#8C8EEA',
+     'red-error': '#E31B1B',
+     'transparent': 'transparent'
+     );
+     
 :root{
      @each $name, $color in $colorsMap {
           --color-#{$name}: #{$color}
      }
+     --base-font: 16px;
 }
 
 // *------*
@@ -32,6 +34,7 @@ $colorsMap: (
 
 // *! Fonts*
 $ff-exo: 'Exo 2';
+$ff-roboto: 'Roboto';
 $fontSize: 16px;
 $fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24);
 // *!------*
