@@ -43,7 +43,7 @@
      }
 }
 
-.floating-input:disabled{
+.floating-input:disabled, .floating-input.disabled{
      cursor: not-allowed;
 }
 

@@ -1,0 +1,17 @@
+.header-logo {
+     p{
+          color: var(--color-gray-txt);
+          cursor: default;
+          font-family: $ff-exo;
+          font-size: 12px;
+          line-height: 120%;
+          letter-spacing: 0;
+          margin-bottom: 0;
+     }
+     picture, img{
+          max-width: 56px;
+          max-height: 56px;
+          width: 100%;
+          height: 100%;
+     }
+}

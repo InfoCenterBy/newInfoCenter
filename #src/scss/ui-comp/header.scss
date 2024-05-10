@@ -1,0 +1,47 @@
+@layer component{
+     .button-serach{
+     @include adaptiv-value('font-size', 22, 16, 1);
+     padding: .5rem;
+     }
+     .button-serach::before {
+          content: ' \F52A';
+     }
+     .button-serach::before {
+          @extend .bootsrtap-icon;
+     }
+     .button-serach{
+          border-radius: 50%;
+     }
+     .button-serach:not(.disabled, :disabled){
+          @include hover('background-color', var(--color-violet-hover));
+          @include hover('color', var(--color-white));
+     }
+     .disabled.button-serach, .button-serach:disabled {
+          background-color: var(--color-gray-stroke);
+          cursor: not-allowed;
+     }
+     .button-serach{
+     outline: 1.5px solid transparent;
+     border: 1.5px solid transparent;
+     box-sizing: border-box;
+     @include transition(#{$transition-3});
+     text-align: center;
+     text-decoration: none;
+     display: grid;
+     place-items: center;
+     cursor: pointer;
+     width: fit-content;
+     }
+
+     .button-serach {
+          background-color: var(--color-violet);
+          color: var(--color-white);
+     }
+
+     .dropdown-header-tel{
+          &:hover .dropdown-menu{
+               display: flex;
+               margin-top: 0;
+          }
+     }
+}

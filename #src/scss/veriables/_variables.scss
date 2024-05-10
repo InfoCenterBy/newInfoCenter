@@ -28,15 +28,33 @@ $colorsMap: (
      }
      --base-font: 16px;
 }
-
 // *------*
+
+//? *Sizing*
+.px-12{
+     padding-left: 12px;
+     padding-right: 12px;
+}
+.mt-2{
+     margin-top: 2px;
+}
+//?
 
 
 // *! Fonts*
 $ff-exo: 'Exo 2';
+.ff-exo{
+     font-family: $ff-exo;
+}
 $ff-roboto: 'Roboto';
+.ff-roboto{
+     font-family: $ff-roboto;
+}
 $fontSize: 16px;
 $fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24);
+.ls-0{
+     letter-spacing: 0;
+}
 // *!------*
 
 // *? Border*

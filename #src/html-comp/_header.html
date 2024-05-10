@@ -3,7 +3,7 @@
           <div class="container">
                <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
                     <div class="language-block d-flex flex-row gap-3">
-                         <button class="language-button top-header-button">
+                         <button class="language-button top-header-button active">
                               РУС
                          </button>
                          <button class="language-button top-header-button">
@@ -25,6 +25,32 @@
           </div>
      </div>
      <div class="container">
-          @@include('../html-elements/_header-search.html')
+          <div class="row align-items-center">
+               <div class="col-lg-3">
+                    <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
+                         <picture>
+                              <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png">
+                              <img src="./img/png/logo/logo-header.png" alt="">
+                         </picture>
+                         <p class="">
+                              Республиканское унитарное предприятие <br>
+                              «Информационно-издательский центр <br>
+                              по налогам и сборам»
+                         </p>
+                    </div>
+               </div>
+               <div class="col-lg-3">
+                    @@include('../html-elements/_header-search.html')
+               </div>
+               <div class="col-lg-2">
+                    @@include('../html-elements/_header-tel-drop.html')
+               </div>
+               <div class="col-lg-3">
+                    <p class="mb-0 fs-14 ff-roboto lh-sm ls-0">
+                         <span>Пн – Чт: с 8:45 до 18:00</span> <br>
+                         <span>Пт: с 8:45 до 16:45</span>
+                    </p>
+               </div>
+          </div>
      </div>
 </header>
