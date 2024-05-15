@@ -1,55 +1,106 @@
 <header class="header">
-     <div class="bg-gray-bg-illustr">
-          <div class="container">
-               <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
-                    <div class="language-block d-flex flex-row gap-3">
-                         <button class="language-button top-header-button active">
-                              РУС
-                         </button>
-                         <button class="language-button top-header-button">
-                              БЕЛ
-                         </button>
-                         <button class="language-button top-header-button">
-                              EN
-                         </button>
-                    </div>
-                    <div class="blind-block">
-                         <button class="blind-button top-header-button d-flex flex-row justify-content-center flex-wrap align-items-center">
-                              <span>
-                                   Версия для слабовидящих
-                              </span>
-                              <i class="bi bi-eye"></i>
-                         </button>
+     <div class="header-container w-100">
+          <div class="bg-gray-bg-illustr">
+               <div class="container">
+                    <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
+                         <div class="language-block d-flex flex-row gap-3">
+                              <button class="language-button top-header-button active">
+                                   РУС
+                              </button>
+                              <button class="language-button top-header-button">
+                                   БЕЛ
+                              </button>
+                              <button class="language-button top-header-button">
+                                   EN
+                              </button>
+                         </div>
+                         <div class="blind-block">
+                              <button
+                                   class="blind-button top-header-button d-flex flex-row justify-content-center flex-wrap align-items-center">
+                                   <span>
+                                        Версия для слабовидящих
+                                   </span>
+                                   <i class="bi bi-eye"></i>
+                              </button>
+                         </div>
                     </div>
                </div>
           </div>
-     </div>
-     <div class="container">
-          <div class="row align-items-center">
-               <div class="col-lg-3">
-                    <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
-                         <picture>
-                              <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png">
-                              <img src="./img/png/logo/logo-header.png" alt="">
-                         </picture>
-                         <p class="">
-                              Республиканское унитарное предприятие <br>
-                              «Информационно-издательский центр <br>
-                              по налогам и сборам»
+          <div class="container mt-12">
+               <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-3">
+                         <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png">
+                                   <img src="./img/png/logo/logo-header.png" alt="">
+                              </picture>
+                              <p class="">
+                                   Республиканское унитарное предприятие <br>
+                                   «Информационно-издательский центр <br>
+                                   по налогам и сборам»
+                              </p>
+                         </div>
+                    </div>
+                    <div class="col-lg-1 d-xl-flex d-none"></div>
+                    <div class="col-lg-4">
+                         @@include('../html-elements/_header-search.html')
+                    </div>
+                    <div class="col-lg-2 w-lg-auto">
+                         @@include('../html-elements/_header-tel-drop.html')
+                    </div>
+                    <div class="col-lg-2 w-lg-auto d-flex justify-content-end">
+                         <p class="mb-0 fs-14 ff-roboto lh-sm ls-0 color-gray-txt">
+                              <span>Пн – Чт: с 8:45 до 18:00</span> <br>
+                              <span>Пт: с 8:45 до 16:45</span>
                          </p>
                     </div>
                </div>
-               <div class="col-lg-3">
-                    @@include('../html-elements/_header-search.html')
-               </div>
-               <div class="col-lg-2">
-                    @@include('../html-elements/_header-tel-drop.html')
-               </div>
-               <div class="col-lg-3">
-                    <p class="mb-0 fs-14 ff-roboto lh-sm ls-0">
-                         <span>Пн – Чт: с 8:45 до 18:00</span> <br>
-                         <span>Пт: с 8:45 до 16:45</span>
-                    </p>
+          </div>
+          <div class="container mt-12">
+               <nav class="header-nav d-flex flex-row w-100 justify-content-between align-items-center">
+                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-about" data-bs-toggle="modal" data-bs-target="#headerNavAboutModal">
+                         О предприятии
+                    </div>
+                    <div class="header-nav-link">
+                         Новости
+                    </div>
+                    <div class="header-nav-link header-nav-link-dropdown">
+                         Оплата услуг
+                    </div>
+                    <div class="header-nav-link header-nav-link-dropdown">
+                         Направления деятельности
+                    </div>
+                    <div class="header-nav-link header-nav-link-dropdown">
+                         Документы
+                    </div>
+                    <div class="header-nav-link">
+                         База знаний
+                    </div>
+                    <div class="header-nav-link">
+                         Контакты
+                    </div>
+                    <div class="header-nav-link">
+                         <i class="bi bi-person"></i>
+                    </div>
+               </nav>
+          </div>
+          <div class="header-nav-dropdown-container">
+               <div class="modal fade header-nav-about-modal" id="headerNavAboutModal" tabindex="-1" aria-labelledby="headerNavAboutModalLabel" aria-hidden="true">
+                    <div class="modal-dialog container">
+                         <div class="modal-content w-100">
+                              <div class="modal-header">
+                                   <h1 class="modal-title fs-5" id="headerNavAboutModalLabel">Modal title</h1>
+                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                   ...
+                              </div>
+                              <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                   <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>
