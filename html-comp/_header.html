@@ -1,6 +1,6 @@
 <header class="header">
      <div class="header-container w-100">
-          <div class="bg-gray-bg-illustr">
+          <div class="bg-gray-bg-illustr d-lg-block d-none">
                <div class="container">
                     <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
                          <div class="language-block d-flex flex-row gap-3">
@@ -28,21 +28,18 @@
           </div>
           <div class="container mt-12">
                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-3">
+                    <div class="col-xxl-3 col-lg-4 col-2">
                          <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
-                              <picture>
-                                   <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png">
-                                   <img src="./img/png/logo/logo-header.png" alt="">
-                              </picture>
-                              <p class="">
+                              <img src="./img/png/logo/logo-header-x2.png" alt="">
+                              <p class="d-lg-block d-none">
                                    Республиканское унитарное предприятие <br>
                                    «Информационно-издательский центр <br>
                                    по налогам и сборам»
                               </p>
                          </div>
                     </div>
-                    <div class="col-lg-1 d-xl-flex d-none"></div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-1 d-xxl-flex d-none"></div>
+                    <div class="col-xl-4 col-lg-3 d-lg-block d-none">
                          <div class="search-block">
      <form class="form-group d-flex flex-row align-items-center w-100">
           <div class="floating-label-content w-100">
@@ -55,7 +52,7 @@
      </form>
 </div>
                     </div>
-                    <div class="col-lg-2 w-lg-auto">
+                    <div class="col-lg-2 w-lg-auto d-lg-block d-none">
                          <div class="dropdown dropdown-header-tel">
      <div class="d-flex flex-column">
           <a href="tel:8 (017) 269-19-19" class="link-tel-drop">
@@ -76,15 +73,29 @@
      </div>
 </div>
                     </div>
-                    <div class="col-lg-2 w-lg-auto d-flex justify-content-end">
+                    <div class="col-lg-2 w-lg-auto d-flex justify-content-end d-lg-block d-none">
                          <p class="mb-0 fs-14 ff-roboto lh-sm ls-0 color-gray-txt">
                               <span>Пн – Чт: с 8:45 до 18:00</span> <br>
                               <span>Пт: с 8:45 до 16:45</span>
                          </p>
                     </div>
+                    <div class="col-6 w-auto d-lg-none d-block d-flex flex-row justify-content-end gap-4 mobile-menu align-items-center">
+                         <button class="">
+                              <i class="bi bi-search"></i>
+                         </button>
+                         <button class="">
+                              <i class="bi bi-phone"></i>
+                         </button>
+                         <button class="">
+                              <i class="bi bi-person"></i>
+                         </button>
+                         <button class="" data-bs-toggle="modal" data-bs-target="#mobileMenu">
+                              <i class="bi bi-list"></i>
+                         </button>
+                    </div>
                </div>
           </div>
-          <div class="container mt-12">
+          <div class="container mt-12 d-lg-block d-none">
                <nav class="header-nav d-flex flex-row w-100 justify-content-between align-items-center">
                     <div class="header-nav-link header-nav-link-dropdown header-nav-link-about" data-bs-toggle="modal" data-bs-target="#headerNavAboutModal" type="button">
                          О предприятии
@@ -107,7 +118,7 @@
                     <div class="header-nav-link">
                          Контакты
                     </div>
-                    <div class="header-nav-link">
+                    <div class="header-nav-link fs-18">
                          <i class="bi bi-person"></i>
                     </div>
                </nav>
@@ -116,7 +127,35 @@
                <div class="modal fade header-nav-about-modal header-modal" id="headerNavAboutModal" tabindex="-1" aria-labelledby="headerNavAboutModalLabel" aria-hidden="true">
      <div class="modal-dialog container">
           <div class="modal-content w-100">
-               <div class="modal-body">
+               <div class="modal-body d-flex flex-row justify-content-between">
+                    <div class="modal-header-link-list d-flex flex-column gap-2">
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              О нас
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Руководство
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Вакансии
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Комиссия по противодействию коррупции
+                         </a>
+                    </div>
+                    <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>
@@ -125,7 +164,29 @@
      aria-labelledby="headerNavPaymentModalLabel" aria-hidden="true">
      <div class="modal-dialog container">
           <div class="modal-content w-100">
-               <div class="modal-body">
+               <div class="modal-body d-flex flex-row justify-content-between">
+                    <div class="modal-header-link-list d-flex flex-column gap-2">
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Прейскуранты
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Способы оплаты
+                         </a>
+                    </div>
+                    <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>
@@ -135,6 +196,162 @@
      <div class="modal-dialog container">
           <div class="modal-content w-100">
                <div class="modal-body">
+                    <div class="row justify-content-between align-items-start">
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Редакция
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Журнал «Налоги Беларуси»
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Сетевое издание «padatak.by»
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Электронные издания
+                                   </a>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Регистрационный центр ГосСУОК
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Предварительная запись
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Адреса РЦ
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Вопрос-ответ
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Услуги
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Документы РЦ
+                                   </a>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2 align-items-start">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        СККО
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Информация для операторов ПКС
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Информация об операторах программных кассовых систем оператор ПКС, программных кассовых системах ПКС и программных
+                                        кассах ПК
+                                   </a>
+                                   <div class="collapse" id="collapseMoreHeader">
+                                        <div class="d-flex flex-column gap-2 align-items-start">
+                                             <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                                  Информация для операторов ПКС
+                                             </a>
+                                             <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                                  Информация об операторах программных кассовых систем оператор ПКС, программных кассовых системах ПКС и программных
+                                                  кассах ПК
+                                             </a>
+                                        </div>
+                                   </div>
+                                   <button class="btn-collapse-more collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMoreHeader"
+                                        aria-expanded="false" aria-controls="collapseMoreHeader">
+                                        Еще
+                                   </button>
+                                   <button class="btn-collapse-more-hidden collapsed p-0" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseMoreHeader" aria-expanded="false" aria-controls="collapseMoreHeader">
+                                        Свернуть
+                                   </button>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Программные кассы
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Информация для пользователей программных касс
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Информация для операторов программных кассовых систем
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Информация об операторах программных кассовых систем, программных кассовых системах и программных кассах
+                                   </a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="mt-4"></div>
+                    <div class="row justify-content-between align-items-start">
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Проведение бизнес-мероприятий
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Конференции/вебинары/семинары
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Доступ к видеороликам
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Организация бизнес-мероприятий под ключ
+                                   </a>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Лицензии на программы
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Лицензии на программы А0 «Лаборатория Касперского»
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        1С-Битрикс: Управление сайтом
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                                        Битрикс24
+                                   </a>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="modal-header-link-list d-flex flex-column gap-2">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        СКTA
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Онлайн-школа «О налогах и не толькодля ИП простыми словами»
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Торговля
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Услуги по налоговому консультированию
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Разработка сайтов
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="modal-header-link-list__title">
+                                        Размещение рекламы
+                                   </a>
+                              </div>
+                         </div>
+                         <div class="col-lg-3">
+                              <div class="d-flex">
+                                   <div class="modal-banner-small">
+                                        <picture>
+                                             <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-sm-2x.png">
+                                             <img src="./img/png/header-banner/header-banner-template-sm.png" alt="">
+                                        </picture>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>
@@ -143,11 +360,106 @@
      aria-labelledby="headerNavDocumentsModalLabel" aria-hidden="true">
      <div class="modal-dialog container">
           <div class="modal-content w-100">
-               <div class="modal-body">
+               <div class="modal-body d-flex flex-row justify-content-between">
+                    <div class="modal-header-link-list d-flex flex-column gap-2">
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Документы РЦ
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Документы СККО
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Документы СКТА
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="link-menu">
+                              Документы предприятия
+                         </a>
+                         <a href="" target="_blank" rel="noopener noreferrer" class="arrow-link">
+                              Все документы
+                         </a>
+                    </div>
+                    <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                         <div class="modal-banner-long">
+                              <picture>
+                                   <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
+                                   <img src="./img/png/header-banner/header-banner-template.png" alt="">
+                              </picture>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>
 </div>
           </div>
+          <div class="border border-1 border-top-0 mt-12 d-lg-none d-block"></div>
      </div>
 </header>
+<div class="modal fade modal-mobile-menu" id="mobileMenu" tabindex="-1" aria-labelledby="mobileMenuLabel" aria-hidden="true">
+     <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+               <div class="container mt-12 pe-3">
+                    <div class="row align-items-center justify-content-between">
+                         <div class="col-xxl-3 col-lg-4 col-2">
+                              <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
+                                   <img src="./img/png/logo/logo-header-x2.png" alt="">
+                              </div>
+                         </div>
+                         <div
+                              class="col-6 w-auto d-lg-none d-block d-flex flex-row justify-content-end gap-4 mobile-menu align-items-center">
+                              <button class="">
+                                   <i class="bi bi-search"></i>
+                              </button>
+                              <button class="">
+                                   <i class="bi bi-phone"></i>
+                              </button>
+                              <button class="">
+                                   <i class="bi bi-person"></i>
+                              </button>
+                              <button class="" data-bs-dismiss="modal" aria-label="Close">
+                                   <i class="bi bi-x-lg"></i>
+                              </button>
+                         </div>
+                    </div>
+               </div>
+               <div class="border border-1 border-top-0 mt-12"></div>
+               <div class="bg-violet py-5 px-3 h-100 overflow-auto d-flex flex-column align-items-start mobile-menu-tabs">
+                    <a class="menu-tabs-main-btn collapsed menu-tabs-main-btn-arrow" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                         aria-controls="collapseExample">
+                         О предприятии
+                    </a>
+                    <div class="collapse menu-tabs-collapse" id="collapseExample">
+                         <div class="d-flex flex-column align-items-start">
+                              <a class="menu-tabs-sub-btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                                   aria-controls="collapseExample">
+                                   О предприятии
+                              </a>
+                              <div class="card card-body">
+                                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
+                                   user activates the relevant trigger.
+                              </div>
+                         </div>
+                    </div>
+                    <a class="menu-tabs-main-btn collapsed" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+                         aria-expanded="false" aria-controls="collapseExample2">
+                         Link with href 2
+                    </a>
+                    <div class="collapse menu-tabs-collapse" id="collapseExample2">
+                         <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                              aria-controls="collapseExample2">
+                              Link with href
+                         </a>
+                         <div class="card card-body">
+                              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
+                              user activates the relevant trigger.
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
