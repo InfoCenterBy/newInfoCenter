@@ -1,0 +1,82 @@
+.mobile-menu{
+     .bi{
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          color: var(--color-black);
+     }
+     .bi-list{
+          font-size: 1.75rem;
+     }
+     .bi-person{
+          font-size: 1.625rem;
+     }
+}
+
+.modal-mobile-menu.modal{
+     z-index: 1057;
+}
+
+.mobile-menu-tabs:has(.menu-tabs-main-btn:not(.collapsed)){
+     .menu-tabs-main-btn.collapsed{
+          animation: hide-tab 1s ease-out forwards;
+     }
+}
+
+@keyframes hide-tab {
+     0% {
+          display: block;
+          opacity: 1;
+     }
+     50%{
+          opacity: 0;
+     }
+     100% {
+          display: none;
+          height: 0;
+          opacity: 0;
+     }
+}
+
+.menu-tabs-main-btn, .menu-tabs-sub-btn{
+     text-transform: uppercase;
+     color: var(--color-white);
+     font-family: $ff-exo;
+     font-weight: 400;
+     line-height: 130%;
+     letter-spacing: 0;
+}
+
+.menu-tabs-main-btn{
+     &-arrow{
+          &::after{
+               @extend .bootsrtap-icon;
+               content: '\F285';
+          }
+     }
+}
+
+.menu-tabs-sub-btn{
+     &::before{
+          @extend .bootsrtap-icon;
+          content: '\F284';
+     }
+}
+
+.menu-tabs-main-btn{
+     display: none;
+     &.collapsed{
+          display: block;
+     }
+}
+
+
+.menu-tabs-sub-btn{
+     display: block;
+     &.collapsed{
+          display: none;
+     }
+}
+
+.menu-tabs-collapse{
+     @include transition($transition-3);
+}

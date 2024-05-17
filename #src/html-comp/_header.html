@@ -1,6 +1,6 @@
 <header class="header">
      <div class="header-container w-100">
-          <div class="bg-gray-bg-illustr">
+          <div class="bg-gray-bg-illustr d-lg-block d-none">
                <div class="container">
                     <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
                          <div class="language-block d-flex flex-row gap-3">
@@ -28,49 +28,63 @@
           </div>
           <div class="container mt-12">
                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-3">
+                    <div class="col-xxl-3 col-lg-4 col-2">
                          <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
-                              <picture>
-                                   <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png">
-                                   <img src="./img/png/logo/logo-header.png" alt="">
-                              </picture>
-                              <p class="">
+                              <!-- <picture> -->
+                                   <!-- <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png"> -->
+                              <img src="./img/png/logo/logo-header-x2.png" alt="">
+                              <!-- </picture> -->
+                              <p class="d-lg-block d-none">
                                    Республиканское унитарное предприятие <br>
                                    «Информационно-издательский центр <br>
                                    по налогам и сборам»
                               </p>
                          </div>
                     </div>
-                    <div class="col-lg-1 d-xl-flex d-none"></div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-1 d-xxl-flex d-none"></div>
+                    <div class="col-xl-4 col-lg-3 d-lg-block d-none">
                          @@include('../html-elements/_header-search.html')
                     </div>
-                    <div class="col-lg-2 w-lg-auto">
+                    <div class="col-lg-2 w-lg-auto d-lg-block d-none">
                          @@include('../html-elements/_header-tel-drop.html')
                     </div>
-                    <div class="col-lg-2 w-lg-auto d-flex justify-content-end">
+                    <div class="col-lg-2 w-lg-auto d-flex justify-content-end d-lg-block d-none">
                          <p class="mb-0 fs-14 ff-roboto lh-sm ls-0 color-gray-txt">
                               <span>Пн – Чт: с 8:45 до 18:00</span> <br>
                               <span>Пт: с 8:45 до 16:45</span>
                          </p>
                     </div>
+                    <div class="col-6 w-auto d-lg-none d-block d-flex flex-row justify-content-end gap-4 mobile-menu align-items-center">
+                         <button class="">
+                              <i class="bi bi-search"></i>
+                         </button>
+                         <button class="">
+                              <i class="bi bi-phone"></i>
+                         </button>
+                         <button class="">
+                              <i class="bi bi-person"></i>
+                         </button>
+                         <button class="" data-bs-toggle="modal" data-bs-target="#mobileMenu">
+                              <i class="bi bi-list"></i>
+                         </button>
+                    </div>
                </div>
           </div>
-          <div class="container mt-12">
+          <div class="container mt-12 d-lg-block d-none">
                <nav class="header-nav d-flex flex-row w-100 justify-content-between align-items-center">
-                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-about" data-bs-toggle="modal" data-bs-target="#headerNavAboutModal">
+                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-about" data-bs-toggle="modal" data-bs-target="#headerNavAboutModal" type="button">
                          О предприятии
                     </div>
                     <div class="header-nav-link">
                          Новости
                     </div>
-                    <div class="header-nav-link header-nav-link-dropdown">
+                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-payment" data-bs-toggle="modal" data-bs-target="#headerNavPaymentModal" type="button">
                          Оплата услуг
                     </div>
-                    <div class="header-nav-link header-nav-link-dropdown">
+                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-activity" data-bs-toggle="modal" data-bs-target="#headerNavАctivityModal" type="button">
                          Направления деятельности
                     </div>
-                    <div class="header-nav-link header-nav-link-dropdown">
+                    <div class="header-nav-link header-nav-link-dropdown header-nav-link-documents" data-bs-toggle="modal" data-bs-target="#headerNavDocumentsModal" type="button">
                          Документы
                     </div>
                     <div class="header-nav-link">
@@ -79,29 +93,18 @@
                     <div class="header-nav-link">
                          Контакты
                     </div>
-                    <div class="header-nav-link">
+                    <div class="header-nav-link fs-18">
                          <i class="bi bi-person"></i>
                     </div>
                </nav>
           </div>
           <div class="header-nav-dropdown-container">
-               <div class="modal fade header-nav-about-modal" id="headerNavAboutModal" tabindex="-1" aria-labelledby="headerNavAboutModalLabel" aria-hidden="true">
-                    <div class="modal-dialog container">
-                         <div class="modal-content w-100">
-                              <div class="modal-header">
-                                   <h1 class="modal-title fs-5" id="headerNavAboutModalLabel">Modal title</h1>
-                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                   ...
-                              </div>
-                              <div class="modal-footer">
-                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                   <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                         </div>
-                    </div>
-               </div>
+               @@include('../html-elements/_header-nav-about-modal.html')
+               @@include('../html-elements/_header-nav-payment-modal.html')
+               @@include('../html-elements/_header-nav-activity-modal.html')
+               @@include('../html-elements/_header-nav-documents-modal.html')
           </div>
+          <div class="border border-1 border-top-0 mt-12 d-lg-none d-block"></div>
      </div>
 </header>
+@@include('../html-elements/_header-mobile-menu.html')

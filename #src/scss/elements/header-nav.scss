@@ -9,8 +9,35 @@
      letter-spacing: 0;
      cursor: pointer;
      border-bottom: 2px solid transparent;
+     padding-bottom: .75rem;
+     position: relative;
+     top: 1px;
+     user-select: none;
+     @include transition($transition-3);
      &-show{
-          border-color: red;
+          color: var(--color-violet);
+          border-color: var(--color-violet);
+     }
+     @include hover('color', var(--color-violet));
+     @include hover('border-color', var(--color-violet));
+}
+
+@keyframes changeContentChevron {
+     0% {
+          opacity: 1;
+     }
+     25%{
+          opacity: .5;
+     }
+     50% {
+          opacity: 0;
+     }
+     75%{
+          opacity: .5;
+     }
+     100% {
+          opacity: 1;
+          content: '\F286';
      }
 }
 
@@ -24,6 +51,14 @@
           height: 17px;
           font-size: 1rem;
           margin-left: .375rem;
+          transition: all .4s ease-out;
+          animation-direction: reverse;
+     }
+     &.header-nav-link-show{
+          &::after{
+               animation-fill-mode: forwards;
+               animation: changeContentChevron .4s ease-out forwards;
+          }
      }
 }
 .header-nav-dropdown-container{
@@ -31,30 +66,22 @@
           margin-top: var(--header-height);
      }
      .modal-dialog{
-          margin-top: .25rem;
+          margin-top: 1rem;
      }
      .modal {
           --bs-modal-zindex: 1055;
-          --bs-modal-width: 500px;
-          --bs-modal-padding: 1rem;
+          --bs-modal-width: 100%;
+          --bs-modal-padding: 2rem;
           --bs-modal-margin: 0.5rem;
           --bs-modal-color: ;
-          --bs-modal-bg: #fff;
-          --bs-modal-border-color: var(--bs-border-color-translucent);
+          --bs-modal-bg: var(--color-white);
+          --bs-modal-border-color: var(--color-gray-stroke);
           --bs-modal-border-width: 1px;
-          --bs-modal-border-radius: 0.5rem;
-          /* --bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
+          --bs-modal-border-radius: 1.875rem;
+          --bs-modal-box-shadow: none;
           --bs-modal-inner-border-radius: calc(0.5rem - 1px);
-          --bs-modal-header-padding-x: 1rem;
-          --bs-modal-header-padding-y: 1rem;
-          --bs-modal-header-padding: 1rem 1rem;
-          --bs-modal-header-border-color: var(--bs-border-color);
-          --bs-modal-header-border-width: 1px;
-          --bs-modal-title-line-height: 1.5;
-          --bs-modal-footer-gap: 0.5rem;
-          --bs-modal-footer-bg: ;
-          --bs-modal-footer-border-color: var(--bs-border-color);
-          --bs-modal-footer-border-width: 1px;
+          --bs-modal-header-padding-x: 2rem;
+          --bs-modal-header-padding-y: 2rem;
           position: fixed;
           top: 0;
           left: 0;
@@ -85,3 +112,50 @@
      @extend .header-nav-link-show;
 }
 
+.header:has(.header-nav-payment-modal.show) .header-nav-link-payment{
+     @extend .header-nav-link-show;
+}
+
+.header:has(.header-nav-activity-modal.show) .header-nav-link-activity{
+     @extend .header-nav-link-show;
+}
+
+.header:has(.header-nav-documents-modal.show) .header-nav-link-documents{
+     @extend .header-nav-link-show;
+}
+
+
+.modal-banner-long{
+     img{
+          max-width: 440px;
+          // max-height: 150px;
+          width: 100%;
+          object-fit: contain;
+     }
+}
+
+.modal-banner-small{
+     img{
+          max-width: 320px;
+          width: 100%;
+          object-fit: contain;
+     }
+}
+
+.modal-header-link-list:has(.modal-header-link-list__title){
+     .link-menu:nth-of-type(2){
+          margin-top: .25rem;
+     }
+}
+
+.modal-header-link-list{
+     &__title{
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: var(--color-black);
+          line-height: 120%;
+          letter-spacing: 0;
+          font-family: $ff-exo;
+          @include hover('color', var(--color-violet));
+     }
+}
