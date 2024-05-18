@@ -18,35 +18,51 @@
 
 .mobile-menu-tabs:has(.menu-tabs-main-btn:not(.collapsed)){
      .menu-tabs-main-btn.collapsed{
-          animation: hide-tab 1s ease-out forwards;
+          animation: hide-tab .5s ease-out forwards;
+          display: none;
+     }
+}
+
+.mobile-inner-menu-tab:has(.menu-tabs-inner-main-btn:not(.collapsed)){
+     .menu-tabs-inner-main-btn, .menu-tabs-sub-btn{
+          animation: hide-tab .5s ease-out forwards;
+          display: none;
      }
 }
 
 @keyframes hide-tab {
-     0% {
-          display: block;
-          opacity: 1;
-     }
-     50%{
-          opacity: 0;
-     }
+     // 0% {
+     //      display: block;
+     //      opacity: 1;
+     // }
+     // 50%{
+     //      opacity: 0;
+     // }
      100% {
           display: none;
-          height: 0;
           opacity: 0;
+          height: 0;
+          visibility: hidden;
      }
 }
 
-.menu-tabs-main-btn, .menu-tabs-sub-btn{
+.menu-tabs-main-btn, .menu-tabs-sub-btn, .menu-tabs-inner-main-btn, .menu-tabs-inner-sub-btn{
      text-transform: uppercase;
      color: var(--color-white);
      font-family: $ff-exo;
      font-weight: 400;
      line-height: 130%;
      letter-spacing: 0;
+     width: 100%;
+     @include transition($transition-3);
 }
 
 .menu-tabs-main-btn{
+     display: flex;
+     flex-direction: row;
+     gap: .5rem;
+     justify-content: space-between;
+     align-items: center;
      &-arrow{
           &::after{
                @extend .bootsrtap-icon;
@@ -56,6 +72,10 @@
 }
 
 .menu-tabs-sub-btn{
+     display: flex;
+     flex-direction: row;
+     gap: .5rem;
+     align-items: center;
      &::before{
           @extend .bootsrtap-icon;
           content: '\F284';
@@ -65,13 +85,13 @@
 .menu-tabs-main-btn{
      display: none;
      &.collapsed{
-          display: block;
+          display: flex;
      }
 }
 
 
 .menu-tabs-sub-btn{
-     display: block;
+     display: flex;
      &.collapsed{
           display: none;
      }
@@ -79,4 +99,14 @@
 
 .menu-tabs-collapse{
      @include transition($transition-3);
+}
+
+
+.menu-tabs-link{
+     color: var(--color-white);
+     font-family: $ff-exo;
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 130%;
+     letter-spacing: 0;
 }
