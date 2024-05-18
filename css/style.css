@@ -1461,6 +1461,8 @@
   100% {
     display: none;
     opacity: 0;
+    height: 0;
+    visibility: hidden;
   }
 }
 
@@ -1468,6 +1470,8 @@
   100% {
     display: none;
     opacity: 0;
+    height: 0;
+    visibility: hidden;
   }
 }
 .menu-tabs-main-btn, .menu-tabs-sub-btn {
@@ -1478,6 +1482,8 @@
   line-height: 130%;
   letter-spacing: 0;
   width: 100%;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
 }
 
 .menu-tabs-main-btn {
