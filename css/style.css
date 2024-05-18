@@ -1458,6 +1458,12 @@
   display: none;
 }
 
+.mobile-inner-menu-tab:has(.menu-tabs-inner-main-btn:not(.collapsed)) .menu-tabs-inner-main-btn, .mobile-inner-menu-tab:has(.menu-tabs-inner-main-btn:not(.collapsed)) .menu-tabs-sub-btn {
+  -webkit-animation: hide-tab 0.5s ease-out forwards;
+          animation: hide-tab 0.5s ease-out forwards;
+  display: none;
+}
+
 @-webkit-keyframes hide-tab {
   100% {
     display: none;
@@ -1475,7 +1481,7 @@
     visibility: hidden;
   }
 }
-.menu-tabs-main-btn, .menu-tabs-sub-btn {
+.menu-tabs-main-btn, .menu-tabs-sub-btn, .menu-tabs-inner-main-btn, .menu-tabs-inner-sub-btn {
   text-transform: uppercase;
   color: var(--color-white);
   font-family: "Exo 2";
