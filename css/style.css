@@ -1455,6 +1455,7 @@
 .mobile-menu-tabs:has(.menu-tabs-main-btn:not(.collapsed)) .menu-tabs-main-btn.collapsed {
   -webkit-animation: hide-tab 0.5s ease-out forwards;
           animation: hide-tab 0.5s ease-out forwards;
+  display: none;
 }
 
 @-webkit-keyframes hide-tab {
