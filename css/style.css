@@ -31,6 +31,14 @@
   margin-top: 12px;
 }
 
+.gap-12 {
+  gap: 0.75rem;
+}
+
+.gap-20 {
+  gap: 1.25rem;
+}
+
 .ff-exo {
   font-family: "Exo 2";
 }
@@ -900,6 +908,14 @@
   margin-top: 12px;
 }
 
+.gap-12 {
+  gap: 0.75rem;
+}
+
+.gap-20 {
+  gap: 1.25rem;
+}
+
 .ff-exo {
   font-family: "Exo 2";
 }
@@ -1437,36 +1453,20 @@
 }
 
 .mobile-menu-tabs:has(.menu-tabs-main-btn:not(.collapsed)) .menu-tabs-main-btn.collapsed {
-  -webkit-animation: hide-tab 1s ease-out forwards;
-          animation: hide-tab 1s ease-out forwards;
+  -webkit-animation: hide-tab 0.5s ease-out forwards;
+          animation: hide-tab 0.5s ease-out forwards;
 }
 
 @-webkit-keyframes hide-tab {
-  0% {
-    display: block;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
   100% {
     display: none;
-    height: 0;
     opacity: 0;
   }
 }
 
 @keyframes hide-tab {
-  0% {
-    display: block;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
   100% {
     display: none;
-    height: 0;
     opacity: 0;
   }
 }
@@ -1477,12 +1477,42 @@
   font-weight: 400;
   line-height: 130%;
   letter-spacing: 0;
+  width: 100%;
 }
 
+.menu-tabs-main-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .menu-tabs-main-btn-arrow::after {
   content: "\f285";
 }
 
+.menu-tabs-sub-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .menu-tabs-sub-btn::before {
   content: "\f284";
 }
@@ -1491,11 +1521,15 @@
   display: none;
 }
 .menu-tabs-main-btn.collapsed {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .menu-tabs-sub-btn {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .menu-tabs-sub-btn.collapsed {
   display: none;
@@ -1504,6 +1538,15 @@
 .menu-tabs-collapse {
   -webkit-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
+}
+
+.menu-tabs-link {
+  color: var(--color-white);
+  font-family: "Exo 2";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0;
 }
 
 html {
