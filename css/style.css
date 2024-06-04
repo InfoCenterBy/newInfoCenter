@@ -51,7 +51,7 @@
   letter-spacing: 0;
 }
 
-.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
+.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
   display: inline-block;
   font-family: bootstrap-icons !important;
   font-style: normal;
@@ -928,7 +928,7 @@
   letter-spacing: 0;
 }
 
-.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
+.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
   display: inline-block;
   font-family: bootstrap-icons !important;
   font-style: normal;
@@ -1493,7 +1493,11 @@
   transition: all ease-out 0.3s;
 }
 
-.menu-tabs-main-btn {
+.menu-tabs-inner-sub-btn {
+  text-transform: capitalize;
+}
+
+.menu-tabs-main-btn, .menu-tabs-inner-main-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1509,11 +1513,11 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.menu-tabs-main-btn-arrow::after {
+.menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after {
   content: "\f285";
 }
 
-.menu-tabs-sub-btn {
+.menu-tabs-sub-btn, .menu-tabs-inner-sub-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1526,7 +1530,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.menu-tabs-sub-btn::before {
+.menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before {
   content: "\f284";
 }
 
