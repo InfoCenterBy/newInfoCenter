@@ -14,13 +14,14 @@
 @import './elements/header-logo.scss';
 @import './elements/header-nav.scss';
 @import './ui-comp/mobile-menu.scss';
+@import './elements/footer-logo.scss';
 //! end imports
 
 html{
      height: auto;
      scroll-behavior: smooth;
      width: 100%;
-     scrollbar-gutter: stable;
+     // scrollbar-gutter: stable;
 }
 html,
 body {

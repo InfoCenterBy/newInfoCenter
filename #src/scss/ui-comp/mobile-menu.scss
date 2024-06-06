@@ -16,16 +16,20 @@
      z-index: 1057;
 }
 
+.modal-mobile-search.modal{
+     z-index: 1057;
+}
+
 .mobile-menu-tabs:has(.menu-tabs-main-btn:not(.collapsed)){
      .menu-tabs-main-btn.collapsed{
-          animation: hide-tab .5s ease-out forwards;
+          // animation: hide-tab .5s ease-out;
           display: none;
      }
 }
 
 .mobile-inner-menu-tab:has(.menu-tabs-inner-main-btn:not(.collapsed)){
      .menu-tabs-inner-main-btn, .menu-tabs-sub-btn{
-          animation: hide-tab .5s ease-out forwards;
+          // animation: hide-tab .5s ease-out;
           display: none;
      }
 }
@@ -57,7 +61,7 @@
      @include transition($transition-3);
 }
 
-.menu-tabs-main-btn{
+.menu-tabs-main-btn, .menu-tabs-inner-main-btn{
      display: flex;
      flex-direction: row;
      gap: .5rem;
@@ -71,7 +75,7 @@
      }
 }
 
-.menu-tabs-sub-btn{
+.menu-tabs-sub-btn, .menu-tabs-inner-sub-btn{
      display: flex;
      flex-direction: row;
      gap: .5rem;

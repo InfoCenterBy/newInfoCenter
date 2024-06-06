@@ -8,6 +8,15 @@
      button:disabled, button.disabled{
           cursor: not-allowed;
      }
+     button{
+          @media (hover: none) {
+               &:focus,&:active{
+                    outline: 1px solid transparent;
+                    box-shadow: 0 0 0 1px var(--color-violet-hover);
+                    border-radius: .25rem;
+               }
+          }
+     }
 }
 
 @layer component{
@@ -48,14 +57,16 @@
                content: '\F282';
           }
      }
-     .btn-collapse-more, .btn-collapse-more-hidden{
-          color: var(--color-gray-txt);
-          font-family: $ff-roboto;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 0;
-          user-select: none;
+     .header{
+          .btn-collapse-more, .btn-collapse-more-hidden{
+               color: var(--color-gray-txt);
+               font-family: $ff-roboto;
+               font-size: 1rem;
+               font-weight: 400;
+               line-height: 130%;
+               letter-spacing: 0;
+               user-select: none;
+          }
      }
      .btn-collapse-more-hidden{
           display: block;
@@ -65,6 +76,12 @@
           &::after{
                @extend .bootsrtap-icon;
                content: '\F286';
+          }
+     }
+     .collapsed-more-btn-flex{
+          display: none;
+          &.collapsed{
+               display: flex;
           }
      }
 }

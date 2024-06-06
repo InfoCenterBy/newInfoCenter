@@ -5,12 +5,16 @@
           background-color: var(--color-white);
           --header-height: 9.375rem;
           min-height: var(--header-height);
+          @media (max-width:992px) {
+               --header-height: 5.125rem;
+          }
           .header-container{
                top: 0;
                left: 0;
                position: fixed;
                z-index: 1056;
                background-color: var(--color-white);
+               border-bottom: 1px solid var(--color-gray-stroke);
           }
      }
      .button-serach{
@@ -38,16 +42,16 @@
           cursor: not-allowed;
      }
      .button-serach{
-     outline: 1.5px solid transparent;
-     border: 1.5px solid transparent;
-     box-sizing: border-box;
-     @include transition(#{$transition-3});
-     text-align: center;
-     text-decoration: none;
-     display: grid;
-     place-items: center;
-     cursor: pointer;
-     width: fit-content;
+          outline: 1.5px solid transparent;
+          border: 1.5px solid transparent;
+          box-sizing: border-box;
+          @include transition(#{$transition-3});
+          text-align: center;
+          text-decoration: none;
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          width: fit-content;
      }
 
      .button-serach {
@@ -104,5 +108,12 @@
                border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
                border-radius: var(--bs-dropdown-border-radius);
           }
+     }
+}
+
+
+.modal-mobile-search{
+     .modal-content{
+          background-color: var(--color-white);
      }
 }
