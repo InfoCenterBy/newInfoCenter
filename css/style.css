@@ -765,6 +765,11 @@
     --header-height: 9.375rem;
     min-height: var(--header-height);
   }
+  @media (max-width: 992px) {
+    .header {
+      --header-height: 5.125rem;
+    }
+  }
   .header .header-container {
     top: 0;
     left: 0;
@@ -986,6 +991,14 @@ footer.footer {
   button:disabled, button.disabled {
     cursor: not-allowed;
   }
+  @media (hover: none) {
+    button:focus, button:active {
+      outline: 1px solid transparent;
+      -webkit-box-shadow: 0 0 0 1px var(--color-violet-hover);
+              box-shadow: 0 0 0 1px var(--color-violet-hover);
+      border-radius: 0.25rem;
+    }
+  }
 }
 @layer component {
   .blind-button {
@@ -1029,7 +1042,7 @@ footer.footer {
   .btn-collapse-more::after {
     content: "\f282";
   }
-  .btn-collapse-more, .btn-collapse-more-hidden {
+  .header .btn-collapse-more, .header .btn-collapse-more-hidden {
     color: var(--color-gray-txt);
     font-family: "Roboto";
     font-size: 1rem;
@@ -1049,6 +1062,14 @@ footer.footer {
   }
   .btn-collapse-more-hidden::after {
     content: "\f286";
+  }
+  .collapsed-more-btn-flex {
+    display: none;
+  }
+  .collapsed-more-btn-flex.collapsed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 @layer base {
