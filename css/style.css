@@ -1660,7 +1660,6 @@ html {
   height: auto;
   scroll-behavior: smooth;
   width: 100%;
-  scrollbar-gutter: stable;
 }
 
 html,
