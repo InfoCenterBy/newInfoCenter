@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css") layer(vendor);
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css") layer(vendor);
 @import url("https://fonts.googleapis.com/css?family=Exo 2");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @layer base, vendor, component, variations;
@@ -35,6 +36,10 @@
   margin-top: 0.625rem;
 }
 
+.mt-20 {
+  margin-top: 1.25rem;
+}
+
 .gap-12 {
   gap: 0.75rem;
 }
@@ -55,7 +60,7 @@
   letter-spacing: 0;
 }
 
-.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
+.bootsrtap-icon, .main-banner-wrapper .swiper-button-next-custom::before, .main-banner-wrapper .swiper-button-prev-custom::before, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
   display: inline-block;
   font-family: bootstrap-icons !important;
   font-style: normal;
@@ -937,6 +942,10 @@ footer.footer {
   margin-top: 0.625rem;
 }
 
+.mt-20 {
+  margin-top: 1.25rem;
+}
+
 .gap-12 {
   gap: 0.75rem;
 }
@@ -957,7 +966,7 @@ footer.footer {
   letter-spacing: 0;
 }
 
-.bootsrtap-icon, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
+.bootsrtap-icon, .main-banner-wrapper .swiper-button-next-custom::before, .main-banner-wrapper .swiper-button-prev-custom::before, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .button-serach::before {
   display: inline-block;
   font-family: bootstrap-icons !important;
   font-style: normal;
@@ -1070,6 +1079,45 @@ footer.footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .btn-default {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0.625rem 1.5rem;
+    color: var(--color-white);
+    font-family: "Exo 2";
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+    background-color: var(--color-violet);
+    border-radius: 6.25rem;
+    border: 1.5px solid transparent;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-default:not([disabled]):hover {
+      background-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: none) {
+    .btn-default:not([disabled]):active {
+      background-color: var(--color-violet-hover);
+    }
+  }
+  .btn-default:focus, .btn-default:active {
+    background-color: var(--color-dark-violet);
+  }
+  .btn-default:disabled {
+    background-color: var(--color-gray-stroke);
+  }
+  @media screen and (max-width: 1200px) {
+    .btn-default {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
   }
 }
 @layer base {
@@ -1677,6 +1725,120 @@ footer.footer {
   margin-left: 0.25rem;
 }
 
+.main-banner-wrapper {
+  padding: 4rem;
+}
+@media screen and (max-width: 1200px) {
+  .main-banner-wrapper {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main-banner-wrapper {
+    padding: 1rem;
+  }
+}
+
+.swiper.main-banner {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+@layer component {
+  .main-banner-wrapper {
+    --swiper-pagination-color: var(--color-violet);
+    --swiper-pagination-left: 0;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 8px;
+    --swiper-pagination-top: auto;
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: var(--color-violet-hover);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 1.25rem;
+    --swiper-pagination-bullet-height: .375rem;
+    --swiper-pagination-bullet-inactive-color: var(--color-violet-hover);
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: .375rem;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+    --swiper-pagination-bullet-border-radius: 2px;
+  }
+  .main-banner-wrapper .swiper-button-prev-custom::before {
+    content: "\f12f";
+  }
+  .main-banner-wrapper .swiper-button-next-custom::before {
+    content: "\f138";
+  }
+  .main-banner-wrapper .swiper-button-prev-custom, .main-banner-wrapper .swiper-button-next-custom {
+    border: 1.5px solid var(--color-violet);
+    color: var(--color-violet);
+    border-radius: 6.25rem;
+    background-color: var(--color-white);
+    font-size: 2rem;
+    text-align: center;
+    min-width: 3rem;
+    min-height: 3rem;
+    display: grid;
+    place-items: center;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .main-banner-wrapper .swiper-button-prev-custom:not([disabled]):hover, .main-banner-wrapper .swiper-button-next-custom:not([disabled]):hover {
+      background-color: var(--color-violet-hover);
+      color: var(--color-white);
+      border-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: none) {
+    .main-banner-wrapper .swiper-button-prev-custom:active, .main-banner-wrapper .swiper-button-next-custom:active {
+      background-color: var(--color-violet-hover);
+      color: var(--color-white);
+      border-color: var(--color-violet-hover);
+    }
+  }
+  .main-banner-wrapper .swiper-button-prev-custom:disabled, .main-banner-wrapper .swiper-button-prev-custom.disabled, .main-banner-wrapper .swiper-button-next-custom:disabled, .main-banner-wrapper .swiper-button-next-custom.disabled {
+    border-color: var(--color-gray-stroke);
+    color: var(--color-gray-stroke);
+  }
+  @media screen and (max-width: 992px) {
+    .main-banner-wrapper .swiper-button-prev-custom, .main-banner-wrapper .swiper-button-next-custom {
+      display: none;
+    }
+  }
+  .main-banner-wrapper .main-banner .main-banner-title {
+    color: var(--color-violet);
+    font-family: "Exo 2";
+    font-size: 2.125rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 992px) {
+    .main-banner-wrapper .main-banner .main-banner-title {
+      font-size: 1.5rem;
+    }
+  }
+  .main-banner-wrapper .main-banner .main-banner-img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .main-banner-wrapper .main-banner p {
+    color: var(--color-black);
+    font-family: "Exo 2";
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
 html {
   height: auto;
   scroll-behavior: smooth;
@@ -1715,6 +1877,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+main .container:first-of-type {
+  margin-top: 1.5rem;
 }
 
 :root {
