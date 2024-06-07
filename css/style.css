@@ -1003,8 +1003,6 @@ footer.footer {
   @media (hover: none) {
     button:focus, button:active {
       outline: 1px solid transparent;
-      -webkit-box-shadow: 0 0 0 1px var(--color-violet-hover);
-              box-shadow: 0 0 0 1px var(--color-violet-hover);
       border-radius: 0.25rem;
     }
   }
