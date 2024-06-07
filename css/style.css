@@ -909,6 +909,29 @@ footer.footer {
   padding: 6px;
 }
 
+.highlight-block {
+  border-radius: 1.25rem;
+  padding: 0.5rem 1.25rem 1.25rem;
+  text-align: center;
+  width: 100%;
+}
+.highlight-block img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 9.375rem;
+}
+.highlight-block p {
+  color: var(--color-black);
+  font-family: "Exo 2";
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
 :root {
   --color-black: #030303 ;
   --color-white: #FBFBFB ;
@@ -1875,6 +1898,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+main .container:not(:first-of-type) {
+  margin-top: 6.25rem;
 }
 
 main .container:first-of-type {
