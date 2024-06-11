@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper.main-banner', {
+const swiperMainBanner = new Swiper('.swiper.main-banner', {
 	direction: 'horizontal',
 	// loop: true,
 
@@ -18,4 +18,43 @@ const swiper = new Swiper('.swiper.main-banner', {
 	allowTouchMove: true,
 	grabCursor: true,
 	// allowSlideNext: false,
+});
+
+const swiperMainNav = new Swiper('.swiper.slider-nav', {
+	direction: 'horizontal',
+	loop: true,
+	allowTouchMove: true,
+	// grabCursor: true,
+	// allowSlideNext: false,
+	breakpointsBase: 'window',
+	autoplay: {
+		delay: 3000,
+		pauseOnMouseEnter: true,
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			loop: true,
+		},
+		576: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+			loop: true,
+		},
+		768: {
+			slidesPerView: 4,
+			spaceBetween: 10,
+			loop: true,
+		},
+		992: {
+			slidesPerView: 7,
+			spaceBetween: 10,
+			loop: true,
+		},
+		1100: {
+			slidesPerView: 9,
+			loop: false,
+		},
+	},
 });
