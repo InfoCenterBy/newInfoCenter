@@ -28,7 +28,7 @@ const swiperMainNav = new Swiper('.swiper.slider-nav', {
 	// allowSlideNext: false,
 	breakpointsBase: 'window',
 	autoplay: {
-		delay: 3000,
+		delay: 5000,
 		pauseOnMouseEnter: true,
 	},
 	breakpoints: {
