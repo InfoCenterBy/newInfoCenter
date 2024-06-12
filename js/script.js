@@ -28,7 +28,7 @@ const swiperMainNav = new Swiper('.swiper.slider-nav', {
 	// allowSlideNext: false,
 	breakpointsBase: 'window',
 	autoplay: {
-		delay: 5000,
+		delay: 4000,
 		pauseOnMouseEnter: true,
 	},
 	breakpoints: {
@@ -55,6 +55,42 @@ const swiperMainNav = new Swiper('.swiper.slider-nav', {
 		1100: {
 			slidesPerView: 9,
 			loop: false,
+		},
+	},
+});
+
+const swiperMainPartner = new Swiper('.swiper.slider-partner', {
+	direction: 'horizontal',
+	loop: true,
+	allowTouchMove: true,
+	autoplay: {
+		delay: 4000,
+		pauseOnMouseEnter: true,
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+		},
+		576: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+		},
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+		},
+		992: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+		},
+		1200: {
+			slidesPerView: 4,
+			spaceBetween: 12,
+		},
+		1400: {
+			slidesPerView: 5,
+			spaceBetween: 24,
 		},
 	},
 });
