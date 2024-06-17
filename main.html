@@ -102,12 +102,48 @@
                          <button type="button" data-bs-toggle="modal" data-bs-target="#mobileSearch">
                               <i class="bi bi-search"></i>
                          </button>
-                         <button class="">
-                              <i class="bi bi-phone"></i>
-                         </button>
-                         <button class="">
-                              <i class="bi bi-person"></i>
-                         </button>
+
+                                                  <div class="dropdown dropdown-header-tel">
+                              <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-phone"></i>
+                              </button>
+                              <div class="dropdown-menu px-12">
+                                   <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column">
+                                             <a href="tel:+8(017)269-19-19" class="link-tel-drop text-nowrap">
+                                                  8 (017) 269-19-19
+                                             </a>
+                                             <span>
+                                                  Колл-центр
+                                             </span>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                             <a href="tel:+8(017)269-18-00" class="link-tel-drop text-nowrap">
+                                                  8 (017) 269-18-00
+                                             </a>
+                                             <span>
+                                                  техподдержка&nbsp;СККО
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="dropdown dropdown-person-logged">
+                              <button class="header-nav-link header-nav-link-person header-nav-link-person-logged" type="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item" href="#">Персональные данные</a></li>
+                                   <li><a class="dropdown-item" href="#">Уведомления</a></li>
+                                   <li><a class="dropdown-item" href="#">Журналы</a></li>
+                                   <li><a class="dropdown-item" href="#">Заказы</a></li>
+                                   <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
+                                   <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a>
+                                   </li>
+                              </ul>
+                         </div>
+
                          <button class="" data-bs-toggle="modal" data-bs-target="#mobileMenu">
                               <i class="bi bi-list"></i>
                          </button>
@@ -137,10 +173,23 @@
                     <div class="header-nav-link">
                          Контакты
                     </div>
-                    <div class="header-nav-link fs-18">
-                         <i class="bi bi-person"></i>
+
+
+                    <div class="dropdown dropdown-person-logged">
+                         <button class="header-nav-link fs-20 header-nav-link-person header-nav-link-person-logged" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi bi-person"></i>
+                         </button>
+                         <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Персональные данные</a></li>
+                              <li><a class="dropdown-item" href="#">Уведомления</a></li>
+                              <li><a class="dropdown-item" href="#">Журналы</a></li>
+                              <li><a class="dropdown-item" href="#">Заказы</a></li>
+                              <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a></li>
+                         </ul>
                     </div>
-               </nav>
+
+                                   </nav>
           </div>
           <div class="header-nav-dropdown-container ">
                <div class="modal fade header-nav-about-modal header-modal" id="headerNavAboutModal" tabindex="-1" aria-labelledby="headerNavAboutModalLabel" aria-hidden="true">
@@ -162,18 +211,18 @@
                          </a>
                     </div>
                     <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
-                         <div class="modal-banner-long">
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
-                         <div class="modal-banner-long">
+                         </a>
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
+                         </a>
                     </div>
                </div>
           </div>
@@ -193,18 +242,18 @@
                          </a>
                     </div>
                     <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
-                         <div class="modal-banner-long">
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
-                         <div class="modal-banner-long">
+                         </a>
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
+                         </a>
                     </div>
                </div>
           </div>
@@ -362,12 +411,12 @@
                          </div>
                          <div class="col-lg-3">
                               <div class="d-flex">
-                                   <div class="modal-banner-small">
+                                   <a href="" target="_blank" class="modal-banner-small">
                                         <picture>
                                              <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-sm-2x.png">
                                              <img src="./img/png/header-banner/header-banner-template-sm.png" alt="">
                                         </picture>
-                                   </div>
+                                   </a>
                               </div>
                          </div>
                     </div>
@@ -398,18 +447,18 @@
                          </a>
                     </div>
                     <div class="modal-banner-block d-flex flex-row justify-content-between gap-4 flex-lg-nowrap flex-wrap">
-                         <div class="modal-banner-long">
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
-                         <div class="modal-banner-long">
+                         </a>
+                         <a href="" target="_blank" class="modal-banner-long">
                               <picture>
                                    <source media="(min-width: 992px)" srcset="./img/png/header-banner/header-banner-template-2x.png">
                                    <img src="./img/png/header-banner/header-banner-template.png" alt="">
                               </picture>
-                         </div>
+                         </a>
                     </div>
                </div>
           </div>
@@ -434,12 +483,46 @@
                               <button type="button" data-bs-toggle="modal" data-bs-target="#mobileSearch">
                                    <i class="bi bi-search"></i>
                               </button>
-                              <button class="">
-                                   <i class="bi bi-phone"></i>
-                              </button>
-                              <button class="">
-                                   <i class="bi bi-person"></i>
-                              </button>
+                              <div class="dropdown dropdown-header-tel">
+                                   <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-phone"></i>
+                                   </button>
+                                   <div class="dropdown-menu px-12">
+                                        <div class="d-flex flex-column">
+                                             <div class="d-flex flex-column">
+                                                  <a href="tel:+8(017)269-19-19" class="link-tel-drop text-nowrap">
+                                                       8 (017) 269-19-19
+                                                  </a>
+                                                  <span>
+                                                       Колл-центр
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column">
+                                                  <a href="tel:+8(017)269-18-00" class="link-tel-drop text-nowrap">
+                                                       8 (017) 269-18-00
+                                                  </a>
+                                                  <span>
+                                                       техподдержка&nbsp;СККО
+                                                  </span>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="dropdown dropdown-person-logged">
+                                   <button class="header-nav-link header-nav-link-person header-nav-link-person-logged" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-person"></i>
+                                   </button>
+                                   <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Персональные данные</a></li>
+                                        <li><a class="dropdown-item" href="#">Уведомления</a></li>
+                                        <li><a class="dropdown-item" href="#">Журналы</a></li>
+                                        <li><a class="dropdown-item" href="#">Заказы</a></li>
+                                        <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a>
+                                        </li>
+                                   </ul>
+                              </div>
                               <button class="" data-bs-dismiss="modal" aria-label="Close">
                                    <i class="bi bi-x-lg"></i>
                               </button>
@@ -806,7 +889,7 @@
 
 </div>
           </div>
-          <div class="container">
+          <div class="container mt-40">
                <div class="w-100">
      <div class="swiper slider-nav">
           <div class="swiper-wrapper">
@@ -976,37 +1059,30 @@
                </div>
                <div class="swiper-slide d-flex justify-content-center">
                     <a href="" target="_blank" class="slider-nav-slide d-flex flex-column align-items-center justify-content-center">
-                         <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <defs>
-                                   <clipPath id="clip416_17044">
-                                        <rect id="navig/skta" rx="-0.023438" width="23.953125" height="23.953125"
-                                             transform="translate(0.023438 0.023438)" fill="white" fill-opacity="0" />
-                                   </clipPath>
-                              </defs>
-                              <rect id="navig/skta" rx="-0.023438" width="23.953125" height="23.953125" transform="translate(0.023438 0.023438)"
-                                   fill="#FFFFFF" fill-opacity="0" />
-                              <g clip-path="url(#clip416_17044)">
-                                   <mask id="mask416_17047" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.857178" y="-0.045166"
-                                        width="21.857178" height="23.008057">
-                                        <path id="Vector" d="M0.85 -0.05L22.71 -0.05L22.71 22.96L0.85 22.96L0.85 -0.05Z" fill="#000000"
-                                             fill-opacity="1.000000" fill-rule="nonzero" />
-                                        <path id="Vector"
-                                             d="M22.71 -0.05L0.85 -0.05L0.85 22.96L22.71 22.96L22.71 -0.05ZM21.21 21.46L2.35 21.46L2.35 1.45L21.21 1.45L21.21 21.46Z"
-                                             fill="#000000" fill-opacity="1.000000" fill-rule="evenodd" />
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_4142_95)">
+                                   <mask id="mask0_4142_95" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="-1" width="23"
+                                        height="24">
+                                        <path d="M21.9643 22.2129V0.704809H1.60718V22.2129H21.9643Z" fill="white" stroke="white"
+                                             stroke-width="1.5" />
                                    </mask>
-                                   <g mask="url(#mask416_17047)">
-                                        <path id="Vector"
-                                             d="M5.06 21.68C4.51 21.68 4.06 21.24 4.06 20.69L4.06 2.1C4.06 1.55 4.51 1.11 5.06 1.11L18.5 1.11C19.05 1.11 19.5 1.55 19.5 2.1L19.5 20.69C19.5 21.24 19.05 21.68 18.5 21.68L5.06 21.68Z"
-                                             stroke="#030303" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" />
-                                        <path id="Vector" d="M6.64 14.86L6.64 4.57L14.35 4.57L14.35 14.86L6.64 14.86Z" stroke="#030303"
-                                             stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" />
-                                        <path id="Vector" d="M6.61 9.63L14.33 9.63" stroke="#030303" stroke-opacity="1.000000"
-                                             stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round" />
-                                        <path id="Vector" d="M22.07 9.71L16.92 9.71" stroke="#030303" stroke-opacity="1.000000"
-                                             stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round" />
+                                   <g mask="url(#mask0_4142_95)">
+                                        <path d="M18.5091 21.6873H5.06187C4.51369 21.6873 4.06934 21.2429 4.06934 20.6947V2.10334C4.06934 1.55516 4.51369 1.11081 5.06187 1.11081H18.5091C19.0573 1.11081 19.5017 1.55516 19.5017 2.10334V20.6947C19.5017 21.2429 19.0573 21.6873 18.5091 21.6873Z"
+                                             stroke="#030303" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                             stroke-linejoin="round" />
+                                        <path d="M14.3578 14.8632H6.6416V4.57493H14.3578V14.8632Z" stroke="#030303" stroke-width="1.5"
+                                             stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M6.61414 9.63867H14.3303" stroke="#030303" stroke-width="1.5" stroke-miterlimit="10"
+                                             stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M16.9298 4.57476V9.71887" stroke="#030303" stroke-width="1.5" stroke-miterlimit="10"
+                                             stroke-linecap="round" stroke-linejoin="round" />
                                    </g>
                               </g>
+                              <defs>
+                                   <clipPath id="clip0_4142_95">
+                                        <rect width="24" height="24" fill="white" />
+                                   </clipPath>
+                              </defs>
                          </svg>
 
                                                   <p>
@@ -1169,7 +1245,7 @@
                </a>
           </div>
           <div class="row justify-content-center mt-32">
-               <div class="col-lg-4 col-md-6 d-flex my-2">
+               <div class="col-lg-4 col-md-6 d-flex my-3">
                     <a href="" target="_blank" rel="noopener noreferrer" class="news-element w-100">
                          <div class="news-element-tag-wrapper">
                               <div class="news-element__tag news-element__tag-vebinar">
@@ -1186,7 +1262,7 @@
                          </div>
                     </a>
                </div>
-               <div class="col-lg-4 col-md-6 d-flex my-2">
+               <div class="col-lg-4 col-md-6 d-flex my-3">
                     <a href="" target="_blank" rel="noopener noreferrer" class="news-element w-100">
                          <div class="news-element-tag-wrapper">
                               <div class="news-element__tag news-element__tag-news">
@@ -1203,7 +1279,7 @@
                          </div>
                     </a>
                </div>
-               <div class="col-lg-4 col-md-6 d-flex my-2">
+               <div class="col-lg-4 col-md-6 d-flex my-3">
                     <a href="" target="_blank" rel="noopener noreferrer" class="news-element w-100">
                          <div class="news-element-tag-wrapper">
                               <div class="news-element__tag news-element__tag-school">
@@ -1228,9 +1304,9 @@
                <div class="block-title-main">
      Направления деятельности
 </div>
-
-<div class="row mt-32">
-     <div class="col-lg-6 d-flex my-2">
+<div class="mt-32 d-lg-block d-none"></div>
+<div class="row">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-xl bg-yellow-light">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     регистрационный центр госсуок
@@ -1274,7 +1350,7 @@
                </div>
           </div>
      </div>
-     <div class="col-lg-6 d-flex flex-column justify-content-between gap-3 my-2">
+     <div class="col-lg-6 d-flex flex-column justify-content-between gap-3 my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1357,7 +1433,7 @@
                </div>
           </div>
      </div>
-     <div class="col-lg-6 d-flex my-2">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-green">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1409,7 +1485,7 @@
                </div>
           </div>
      </div>
-     <div class="col-lg-6 d-flex my-2">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1450,7 +1526,7 @@
 
                          </div>
      </div>
-     <div class="col-lg-6 d-flex flex-column justify-content-between gap-3 my-2">
+     <div class="col-lg-6 d-flex flex-column justify-content-between gap-3 my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-yellow">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1468,7 +1544,7 @@
                <p class="mb-0 mt-12 color-gray-txt">
                     Организуем и проводим образовательные мероприятия, семинары, вебинары, круглые столы.
                </p>
-               <div class="d-flex flex-row flex-wrap gap-4 mt-2">
+               <div class="d-flex flex-row flex-wrap gap-2 mt-2">
                     <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
                          Конференции/вебинары/семинары
                     </a>
@@ -1500,7 +1576,7 @@
 
                          </div>
      </div>
-     <div class="col-lg-6 d-flex my-2">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-xl bg-green-light">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     Программные кассы
@@ -1533,7 +1609,7 @@
                </div>
           </div>
      </div>
-     <div class="col-lg-6 d-flex my-2">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-yellow">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1557,7 +1633,7 @@
                </p>
           </div>
      </div>
-     <div class="col-lg-6 d-flex my-2">
+     <div class="col-lg-6 d-flex my-3">
           <div class="activity-block activity-block-lg bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-green">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1584,7 +1660,7 @@
                </p>
           </div>
      </div>
-     <div class="col-lg-4 d-flex my-2">
+     <div class="col-lg-4 d-flex my-3">
           <div class="activity-block activity-block-sm bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1603,13 +1679,21 @@
                </a>
                <p class="mb-0 mt-12 color-gray-txt">
                     Разместить рекламу можно на страницах печатного и электронного изданий журнала «Налоги Беларуси», а также на страницах
-                    сайтов <a href="" target="_blank" rel="noopener noreferrer" class="link-activity fw-bold">skko.by</a> и <a href="" target="_blank" rel="noopener noreferrer" class="link-activity fw-bold">ckta.by</a>. <br>
+                    сайтов <a 
+                    href="" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="link-activity">skko.by</a> и <a 
+                    href="" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="link-activity">ckta.by</a>. <br>
                     Выбрать подходящий формат, целевую аудиторию и место размещения, а также узнать стоимость размещения можно в наших
                     медиакитах.
                </p>
           </div>
      </div>
-     <div class="col-lg-4 d-flex my-2">
+     <div class="col-lg-4 d-flex my-3">
           <div class="activity-block activity-block-sm bg-violet-light">
                <a href="" target="_blank" class="activity-block-title activity-block-title-violet">
                     Разработка сайтов
@@ -1629,7 +1713,7 @@
                </div>
           </div>
      </div>
-     <div class="col-lg-4 d-flex my-2">
+     <div class="col-lg-4 d-flex my-3">
           <div class="activity-block activity-block-sm bg-gray-bg-illustr">
                <a href="" target="_blank" class="activity-block-title activity-block-title-green">
                     <div class="d-flex flex-row gap-2 align-items-center">
@@ -1719,9 +1803,9 @@
                </div>
                <div class="swiper-slide">
                     <a href="" target="_blank" class="slider-partner__element">
-                         <img src="./img/png/partner-block/slider-partner-7.png" alt="">
+                         <img src="./img/png/partner-block/slider-partner-8.png" alt="">
                          <p>
-                              Год мира и созидания
+                              Год качества
                          </p>
                     </a>
                </div>
@@ -1735,7 +1819,7 @@
      <div class="container">
           <div class="row">
                <div class="col-xl-3 d-flex flex-column">
-                    <div class="footer-logo d-flex flex-row align-items-center">
+                    <a href="" target="_blank" class="footer-logo d-flex flex-row align-items-center">
                          <picture>
                               <source media="(min-width: 960px)" srcset="./img/png/logo/footer-logo-white.png">
                               <img src="./img/svg/logo/footer-logo-white.svg" alt="">
@@ -1745,10 +1829,10 @@
                               предприятие «Информационно-издательский 
                               центр по налогам и сборам»
                          </p>
-                    </div>
+                    </a>
                     <div class="mt-3">
                          <div class="">
-                              <a href="" target="_blank" class="footer-title">Мы в социальных сетях</a>
+                              <div class="footer-title hover-no">Мы в социальных сетях</div>
                          </div>
                          <div class="social-links d-flex flex-row gap-lg-3 gap-2 mt-3">
                               <a href="" target="_blank" class="social-links__block">
@@ -1799,7 +1883,7 @@
                          </div>
                     </div>
                </div>
-               <div class="col-xl-6 d-flex flex-column mt-xl-0 mt-4">
+               <div class="col-xl-6 col-sm-6 d-flex flex-column mt-xl-0 mt-4">
                     <div class="mt-10">
                          <a href="" target="_blank" class="footer-title">Направления деятельности</a>
                     </div>
@@ -1835,12 +1919,6 @@
                          </div>
                          <div class="col-lg-6 collapse d-xl-block" id="collapseFooterActivity">
                               <div class="d-flex flex-column gap-lg-3 gap-2 my-lg-0 my-1 ">
-                                   <a class="d-flex align-items-center gap-1 d-xl-none footer-link" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#collapseFooterActivity" aria-expanded="false"
-                                        aria-controls="collapseFooterActivity">
-                                        <span>Свернуть</span>
-                                        <i class="bi bi-chevron-up fs-12"></i>
-                                   </a>
                                    <a href="" target="_blank" rel="noopener noreferrer" class="footer-link">
                                         Онлайн-школа
                                    </a>
@@ -1856,12 +1934,17 @@
                                    <a href="" target="_blank" rel="noopener noreferrer" class="footer-link">
                                         Размещение рекламы
                                    </a>
+                                   <a class="d-flex align-items-center gap-1 d-xl-none footer-link" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFooterActivity" aria-expanded="false" aria-controls="collapseFooterActivity">
+                                        <span>Свернуть</span>
+                                        <i class="bi bi-chevron-up fs-12"></i>
+                                   </a>
                               </div>
                          </div>
 
                                              </div>
                </div>
-               <div class="col-xl-3 d-flex flex-column mt-xl-0 mt-4">
+               <div class="col-xl-3 col-sm-6 d-flex flex-column mt-xl-0 mt-4">
                     <div class="mt-10">
                          <a href="" target="_blank" class="footer-title">Контакты</a>
                     </div>
@@ -1874,13 +1957,13 @@
                               <i class="bi bi-phone"></i>
                               <span>8 (017) 269-19-19</span>
                          </a>
-                         <a href="" target="_blank" rel="noopener noreferrer" class="footer-link d-flex flex-row gap-2">
+                         <div  class="footer-link d-flex flex-row gap-2 hover-no">
                               <i class="bi bi-calendar4"></i>
                               <span>
                                    Пн.–Чт.: с 8:45 до 18:00 <br>
                                    Пт.: с 8:45 до 16:45
                               </span>
-                         </a>
+                         </div>
                          <a href="" target="_blank" rel="noopener noreferrer" class="footer-link d-flex flex-row gap-2 align-items-center">
                               <i class="bi bi-envelope"></i>
                               <span>info@info-center.by (кроме обращений)</span>
