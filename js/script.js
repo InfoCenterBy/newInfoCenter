@@ -54,7 +54,8 @@ const swiperMainNav = new Swiper('.swiper.slider-nav', {
 		},
 		1100: {
 			slidesPerView: 9,
-			loop: false,
+			loop: true,
+			spaceBetween: 20,
 		},
 	},
 });
