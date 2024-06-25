@@ -1,26 +1,136 @@
 .header-nav {
+     // padding-bottom: .25rem;
 }
-.header-nav-link {
-     font-size: 1rem;
-     font-family: $ff-roboto;
-     color: var(--color-black);
-     font-weight: 400;
-     line-height: 130%;
-     letter-spacing: 0;
-     cursor: pointer;
-     border-bottom: 2px solid transparent;
-     padding-bottom: .75rem;
-     position: relative;
-     top: 3px;
-     user-select: none;
-     @include transition($transition-3);
-     &-show{
-          color: var(--color-violet);
-          border-color: var(--color-violet);
+@layer component{
+     .header-nav-link {
+          font-size: 1rem;
+          font-family: $ff-roboto;
+          color: var(--color-black);
+          font-weight: 400;
+          line-height: 130%;
+          letter-spacing: 0;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          // padding-bottom: .75rem;
+          position: relative;
+          top: 3px;
+          user-select: none;
+          @include transition($transition-3);
+          &-show{
+               color: var(--color-violet);
+               border-color: var(--color-violet);
+          }
+          &:not(.header-nav-link-person){
+               padding: .5rem 0;
+               @include hover('color', var(--color-violet));
+               @include hover('border-color', var(--color-violet));
+               
+          }
      }
-     @include hover('color', var(--color-violet));
-     @include hover('border-color', var(--color-violet));
+
+     .header-nav-link.header-nav-link-person{
+          padding: .5rem;
+          position: relative;
+          border-radius: 50%;
+          min-width: 2.5rem;
+          width: 2.5rem;
+          min-height: 2.5rem;
+          height: 2.5rem;
+          display: grid;
+          place-items: center;
+          top: -1px;
+          @media #{$mouse-device} {
+               &:hover{
+                    background-color: var(--color-violet-hover);
+                    .bi{
+                         color: var(--color-white);
+                    }
+               }
+          }
+     }
+
 }
+@layer component{
+     .dropdown-person-logged .dropdown-menu{
+          --bs-dropdown-zindex: 1057;
+          --bs-dropdown-min-width: 10rem;
+          --bs-dropdown-padding-x: 0;
+          --bs-dropdown-padding-y: 0.5rem;
+          --bs-dropdown-spacer: 0.125rem;
+          --bs-dropdown-font-size: .875rem;
+          --bs-dropdown-color: var(--color-black);
+          --bs-dropdown-bg: var(--color-white);
+          --bs-dropdown-border-color: var(--color-gray-stroke);
+          --bs-dropdown-border-radius: .625rem;
+          --bs-dropdown-border-width: 1px;
+          --bs-dropdown-inner-border-radius: calc(.625rem - 1px);
+          --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+          --bs-dropdown-divider-margin-y: 0.5rem;
+          --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          --bs-dropdown-link-color: var(--color-black);
+          --bs-dropdown-link-hover-color: var(--color-white);
+          --bs-dropdown-link-hover-bg: var(--color-violet-hover);
+          --bs-dropdown-link-active-color: var(--color-white);
+          --bs-dropdown-link-active-bg: var(--color-violet-hover);
+          --bs-dropdown-link-disabled-color: var(--color-gray-txt);
+          --bs-dropdown-item-padding-x: 1rem;
+          --bs-dropdown-item-padding-y: 0.25rem;
+          --bs-dropdown-header-color: #6c757d;
+          --bs-dropdown-header-padding-x: 1rem;
+          --bs-dropdown-header-padding-y: 0.5rem;
+          font-family: $ff-roboto;
+          .dropdown-item{
+               border-radius: .25rem;
+          }
+     }
+}
+
+
+
+@layer component{
+     .header-nav-link-person-logged{
+          position: relative;
+          background-color: var(--color-violet);
+          color: var(--color-white);
+          &.show{
+               background-color: var(--color-violet-hover);
+               .bi{
+                    color: var(--color-white);
+               }
+          }
+          &::after{
+               color: var(--color-gray-txt);
+               font-size: 12px;
+               position: absolute;
+               right: -32%;
+               top: 14.5px;
+               content: '\F282';
+               @extend .bootsrtap-icon;
+          }
+     }
+}
+
+@layer variations{
+     .mobile-menu{
+          .header-nav-link.header-nav-link-person{
+               padding: 0;
+          }
+          .header-nav-link-person-logged{
+               background-color: var(--color-violet);
+               color: var(--color-white);
+               &.show{
+                    background-color: var(--color-violet-hover);
+                    .bi{
+                         color: var(--color-white);
+                    }
+               }
+               &::after{
+                    content: none;
+               }
+          }
+     }
+}
+
 
 @keyframes changeContentChevron {
      0% {
@@ -151,7 +261,7 @@
 .modal-header-link-list{
      &__title{
           font-size: 1.25rem;
-          font-weight: 400;
+          font-weight: 600;
           color: var(--color-black);
           line-height: 120%;
           letter-spacing: 0;

@@ -1,5 +1,6 @@
 .floating-label-content { 
      position:relative;
+     z-index: 1057;
 }
 .floating-label {
      font-weight: 400;
@@ -8,6 +9,7 @@
      color: var(--color-gray-txt);
      @include adaptiv-value('font-size', 16, 12, 1);
      position:absolute;
+     z-index: 1057;
      pointer-events:none;
      left: 16px;
      top: 13px;
@@ -15,6 +17,7 @@
      background-color:var(--color-white);
      @include transition($transition-2);
 }
+
 .floating-input {
      @include adaptiv-value('font-size', 16, 12, 1);
      display:block;
@@ -36,6 +39,8 @@
           }
      }
 }
+
+
 
 .floating-label-content:not(.floating-input-error){
      .floating-input:not(:focus, :disabled){
@@ -64,5 +69,11 @@
      .floating-label{
           font-weight: 600;
           color:var(--color-red-error);
+     }
+}
+
+body:has(.modal-backdrop.fade.show){
+     .floating-input{
+          cursor: not-allowed;
      }
 }

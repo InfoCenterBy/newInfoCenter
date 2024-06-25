@@ -29,7 +29,7 @@
           <div class="container mt-12">
                <div class="row align-items-center justify-content-between">
                     <div class="col-xxl-3 col-lg-4 col-2">
-                         <div class="header-logo w-100 d-flex flex-row align-items-center gap-1">
+                         <a href="" target="_blank" class="header-logo w-100 d-flex flex-row align-items-center gap-1">
                               <!-- <picture> -->
                                    <!-- <source media="(min-width: 992px)" srcset="./img/png/logo/logo-header-x2.png"> -->
                               <img src="./img/png/logo/logo-header-x2.png" alt="">
@@ -39,7 +39,7 @@
                                    «Информационно-издательский центр <br>
                                    по налогам и сборам»
                               </p>
-                         </div>
+                         </a>
                     </div>
                     <div class="col-lg-1 d-xxl-flex d-none"></div>
                     <div class="col-xl-4 col-lg-3 d-lg-block d-none">
@@ -58,12 +58,55 @@
                          <button type="button" data-bs-toggle="modal" data-bs-target="#mobileSearch">
                               <i class="bi bi-search"></i>
                          </button>
-                         <button class="">
-                              <i class="bi bi-phone"></i>
-                         </button>
-                         <button class="">
+                         
+                         <div class="dropdown dropdown-header-tel">
+                              <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-phone"></i>
+                              </button>
+                              <div class="dropdown-menu px-12">
+                                   <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column">
+                                             <a href="tel:+8(017)269-19-19" class="link-tel-drop text-nowrap">
+                                                  8 (017) 269-19-19
+                                             </a>
+                                             <span>
+                                                  Колл-центр
+                                             </span>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                             <a href="tel:+8(017)269-18-00" class="link-tel-drop text-nowrap">
+                                                  8 (017) 269-18-00
+                                             </a>
+                                             <span>
+                                                  техподдержка&nbsp;СККО
+                                             </span>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <!-- when not logged -->
+                         <!-- <div class="header-nav-link header-nav-link-person">
                               <i class="bi bi-person"></i>
-                         </button>
+                         </div> -->
+                         <!-- // -->
+                         <!-- if logged -->
+                         <div class="dropdown dropdown-person-logged">
+                              <button class="header-nav-link header-nav-link-person header-nav-link-person-logged" type="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person"></i>
+                              </button>
+                              <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item" href="#">Персональные данные</a></li>
+                                   <li><a class="dropdown-item" href="#">Уведомления</a></li>
+                                   <li><a class="dropdown-item" href="#">Журналы</a></li>
+                                   <li><a class="dropdown-item" href="#">Заказы</a></li>
+                                   <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
+                                   <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a>
+                                   </li>
+                              </ul>
+                         </div>
+                         <!-- // -->
+
                          <button class="" data-bs-toggle="modal" data-bs-target="#mobileMenu">
                               <i class="bi bi-list"></i>
                          </button>
@@ -93,9 +136,27 @@
                     <div class="header-nav-link">
                          Контакты
                     </div>
-                    <div class="header-nav-link fs-18">
+                    
+                    <!-- when not logged -->
+                    <!-- <div class="header-nav-link fs-18 header-nav-link-person">
                          <i class="bi bi-person"></i>
+                    </div> -->
+
+                    <!-- if logged -->
+                    <div class="dropdown dropdown-person-logged">
+                         <button class="header-nav-link fs-20 header-nav-link-person header-nav-link-person-logged" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="bi bi-person"></i>
+                         </button>
+                         <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Персональные данные</a></li>
+                              <li><a class="dropdown-item" href="#">Уведомления</a></li>
+                              <li><a class="dropdown-item" href="#">Журналы</a></li>
+                              <li><a class="dropdown-item" href="#">Заказы</a></li>
+                              <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a></li>
+                         </ul>
                     </div>
+                    
                </nav>
           </div>
           <div class="header-nav-dropdown-container ">

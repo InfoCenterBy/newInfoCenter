@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
      @@include('./html-comp/_head.html',{
-          "title":"Практическая конференция",
+          "title":"Республиканское унитарное предприятие «Информационно-издательский центр по налогам и сборам»",
      })
 <body>
      @@include('./html-comp/_header.html')
-     <main>
-          sdfsdf
+     <main class="main">
+          <div class="container">
+               @@include('./html-comp/_slider-banner.html')
+          </div>
+          <div class="container mt-40">
+               @@include('./html-comp/_slider-nav.html')
+          </div>
+          <div class="container">
+               @@include('./html-elements/_main-highlight-block.html')
+          </div>
+          <div class="container">
+               @@include('./html-comp/_main-news-block.html')
+          </div>
+          <div class="container">
+               @@include('./html-comp/_main-activity-block.html')
+          </div>
+          <div class="container">
+               @@include('./html-comp/_main-slider-partner.html')
+          </div>
+          <div class="container"></div>
      </main>
      @@include('./html-comp/_footer.html')
      @@include('./html-comp/_script.html')

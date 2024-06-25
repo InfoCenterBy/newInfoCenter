@@ -16,9 +16,15 @@
                background-color: var(--color-white);
                border-bottom: 1px solid var(--color-gray-stroke);
           }
+          .dropdown-header-tel{
+               &:hover .dropdown-menu{
+                    display: flex;
+                    margin-top: 0;
+               }
+          }
      }
      .button-serach{
-          @include adaptiv-value('font-size', 22, 16, 1);
+          font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);
           padding: .5rem;
           --button-search-width: 2.625rem;
           min-width: var(--button-search-width);
@@ -58,13 +64,7 @@
           background-color: var(--color-violet);
           color: var(--color-white);
      }
-
-     .dropdown-header-tel{
-          &:hover .dropdown-menu{
-               display: flex;
-               margin-top: 0;
-          }
-     }
+     
      .dropdown-header-tel{
           .dropdown-menu {
                --bs-dropdown-zindex: 1000;
@@ -109,11 +109,19 @@
                border-radius: var(--bs-dropdown-border-radius);
           }
      }
+     .modal-mobile-menu{
+          .dropdown-header-tel{
+               .dropdown-menu {
+                    --bs-dropdown-zindex: 1056;
+               }
+          }
+     }
 }
 
 
-.modal-mobile-search{
+.modal-mobile-search {
      .modal-content{
           background-color: var(--color-white);
      }
 }
+

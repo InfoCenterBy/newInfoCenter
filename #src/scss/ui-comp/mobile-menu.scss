@@ -1,8 +1,10 @@
 .mobile-menu{
+     .bi:not(.bi-person){
+          color: var(--color-black);
+     }
      .bi{
           font-size: 1.5rem;
           line-height: 1.5rem;
-          color: var(--color-black);
      }
      .bi-list{
           font-size: 1.75rem;

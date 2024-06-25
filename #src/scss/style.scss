@@ -1,6 +1,7 @@
 @layer base, vendor, component, variations;
 //! imports
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css') layer(vendor);
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css') layer(vendor);
 @import url('https://fonts.googleapis.com/css?family=Exo 2');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './veriables/variables';
@@ -15,6 +16,9 @@
 @import './elements/header-nav.scss';
 @import './ui-comp/mobile-menu.scss';
 @import './elements/footer-logo.scss';
+@import './ui-comp/slider-banner.scss';
+@import './ui-comp/slider-nav.scss';
+@import './ui-comp/slider-partner.scss';
 //! end imports
 
 html{
@@ -44,8 +48,31 @@ main{
      flex-direction: column;
 }
 
+@layer base{
+     main .container:not(:first-of-type){
+     margin-top: 6.25rem;
+          @media #{$ui-tablet} {
+               margin-top: 3.5rem;
+          }
+     }
+
+     main .container:first-of-type{
+          margin-top: 1.5rem;
+     }
+}
+
 :root{
      font-size: 16px;
+}
+
+.main-section{
+     padding: 3rem 3.5rem;
+     @media #{$ui-tablet} {
+          padding: 2rem 2rem;
+     }
+     @media #{$ui-mobile} {
+          padding: 1.5rem 1.5rem;
+     }
 }
 
 //! *container*

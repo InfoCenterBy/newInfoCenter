@@ -1,5 +1,3 @@
-@import '../veriables/variables';
-
 @layer base{
      button:not(.btn-close){
           border: 0;
@@ -12,7 +10,7 @@
           @media (hover: none) {
                &:focus,&:active{
                     outline: 1px solid transparent;
-                    box-shadow: 0 0 0 1px var(--color-violet-hover);
+                    // box-shadow: 0 0 0 1px var(--color-violet-hover);
                     border-radius: .25rem;
                }
           }
@@ -66,6 +64,8 @@
                line-height: 130%;
                letter-spacing: 0;
                user-select: none;
+               @include transition($transition-3);
+               @include hover('color', var(--color-violet));
           }
      }
      .btn-collapse-more-hidden{
@@ -82,6 +82,35 @@
           display: none;
           &.collapsed{
                display: flex;
+          }
+     }
+     .btn-default{
+          display: grid;
+          place-items: center;
+          text-align: center;
+          padding: .625rem 1.5rem;
+          color: var(--color-white);
+          font-family: $ff-exo;
+          font-size: 1.125rem;
+          font-weight: 400;
+          line-height: 100%;
+          letter-spacing: 0;
+          background-color: var(--color-violet);
+          border-radius: 6.25rem;
+          border: 1.5px solid transparent;
+          @include transition($transition-3);
+          &:not([disabled]){
+               @include hover('background-color', var(--color-violet-hover));
+          }
+          &:focus, &:active{
+               background-color: var(--color-dark-violet);
+          }
+          &:disabled{
+               background-color: var(--color-gray-stroke);
+          }
+          @media #{$ui-laptop} {
+               font-size: 1rem;
+               padding: .5rem 1rem;
           }
      }
 }
