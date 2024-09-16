@@ -113,8 +113,8 @@
                     </div>
                </div>
           </div>
-          <div class="container mt-12 d-lg-block d-none">
-               <nav class="header-nav d-flex flex-row w-100 justify-content-between align-items-center">
+          <div class="container mt-12 d-lg-flex d-none flex-row w-100 justify-content-between align-items-center gap-xl-4 gap-lg-2 header-nav">
+               <nav class=" d-flex flex-row w-100 justify-content-between align-items-center">
                     <div class="header-nav-link header-nav-link-dropdown header-nav-link-about" data-bs-toggle="modal" data-bs-target="#headerNavAboutModal" type="button">
                          О предприятии
                     </div>
@@ -143,8 +143,13 @@
                     </div> -->
 
                     <!-- if logged -->
+                    
+                    
+               </nav>
+               <div class="">
                     <div class="dropdown dropdown-person-logged">
-                         <button class="header-nav-link fs-20 header-nav-link-person header-nav-link-person-logged" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <button class="header-nav-link fs-20 header-nav-link-person header-nav-link-person-logged" type="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
                               <i class="bi bi-person"></i>
                          </button>
                          <ul class="dropdown-menu">
@@ -153,11 +158,11 @@
                               <li><a class="dropdown-item" href="#">Журналы</a></li>
                               <li><a class="dropdown-item" href="#">Заказы</a></li>
                               <li><a class="dropdown-item" href="#">Онлайн-школа</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a></li>
+                              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i><span class="ms-2">Выйти</span></a>
+                              </li>
                          </ul>
                     </div>
-                    
-               </nav>
+               </div>
           </div>
           <div class="header-nav-dropdown-container ">
                @@include('../html-elements/_header-nav-about-modal.html')

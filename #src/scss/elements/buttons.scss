@@ -99,6 +99,7 @@
           border-radius: 6.25rem;
           border: 1.5px solid transparent;
           @include transition($transition-3);
+          width: fit-content;
           &:not([disabled]){
                @include hover('background-color', var(--color-violet-hover));
           }
