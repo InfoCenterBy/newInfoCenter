@@ -47,6 +47,20 @@
                     }
                }
           }
+          .header-nav-link-person__dot{
+               width: .75rem;
+               height: .75rem;
+               background-color: var(--color-transparent);
+               border-radius: 50%;
+               position: absolute;
+               top: -8px;
+               left: 8px;
+          }
+          &.nav-notification-active{
+               .header-nav-link-person__dot{
+                    background-color: var(--color-red-attention);
+               }
+          }
      }
 
 }

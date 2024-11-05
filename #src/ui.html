@@ -8,19 +8,19 @@
 <body class="ui-page px-2 pt-1">
 
      <div class="d-flex flex-row align-items-start" id="app">
-          <div class="ui-nav border-1 border p-2 d-none d-md-block mt-5 sticky-top">
+          <div class="ui-nav border-1 border p-2 d-none d-md-block mt-5 sticky-top z-3 bg-white">
                <nav class="">
-                    <ol>
+                    <ol>  
                          <li v-for="(value, key) in uiElem" :key="key">
                               <a :href="'#' + key" class="mt-2">{{value.slice(1)}}</a>
                          </li>
                     </ol>
                </nav>
           </div>
-          <div class="ui-content ms-md-3 ms-0 w-100">
-               <section v-for="(value, key) in uiElem" :key="key" :id="key">
+          <div class="ui-content ms-md-3 ms-0 w-100 ">
+               <section v-for="(value, key) in uiElem" :key="key" :id="key" class="">
                     <h1 class="h1 mt-5">{{value.slice(1)}}</h1>
-                    <div class="" v-html="htmlData[value]"></div>
+                    <div class="" v-html="htmlData[value]" class="position-static"></div>
                </section>
           </div>
      </div>
@@ -33,7 +33,8 @@
                data() {
                     return {
                          uiElem: [
-                              '_header',
+                              '_breadcrumb'
+                              // '_header',
                               // '_buttons',
                               // '_links',
                               // '_bread-crumbs',

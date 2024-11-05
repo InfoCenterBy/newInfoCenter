@@ -1,0 +1,13 @@
+nav.breadcrumb{
+     display: flex;
+     gap: .25rem;
+     a:nth-child(n):not(:last-child){
+          &::after{
+               content: '\F285';
+               @extend .bootsrtap-icon;
+          }
+     }
+     a:last-child{
+          // outline: 1px solid red;
+     }
+}
