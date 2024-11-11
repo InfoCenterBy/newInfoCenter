@@ -108,6 +108,7 @@
           }
           &:disabled{
                background-color: var(--color-gray-stroke);
+               cursor: not-allowed;
           }
           @media #{$ui-laptop} {
                font-size: 1rem;

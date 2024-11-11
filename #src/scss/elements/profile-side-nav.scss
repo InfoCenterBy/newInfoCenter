@@ -1,0 +1,56 @@
+.sidenav-profile {
+     border: 1.5px solid var(--color-gray-stroke);
+     border-radius: 10px;
+     overflow: hidden;
+     width: fit-content;
+		&__link {
+               font-family: $ff-exo;
+               padding: .5rem .75rem;
+               color: var(--color-black);
+               font-size: 1.125rem;
+               font-weight: 400;
+               line-height: 1.2;
+               @include transition($transition-3);
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               gap: .25rem;
+               &:hover{
+                    @media #{$mouse-device} {
+                         background-color: var(--color-violet);
+                         color: var(--color-white);
+                    }
+               }
+		}
+
+		&__text {
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               gap: .5rem;
+		}
+
+		&__notification {
+               display: none;
+               border-radius: 50%;
+               // width: fit-content;
+               // height: fit-content;
+               background-color: var(--color-red-attention);
+               color: var(--color-white);
+               font-size: .75rem;
+               font-weight: 400;
+               line-height: 0;
+               letter-spacing: 0;
+               font-family: $ff-roboto;
+               span{
+                    display: inline-block;
+                    padding-top: 50%;
+                    padding-bottom: 50%;
+                    margin-left: 5.5px;
+                    margin-right: 5.5px;
+               }
+               &-active {
+                    display: inline-block;
+               }
+		}
+}
