@@ -1,0 +1,34 @@
+@layer component{
+     .form-check-input {
+          --bs-form-check-bg: var(--bs-body-bg);
+          flex-shrink: 0;
+          width: 1.125rem;
+          height: 1.125rem;
+          margin-top: .25em;
+          vertical-align: top;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: var(--bs-form-check-bg);
+          background-image: var(--bs-form-check-bg-image);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          border: var(--bs-border-width) solid var(--color-gray-inputs);
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+          print-color-adjust: exact;
+     }
+     .form-check-input:checked {
+          background-color: var(--color-violet);
+          border-color: var(--color-violet);
+     }
+     .form-check-input:active {
+          filter: brightness(90%);
+     }
+     .form-check-input:focus {
+          border-color: var(--color-violet);
+          outline: 0;
+          box-shadow: none;
+     }
+}

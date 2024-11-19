@@ -20,7 +20,7 @@
           <div class="ui-content ms-md-3 ms-0 w-100 ">
                <section v-for="(value, key) in uiElem" :key="key" :id="key" class="">
                     <h1 class="h1 mt-5">{{value.slice(1)}}</h1>
-                    <div class="" v-html="htmlData[value]" class="position-static"></div>
+                    <div class="" v-html="htmlData[value]" class=""></div>
                </section>
           </div>
      </div>
@@ -37,6 +37,8 @@
                               '_sidenav-tabs',
                               // '_header',
                               '_buttons',
+                              '_checkboxes',
+                              '_modals',
                               // '_links',
                               // '_bread-crumbs',
                               // '_inputs',

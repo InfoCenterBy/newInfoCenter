@@ -15,11 +15,16 @@
                flex-direction: row;
                align-items: center;
                gap: .25rem;
+               background-color: var(--color-white);
                &:hover{
                     @media #{$mouse-device} {
-                         background-color: var(--color-violet);
+                         background-color: var(--color-violet-hover);
                          color: var(--color-white);
                     }
+               }
+               &-active{
+                    background-color: var(--color-violet);
+                    color: var(--color-white);
                }
 		}
 

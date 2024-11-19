@@ -20,7 +20,9 @@ $colorsMap: (
      'violet-hover': '#8C8EEA',
      'red-error': '#E31B1B',
      'transparent': 'transparent',
-     'red-attention': '#D03D3D'
+     'red-attention': '#D03D3D',
+     'red-hover': '#F86565',
+     'red-pressed': '#BC2929'
      );
      
 :root{
@@ -151,4 +153,8 @@ $layer-modal: 4;
      .overflow-x-hidden{
           overflow-x: hidden;
      }
+}
+
+.w-fit{
+     width: fit-content;
 }

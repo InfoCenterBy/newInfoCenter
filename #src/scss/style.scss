@@ -21,13 +21,16 @@
 @import './ui-comp/slider-partner.scss';
 @import './elements/breadcrumb.scss';
 @import './elements/profile-side-nav.scss';
+@import './elements/checkbox.scss';
+@import './elements/modals.scss';
 //! end imports
 
 html{
      height: auto;
      scroll-behavior: smooth;
      width: 100%;
-     // scrollbar-gutter: stable;
+     scrollbar-gutter: stable;
+     overflow-y: scroll;
 }
 html,
 body {
@@ -40,6 +43,7 @@ body{
      flex-direction: column;
      min-height: 100vh;
      background-color: var(--color-white);
+     overflow-y: scroll;
 
 }
 main{
@@ -48,6 +52,7 @@ main{
      min-width: $minWidth;
      display: flex;
      flex-direction: column;
+     // scrollbar-gutter: stable;
 }
 
 @layer base{
