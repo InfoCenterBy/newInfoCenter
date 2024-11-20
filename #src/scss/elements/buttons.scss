@@ -157,6 +157,13 @@
      .btn-close:focus {
           box-shadow: none;
      }
+
+     .button-bin{
+          font-size: 1.25rem;
+          color: var(--color-gray-txt);
+          @include transition($transition-3);
+          @include hover('color', var(--color-violet-hover));
+     }
 }
 
 @layer variations{
