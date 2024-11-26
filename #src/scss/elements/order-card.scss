@@ -1,0 +1,66 @@
+
+.order-card {
+     border: 1.5px solid var(--color-gray-stroke);
+     font-family: $ff-roboto;
+     font-size: 1rem;
+     background-color: var(--color-white);
+     border-radius: 10px;
+		&__nuber {
+               color: var(--color-violet);
+		}
+
+		&__date {
+               color: var(--color-gray-txt);
+		}
+
+		&__title {
+               font-weight: 600;
+
+		}
+
+		&__cost {
+               font-weight: 600;
+		}
+
+		&__type {
+               font-weight: 400;
+               color: var(--color-gray-txt);
+		}
+          
+		&__amount {
+          }
+          
+          &__type,&__amount {
+               font-weight: 400;
+               color: var(--color-gray-txt);
+          }
+
+		&__footer {
+		}
+}
+
+.card-status {
+     border-radius: 100px;
+     padding: .25rem .75rem;
+     font-weight: 600;
+     font-family: $ff-roboto;
+     font-size: .875rem;
+     line-height: 1.3;
+     &-active{
+          color: var(--color-green-success);
+          background-color: var(--color-green-light);
+     }
+     &-waiting{
+          color: var(--color-gold-light);
+          background-color: var(--color-yellow-system);
+     }
+     &-deny{
+          color: var(--color-red-attention);
+          background-color: var(--color-red-light);
+     }
+     &-archive{
+          color: var(--color-gray-txt);
+          background-color: var(--color-gray-stroke);
+     }
+}
+

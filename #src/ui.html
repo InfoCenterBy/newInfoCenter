@@ -17,11 +17,13 @@
                     </ol>
                </nav>
           </div>
-          <div class="ui-content ms-md-3 ms-0 w-100 ">
+          <div class="ui-content ms-md-3 ms-0 w-100 pb-5">
                <section v-for="(value, key) in uiElem" :key="key" :id="key" class="">
                     <h1 class="h1 mt-5">{{value.slice(1)}}</h1>
+                    <div class="mt-3"></div>
                     <div class="" v-html="htmlData[value]" class=""></div>
                </section>
+               <div class="my-5"></div>
           </div>
      </div>
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -40,7 +42,8 @@
                               '_checkboxes',
                               '_modals',
                               '_notifications-card',
-                              '_notifications-radio-btn'
+                              '_notifications-radio-btn',
+                              '_order-card'
                               // '_links',
                               // '_bread-crumbs',
                               // '_inputs',
