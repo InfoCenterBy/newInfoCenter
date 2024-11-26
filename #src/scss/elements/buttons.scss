@@ -33,7 +33,7 @@
                padding: .5rem 1rem;
           }
      }
-     .btn-default, .btn-empty, .btn-deny{
+     .btn-default, .btn-empty, .btn-deny, .btn-round{
           @extend .btn-base-style;
      }
 }
@@ -167,5 +167,11 @@
 }
 
 @layer variations{
-     
+     .btn-round {
+          border-radius: 50%;
+          padding: .875rem;
+          @media #{$ui-tablet} {
+               padding: .5rem;
+          }
+     }
 }
