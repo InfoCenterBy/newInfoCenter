@@ -29,12 +29,17 @@
                background-color: var(--color-violet-light);
                border-radius: .5rem;
                padding: .75rem 1rem;
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               text-align: center;
                @media #{$ui-tablet} {
                     padding: .75rem;
                }
                img{
                     width: 100%;
                     object-fit: contain;
+                    max-width: 180px;
                }
                span{
                     font-family: $ff-exo;
