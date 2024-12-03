@@ -55,6 +55,10 @@ $colorsMap: (
      .mt-20{
           margin-top: 1.25rem;
      }
+     
+     .mt-24{
+          margin-top: 1.5rem;
+     }
 
      .mt-40{
           margin-top: 2.5rem;
@@ -89,7 +93,7 @@ $ff-roboto: 'Roboto';
      }
 }
 $fontSize: 16px;
-$fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24);
+$fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24, 26, 28);
 @layer variations{
      .ls-0{
           letter-spacing: 0;

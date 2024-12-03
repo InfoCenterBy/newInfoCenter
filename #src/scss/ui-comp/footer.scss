@@ -1,6 +1,10 @@
 footer.footer{
      background-color: var(--color-violet);
      padding: 2.375rem 0 1.875rem 0;
+     margin-top: 14rem;
+     @media #{$ui-tablet} {
+          margin-top: 7rem;
+     }
 }
 
 .parnter-block{

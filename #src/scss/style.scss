@@ -61,11 +61,11 @@ main{
 }
 
 @layer base{
-     main .container:not(:first-of-type){
-     margin-top: 6.25rem;
-          @media #{$ui-tablet} {
-               margin-top: 3.5rem;
-          }
+     .main-page main.container:not(:first-of-type){
+          margin-top: 6.25rem;
+               @media #{$ui-tablet} {
+                    margin-top: 3.5rem;
+               }
      }
 
      main .container:first-of-type{

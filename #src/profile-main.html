@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Профиль",
+})
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Профиль
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
+                         <nav class="sidenav-profile w-100">
+                              <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+                                   <div class="sidenav-profile__text">
+                                        <span>Профиль</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Безопасность и&nbsp;конфиденциальность</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Уведомления</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification sidenav-profile__notification-active">
+                                        <span>1</span>
+                                   </div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Заказы</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Предварительные записи в РЦ</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Журналы</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <span>Онлайн-школа</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                              <a href="" target="_self" class="sidenav-profile__link">
+                                   <div class="sidenav-profile__text">
+                                        <i class="bi bi-box-arrow-left"></i>
+                                        <span>Выйти</span>
+                                   </div>
+                                   <div class="sidenav-profile__notification"></div>
+                              </a>
+                         </nav>
+                    </div>
+                    <div class="col-lg-8 d-flex my-2">
+                         <div class="w-100">
+                              <div class="">
+                                   <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                                        Профиль
+                                   </h2>
+                              </div>
+                              <div class="col-lg-6 mt-24">
+                                   <form action="">
+                                        <div class="d-flex flex-column gap-4 w-100">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="" required>
+                                                  <label class="floating-label">
+                                                       <span>ФИО</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="">
+                                                  <label class="floating-label">
+                                                       <span>Телефон</span>
+                                                  </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="" required>
+                                                  <label class="floating-label">
+                                                       <span>Электронная почта</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="" required>
+                                                  <label class="floating-label">
+                                                       <span>Логин</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                        </div>
+                                        <a href="" target="_blank" class="mt-40 btn-default">
+                                             Сохранить изменения
+                                        </a>
+                                   </form>
+                                   <div class="">
+                                        <div class="floating-label-content w-100">
+                                             <input class="floating-input password-input" id="old-pass" type="password" required>
+                                             <label class="floating-label">
+                                                  <span>Пароль</span><span class="color-red-attention">*</span>
+                                             </label>
+                                             <span class="floating-label-error">Данные введены неверно</span>
+                                             <div class="d-flex justify-content-end">
+                                                  <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+</body>
+</html>
