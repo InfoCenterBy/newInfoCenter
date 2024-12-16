@@ -1,3 +1,4 @@
+
 const swiperMainBanner = new Swiper('.swiper.main-banner', {
 	direction: 'horizontal',
 	// loop: true,
@@ -94,4 +95,27 @@ const swiperMainPartner = new Swiper('.swiper.slider-partner', {
 			spaceBetween: 24,
 		},
 	},
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	const passwordInputs = document.querySelectorAll('.floating-label-content .password-input');
+	const togglePasswordIcons = document.querySelectorAll('.password-icon');
+
+	console.log(passwordInputs, togglePasswordIcons);
+
+	togglePasswordIcons.forEach((icon, index) => {
+		icon.addEventListener('click', function () {
+			const passwordInput = passwordInputs[index];
+			const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+			passwordInput.setAttribute('type', type);
+
+			if (type === 'password') {
+				this.classList.remove('bi-eye');
+				this.classList.add('bi-eye-slash');
+			} else {
+				this.classList.remove('bi-eye-slash');
+				this.classList.add('bi-eye');
+			}
+		});
+	});
 });
