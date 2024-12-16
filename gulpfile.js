@@ -59,7 +59,17 @@ function browserSync(done) {
 }
 
 function html() {
-	return src(path.src.html).pipe(fileinclude()).pipe(strip()).pipe(dest(path.build.html)).pipe(browsersync.stream());
+	return src(path.src.html)
+		.pipe(
+			fileinclude({
+				context: {
+					link: 1,
+				},
+			})
+		)
+		.pipe(strip())
+		.pipe(dest(path.build.html))
+		.pipe(browsersync.stream());
 }
 
 function css() {

@@ -1,17 +1,32 @@
-<nav class="sidenav-profile">
-     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+<nav class="sidenav-profile w-100">
+     @@if(link == 1){
+     <a href="./profile-main.html" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 1){
+     <a href="./profile-main.html" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Профиль</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
-     <a href="" target="_self" class="sidenav-profile__link">
+     @@if(link == 2){
+     <a href="./profile-security.html" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 2){
+     <a href="./profile-security.html" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
-               <span>Безопасность и конфиденциальность</span>
+               <span>Безопасность и&nbsp;конфиденциальность</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
+     @@if(link == 3){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 3){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Уведомления</span>
           </div>
@@ -19,31 +34,56 @@
                <span>1</span>
           </div>
      </a>
+     @@if(link == 4){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 4){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Заказы</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
+     @@if(link == 5){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 5){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Предварительные записи в РЦ</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
+     @@if(link == 6){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 6){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Журналы</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
+     @@if(link == 7){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 7){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <span>Онлайн-школа</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
+     @@if(link == 8){
+     <a href="" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
+     }
+     @@if(link != 8){
      <a href="" target="_self" class="sidenav-profile__link">
+     }
           <div class="sidenav-profile__text">
                <i class="bi bi-box-arrow-left"></i>
                <span>Выйти</span>
