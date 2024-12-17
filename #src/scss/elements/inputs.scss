@@ -1,0 +1,52 @@
+@layer component{
+     .form-date{
+          position: relative;
+          label{
+               position: absolute;
+               top: 10.5px;
+               left: 1rem;
+               color: var(--color-gray-txt);
+          }
+          input.form-control{
+               border-radius: 9.375rem;
+               padding: 10.5px;
+               padding-left: 2.375rem;
+               font-family: $ff-roboto;
+               border: 1.5px solid (--color-gray-stroke);
+               transition: $transition-3;
+               @include hover('border-color', var(--color-violet-hover));
+               &:focus{
+                    box-shadow: none;
+                    border-color: var(--color-violet);
+               }
+          }
+     }
+     .form-input.invalid{
+          .form-control, .form-select {
+               border-color: var(--color-red-error);
+          }
+          .input-label-error{
+               display: block;
+               color: var(--color-red-attention);
+               font-size: .875rem;
+               user-select: none;
+          }
+     }
+     .form-input:not(.invalid){
+          .input-label-error{
+               display: none;
+          }
+     }
+     .form-select{
+          border-radius: 9.375rem;
+          font-family: $ff-roboto;
+          border: 1.5px solid var(--color-gray-stroke);
+          transition: $transition-3;
+          padding: .6563rem 1rem;
+          @include hover('border-color', var(--color-violet-hover));
+          &:focus{
+               box-shadow: none;
+               border-color: var(--color-violet);
+          }
+     }
+}

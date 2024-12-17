@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Заказы",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Заказы
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
+                         @@include('./html-comp/_sidenav-tabs.html', {"link": 4})
+                    </div>
+                    <div class="col-lg-9 d-flex my-2">
+                         <div class="w-100">
+                              <div class="">
+                                   <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                                        Заказы
+                                   </h2>
+                              </div>
+                              <div class="mt-32">
+                                   <form action="">
+                                        <div class="row">
+                                             <div class="col-xl-3 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-date form-input w-100">
+                                                       <label for="inputDateForm1">от</label>
+                                                       <input type="date" name="" id="inputDateForm1" class="form-control">
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-3 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-date form-input w-100">
+                                                       <label for="inputDateForm2">от</label>
+                                                       <input type="date" name="" id="inputDateForm2" class="form-control">
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-2 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-input w-100">
+                                                       <select class="form-select w-100" aria-label="Default select example">
+                                                            <option selected="">Статус</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                       </select>
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-4 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-input w-100">
+                                                       <select class="form-select w-100" aria-label="Default select example">
+                                                            <option selected="">Направление деятельности</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                       </select>
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="mt-4 row">
+                                             <div class="col-lg-3 my-lg-0 my-2">
+                                                  <a href="" target="_blank" class="btn-default w-100 py-lg-2 py-3">
+                                                       Применить
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-3 my-lg-0 my-2">
+                                                  <a href="" target="_blank" class="btn-empty w-100 py-lg-2 py-3">
+                                                       Очистить
+                                                  </a>
+                                             </div>
+                                        </div>
+                                   </form>
+                              </div>
+                              <div class="mt-32">
+                                   <div class="d-flex flex-column gap-3">
+                                        <div class="order-card w-100 d-flex flex-column gap-2 p-3">
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="d-flex flex-row gap-2 flex-wrap">
+                                                       <div class="order-card__nuber">
+                                                            <span>Заказ №</span><span>&nbsp;444000000000162333&nbsp;</span>
+                                                       </div>
+                                                       <div class="card-status card-status-active">
+                                                            <span>Выполнен</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="order-card__date">
+                                                            <span>от 09.02.2024 11:04:46</span>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__title">
+                                                  Предоставление удаленного доступа к видеокурсу "Онлайн школа «О налогах и не только для ИП простыми
+                                                  словами»"
+                                             </div>
+                                             <div class="order-card__cost">
+                                                  <span>Сумма: </span><span>194 руб. 40 коп</span>
+                                             </div>
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="order-card__type">
+                                                       <span>Способ оплаты: </span><span>оплата через ЕРИП</span>
+                                                  </div>
+                                                  <div class="order-card__amount">
+                                                       <span>1 шт.</span>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__footer d-flex flex-row flex-wrap gap-3 gap-lg-4 justify-content-between">
+                                                  <div class="d-flex flex-row flex-wrap gap-3 gap-lg-4">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Счет фактура
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Скачать акт
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Повторить заказ
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Отменить заказ
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="order-card w-100 d-flex flex-column gap-2 p-3">
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="d-flex flex-row gap-2 flex-wrap">
+                                                       <div class="order-card__nuber">
+                                                            <span>Заказ №</span><span>&nbsp;444000000000162333&nbsp;</span>
+                                                       </div>
+                                                       <div class="card-status card-status-deny">
+                                                            <span>Отменен</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="order-card__date">
+                                                            <span>от 09.02.2024 11:04:46</span>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__title">
+                                                  Предоставление удаленного доступа к видеокурсу "Онлайн школа «О налогах и не только для ИП простыми
+                                                  словами»"
+                                             </div>
+                                             <div class="order-card__cost">
+                                                  <span>Сумма: </span><span>194 руб. 40 коп</span>
+                                             </div>
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="order-card__type">
+                                                       <span>Способ оплаты: </span><span>оплата через ЕРИП</span>
+                                                  </div>
+                                                  <div class="order-card__amount">
+                                                       <span>1 шт.</span>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__footer d-flex flex-row flex-wrap gap-3 gap-lg-4 justify-content-between">
+                                                  <div class="d-flex flex-row flex-wrap gap-3 gap-lg-4">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Счет фактура
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Скачать акт
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Повторить заказ
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Отменить заказ
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="order-card w-100 d-flex flex-column gap-2 p-3">
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="d-flex flex-row gap-2 flex-wrap">
+                                                       <div class="order-card__nuber">
+                                                            <span>Заказ №</span><span>&nbsp;444000000000162333&nbsp;</span>
+                                                       </div>
+                                                       <div class="card-status card-status-waiting">
+                                                            <span>Принят, ожидается оплата</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="order-card__date">
+                                                            <span>от 09.02.2024 11:04:46</span>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__title">
+                                                  Предоставление удаленного доступа к видеокурсу "Онлайн школа «О налогах и не только для ИП простыми
+                                                  словами»"
+                                             </div>
+                                             <div class="order-card__cost">
+                                                  <span>Сумма: </span><span>194 руб. 40 коп</span>
+                                             </div>
+                                             <div class="d-flex flex-row flex-wrap gap-2 justify-content-between">
+                                                  <div class="order-card__type">
+                                                       <span>Способ оплаты: </span><span>оплата через ЕРИП</span>
+                                                  </div>
+                                                  <div class="order-card__amount">
+                                                       <span>1 шт.</span>
+                                                  </div>
+                                             </div>
+                                             <div class="order-card__footer d-flex flex-row flex-wrap gap-3 gap-lg-4 justify-content-between">
+                                                  <div class="d-flex flex-row flex-wrap gap-3 gap-lg-4">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Счет фактура
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">
+                                                            Скачать акт
+                                                       </a>
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Повторить заказ
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" rel="noopener noreferrer" class="color-gray-txt">
+                                                            Отменить заказ
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+@@include('./html-comp/_footer.html')
+@@include('./html-comp/_script.html')
+</body>
+</html>

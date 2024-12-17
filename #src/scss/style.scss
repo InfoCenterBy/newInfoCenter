@@ -28,6 +28,7 @@
 @import './elements/journal-card.scss';
 @import './elements/journal-inner.scss';
 @import './elements/school-card.scss';
+@import './elements/inputs.scss';
 //! end imports
 
 html{
@@ -61,7 +62,7 @@ main{
 }
 
 @layer base{
-     .main-page main.container:not(:first-of-type){
+     main.main-page .container:not(:first-of-type){
           margin-top: 6.25rem;
                @media #{$ui-tablet} {
                     margin-top: 3.5rem;

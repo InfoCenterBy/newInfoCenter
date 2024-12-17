@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Предварительные записи в РЦ",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Предварительные записи в РЦ
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
+                         @@include('./html-comp/_sidenav-tabs.html', {"link": 5})
+                    </div>
+                    <div class="col-lg-9 d-flex my-2">
+                         <div class="w-100">
+                              <div class="">
+                                   <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                                        Предварительные записи в РЦ
+                                   </h2>
+                              </div>
+                              <div class="mt-32">
+                                   <table class="w-100">
+                                        <thead>
+                                             <tr class="text-center ff-roboto fs-16 ">
+                                                  <th class="bg-gray-bg-illustr border-top-left-20 py-3 px-lg-3 px-2">
+                                                       №
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                       Дата
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                       Время
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2" colspan="2">
+                                                       Адрес
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                       Код записи
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                       Статус
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr py-3 px-2" colspan="2">
+                                                       
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr border-top-right-20 py-3 px-lg-3 px-2" >
+                                                       
+                                                  </th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr class="border-bottom">
+                                                  <td class="py-3 px-2 text-center">
+                                                       <span>1</span>
+                                                  </td>
+                                                  <td class="py-3 px-2 text-center">
+                                                       <span>14.11.2023</span>
+                                                  </td>
+                                                  <td class="py-3 px-2 text-center">
+                                                       <span>12:00</span>
+                                                  </td>
+                                                  <td class="py-3 px-2" colspan="2">
+                                                       <p class="mb-0">
+                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
+                                                       </p>
+                                                  </td>
+                                                  <td class="py-3 px-2 text-center">
+                                                       <span>ekbN8kSEFy</span>
+                                                  </td>
+                                                  <td class="py-3 px-2">
+                                                       <div class="card-status card-status-active">
+                                                            <span>Активный</span>
+                                                       </div>
+                                                  </td>
+                                                  <td class="py-3 px-2" colspan="2">
+                                                       <a href="" target="_blank" class="btn-default">
+                                                            Отменить
+                                                       </a>
+                                                  </td>
+                                                  <td class="py-3 px-2">
+                                                       <div class="d-flex justify-content-center">
+                                                            <button>
+                                                                 <i class="bi bi-eye fs-24"></i>
+                                                            </button>
+                                                       </div>
+                                                  </td>
+                                             </tr>
+                                             
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+@@include('./html-comp/_footer.html')
+@@include('./html-comp/_script.html')
+</body>
+
+</html>

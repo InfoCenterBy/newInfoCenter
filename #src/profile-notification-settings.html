@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Уведомления",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./profile-notification.html" target="_blank" rel="noopener noreferrer">
+                         Уведомления
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Настройка уведомлений
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
+                         @@include('./html-comp/_sidenav-tabs.html', {"link": 0})
+                    </div>
+                    <div class="col-lg-9 d-flex my-2">
+                         <div class="w-100">
+                              <div class="">
+                                   <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                                        настройка Уведомлений
+                                   </h2>
+                              </div>
+                              <div class="">
+                                   <table class="w-100">
+                                        <thead>
+                                             <tr class="text-center ff-roboto fs-16 ">
+                                                  <th colspan="2" class="bg-gray-bg-illustr border-top-left-20 py-3 px-lg-3 px-2"></th>
+                                                  <th class="bg-gray-bg-illustr py-3">
+                                                       Электронная почта
+                                                  </th>
+                                                  <th class="bg-gray-bg-illustr border-top-right-20 py-3 px-lg-3 px-2">
+                                                       Личный кабинет
+                                                  </th>
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                             <tr class="border-bottom">
+                                                  <td colspan="2" class="py-3">
+                                                       Системные уведомления
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                       </div>
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck2" disabled checked>
+                                                       </div>
+                                                  </td>
+                                             </tr>
+                                             <tr class="border-bottom">
+                                                  <td colspan="2" class="py-3">
+                                                       Новости
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                                       </div>
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                                       </div>
+                                                  </td>
+                                             </tr>
+                                             <tr class="border-bottom">
+                                                  <td colspan="2" class="py-3">
+                                                       «Журнал налоги Беларуси»
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck5">
+                                                       </div>
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck6">
+                                                       </div>
+                                                  </td>
+                                             </tr>
+                                             <tr class="border-bottom">
+                                                  <td colspan="2" class="py-3">
+                                                       Онлайн-школа «О налогах и не только для ИП простыми словами»
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck7">
+                                                       </div>
+                                                  </td>
+                                                  <td class="py-3">
+                                                       <div class="form-check d-flex justify-content-center">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck8">
+                                                       </div>
+                                                  </td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                              <div class="mt-40">
+                                   <h4 class="h4 ff-exo fw-bold fs-20 color-black">Настройка рассылок</h4>
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck9">
+                                        <label class="form-check-label" for="exampleCheck9">Получать рассылки на электронную почту</label>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+</body>
+
+</html>
