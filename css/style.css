@@ -112,6 +112,14 @@
   width: fit-content;
 }
 
+.border-top-left-20 {
+  border-top-left-radius: 20px;
+}
+
+.border-top-right-20 {
+  border-top-right-radius: 20px;
+}
+
 @layer component {
   .bg-black {
     background-color: #030303;
@@ -1048,11 +1056,11 @@
 footer.footer {
   background-color: var(--color-violet);
   padding: 2.375rem 0 1.875rem 0;
-  margin-top: 14rem;
+  margin-top: 6.25rem;
 }
 @media screen and (max-width: 992px) {
   footer.footer {
-    margin-top: 7rem;
+    margin-top: 3rem;
   }
 }
 
@@ -3086,6 +3094,79 @@ nav.breadcrumb a:last-child {
   margin-bottom: 0;
 }
 
+@layer component {
+  .form-date {
+    position: relative;
+  }
+  .form-date label {
+    position: absolute;
+    top: 10.5px;
+    left: 1rem;
+    color: var(--color-gray-txt);
+  }
+  .form-date input.form-control {
+    border-radius: 9.375rem;
+    padding: 10.5px;
+    padding-left: 2.375rem;
+    font-family: "Roboto";
+    border: 1.5px solid --color-gray-stroke;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .form-date input.form-control:hover {
+      border-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: none) {
+    .form-date input.form-control:active {
+      border-color: var(--color-violet-hover);
+    }
+  }
+  .form-date input.form-control:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-color: var(--color-violet);
+  }
+  .form-input.invalid .form-control, .form-input.invalid .form-select {
+    border-color: var(--color-red-error);
+  }
+  .form-input.invalid .input-label-error {
+    display: block;
+    color: var(--color-red-attention);
+    font-size: 0.875rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .form-input:not(.invalid) .input-label-error {
+    display: none;
+  }
+  .form-select {
+    border-radius: 9.375rem;
+    font-family: "Roboto";
+    border: 1.5px solid var(--color-gray-stroke);
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+    padding: 0.6563rem 1rem;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .form-select:hover {
+      border-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: none) {
+    .form-select:active {
+      border-color: var(--color-violet-hover);
+    }
+  }
+  .form-select:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-color: var(--color-violet);
+  }
+}
 html {
   height: auto;
   scroll-behavior: smooth;
@@ -3130,11 +3211,11 @@ main {
 }
 
 @layer base {
-  .main-page main.container:not(:first-of-type) {
+  main.main-page .container:not(:first-of-type) {
     margin-top: 6.25rem;
   }
   @media screen and (max-width: 992px) {
-    .main-page main.container:not(:first-of-type) {
+    main.main-page .container:not(:first-of-type) {
       margin-top: 3.5rem;
     }
   }

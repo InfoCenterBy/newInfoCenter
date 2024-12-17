@@ -16,7 +16,7 @@
      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
      <link rel="stylesheet" @@style-path />
      <link rel="stylesheet" href="css/style.css" />
-     <title>Безопасность и конфиденциальность</title>
+     <title>Уведомления</title>
 </head>
 
 <body>
@@ -872,7 +872,7 @@
                          Главная
                     </a>
                     <a href="" target="_blank" rel="noopener noreferrer">
-                         Безопасность и конфиденциальность
+                         Уведомления
                     </a>
                </nav>
           </div>
@@ -890,19 +890,19 @@
           <div class="sidenav-profile__notification"></div>
      </a>
 
-          <a href="./profile-security.html" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
 
+               <a href="./profile-security.html" target="_self" class="sidenav-profile__link">
 
-                    <div class="sidenav-profile__text">
+               <div class="sidenav-profile__text">
                <span>Безопасность и&nbsp;конфиденциальность</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
 
+          <a href="./profile-notification.html" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
 
-               <a href="./profile-notification.html" target="_self" class="sidenav-profile__link">
 
-               <div class="sidenav-profile__text">
+                    <div class="sidenav-profile__text">
                <span>Уведомления</span>
           </div>
           <div class="sidenav-profile__notification sidenav-profile__notification-active">
@@ -962,217 +962,136 @@
                          <div class="w-100">
                               <div class="">
                                    <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
-                                        Безопасность и конфиденциальность
+                                        Уведомления
                                    </h2>
                               </div>
-                              <div class="mt-4">
-                                   <h3 class="h2 ff-exo fw-bold fs-4 lh-normal text-uppercase">
-                                        изменить пароль
-                                   </h3>
+                              <div class="mt-32">
+                                   <a href="profile-notification-settings.html" target="_self" class="btn-default py-3">
+                                        Настроить уведомления
+                                   </a>
                               </div>
-                              <div class="col-lg-6 mt-24">
-                                   <form action="">
-                                        <div class="d-flex flex-column gap-4 w-100">
-                                             <div class="floating-label-content w-100">
-                                                  <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
-                                                  <label class="floating-label">
-                                                       <span>Введите старый пароль</span><span class="color-red-attention">*</span>
-                                                  </label>
-                                                  <span class="floating-label-error">Данные введены неверно</span>
-                                                  <div class="d-flex justify-content-end">
-                                                       <div class="position-absolute">
-                                                            <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                              <div class="mt-40">
+                                   <div class="d-flex flex-row flex-wrap gap-3 notification-radio">
+                                        <a href="" target="_blank" rel="noopener noreferrer"
+                                             class="notification-radio__elem notification-radio__elem-active">
+                                             <span>Все</span> <span>(1)</span>
+                                        </a>
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="notification-radio__elem">
+                                             <span>Системные уведомления</span> <span>(1)</span>
+                                        </a>
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="notification-radio__elem">
+                                             <span>Новости</span> <span>(1)</span>
+                                        </a>
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="notification-radio__elem">
+                                             <span>«Журнал налоги Беларуси»</span>
+                                        </a>
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="notification-radio__elem">
+                                             <span>Онлайн-школа «О налогах и не только для ИП простыми словами»</span>
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="mt-3">
+                                   <div class="d-flex justify-content-end">
+                                        <a href="" rel="noopener noreferrer" class="fs-18 ff-exo fw-normal lh-normal color-violet">
+                                             Выделить все
+                                        </a>
+                                   </div>
+                                   <div class="mt-3">
+                                        <div class="d-flex flex-column gap-3">
+                                             <div class="notification-card d-flex flex-row p-3 gap-3">
+                                                  <div class="">
+                                                       <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                                        </div>
                                                   </div>
-                                             </div>
-                                             <div class="w-100">
-                                                  <div class="floating-label-content w-100">
-                                                       <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
-                                                       <label class="floating-label">
-                                                            <span>Введите новый пароль</span><span class="color-red-attention">*</span>
-                                                       </label>
-                                                       <span class="floating-label-error">Данные введены неверно</span>
-                                                       <div class="d-flex justify-content-end">
-                                                            <div class="position-absolute">
-                                                                 <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                                                  <div class="w-100">
+                                                       <div class="d-flex flex-row justify-content-between align-items-center">
+                                                            <div class="notification-card__type bg-yellow-light color-black">
+                                                                 <span>
+                                                                      Новости
+                                                                 </span>
+                                                            </div>
+                                                            <div class="notification-card__date">
+                                                                 <span>
+                                                                      01.11.2023
+                                                                 </span>
+                                                            </div>
+                                                       </div>
+                                                       <a href="" class="notification-card__description mt-2">
+                                                            <div class="notification-card__title">
+                                                                 <span>
+                                                                      О проведении технических работ с 05.07.2024 по 15.07.2024
+                                                                 </span>
+                                                            </div>
+                                                            <div class="notification-card__text mt-2">
+                                                                 В связи с проведением с 05.07.2024 по 15.07.2024 технических работ по обновлению программного
+                                                                 обеспечения, возможны
+                                                                 проблемы при использовании функций личного от по обновлению
+                                                            </div>
+                                                       </a>
+                                                       <div class="d-flex flex-row gap-2 justify-content-between align-items-center mt-2">
+                                                            <div class="notification-card__tags">
+                                                                 <a href="" target="_blank" rel="noopener noreferrer">Новости предприятия</a>
+                                                            </div>
+                                                            <div class="">
+                                                                 <a href="" class="button-bin">
+                                                                      <i class="bi bi-trash3"></i>
+                                                                 </a>
                                                             </div>
                                                        </div>
                                                   </div>
-                                                  <span class="d-block fs-14 color-gray-txt mt-2">
-                                                       Пароль должен быть не менее 6 символов длиной, содержать латинские символы верхнего регистра (A-Z), содержать латинские
-                                                       символы нижнего регистра (a-z), содержать цифры (0-9).
-                                                  </span>
                                              </div>
-                                             <div class="floating-label-content w-100">
-                                                  <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
-                                                  <label class="floating-label">
-                                                       <span>Повторите новый пароль</span><span class="color-red-attention">*</span>
-                                                  </label>
-                                                  <span class="floating-label-error">Данные введены неверно</span>
-                                                  <div class="d-flex justify-content-end">
-                                                       <div class="position-absolute">
-                                                            <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                                             <div class="notification-card d-flex flex-row p-3 gap-3">
+                                                  <div class="">
+                                                       <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                       </div>
+                                                  </div>
+                                                  <div class="w-100">
+                                                       <div class="d-flex flex-row justify-content-between align-items-center">
+                                                            <div class="notification-card__type bg-yellow-light color-black">
+                                                                 <span>
+                                                                      Новости
+                                                                 </span>
+                                                            </div>
+                                                            <div class="notification-card__date">
+                                                                 <span>
+                                                                      01.11.2023
+                                                                 </span>
+                                                            </div>
+                                                       </div>
+                                                       <a href="" class="notification-card__description mt-2">
+                                                            <div class="notification-card__title">
+                                                                 <span>
+                                                                      О проведении технических работ с 05.07.2024 по 15.07.2024
+                                                                 </span>
+                                                            </div>
+                                                            <div class="notification-card__text mt-2">
+                                                                 В связи с проведением с 05.07.2024 по 15.07.2024 технических работ по обновлению программного
+                                                                 обеспечения, возможны
+                                                                 проблемы при использовании функций личного от по обновлению
+                                                            </div>
+                                                       </a>
+                                                       <div class="d-flex flex-row gap-2 justify-content-between align-items-center mt-2">
+                                                            <div class="notification-card__tags">
+                                                                 <a href="" target="_blank" rel="noopener noreferrer">Новости предприятия</a>
+                                                            </div>
+                                                            <div class="">
+                                                                 <a href="" class="button-bin">
+                                                                      <i class="bi bi-trash3"></i>
+                                                                 </a>
+                                                            </div>
                                                        </div>
                                                   </div>
                                              </div>
                                         </div>
-                                        <a href="" target="_blank" class="mt-40 btn-default">
-                                             Изменить пароль
-                                        </a>
-                                   </form>
+                                   </div>
                               </div>
-                              <form class="mt-5 d-flex flex-column gap-4">
-                                   <h3 class="h2 ff-exo fw-bold fs-4 lh-normal text-uppercase">
-                                        отзыв согласия на обработку персональных данных
-                                   </h3>
-                                   <div class="">
-                                        <p class="mb-0 ff-roboto">
-                                             Для отзыва согласия на обработку ваших персональных данных необходимо снять соответствующую отметку
-                                             напротив выбранной
-                                             цели обработки персональных данных или удалить свой личный кабинет.
-                                        </p>
-                                   </div>
-                                   <div class="">
-                                        <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                             <label class="form-check-label fs-16" for="exampleCheck1">Я согласен(а) на обработку персональных данных с целью создания и использования личного кабинета *</label>
-                                        </div>
-                                        <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                             <label class="form-check-label fs-16" for="exampleCheck2">Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки на электронную
-                                             почту</label>
-                                        </div>
-                                        <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                                             <label class="form-check-label fs-16" for="exampleCheck3">Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки посредством
-                                             Viber/СМС»</label>
-                                        </div>
-                                   </div>
-                                   <div class="">
-                                        <p class="mb-0 ff-roboto">
-                                             Если вы отзовете согласие на обработку ваших персональных данных, мы не сможем предоставить или оказать вам наши услуги
-                                             (совершить следующие действия
-                                        </p>
-                                   </div>
-                                   <div class="">
-                                        <ol class="mb-0">
-                                             <li>
-                                                  При отзыве согласия на обработку персональных данных на цели, указанные как обязательные (с отметкой «*»):
-                                                  <ul>
-                                                       <li>
-                                                            прекращается доступ к вашему личному кабинету;
-                                                       </li>
-                                                       <li>
-                                                            вы не сможете воспользоваться нашими услугами или заказать бланочную продукцию, канцелярские товары (за исключением
-                                                            исполнения обязательств, принятых нами до отзыва вашего согласия);
-                                                       </li>
-                                                       <li>
-                                                            прекращается направление в личный кабинет актов выполненных работ (оказанных услуг), рассмотрение ваших обращений,
-                                                            заявлений и иных документов, направленных через личный кабинет.
-                                                       </li>
-                                                  </ul>
-                                             </li>
-                                             <li>
-                                                  При отзыве согласия на обработку персональных данных на цели, не являющиеся обязательными, прекращается направление вам
-                                                  информационной и рекламной рассылки.
-                                             </li>
-                                        </ol>
-                                   </div>
-                                   <div class="">
-                                        <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                                             <label class="form-check-label fs-16" for="exampleCheck4">
-                                                  Я понимаю и принимаю последствия отзыва согласия на обработку моих персональных данных
-                                             </label>
-                                        </div>
-                                   </div>
-                                   <div class="">
-                                        <a href="" target="_blank" class="btn-default">
-                                             Отозвать согласие
-                                        </a>
-                                   </div>
-                                   <div class="d-flex flex-row gap-3 align-items-center flex-lg-nowrap flex-wrap">
-                                        <p class="mb-0">
-                                             Отозвать согласие возможно также посредством удаления личного кабинета.
-                                        </p>
-                                        <a href="" target="_blank" class="btn-default" data-bs-toggle="modal" data-bs-target="#deleteCabinet">
-                                             Удалить личный кабинет
-                                        </a>
-                                   </div>
-                              </form>
                          </div>
                     </div>
                </div>
           </div>
      </main>
-     <div class="modal fade" id="deleteCabinet" tabindex="-1" aria-labelledby="deleteCabinetLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-               <div class="modal-content">
-                    <div class="modal-header">
-                         <h1 class="modal-title fs-5" id="deleteCabinetLabel">Удаление личного кабинета</h1>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                         <p class="mb-2">
-                              Если вы удалите свой личный кабинет:
-                         </p>
-                         <ol class="mb-4">
-                              <li>
-                                   прекратится доступ к вашему личному кабинету без возможности восстановления документов и информации, находившихся в нем;
-                              </li>
-                              <li>
-                                   вы не сможете воспользоваться нашими услугами или заказать бланочную продукцию, канцелярские товары (за исключением
-                                   исполнения обязательств, принятых нами до отзыва вашего согласия);
-                              </li>
-                              <li>
-                                   прекратится направление в личный кабинет актов выполненных работ (оказанных услуг), рассмотрение ваших обращений,
-                                   заявлений и иных документов, направленных через личный кабинет.
-                              </li>
-                              <li>
-                                   прекратится направление вам информационной и рекламной рассылки.
-                              </li>
-                         </ol>
-                         <div class="form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck7">
-                              <label class="form-check-label" for="exampleCheck7">Я понимаю и принимаю последствия удаления моего личного кабинета.</label>
-                         </div>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                         <button type="button" class="btn-default px-lg-5" data-bs-toggle="modal" data-bs-target="#deleteAgree">Удалить</button>
-                    </div>
-               </div>
-          </div>
-     </div>
-     <div class="modal fade" id="deleteAgree" tabindex="-1" aria-labelledby="deleteAgreeLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-               <div class="modal-content">
-                    <div class="modal-header">
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body pt-0">
-                         <div class="mb-2 text-center">
-                              <i class="bi bi-trash3 fs-64 color-red-attention lh-sm"></i>
-                         </div>
-                         <div class="color-black text-center">
-                              <h4 class="h4 ff-exo fw-bold fs-20 lh-normal mb-2">
-                                   Удалить личный кабинет?
-                              </h4>
-                              <p class="mb-0">
-                                   Вы действительно хотите удалить личный кабинет?
-                              </p>
-                         </div>
-                         <div class="d-flex flex-column gap-3 mt-4">
-                              <a href="" target="_blank" class="btn-deny w-100 py-lg-3">
-                                   Удалить
-                              </a>
-                              <a href="" target="_blank" class="btn-empty w-100 py-lg-3">
-                                   Отменить
-                              </a>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </div>
      <footer class="footer">
      <div class="container">
           <div class="row">
