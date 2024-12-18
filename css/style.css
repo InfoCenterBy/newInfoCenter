@@ -1285,6 +1285,30 @@ footer.footer {
   }
 }
 @layer base {
+  .records-card {
+    font-family: "Roboto";
+    border-radius: 0.625rem;
+    border: 1px solid var(--color-gray-inputs);
+    padding: 1rem;
+  }
+  .records-table thead th {
+    padding: 1rem 0.75rem;
+  }
+  .records-table tbody td {
+    padding: 1rem 0.75rem;
+  }
+  .table-gray-head th {
+    background-color: var(--color-gray-bg-illustr);
+  }
+  .record-modal-data {
+    font-family: "Roboto";
+    color: var(--color-black);
+  }
+  .record-modal-data p {
+    margin-bottom: 0;
+  }
+}
+@layer base {
   button:not(.btn-close) {
     border: 0;
     background: none;
@@ -3112,6 +3136,7 @@ nav.breadcrumb a:last-child {
     border: 1.5px solid --color-gray-stroke;
     -webkit-transition: all ease-out 0.3s;
     transition: all ease-out 0.3s;
+    background-color: var(--color-white);
   }
   @media (hover: hover) and (pointer: fine) {
     .form-date input.form-control:hover {
