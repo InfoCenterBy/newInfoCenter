@@ -15,6 +15,7 @@
                border: 1.5px solid (--color-gray-stroke);
                transition: $transition-3;
                @include hover('border-color', var(--color-violet-hover));
+               background-color: var(--color-white);
                &:focus{
                     box-shadow: none;
                     border-color: var(--color-violet);

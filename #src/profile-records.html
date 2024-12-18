@@ -30,67 +30,67 @@
                                    </h2>
                               </div>
                               <div class="mt-32">
-                                   <table class="w-100">
+                                   <table class="w-100 records-table d-none d-xl-block">
                                         <thead>
-                                             <tr class="text-center ff-roboto fs-16 ">
-                                                  <th class="bg-gray-bg-illustr border-top-left-20 py-3 px-lg-3 px-2">
+                                             <tr class="text-center ff-roboto fs-16 table-gray-head">
+                                                  <th class="border-top-left-20 ">
                                                        №
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                  <th class="">
                                                        Дата
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                  <th class="">
                                                        Время
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2" colspan="2">
+                                                  <th class="" colspan="2">
                                                        Адрес
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                  <th class="">
                                                        Код записи
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2">
+                                                  <th class="">
                                                        Статус
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr py-3 px-2" colspan="2">
+                                                  <th class="" colspan="2">
                                                        
                                                   </th>
-                                                  <th class="bg-gray-bg-illustr border-top-right-20 py-3 px-lg-3 px-2" >
+                                                  <th class="border-top-right-20 " >
                                                        
                                                   </th>
                                              </tr>
                                         </thead>
                                         <tbody>
                                              <tr class="border-bottom">
-                                                  <td class="py-3 px-2 text-center">
+                                                  <td class=" text-center">
                                                        <span>1</span>
                                                   </td>
-                                                  <td class="py-3 px-2 text-center">
+                                                  <td class=" text-center">
                                                        <span>14.11.2023</span>
                                                   </td>
-                                                  <td class="py-3 px-2 text-center">
+                                                  <td class=" text-center">
                                                        <span>12:00</span>
                                                   </td>
-                                                  <td class="py-3 px-2" colspan="2">
+                                                  <td class="" colspan="2">
                                                        <p class="mb-0">
                                                             г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
                                                        </p>
                                                   </td>
-                                                  <td class="py-3 px-2 text-center">
+                                                  <td class=" text-center">
                                                        <span>ekbN8kSEFy</span>
                                                   </td>
-                                                  <td class="py-3 px-2">
+                                                  <td class="">
                                                        <div class="card-status card-status-active">
                                                             <span>Активный</span>
                                                        </div>
                                                   </td>
-                                                  <td class="py-3 px-2" colspan="2">
+                                                  <td class="" colspan="2">
                                                        <a href="" target="_blank" class="btn-default">
                                                             Отменить
                                                        </a>
                                                   </td>
-                                                  <td class="py-3 px-2">
+                                                  <td class="">
                                                        <div class="d-flex justify-content-center">
-                                                            <button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#recordModal">
                                                                  <i class="bi bi-eye fs-24"></i>
                                                             </button>
                                                        </div>
@@ -99,12 +99,174 @@
                                              
                                         </tbody>
                                    </table>
+                                   <div class="d-flex flex-column gap-3 d-xl-none d-block">
+                                        <div class="records-card d-flex flex-column gap-3">
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>№</b>
+                                                  <span>
+                                                       1
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>
+                                                       Дата
+                                                  </b>
+                                                  <span>
+                                                       14.11.2023
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>
+                                                       Время
+                                                  </b>
+                                                  <span>
+                                                       12:00
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>
+                                                       Адрес
+                                                  </b>
+                                                  <span>
+                                                       г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>
+                                                       Код записи
+                                                  </b>
+                                                  <span>
+                                                       ekbN8kSEFy
+                                                  </span>
+                                             </div>
+                                             <div class="d-flex flex-column gap-2">
+                                                  <b>
+                                                       Статус
+                                                  </b>
+                                                  <div class="card-status card-status-active w-fit">
+                                                       <span>Активный</span>
+                                                  </div>
+                                             </div>
+                                             <div class="row justify-content-md-start justify-content-between">
+                                                  <div class="col-md-4 col-8">
+                                                       <a href="" target="_blank" class="btn-default w-100">
+                                                            Отменить
+                                                       </a>
+                                                  </div>
+                                                  <div class="col-md-1 col-3">
+                                                       <div class="d-flex justify-content-center">
+                                                            <button data-bs-toggle="modal" data-bs-target="#recordModal">
+                                                                 <i class="bi bi-eye fs-24"></i>
+                                                            </button>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
                               </div>
                          </div>
                     </div>
                </div>
           </div>
      </main>
+     <div class="modal fade" id="recordModal" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h1 class="modal-title fs-5" id="recordModalLabel">Данные о записи</h1>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="row record-modal-data">
+                              <div class="col-4 my-2">
+                                   <b>
+                                        ФИО:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        Иванов Иван Иванович
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        УНП:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        12699053
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        Телефон:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        +375 (33) 844 32 11
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        E-mail:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        ivanov@mail.ru
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        РЦ:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        г. Полоцк, пр-т Ф. Скорины, д.13, пом.222
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        Код записи:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        ekbN8kSEFy
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        Дата:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        13.10.2024
+                                   </p>
+                              </div>
+                              <div class="col-4 my-2">
+                                   <b>
+                                        Время:
+                                   </b>
+                              </div>
+                              <div class="col-8 my-2">
+                                   <p>
+                                        09:00
+                                   </p>
+                              </div>
+                         </div>
+                         <div class="border w-100 mt-24"></div>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn-default" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+               </div>
+          </div>
+     </div>
 @@include('./html-comp/_footer.html')
 @@include('./html-comp/_script.html')
 </body>

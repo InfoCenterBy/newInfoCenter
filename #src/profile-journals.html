@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Журналы",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Журналы
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
+                         @@include('./html-comp/_sidenav-tabs.html', {"link": 6})
+                    </div>
+                    <div class="col-lg-9 d-flex my-2">
+                         <div class="w-100">
+                              <div class="">
+                                   <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                                        Журналы
+                                   </h2>
+                              </div>
+                              <div class="mt-32">
+                                   <form action="">
+                                        <div class="row">
+                                             <div class="col-xl-4 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-date form-input w-100">
+                                                       <label for="inputDateForm1">от</label>
+                                                       <input type="date" name="" id="inputDateForm1"
+                                                            class="form-control">
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-4 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="form-date form-input w-100">
+                                                       <label for="inputDateForm2">от</label>
+                                                       <input type="date" name="" id="inputDateForm2"
+                                                            class="form-control">
+                                                       <span class="input-label-error">Данные введены неверно</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-4 col-md-6 d-flex my-xl-0 my-2">
+                                                  <div class="floating-label-content w-100">
+                                                       <input class="floating-input" type="text" placeholder="" required="">
+                                                       <label class="floating-label">
+                                                            <span>Поиск по названию</span><span class="color-red-attention">*</span>
+                                                       </label>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="mt-4 row">
+                                             <div class="col-lg-3 my-lg-0 my-2">
+                                                  <a href="" target="_blank" class="btn-default w-100 py-lg-2 py-3">
+                                                       Применить
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-3 my-lg-0 my-2">
+                                                  <a href="" target="_blank" class="btn-empty w-100 py-lg-2 py-3">
+                                                       Очистить
+                                                  </a>
+                                             </div>
+                                        </div>
+                                   </form>
+                              </div>
+                              <div class="mt-40">
+                                   <div class="row">
+                                        <div class="col-xl-4 col-lg-6 d-flex my-3">
+                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                                  <div class="journal-card__img">
+                                                       <img src="./img/png/journal-card/journal-img.png" alt="">
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="journal-card__title">
+                                                            <span>Налоги Беларуси №2 2024</span>
+                                                       </div>
+                                                       <div class="journal-card__date mt-2">
+                                                            <span>01.11.2023</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="d-flex flex-row flex-nowrap gap-lg-3 gap-2">
+                                                       <a href="" class="btn-default w-100">
+                                                            Читать журнал
+                                                       </a>
+                                                       <a href="" class="btn-empty btn-round">
+                                                            <i class="bi bi-download"></i>
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" class="btn-empty w-100">
+                                                            Читать анонс
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 d-flex my-3">
+                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                                  <div class="journal-card__img">
+                                                       <img src="./img/png/journal-card/journal-img.png" alt="">
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="journal-card__title">
+                                                            <span>Налоги Беларуси №2 2024</span>
+                                                       </div>
+                                                       <div class="journal-card__date mt-2">
+                                                            <span>01.11.2023</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="d-flex flex-row flex-nowrap gap-lg-3 gap-2">
+                                                       <a href="" class="btn-default w-100">
+                                                            Читать журнал
+                                                       </a>
+                                                       <a href="" class="btn-empty btn-round">
+                                                            <i class="bi bi-download"></i>
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" class="btn-empty w-100">
+                                                            Читать анонс
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 d-flex my-3">
+                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                                  <div class="journal-card__img">
+                                                       <img src="./img/png/journal-card/journal-img.png" alt="">
+                                                  </div>
+                                                  <div class="">
+                                                       <div class="journal-card__title">
+                                                            <span>Налоги Беларуси №2 2024</span>
+                                                       </div>
+                                                       <div class="journal-card__date mt-2">
+                                                            <span>01.11.2023</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="d-flex flex-row flex-nowrap gap-lg-3 gap-2">
+                                                       <a href="" class="btn-default w-100">
+                                                            Читать журнал
+                                                       </a>
+                                                       <a href="" class="btn-empty btn-round">
+                                                            <i class="bi bi-download"></i>
+                                                       </a>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="" target="_blank" class="btn-empty w-100">
+                                                            Читать анонс
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+@@include('./html-comp/_footer.html')
+@@include('./html-comp/_script.html')
+</body>
+
+</html>
