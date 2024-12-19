@@ -941,7 +941,7 @@
      </a>
 
 
-               <a href="" target="_self" class="sidenav-profile__link">
+               <a href="./profile-school.html" target="_self" class="sidenav-profile__link">
 
                <div class="sidenav-profile__text">
                <span>Онлайн-школа</span>
@@ -949,16 +949,49 @@
           <div class="sidenav-profile__notification"></div>
      </a>
 
-
-               <a href="" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
+          <a class="sidenav-profile__link" data-bs-toggle="modal" data-bs-target="#exitModal">
+          <div class="sidenav-profile__text">
                <i class="bi bi-box-arrow-left"></i>
                <span>Выйти</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
 </nav>
+
+<div class="modal fade" id="exitModal" tabindex="-1" aria-labelledby="exitModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+               <div class="modal-header pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body d-flex flex-column justify-content-center gap-2 text-center pt-0">
+                    <div class="fs-64">
+                         <i class="bi bi-box-arrow-left"></i>
+                    </div>
+                    <div class="">
+                         <b class="fs-20 lh-lg">
+                              Выйти из личного кабинета?
+                         </b>
+                    </div>
+                    <div class="">
+                         <p class="mb-0">
+                              Вы действительно хотите выйти из личного кабинета?
+                         </p>
+                    </div>
+               </div>
+               <div class="modal-footer justify-content-center">
+                    <div class="d-flex flex-column gap-3 w-100">
+                         <a href="" target="_blank" class="btn-default w-100 px-lg-4 px-3">
+                              Выйти
+                         </a>
+                         <a href="" target="_blank" class="btn-empty w-100 px-lg-4 px-3" data-bs-dismiss="modal">
+                              Отменить
+                         </a>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
 
                     </div>
                     <div class="col-lg-9 d-flex my-2">

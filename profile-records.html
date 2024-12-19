@@ -938,7 +938,7 @@
      </a>
 
 
-               <a href="" target="_self" class="sidenav-profile__link">
+               <a href="./profile-school.html" target="_self" class="sidenav-profile__link">
 
                <div class="sidenav-profile__text">
                <span>Онлайн-школа</span>
@@ -946,16 +946,49 @@
           <div class="sidenav-profile__notification"></div>
      </a>
 
-
-               <a href="" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
+          <a class="sidenav-profile__link" data-bs-toggle="modal" data-bs-target="#exitModal">
+          <div class="sidenav-profile__text">
                <i class="bi bi-box-arrow-left"></i>
                <span>Выйти</span>
           </div>
           <div class="sidenav-profile__notification"></div>
      </a>
 </nav>
+
+<div class="modal fade" id="exitModal" tabindex="-1" aria-labelledby="exitModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+               <div class="modal-header pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body d-flex flex-column justify-content-center gap-2 text-center pt-0">
+                    <div class="fs-64">
+                         <i class="bi bi-box-arrow-left"></i>
+                    </div>
+                    <div class="">
+                         <b class="fs-20 lh-lg">
+                              Выйти из личного кабинета?
+                         </b>
+                    </div>
+                    <div class="">
+                         <p class="mb-0">
+                              Вы действительно хотите выйти из личного кабинета?
+                         </p>
+                    </div>
+               </div>
+               <div class="modal-footer justify-content-center">
+                    <div class="d-flex flex-column gap-3 w-100">
+                         <a href="" target="_blank" class="btn-default w-100 px-lg-4 px-3">
+                              Выйти
+                         </a>
+                         <a href="" target="_blank" class="btn-empty w-100 px-lg-4 px-3" data-bs-dismiss="modal">
+                              Отменить
+                         </a>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
 
                     </div>
                     <div class="col-lg-9 d-flex my-2">
@@ -1015,7 +1048,7 @@
                                                        <span>ekbN8kSEFy</span>
                                                   </td>
                                                   <td class="">
-                                                       <div class="card-status card-status-active">
+                                                       <div class="card-status card-status-active text-center">
                                                             <span>Активный</span>
                                                        </div>
                                                   </td>
@@ -1024,6 +1057,76 @@
                                                             Отменить
                                                        </a>
                                                   </td>
+                                                  <td class="">
+                                                       <div class="d-flex justify-content-center">
+                                                            <button data-bs-toggle="modal" data-bs-target="#recordModal">
+                                                                 <i class="bi bi-eye fs-24"></i>
+                                                            </button>
+                                                       </div>
+                                                  </td>
+                                             </tr>
+
+                                             <tr class="border-bottom">
+                                                  <td class=" text-center">
+                                                       <span>2</span>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>14.11.2023</span>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>12:00</span>
+                                                  </td>
+                                                  <td class="" colspan="2">
+                                                       <p class="mb-0">
+                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
+                                                       </p>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>ekbN8kSEFy</span>
+                                                  </td>
+                                                  <td class="">
+                                                       <div class="card-status card-status-archive text-center">
+                                                            <span>Архив</span>
+                                                       </div>
+                                                  </td>
+                                                  <td class="" colspan="2">
+
+                                                                                                         </td>
+                                                  <td class="">
+                                                       <div class="d-flex justify-content-center">
+                                                            <button data-bs-toggle="modal" data-bs-target="#recordModal">
+                                                                 <i class="bi bi-eye fs-24"></i>
+                                                            </button>
+                                                       </div>
+                                                  </td>
+                                             </tr>
+
+                                             <tr class="border-bottom">
+                                                  <td class=" text-center">
+                                                       <span>2</span>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>14.11.2023</span>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>12:00</span>
+                                                  </td>
+                                                  <td class="" colspan="2">
+                                                       <p class="mb-0">
+                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
+                                                       </p>
+                                                  </td>
+                                                  <td class=" text-center">
+                                                       <span>ekbN8kSEFy</span>
+                                                  </td>
+                                                  <td class="">
+                                                       <div class="card-status card-status-deny text-center">
+                                                            <span>Отменен</span>
+                                                       </div>
+                                                  </td>
+                                                  <td class="" colspan="2">
+
+                                                                                                         </td>
                                                   <td class="">
                                                        <div class="d-flex justify-content-center">
                                                             <button data-bs-toggle="modal" data-bs-target="#recordModal">
@@ -1100,13 +1203,29 @@
                                         </div>
                                    </div>
                               </div>
+                              <div class="mt-40">
+                                   <div class="border-20 p-4 bg-gray-bg-illustr">
+                                        <b class="d-block ff-exo fs-20">Выбирайте услугу и оформляйте предварительную запись</b>
+                                        <p class="mb-0 mt-3 ff-roboto fs-16">
+                                             При необходимости получения более одной услуги по Предварительной записи (код активации),
+                                             необходимо получить дополнительное время (дополнительную Предварительную запись - рекомендуем последовательно) для
+                                             возможности получения остальных услуг.
+                                             <br>
+                                             <br>
+                                             При получении первой услуги сообщите регистратору о наличии у Вас записи на другие услуги.
+                                        </p>
+                                        <a href="" target="_blank" class="btn-default mt-3">
+                                             Выбрать услугу
+                                        </a>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>
           </div>
      </main>
      <div class="modal fade" id="recordModal" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
                <div class="modal-content">
                     <div class="modal-header">
                          <h1 class="modal-title fs-5" id="recordModalLabel">Данные о записи</h1>
