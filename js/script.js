@@ -101,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const passwordInputs = document.querySelectorAll('.floating-label-content .password-input');
 	const togglePasswordIcons = document.querySelectorAll('.password-icon');
 
-	console.log(passwordInputs, togglePasswordIcons);
-
 	togglePasswordIcons.forEach((icon, index) => {
 		icon.addEventListener('click', function () {
 			const passwordInput = passwordInputs[index];
@@ -119,3 +117,29 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
+const agreeDeleteCheck = document.querySelector('#agreeDeleteCheck');
+const deleteAgreeBtn = document.querySelector('#deleteAgreeBtn');
+
+function agreeCheckIsTrue(checkBox) {
+	if (checkBox.checked) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+if (agreeDeleteCheck) {
+	if (agreeCheckIsTrue(agreeDeleteCheck)) {
+		deleteAgreeBtn.disabled = false;
+	} else {
+		deleteAgreeBtn.disabled = true;
+	}
+	agreeDeleteCheck.addEventListener('change', () => {
+		if (agreeCheckIsTrue(agreeDeleteCheck)) {
+			deleteAgreeBtn.disabled = false;
+		} else {
+			deleteAgreeBtn.disabled = true;
+		}
+	});
+}

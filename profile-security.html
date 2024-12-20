@@ -1007,7 +1007,7 @@
                                    <form action="">
                                         <div class="d-flex flex-column gap-4 w-100">
                                              <div class="floating-label-content w-100">
-                                                  <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
+                                                  <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="" autocomplete="current-password">
                                                   <label class="floating-label">
                                                        <span>Введите старый пароль</span><span class="color-red-attention">*</span>
                                                   </label>
@@ -1020,7 +1020,7 @@
                                              </div>
                                              <div class="w-100">
                                                   <div class="floating-label-content w-100">
-                                                       <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
+                                                       <input class="floating-input password-input" id="new-pass" type="password" required="" placeholder="" autocomplete="new-password">
                                                        <label class="floating-label">
                                                             <span>Введите новый пароль</span><span class="color-red-attention">*</span>
                                                        </label>
@@ -1037,7 +1037,7 @@
                                                   </span>
                                              </div>
                                              <div class="floating-label-content w-100">
-                                                  <input class="floating-input password-input" id="old-pass" type="password" required="" placeholder="">
+                                                  <input class="floating-input password-input" id="new-pass-rep" type="password" required="" placeholder="" autocomplete="new-password">
                                                   <label class="floating-label">
                                                        <span>Повторите новый пароль</span><span class="color-red-attention">*</span>
                                                   </label>
@@ -1166,12 +1166,12 @@
                               </li>
                          </ol>
                          <div class="form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck7">
-                              <label class="form-check-label" for="exampleCheck7">Я понимаю и принимаю последствия удаления моего личного кабинета.</label>
+                              <input type="checkbox" class="form-check-input" id="agreeDeleteCheck">
+                              <label class="form-check-label" for="agreeDeleteCheck">Я понимаю и принимаю последствия удаления моего личного кабинета.</label>
                          </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                         <button type="button" class="btn-default px-lg-5" data-bs-toggle="modal" data-bs-target="#deleteAgree">Удалить</button>
+                         <button type="button" class="btn-default px-lg-5" data-bs-toggle="modal" data-bs-target="#deleteAgree" id="deleteAgreeBtn">Удалить</button>
                     </div>
                </div>
           </div>
