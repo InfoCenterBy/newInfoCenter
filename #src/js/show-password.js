@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const passwordInputs = document.querySelectorAll('.floating-label-content .password-input');
 	const togglePasswordIcons = document.querySelectorAll('.password-icon');
 
-	console.log(passwordInputs, togglePasswordIcons);
-
 	togglePasswordIcons.forEach((icon, index) => {
 		icon.addEventListener('click', function () {
 			const passwordInput = passwordInputs[index];

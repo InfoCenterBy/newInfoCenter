@@ -29,6 +29,7 @@
 @import './elements/journal-inner.scss';
 @import './elements/school-card.scss';
 @import './elements/inputs.scss';
+@import './elements/pagination.scss';
 //! end imports
 
 html{
@@ -69,8 +70,8 @@ main{
                }
      }
 
-     main .container:first-of-type{
-          margin-top: 1.5rem;
+     main .container:first-of-type:not(:has(.breadcrumb)){
+          margin-top: 2rem;
      }
 }
 
