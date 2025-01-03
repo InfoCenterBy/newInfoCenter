@@ -45,4 +45,15 @@
      //      border-radius: var(--bs-modal-border-radius);
      //      outline: 0;
      // }
+     .modal-header{
+          padding-bottom: 0;
+     }
+     .modal-footer{
+          padding-bottom: 1.5rem;
+     }
+     @media #{$ui-mobile} {
+          .modal-content{
+               margin-top: 5.625rem;
+          }
+     }
 }

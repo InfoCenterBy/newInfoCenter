@@ -83,6 +83,9 @@
           @include transition($transition-3);
           @include hover('background-color', var(--color-violet));
           @include hover('border-color', var(--color-violet));
+          @media (max-width:992px) {
+               text-wrap: nowrap;
+          }
      }
      &__elem-active{
           background-color: var(--color-violet);

@@ -40,6 +40,7 @@
           border-radius: 9.375rem;
           box-sizing: border-box;
           @include transition($transition-2);
+          font-size: 1rem;
           &:focus{
                outline:none;
                border: 1.5px solid var(--color-violet);

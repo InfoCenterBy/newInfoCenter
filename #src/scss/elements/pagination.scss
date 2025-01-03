@@ -4,7 +4,7 @@
           --bs-pagination-padding-y: .3125rem;
           --bs-pagination-font-size: 1rem;
           --bs-pagination-color: var(--color-black);
-          --bs-pagination-bg: var(--bs-body-bg);
+          --bs-pagination-bg: var(--color-white);
           --bs-pagination-border-width: 0;
           --bs-pagination-border-color: 0;
           --bs-pagination-border-radius: 0;
@@ -30,4 +30,5 @@
                border-radius: 50px;
           }
      }
+     
 }

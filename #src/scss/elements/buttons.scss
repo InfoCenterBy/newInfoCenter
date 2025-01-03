@@ -29,8 +29,8 @@
           width: fit-content;
           @include transition($transition-3);
           @media #{$ui-laptop} {
-               font-size: 1rem;
-               padding: .5rem 1rem;
+               font-size: 1.125rem;
+               padding: .75rem 1rem;
           }
      }
      .btn-default, .btn-empty, .btn-deny, .btn-round{
