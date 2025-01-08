@@ -177,3 +177,15 @@ $layer-modal: 4;
 .border-top-right-20{
      border-top-right-radius: 20px;
 }
+
+.bg-lg-transparent{
+     @media #{$ui-tablet} {
+          background-color: var(--color-transparent);
+     }
+}
+
+.border-lg-0{
+     @media #{$ui-tablet} {
+          border-radius: 0;
+     }
+}

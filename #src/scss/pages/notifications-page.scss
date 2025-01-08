@@ -68,24 +68,31 @@
 		}
 }
 
-.notification-radio{
+.nav-radio{
      &__elem{
           font-size: 1.125rem;
           line-height: 1.2;
           font-family: $ff-exo;
-          color: var(--color-gray-txt);
           border: 1px solid transparent;
           border-radius: 6.25rem;
-          border-color: var(--color-gray-stroke);
           padding: .75rem 1.5rem;
-          background-color: var(--color-white);
-          @include hover('color', var(--color-white));
           @include transition($transition-3);
-          @include hover('background-color', var(--color-violet));
-          @include hover('border-color', var(--color-violet));
           @media (max-width:992px) {
                text-wrap: nowrap;
           }
+     }
+     &__elem-fill{
+          color: var(--color-white);
+          background-color: var(--color-violet);
+          @include hover('background-color', var(--color-violet-hover));
+     }
+     &__elem-empty{
+          color: var(--color-gray-txt);
+          border-color: var(--color-gray-stroke);
+          background-color: var(--color-white);
+          @include hover('color', var(--color-white));
+          @include hover('background-color', var(--color-violet));
+          @include hover('border-color', var(--color-violet));
      }
      &__elem-active{
           background-color: var(--color-violet);
