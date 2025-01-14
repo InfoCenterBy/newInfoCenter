@@ -124,6 +124,24 @@
   border-top-right-radius: 20px;
 }
 
+@media screen and (max-width: 992px) {
+  .bg-lg-transparent {
+    background-color: var(--color-transparent);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .border-lg-0 {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .text-xl-nowrap {
+    text-wrap: nowrap;
+  }
+}
+
 @layer component {
   .bg-black {
     background-color: #030303;
@@ -1313,6 +1331,34 @@ footer.footer {
   }
 }
 @layer base {
+  .ecp-circle {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+  }
+}
+@layer base {
+  .reg-line {
+    width: 88%;
+    height: 1px;
+    background-image: url("../img/png/reg-center/reg-main-lines.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 42px;
+    left: 85px;
+    z-index: -1;
+  }
+  @media (max-width: 1400px) {
+    .reg-line {
+      width: 72%;
+      left: 164px;
+    }
+  }
+}
+@layer base {
   button:not(.btn-close) {
     border: 0;
     background: none;
@@ -1330,7 +1376,7 @@ footer.footer {
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 0.625rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-family: "Exo 2";
     font-size: 1.125rem;
     font-weight: 400;
@@ -2355,6 +2401,36 @@ footer.footer {
     padding: 1rem;
   }
 }
+.main-banner-wrapper .main-banner .main-banner-title {
+  color: var(--color-violet);
+  font-family: "Exo 2";
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+  .main-banner-wrapper .main-banner .main-banner-title {
+    font-size: 1.5rem;
+  }
+}
+.main-banner-wrapper .main-banner .main-banner-img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 39.5rem;
+}
+.main-banner-wrapper .main-banner p {
+  color: var(--color-black);
+  font-family: "Exo 2";
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 0;
+}
 
 .swiper.main-banner {
   width: 100%;
@@ -2364,7 +2440,7 @@ footer.footer {
 }
 
 @layer component {
-  .main-banner-wrapper {
+  .main-banner-wrapper.main-banner-wrapper-slider {
     --swiper-pagination-color: var(--color-violet);
     --swiper-pagination-left: 0;
     --swiper-pagination-right: 8px;
@@ -2425,36 +2501,6 @@ footer.footer {
     .main-banner-wrapper .swiper-button-prev-custom, .main-banner-wrapper .swiper-button-next-custom {
       display: none;
     }
-  }
-  .main-banner-wrapper .main-banner .main-banner-title {
-    color: var(--color-violet);
-    font-family: "Exo 2";
-    font-size: 2.125rem;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 0;
-    text-transform: uppercase;
-  }
-  @media screen and (max-width: 992px) {
-    .main-banner-wrapper .main-banner .main-banner-title {
-      font-size: 1.5rem;
-    }
-  }
-  .main-banner-wrapper .main-banner .main-banner-img {
-    width: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-    max-width: 39.5rem;
-  }
-  .main-banner-wrapper .main-banner p {
-    color: var(--color-black);
-    font-family: "Exo 2";
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 0;
-    text-align: left;
-    margin-bottom: 0;
   }
 }
 @layer component {
@@ -2775,11 +2821,6 @@ nav.breadcrumb a:last-child {
   .modal-footer {
     padding-bottom: 1.5rem;
   }
-  @media screen and (max-width: 768px) {
-    .modal-content {
-      margin-top: 5.625rem;
-    }
-  }
 }
 .notification-card {
   font-family: "Roboto";
@@ -2850,60 +2891,103 @@ nav.breadcrumb a:last-child {
   }
 }
 
-.notification-radio__elem {
-  font-size: 1.125rem;
-  line-height: 1.2;
-  font-family: "Exo 2";
-  color: var(--color-gray-txt);
-  border: 1px solid transparent;
-  border-radius: 6.25rem;
-  border-color: var(--color-gray-stroke);
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-white);
-  -webkit-transition: all ease-out 0.3s;
-  transition: all ease-out 0.3s;
-}
-@media (hover: hover) and (pointer: fine) {
-  .notification-radio__elem:hover {
+@layer component {
+  .nav-radio__elem {
+    font-size: 1.125rem;
+    line-height: 1.2;
+    font-family: "Exo 2";
+    border: 1px solid transparent;
+    border-radius: 6.25rem;
+    padding: 0.75rem 1.5rem;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (max-width: 992px) {
+    .nav-radio__elem-lg {
+      text-wrap: nowrap;
+    }
+  }
+  @media (max-width: 1200px) {
+    .nav-radio__elem-xl {
+      text-wrap: nowrap;
+    }
+  }
+  @media (max-width: 1400px) {
+    .nav-radio__elem-xxl {
+      text-wrap: nowrap;
+    }
+  }
+  .nav-radio__elem-fill {
+    color: var(--color-white);
+    background-color: var(--color-violet);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-radio__elem-fill:hover {
+      background-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: none) {
+    .nav-radio__elem-fill:active {
+      background-color: var(--color-violet-hover);
+    }
+  }
+  .nav-radio__elem-empty {
+    color: var(--color-gray-txt);
+    border-color: var(--color-gray-stroke);
+    background-color: var(--color-white);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-radio__elem-empty:hover {
+      color: var(--color-white);
+    }
+  }
+  @media (hover: none) {
+    .nav-radio__elem-empty:active {
+      color: var(--color-white);
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-radio__elem-empty:hover {
+      background-color: var(--color-violet);
+    }
+  }
+  @media (hover: none) {
+    .nav-radio__elem-empty:active {
+      background-color: var(--color-violet);
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-radio__elem-empty:hover {
+      border-color: var(--color-violet);
+    }
+  }
+  @media (hover: none) {
+    .nav-radio__elem-empty:active {
+      border-color: var(--color-violet);
+    }
+  }
+  .nav-radio__elem-active {
+    background-color: var(--color-violet);
+    border-color: var(--color-violet);
     color: var(--color-white);
   }
 }
-@media (hover: none) {
-  .notification-radio__elem:active {
-    color: var(--color-white);
+@layer variation {
+  .nav-radio-reg {
+    background-color: var(--color-violet-light);
+    border-radius: 100px;
+  }
+  @media (max-width: 1400px) {
+    .nav-radio-reg {
+      background-color: var(--color-transparent);
+    }
+  }
+  @media (max-width: 1400px) {
+    .nav-radio-reg {
+      border-radius: 0;
+    }
   }
 }
-@media (hover: hover) and (pointer: fine) {
-  .notification-radio__elem:hover {
-    background-color: var(--color-violet);
-  }
-}
-@media (hover: none) {
-  .notification-radio__elem:active {
-    background-color: var(--color-violet);
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .notification-radio__elem:hover {
-    border-color: var(--color-violet);
-  }
-}
-@media (hover: none) {
-  .notification-radio__elem:active {
-    border-color: var(--color-violet);
-  }
-}
-@media (max-width: 992px) {
-  .notification-radio__elem {
-    text-wrap: nowrap;
-  }
-}
-.notification-radio__elem-active {
-  background-color: var(--color-violet);
-  border-color: var(--color-violet);
-  color: var(--color-white);
-}
-
 .order-card {
   border: 1.5px solid var(--color-gray-stroke);
   font-family: "Roboto";
@@ -3207,6 +3291,7 @@ nav.breadcrumb a:last-child {
     -webkit-transition: all ease-out 0.3s;
     transition: all ease-out 0.3s;
     padding: 0.6563rem 1rem;
+    background-color: var(--color-white);
   }
   @media (hover: hover) and (pointer: fine) {
     .form-select:hover {
@@ -3255,6 +3340,129 @@ nav.breadcrumb a:last-child {
     border-radius: 50px;
   }
 }
+@layer base {
+  .attention-block {
+    background-color: var(--color-red-light);
+    padding: 1rem;
+    font-family: "Roboto";
+    font-size: 1rem;
+    line-height: 1.3;
+    border-radius: 1.25rem;
+  }
+  .attention-block__icon {
+    color: var(--color-red-attention);
+    font-size: 1.5rem;
+  }
+  .attention-block__title, .attention-block__title * {
+    font-weight: 600;
+  }
+}
+.news-reg-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--color-gray-stroke);
+  border-color: var(--color-gray-stroke);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+@media screen and (max-width: 992px) {
+  .news-reg-card {
+    padding: 1rem;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .news-reg-card:hover {
+    border-color: transparent;
+    background-color: var(--color-gray-bg-illustr);
+  }
+}
+.news-reg-card__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.news-reg-card__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  max-width: 415px;
+}
+.news-reg-card__title {
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+.news-reg-card__date, .news-reg-card__text {
+  color: var(--color-gray-txt);
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.news-reg-card__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@layer component {
+  .accordion {
+    --bs-accordion-color: var(--color-black);
+    --bs-accordion-bg: var(--color-gray-bg-illustr);
+    --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--color-transparent);
+    --bs-accordion-border-width: 0;
+    --bs-accordion-border-radius: 15px;
+    --bs-accordion-inner-border-radius: 0;
+    --bs-accordion-btn-padding-x: 1.5rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: var(--color-black);
+    --bs-accordion-btn-bg: var(--color-transparent);
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23030303' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23030303' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+    --bs-accordion-btn-focus-box-shadow: 0;
+    --bs-accordion-body-padding-x: 1rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-active-color: var(--color-dark-violet);
+    --bs-accordion-active-bg: var(--color-gray-bg-illustr);
+  }
+  .accordion .accordion-body {
+    padding-top: 0;
+  }
+  .accordion .accordion-item {
+    border-radius: 15px;
+  }
+  .accordion .accordion-button {
+    font-family: "Exo 2";
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: var(--color-black);
+  }
+  .accordion .accordion-body {
+    font-family: "Roboto";
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}
 html {
   height: auto;
   scroll-behavior: smooth;
@@ -3300,16 +3508,19 @@ main {
 }
 
 @layer base {
-  main.main-page .container:not(:first-of-type) {
+  main.main-container .container:not(:first-of-type) {
     margin-top: 6.25rem;
   }
   @media screen and (max-width: 992px) {
-    main.main-page .container:not(:first-of-type) {
+    main.main-container .container:not(:first-of-type) {
       margin-top: 3.5rem;
     }
   }
   main .container:first-of-type:not(:has(.breadcrumb)) {
     margin-top: 2rem;
+  }
+  main.main-container:has(.breadcrumb) .container:nth-of-type(2) {
+    margin-top: 0;
   }
 }
 :root {
