@@ -189,3 +189,9 @@ $layer-modal: 4;
           border-radius: 0;
      }
 }
+
+.text-xl-nowrap{
+     @media #{$ui-tablet} {
+          text-wrap: nowrap;
+     }
+}

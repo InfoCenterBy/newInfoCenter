@@ -257,3 +257,31 @@
           }
      }
 }
+
+@layer base{
+     .ecp-circle{
+          width: 52px;
+          height: 52px;
+          display: grid;
+          place-items: center;
+          border-radius: 50%;
+     }
+}
+
+@layer base{
+     .reg-line{
+          width: 88%;
+          height: 1px;
+          background-image: url('../img/png/reg-center/reg-main-lines.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          position: absolute;
+          top: 42px;
+          left: 85px;
+          z-index: -1;
+          @media (max-width:1400px) {
+               width: 72%;
+               left: 164px;
+          }
+     }
+}

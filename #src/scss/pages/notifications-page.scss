@@ -68,35 +68,63 @@
 		}
 }
 
-.nav-radio{
-     &__elem{
-          font-size: 1.125rem;
-          line-height: 1.2;
-          font-family: $ff-exo;
-          border: 1px solid transparent;
-          border-radius: 6.25rem;
-          padding: .75rem 1.5rem;
-          @include transition($transition-3);
-          @media (max-width:992px) {
-               text-wrap: nowrap;
+@layer component{
+     .nav-radio{
+          &__elem{
+               font-size: 1.125rem;
+               line-height: 1.2;
+               font-family: $ff-exo;
+               border: 1px solid transparent;
+               border-radius: 6.25rem;
+               padding: .75rem 1.5rem;
+               @include transition($transition-3);
+          }
+          &__elem-lg{
+               @media (max-width:992px) {
+                    text-wrap: nowrap;
+               }
+          }
+          &__elem-xl{
+               @media (max-width:1200px) {
+                    text-wrap: nowrap;
+               }
+          }
+          &__elem-xxl{
+               @media (max-width:1400px) {
+                    text-wrap: nowrap;
+               }
+          }
+          &__elem-fill{
+               color: var(--color-white);
+               background-color: var(--color-violet);
+               @include hover('background-color', var(--color-violet-hover));
+          }
+          &__elem-empty{
+               color: var(--color-gray-txt);
+               border-color: var(--color-gray-stroke);
+               background-color: var(--color-white);
+               @include hover('color', var(--color-white));
+               @include hover('background-color', var(--color-violet));
+               @include hover('border-color', var(--color-violet));
+          }
+          &__elem-active{
+               background-color: var(--color-violet);
+               border-color: var(--color-violet);
+               color: var(--color-white);
           }
      }
-     &__elem-fill{
-          color: var(--color-white);
-          background-color: var(--color-violet);
-          @include hover('background-color', var(--color-violet-hover));
-     }
-     &__elem-empty{
-          color: var(--color-gray-txt);
-          border-color: var(--color-gray-stroke);
-          background-color: var(--color-white);
-          @include hover('color', var(--color-white));
-          @include hover('background-color', var(--color-violet));
-          @include hover('border-color', var(--color-violet));
-     }
-     &__elem-active{
-          background-color: var(--color-violet);
-          border-color: var(--color-violet);
-          color: var(--color-white);
+}
+
+@layer variation{
+     .nav-radio-reg{
+          background-color: var(--color-violet-light);
+          @media (max-width: 1400px) {
+               background-color: var(--color-transparent);
+          }
+          border-radius: 100px;
+          @media (max-width: 1400px) {
+               border-radius: 0;
+          }
+          
      }
 }
