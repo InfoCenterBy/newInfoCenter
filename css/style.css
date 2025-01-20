@@ -1369,7 +1369,6 @@ footer.footer {
   @media (hover: none) {
     button:focus, button:active {
       outline: 1px solid transparent;
-      border-radius: 0.25rem;
     }
   }
   .btn-base-style, .btn-default, .btn-empty, .btn-deny, .btn-round {
@@ -3463,6 +3462,44 @@ nav.breadcrumb a:last-child {
     line-height: 1.3;
   }
 }
+.file-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--color-gray-bg-illustr);
+  padding: 1rem 1.5rem;
+  color: var(--color-black);
+  border-radius: 0.9375rem;
+}
+@media screen and (max-width: 992px) {
+  .file-link {
+    padding: 1rem;
+  }
+}
+.file-link__icon {
+  color: var(--color-dark-violet);
+  font-size: 2rem;
+  line-height: 1;
+}
+.file-link__text {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.file-link__arrow {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-black);
+}
+
 html {
   height: auto;
   scroll-behavior: smooth;
