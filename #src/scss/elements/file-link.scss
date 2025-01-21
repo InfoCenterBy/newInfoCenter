@@ -1,0 +1,48 @@
+.file-link {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+	background-color: var(--color-gray-bg-illustr);
+	padding: 1rem 1.5rem;
+	color: var(--color-black);
+	@media #{$ui-tablet} {
+		padding: 1rem;
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+	border-radius: .9375rem;
+	@media #{$mouse-device} {
+		&:hover{
+			.file-link__arrow{
+				transform: rotate(45deg);
+			}
+			.file-link__arrow,.file-link__text{
+				color: var(--color-dark-violet);
+			}
+		}
+	}
+		&__icon {
+			color: var(--color-dark-violet);
+			font-size: 2rem;
+			line-height: 1;
+		}
+
+		&__text {
+			font-family: $ff-roboto;
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 1.3;
+			margin: 0 1.5rem 0 .75rem;
+			@media #{$ui-tablet} {
+				margin: 0;
+			}
+			@include transition($transition-2);
+		}
+
+		&__arrow {
+			font-size: 1.5rem;
+			line-height: 1;
+			color: var(--color-black);
+			@include transition($transition-2);
+		}
+}
