@@ -1,6 +1,9 @@
 @import './ui-comp/header';
 @import './ui-comp/footer';
 
+html:has(.ui-page){
+     overflow: auto;
+}
 
 .highlight-block {
      border-radius: 1.25rem;
@@ -283,5 +286,23 @@
                width: 72%;
                left: 164px;
           }
+     }
+}
+
+@layer component{
+     a:hover {
+     --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+     }
+}
+
+@layer base{
+     a{
+          @include transition($transition-3);
+     }
+}
+
+@layer base{
+     p{
+          font-family: $ff-roboto;
      }
 }

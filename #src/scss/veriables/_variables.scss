@@ -70,6 +70,10 @@ $colorsMap: (
           margin-top: 2rem;
      }
 
+     .mt-92{
+          margin-top: 5.75rem;
+     }
+
      .gap-12{
           gap: .75rem;
      }
@@ -196,4 +200,8 @@ $layer-modal: 4;
      @media #{$ui-tablet} {
           text-wrap: nowrap;
      }
+}
+
+.top-3{
+     top: 1rem;
 }

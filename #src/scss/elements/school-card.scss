@@ -9,7 +9,7 @@
      @media #{$mouse-device} {
           &:hover{
                border-color: var(--color-violet);
-               .school-card__title{
+               .school-card__title, .school-card__arrow{
                     color: var(--color-violet);
                }
                .school-card__arrow{
@@ -20,7 +20,7 @@
      @media #{$touch-device} {
           &:active{
                border-color: var(--color-violet);
-               .school-card__title{
+               .school-card__title, .school-card__arrow{
                     color: var(--color-violet);
                }
           }

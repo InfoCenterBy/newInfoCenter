@@ -56,4 +56,11 @@
      //           margin-top: 5.625rem;
      //      }
      // }
+     .success-record{
+          @media #{$ui-mobile} {
+               .modal-content{
+                    margin-top: 5.625rem;
+               }
+          }
+     }
 }

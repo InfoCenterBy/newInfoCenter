@@ -126,4 +126,9 @@
           @include transition($transition-3);
           @include hover('color', var(--color-black));
      }
+
+     .link-gray{
+          color: var(--color-gray-txt);
+          @include hover('color', var(--color-dark-violet));
+     }
 }

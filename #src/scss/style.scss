@@ -42,7 +42,7 @@ html{
      scroll-behavior: smooth;
      width: 100%;
      scrollbar-gutter: stable;
-     overflow-y: scroll;
+     overflow: auto;
 }
 html,
 body {
@@ -55,7 +55,7 @@ body{
      flex-direction: column;
      min-height: 100vh;
      background-color: var(--color-white);
-     overflow-y: scroll;
+     // overflow-y: scroll;
      color: var(--color-black);
 
 }
