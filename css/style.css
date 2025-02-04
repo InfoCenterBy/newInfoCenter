@@ -147,6 +147,10 @@
   }
 }
 
+.top-3 {
+  top: 1rem;
+}
+
 @layer component {
   .bg-black {
     background-color: #030303;
@@ -1159,6 +1163,10 @@ footer.footer {
   background-color: #FAF9FA;
   border-radius: 10px;
   padding: 6px;
+}
+
+html:has(.ui-page) {
+  overflow: auto;
 }
 
 .highlight-block {
@@ -3604,7 +3612,10 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   scrollbar-gutter: stable;
-  overflow-y: scroll;
+  overflow: auto;
+}
+html * {
+  font-family: "Triodion", serif !important;
 }
 
 html,
@@ -3624,7 +3635,6 @@ body {
           flex-direction: column;
   min-height: 100vh;
   background-color: var(--color-white);
-  overflow-y: scroll;
   color: var(--color-black);
 }
 

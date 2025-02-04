@@ -14,6 +14,11 @@
           crossorigin="anonymous"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Triodion&display=swap"
+          rel="stylesheet">
+
      <link rel="stylesheet" @@style-path />
      <link rel="stylesheet" href="css/style.css" />
      <title>ui</title>
@@ -22,7 +27,7 @@
 <body class="ui-page px-2 pt-1">
 
      <div class="d-flex flex-row align-items-start" id="app">
-          <div class="ui-nav border-1 border p-2 d-none d-md-block mt-5 sticky-top z-3 bg-white">
+          <div class="ui-nav border-1 border p-2 d-none d-md-block mt-5 sticky-top z-3 bg-white overflow-auto top-3">
                <nav class="">
                     <ol>  
                          <li v-for="(value, key) in uiElem" :key="key">
