@@ -1,0 +1,19 @@
+<div class="container">
+     <!-- @@include('../html-comp/_script-file.html', {'src-path': link}) -->
+     <script src=></script>
+     <script type="text/javascript">
+          ymaps.ready(function () {
+               // Указывается идентификатор HTML-элемента.
+               var moscow_map = new ymaps.Map("first_map", {
+                    center: [53.902735, 27.555696],
+                    zoom: 12
+               });
+               // Ссылка на элемент.
+               // var piter_map = new ymaps.Map(document.getElementsByTagName('p')[2], {
+               //      center: [59.94, 30.32],
+               //      zoom: 9
+               // });
+          });
+     </script>
+     <div id="first_map" style="width:100%; height:752px"></div>
+</div>
