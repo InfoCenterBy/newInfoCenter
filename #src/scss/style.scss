@@ -2,8 +2,9 @@
 //! imports
 @import url('./bootstrap.min.css') layer(vendor);
 @import url('./swiper-bundle.min.css') layer(vendor);
-@import url('./exo-2.scss');
-@import url('./font-roboto.scss');
+@import url('./font-exo-2.css');
+@import url('./font-roboto.css');
+@import url('./bootstrap-icons.css');
 @import './veriables/variables';
 @import './functional/_mixins.scss';
 @import './veriables/veriables-mix';

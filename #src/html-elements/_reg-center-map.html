@@ -1,19 +1,310 @@
 <div class="container">
      <!-- @@include('../html-comp/_script-file.html', {'src-path': link}) -->
-     <script src=></script>
-     <script type="text/javascript">
-          ymaps.ready(function () {
-               // Указывается идентификатор HTML-элемента.
-               var moscow_map = new ymaps.Map("first_map", {
+     <!-- <div class="map-cards"></div> -->
+     <script src=""></script>
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+     <div id="app">
+          <div class="d-flex flex-row flex-wrap gap-3 nav-radio" id="mapRegion">
+               <!-- nav-radio__elem-active -->
+               <button
+                    class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty nav-radio__elem-all">
+                    <span>Все</span>
+               </button>
+               <!-- <template v-for="(el, index) in uniqueCities">
+                    <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">{{el}}</button>
+               </template> -->
+               
+          </div>
+          <div id="contact_map" style="width:100%; height:752px"></div>
+     </div>
+     <script>
+          const { createApp, ref } = Vue
+
+          createApp({
+               data(){
+                    return{
+                         groups:[
+                              {
+                                   name: "Минск",
+                                   style: "islands#violetGovernmentIcon",
+                                   items: [
+                                        {
+                                             center: [53.91373, 27.574237],
+                                             // name: "Минск, проспект Машерова, 7"
+                                             name: "ИМНС по Центральному району",
+                                             contacts: {
+                                                  adress: 'Минск, проспект Машерова, 7',
+                                                  tel: '+375 (17) 269-19-19',
+                                                  fax: '+375 (17) 269-19-43',
+                                                  email: 'support@ca.info-center.by',
+                                             },
+                                             workTime: {},
+                                             status: {
+                                                  active: true,
+                                                  text: 'Функционирует согласно режиму работы'
+                                             }
+                                        },
+                                        {
+                                             center: [53.897191, 27.494987],
+                                             name: "ИМНС по Фрунзенскому району №2"
+                                        },
+                                   ]
+                              },
+                              {
+                                   name: "Слуцк",
+                                   style: "islands#violetGovernmentIcon",
+                                   items: [
+                                        {
+                                             center: [53.02264, 27.558256],
+                                             // name: "Минск, проспект Машерова, 7"
+                                             name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                                             contacts: {
+                                                  adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                                                  tel: '+375(17) 952 49 92',
+                                                  fax: '',
+                                                  email: '',
+                                             },
+                                             workTime: {},
+                                             status: {
+                                                  active: true,
+                                                  text: 'Функционирует согласно режиму работы'
+                                             }
+                                        },
+                                   ]
+                              },
+                         ],
+                         // cityList: []
+                    }
+               },
+               computed:{
+                    uniqueCities(){
+                         const citySet = new Set()
+
+                         this.groups.forEach(el => {
+                              if(el.name){
+                                   citySet.add(el.name)
+                              }
+                         });
+                         
+                         return Array.from(citySet)
+                         // console.log(this.cityList)
+                    }
+               },
+               methods:{
+                    init() {
+                         // Создание экземпляра карты.
+                         var myMap = new ymaps.Map('contact_map', {
+                              center: [53.902735, 27.555696],
+                              zoom: 12,
+                              // controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'routeButtonControl']
+                              controls: ['zoomControl', 'routeButtonControl']
+                         }),
+                         // Контейнер для меню.
+                         menu = $('#app .nav-radio');
+                         menuCards = $('<div class="map-cards"></div>')
+                         
+                         for(var i = 0, l = this.groups.length; i<l; i++) {
+                              createMenuGroup(this.groups[i]);
+                         }
+
+                         function createMenuGroup(group) {
+                              // Пункт меню.
+                              var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
+                                   // Коллекция для геообъектов группы.
+                                   collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
+                                   // Контейнер для подменю.
+                                   submenu = $('<div class="map-cards-submenu"></div>');
+
+                              // Добавляем пункт меню.
+                              menuItem.appendTo(menu);
+
+                              // Добавляем подменю.
+                              submenu.appendTo(menuCards);
+
+                              // Создаем подменю для группы.
+                              for (var j = 0, m = group.items.length; j < m; j++) {
+                                   createSubMenu(group.items[j], collection, submenu);
+                              }
+
+                              // При старте: все geoObjects добавляются, submenu показываются.
+                              myMap.geoObjects.add(collection);
+                              submenu.show();
+
+                              // Обработчик клика.
+                              menuItem.on('click', function () {
+                                   // Убираем active-класс у всех элементов, скрываем их подменю и удаляем их geoObjects.
+                                   $('.nav-radio__elem').removeClass('nav-radio__elem-active');
+                                   $('.map-cards-submenu').hide();
+                                   myMap.geoObjects.removeAll();
+
+                                   // Назначаем active-класс текущему элементу.
+                                   $(this).addClass('nav-radio__elem-active');
+
+                                   // Добавляем geoObjects и показываем подменю.
+                                   myMap.geoObjects.add(collection);
+                                   submenu.show();
+                              });
+
+                         }
+
+                         function createSubMenu(item, collection, submenu) {
+                              // Пункт подменю.
+                              var submenuItem = $('<div class="map-cards__item"><span>' + item.name + '</span></div>'),
+                                   // Создаем метку.
+                                   placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
+
+                              // Добавляем метку в коллекцию.
+                              collection.add(placemark);
+                              // Добавляем пункт в подменю.
+                              submenuItem
+                                   .appendTo(submenu)
+                                   // При клике по пункту подменю открываем/закрываем баллун у метки.
+                                   .find('span')
+                                   .bind('click', function () {
+                                        if (!placemark.balloon.isOpen()) {
+                                             placemark.balloon.open();
+                                        } else {
+                                             placemark.balloon.close();
+                                        }
+                                        return false;
+                                   });
+                         }
+
+                         // Добавляем меню в тэг BODY.
+                         menu.appendTo($('body #mapRegion'));
+                         menuCards.appendTo($('body #contact_map'));
+                         // Выставляем масштаб карты чтобы были видны все группы.
+                         // myMap.setBounds(myMap.geoObjects.getBounds());
+                    },
+               },
+               created(){},
+               mounted(){
+                    document.querySelector('#app .nav-radio__elem-all').classList.add('nav-radio__elem-active')
+
+                    ymaps.ready(this.init)
+               }
+          }).mount('#app')
+     </script>
+     <!-- <script type="text/javascript">
+          // ymaps.ready(function () {
+          //      // Указывается идентификатор HTML-элемента.
+          //      var moscow_map = new ymaps.Map("contact_map", {
+          //           center: [53.902735, 27.555696],
+          //           zoom: 12
+          //      });
+          //      // Ссылка на элемент.
+          //      // var piter_map = new ymaps.Map(document.getElementsByTagName('p')[2], {
+          //      //      center: [59.94, 30.32],
+          //      //      zoom: 9
+          //      // });
+          // });
+          var groups = [
+                    {
+                         name: "Минск",
+                         style: "islands#violetGovernmentIcon",
+                         items: [
+                              {
+                                   center: [53.91373, 27.574237],
+                                   // name: "Минск, проспект Машерова, 7"
+                                   name: "ИМНС по Центральному району",
+                                   contacts:{
+                                        adress: 'Минск, проспект Машерова, 7',
+                                        tel: '',
+                                        fax: '',
+                                        email:'',
+                                   },
+                                   workTime:{},
+                                   status:{
+                                        active: true,
+                                        text: ''
+                                   }
+                              },
+                              {
+                                   center: [53.897191, 27.494987],
+                                   name: "ИМНС по Фрунзенскому району №2"
+                              },
+                         ]
+                    },
+               ]
+          ymaps.ready(init);
+          function init() {
+               
+               // Создание экземпляра карты.
+               var myMap = new ymaps.Map('contact_map', {
                     center: [53.902735, 27.555696],
                     zoom: 12
-               });
-               // Ссылка на элемент.
-               // var piter_map = new ymaps.Map(document.getElementsByTagName('p')[2], {
-               //      center: [59.94, 30.32],
-               //      zoom: 9
-               // });
-          });
-     </script>
-     <div id="first_map" style="width:100%; height:752px"></div>
+               }),
+                    // Контейнер для меню.
+                    menu = $('<div class="map-region"></div>');
+                    menuCards = $('<div class="map-cards"></div>')
+
+               for (var i = 0, l = groups.length; i < l; i++) {
+                    createMenuGroup(groups[i]);
+               }
+
+               function createMenuGroup(group) {
+                    // Пункт меню.
+                    var menuItem = $('<div class=""><span>' + group.name + '</span></div>'),
+                         // Коллекция для геообъектов группы.
+                         collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
+                         // Контейнер для подменю.
+                         submenu = $('<div class="map-cards-submenu"></div>');
+
+                    // Добавляем коллекцию на карту.
+                    myMap.geoObjects.add(collection);
+                    // Добавляем подменю.
+                    menuItem
+                         // .append(submenu)
+                         // Добавляем пункт в меню.
+                         .appendTo(menu)
+                         // По клику удаляем/добавляем коллекцию на карту и скрываем/отображаем подменю.
+                         .find('span')
+                         .bind('click', function () {
+                              if (collection.getParent()) {
+                                   myMap.geoObjects.remove(collection);
+                                   submenu.hide();
+                                   menuItem.toggleClass('active')
+                              } else {
+                                   myMap.geoObjects.add(collection);
+                                   submenu.show();
+                                   menuItem.toggleClass('active')
+                              }
+                         });
+                    submenu.append(submenu)
+                    .appendTo(menuCards)
+                    for (var j = 0, m = group.items.length; j < m; j++) {
+                         createSubMenu(group.items[j], collection, submenu);
+                    }
+               }
+
+               function createSubMenu(item, collection, submenu) {
+                    // Пункт подменю.
+                    var submenuItem = $('<div class="map-cards__item"><span>' + item.name + '</span></div>'),
+                         // Создаем метку.
+                         placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
+
+                    // Добавляем метку в коллекцию.
+                    collection.add(placemark);
+                    // Добавляем пункт в подменю.
+                    submenuItem
+                         .appendTo(submenu)
+                         // При клике по пункту подменю открываем/закрываем баллун у метки.
+                         .find('span')
+                         .bind('click', function () {
+                              if (!placemark.balloon.isOpen()) {
+                                   placemark.balloon.open();
+                              } else {
+                                   placemark.balloon.close();
+                              }
+                              return false;
+                         });
+               }
+
+               // Добавляем меню в тэг BODY.
+               menu.appendTo($('body #contact_map'));
+               menuCards.appendTo($('body #contact_map'));
+               // Выставляем масштаб карты чтобы были видны все группы.
+               myMap.setBounds(myMap.geoObjects.getBounds());
+          }
+     </script> -->
 </div>

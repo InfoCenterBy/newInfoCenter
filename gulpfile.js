@@ -15,7 +15,7 @@ let path = {
 	src: {
 		html: [source_folder + '/**/*.html', '!' + source_folder + '/_*.html'],
 		css: source_folder + '/scss/**/*.scss',
-		js: source_folder + '/js/script.js',
+		js: source_folder + '/js/**/*.js',
 		img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
 		fonts: source_folder + '/fonts/*.ttf',
 		audio: source_folder + '/audio/*.mp3',
@@ -64,6 +64,7 @@ function html() {
 			fileinclude({
 				context: {
 					link: 1,
+					mapAPI: 'test',
 				},
 			})
 		)
@@ -101,17 +102,19 @@ function css() {
 }
 
 function js() {
-	return src(path.src.js)
-		.pipe(fileinclude())
-		.pipe(dest(path.build.js))
-		.pipe(uglify())
-		.pipe(
-			rename({
-				extname: '.min.js',
-			})
-		)
-		.pipe(dest(path.build.js))
-		.pipe(browsersync.stream());
+	return (
+		src(path.src.js)
+			.pipe(fileinclude())
+			.pipe(dest(path.build.js))
+			// .pipe(uglify())
+			// .pipe(
+			// 	rename({
+			// 		extname: '.min.js',
+			// 	})
+			// )
+			.pipe(dest(path.build.js))
+			.pipe(browsersync.stream())
+	);
 }
 
 function images() {
@@ -164,10 +167,8 @@ gulp.task('svgSprite', function () {
 });
 
 gulp.task('deploy', function () {
-	return gulp.src('./skta/**/*').pipe(deploy());
+	return gulp.src('./newiInfoCenter/**/*').pipe(deploy());
 });
-
-function cb() {}
 
 function watchFiles(params) {
 	gulp.watch([path.watch.html], html);
