@@ -10,12 +10,16 @@
                     class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty nav-radio__elem-all">
                     <span>Все</span>
                </button>
-               <!-- <template v-for="(el, index) in uniqueCities">
-                    <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">{{el}}</button>
-               </template> -->
                
           </div>
-          <div id="contact_map" style="width:100%; height:752px"></div>
+          <div class="position-relative" >
+               <div class="" id="mapCards">
+                    <div class="map-cards">
+                    </div>
+               </div>
+          </div>
+          <div id="contact_map" class="mt-4" style="width:100%; height:752px"></div>
+     </div>
      </div>
      <script>
           const { createApp, ref } = Vue
@@ -38,15 +42,28 @@
                                                   fax: '+375 (17) 269-19-43',
                                                   email: 'support@ca.info-center.by',
                                              },
-                                             workTime: {},
+                                             workTime: 'пн-чт: 8.45-18.00 <br> пт: 8.45-16.45 <br> перерыв: 13.00-14.00 <br> сб-вс: выходной',
                                              status: {
                                                   active: true,
                                                   text: 'Функционирует согласно режиму работы'
-                                             }
+                                             },
+                                             comment: '<strong>Прием осуществляется по предварительной записи</strong>, телефон <a href="tel:+375(17)269-19-19" class="color-dark-violet">+375 17 269 19 19</a> <br>В свободное от предварительной записи время прием ведется посредством системы «Электронная очередь»'
                                         },
                                         {
                                              center: [53.897191, 27.494987],
-                                             name: "ИМНС по Фрунзенскому району №2"
+                                             name: "ИМНС по Фрунзенскому району №2",
+                                             contacts:{
+                                                  adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
+                                                  tel: '+375 (17) 269-19-19',
+                                                  fax: '+375 (17) 323-25-94',
+                                                  email: ''
+                                             },
+                                             workTime: '',
+                                             status: {
+                                                  active: true,
+                                                  text: 'Функционирует согласно режиму работы'
+                                             },
+                                             comment:''
                                         },
                                    ]
                               },
@@ -70,10 +87,26 @@
                                                   text: 'Функционирует согласно режиму работы'
                                              }
                                         },
+                                        {
+                                             center: [53.02264, 28.558256],
+                                             // name: "Минск, проспекулт Машерова, 7"
+                                             name: "г.sdfsdf23609",
+                                             contacts: {
+                                                  adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                                                  tel: '+375(17) 952 49 92',
+                                                  fax: '',
+                                                  email: '',
+                                             },
+                                             workTime: {},
+                                             status: {
+                                                  active: false,
+                                                  text: 'Функционирует согласно режиму работы'
+                                             }
+                                        },
                                    ]
                               },
                          ],
-                         // cityList: []
+                         cityList: [],
                     }
                },
                computed:{
@@ -101,7 +134,7 @@
                          }),
                          // Контейнер для меню.
                          menu = $('#app .nav-radio');
-                         menuCards = $('<div class="map-cards"></div>')
+                         menuCards = $('#app .map-cards')
                          
                          for(var i = 0, l = this.groups.length; i<l; i++) {
                               createMenuGroup(this.groups[i]);
@@ -145,11 +178,46 @@
                                    submenu.show();
                               });
 
+                              $('#app .nav-radio__elem-all').on('click', ()=>{
+                                   $('.nav-radio__elem').removeClass('nav-radio__elem-active');
+                                   $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active');
+                                   myMap.geoObjects.add(collection);
+                                   submenu.show();
+                              })
+
                          }
 
                          function createSubMenu(item, collection, submenu) {
                               // Пункт подменю.
-                              var submenuItem = $('<div class="map-cards__item"><span>' + item.name + '</span></div>'),
+                              console.log(item);
+                              
+                              // ${item.workTime }
+                              var submenuItem = $(`
+                                                  <div class="map-cards-item">
+                                                       <strong class="d-block map-cards-item__title">
+                                                            ${item.contacts?.adress} (${item.name})
+                                                       </strong>
+                                                       <div class="d-flex flex-column gap-2">
+                                                            <div class=" d-flex flex-row align-items-center gap-1 mt-12">
+                                                                 <strong>Статус</strong>
+                                                                 <div class="map-cards-item__status ${item.status.active ? "map-cards-item__status-active" : "map-cards-item__status-disabled"}">
+                                                                      <span>${item.status.text}</span>
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                 <div class="col-lg-6 d-flex flex-column">
+                                                                      <strong>Режим работы</strong>
+                                                                 </div>
+                                                                 <div class="col-lg-6 d-flex flex-column gap-2">
+                                                                      <strong>Контакты</strong>
+                                                                      <span>тел: ${item.contacts?.tel || "Не указан"}</span>
+                                                                      <span>факс: ${item.contacts?.fax || "Не указан"}</span>
+                                                                      <span>электронная почта: <br> <span class="color-dark-violet">${item.contacts?.email || "Не указана"}</span></span>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                                  `),
                                    // Создаем метку.
                                    placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
 
@@ -159,7 +227,7 @@
                               submenuItem
                                    .appendTo(submenu)
                                    // При клике по пункту подменю открываем/закрываем баллун у метки.
-                                   .find('span')
+                                   .find('div')
                                    .bind('click', function () {
                                         if (!placemark.balloon.isOpen()) {
                                              placemark.balloon.open();
@@ -172,7 +240,7 @@
 
                          // Добавляем меню в тэг BODY.
                          menu.appendTo($('body #mapRegion'));
-                         menuCards.appendTo($('body #contact_map'));
+                         menuCards.appendTo($('body #mapCards'));
                          // Выставляем масштаб карты чтобы были видны все группы.
                          // myMap.setBounds(myMap.geoObjects.getBounds());
                     },

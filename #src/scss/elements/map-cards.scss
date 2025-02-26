@@ -1,0 +1,83 @@
+.map-cards{
+     
+     padding: .5rem;
+     overflow-y: auto;
+     overflow-x: hidden;
+     height: 640px;
+     max-width: 600px;
+     width: 100%;
+     display: flex; 
+     flex-direction: column;
+     gap: 1rem;
+     scrollbar-gutter: stable;
+     .map-cards-item{
+     }
+     .map-cards-item{
+          border: 1px solid var(--color-transparent);
+          border-color: var(--color-gray-stroke);
+          @include transition($transition-3);
+          border-radius: 20px;
+          padding: 1rem;
+          cursor: pointer;
+          font-family: $ff-roboto;
+          @media #{$mouse-device} {
+               &:hover{
+                    border-color: var(--color-violet);
+                    .map-cards-item__title{
+                         color: var(--color-dark-violet);
+                    }
+               }
+          }
+          @media #{$touch-device} {
+               &:active{
+                    border-color: var(--color-violet);
+                    .map-cards-item__title{
+                         color: var(--color-dark-violet);
+                    }
+               }
+          }
+          &__title {
+               font-family: $ff-exo;
+               font-size: 1.125rem;
+		} 
+          &__status{
+               border-radius: 100px;
+               background-color: transparent;
+               padding: .25rem .75rem;
+               &-active{
+                    color: var(--color-green-success);
+                    background-color: var(--color-green-light);
+               }
+               &-disabled{
+                    color: var(--color-red-attention);
+                    background-color: var(--color-red-light);
+               }
+          }
+     }
+
+     .map-cards-submenu{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+     }
+}
+
+@layer component{
+     #contact_map{
+          overflow: hidden;
+          border-radius: 30px;
+     }
+     #mapCards{
+          background-color: var(--color-white);
+          border: 1px solid var(--color-gray-stroke);
+          border-radius: 30px;
+          max-width: 600px;
+          width: 100%;
+          height: 668px;
+          position: absolute;
+          top: 68px;
+          left: 46px;
+          z-index: 9999;
+          padding: 1rem .5rem;
+     }
+}
