@@ -306,3 +306,9 @@ html:has(.ui-page){
           font-family: $ff-roboto;
      }
 }
+
+@layer base{
+     .h-0{
+          height: 0;
+     }
+}
