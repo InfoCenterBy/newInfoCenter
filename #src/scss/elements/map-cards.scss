@@ -48,7 +48,17 @@
                font-family: $ff-exo;
                font-size: 1.125rem;
 		} 
-          &__status{
+          
+     }
+     .map-cards-submenu{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+     }
+}
+
+.map-cards-item{
+     &__status{
                border-radius: 100px;
                background-color: transparent;
                padding: .25rem .75rem;
@@ -61,13 +71,6 @@
                     background-color: var(--color-red-light);
                }
           }
-     }
-
-     .map-cards-submenu{
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-     }
 }
 
 @layer component{

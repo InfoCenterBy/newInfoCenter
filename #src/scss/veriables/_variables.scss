@@ -127,6 +127,10 @@ $touch-device: '(hover: none)';
 $ui-mobile: 'screen and (max-width: 768px)'; //md
 $ui-tablet: 'screen and (max-width: 992px)'; //lg
 $ui-laptop: 'screen and (max-width: 1200px)'; //xl
+$ui-bs-md: 'screen and (min-width: 768px)'; //md
+$ui-bs-lg: 'screen and (min-width: 992px)'; //lg
+$ui-bs-xl: 'screen and (min-width: 1200px)'; //xl
+$ui-bs-xxl: 'screen and (min-width: 1400px)'; //xxl
 
 // *! z-indexs* 
 $layer-back: -1;
@@ -198,7 +202,19 @@ $layer-modal: 4;
 
 .text-xl-nowrap{
      @media #{$ui-tablet} {
-          text-wrap: nowrap;
+          white-space: nowrap !important;
+     }
+}
+
+.ws-xl-nowrap{
+     @media #{$ui-bs-xl} {
+          white-space: nowrap;
+     }
+}
+
+.ws-xxl-nowrap{
+     @media #{$ui-bs-xxl} {
+          white-space: nowrap;
      }
 }
 
