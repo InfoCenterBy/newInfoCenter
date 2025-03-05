@@ -3720,19 +3720,6 @@ nav.breadcrumb a:last-child {
   font-family: "Exo 2";
   font-size: 1.125rem;
 }
-.map-cards .map-cards-item__status {
-  border-radius: 100px;
-  background-color: transparent;
-  padding: 0.25rem 0.75rem;
-}
-.map-cards .map-cards-item__status-active {
-  color: var(--color-green-success);
-  background-color: var(--color-green-light);
-}
-.map-cards .map-cards-item__status-disabled {
-  color: var(--color-red-attention);
-  background-color: var(--color-red-light);
-}
 .map-cards .map-cards-submenu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3742,6 +3729,20 @@ nav.breadcrumb a:last-child {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1rem;
+}
+
+.map-cards-item__status {
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 0.25rem 0.75rem;
+}
+.map-cards-item__status-active {
+  color: var(--color-green-success);
+  background-color: var(--color-green-light);
+}
+.map-cards-item__status-disabled {
+  color: var(--color-red-attention);
+  background-color: var(--color-red-light);
 }
 
 @layer component {

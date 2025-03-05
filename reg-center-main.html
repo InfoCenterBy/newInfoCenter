@@ -6,12 +6,11 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="format-detection" content="telephone=no" />
      <meta property="og:image" content="../img/png/logo-header.png" />
-     <meta name="description" content="Практическая конференция">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <meta name="description" content="Республиканское унитарное предприятие «Информационно-издательский центр по налогам и сборам»">
+     <script src="./js/bootstrap.bundle.min.js"></script>
+     <script src="./js/jquery.js"></script>
+     <link rel="stylesheet" href="">
+     <script src="./js/swiper-bundle.min.js"></script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Triodion&display=swap"
@@ -1401,7 +1400,7 @@
                          <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" :class="[activeTab == 1 ? 'nav-radio__elem-active' : '']" @click="changeTab(1)">
                               <span>На карте</span>
                          </button>
-                         <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" :class="[activeTab == 2 ? 'nav-radio__elem-active' : '']" @click="changeTab(2)">
+                         <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" :class="[activeTab == 2 ? 'nav-radio__elem-active' : '']" @click="changeTab(2)" v-if="isLargeScreen">
                               <span>Таблица</span>
                          </button>
                     </div>
@@ -1416,39 +1415,46 @@
                </div>
                <div id="contact_map" class="mt-3" style="width:100%; height:754px"></div>
           </div>
-          <div v-if="activeTab == 2">
-               <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto">
-                    <tr class="bg-gray-bg-illustr">
-                         <td colspan="2" class="px-2 py-3">
-                              <strong>Контакты</strong> 
-                         </td>
-                         <td class="px-2 py-3">
-                              <strong>Режим работы</strong>
-                         </td>
-                         <td colspan="3" class="px-2 py-3">
-                              <strong>Статус</strong> 
-                         </td>
-                         <td colspan="2" class="px-2 py-3">
-                              <strong>Комментарий</strong> 
-                         </td>
-                    </tr>
-                    <tr v-for="item in filteredTableItems">
-                         <td colspan="2" class="px-2 py-3">
-                              {{item.contacts?.adress}} ({{item.name}}) <br>
-                              <span v-if="item.contacts.tel">тел: {{item.contacts.tel}}</span> <br>
-                              <span v-if="item.contacts.fax">факс: {{item.contacts.fax}}</span> <br>
-                              <span v-if="item.contacts.email">email: {{item.contacts.email}}</span> <br>
-                         </td>
-                         <td class="px-2 py-3">
-                              <span v-if="item.workTime != 0" v-html="item.workTime"></span>
-                         </td>
-                         <td colspan="3" class="px-2 py-3">
-                              <span class="ws-xxl-nowrap">{{item.status.text}}</span>
-                         </td>
-                         <td colspan="2" class="px-2 py-3">
-                              <span  v-if="item.comment != 0" v-html="item.comment"></span>
-                         </td>
-                    </tr>
+          <div v-if="activeTab == 2 && isLargeScreen">
+               <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
+                    <thead>
+                         <tr class="bg-gray-bg-illustr">
+                              <td colspan="2" class="px-2 py-3">
+                                   <strong>Контакты</strong>
+                              </td>
+                              <td colspan="2" class="px-2 py-3">
+                                   <strong>Режим работы</strong>
+                              </td>
+                              <td colspan="3" class="px-2 py-3">
+                                   <strong>Статус</strong>
+                              </td>
+                              <td colspan="2" class="px-2 py-3">
+                                   <strong>Комментарий</strong>
+                              </td>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr v-for="item in filteredTableItems" class="border-bottom">
+                              <td colspan="2" class="px-2 py-3">
+                                   {{item.contacts?.adress}} ({{item.name}}) <br>
+                                   <span v-if="item.contacts.tel">тел: {{item.contacts.tel}}</span> <br>
+                                   <span v-if="item.contacts.fax">факс: {{item.contacts.fax}}</span> <br>
+                                   <span v-if="item.contacts.email">email: {{item.contacts.email}}</span> <br>
+                              </td>
+                              <td colspan="2" class="px-2 py-3">
+                                   <span v-if="item.workTime != 0" v-html="item.workTime"></span>
+                              </td>
+                              <td colspan="3" class="px-2 py-3">
+                                   <div class="map-cards-item__status text-center"
+                                        :class="[item.status.active ? 'map-cards-item__status-active' : 'map-cards-item__status-disabled']">
+                                        <span class="text-wrap text-center">{{item.status.text}}</span>
+                                   </div>
+                              </td>
+                              <td colspan="3" class="px-2 py-3">
+                                   <span v-if="item.comment != 0" v-html="item.comment"></span>
+                              </td>
+                         </tr>
+                    </tbody>
                </table>
           </div>
      </div>
@@ -1542,7 +1548,8 @@
                          cityList: [],
                          activeTab: 1,
                          filteredTableItems: [],
-                         filteredTerms: ''
+                         filteredTerms: '',
+                         isLargeScreen: window.innerWidth > 1090
                     }
                },
                computed:{
@@ -1570,11 +1577,11 @@
                               controls: ['zoomControl', 'routeButtonControl']
                          }),
                          // Контейнер для меню.
-                         menu = $('#app .nav-radio#mapRegion');
+                         menu = $('#app .nav-radio#mapRegion')
                          menuCards = $('#app .map-cards')
 
                                                   for(var i = 0, l = this.groups.length; i<l; i++) {
-                              createMenuGroup(this.groups[i]);
+                              createMenuGroup(this.groups[i])
                          }
 
                          function createMenuGroup(group) {
@@ -1585,43 +1592,43 @@
                                    // Коллекция для геообъектов группы.
                                    collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
                                    // Контейнер для подменю.
-                                   submenu = $('<div class="map-cards-submenu"></div>');
+                                   submenu = $('<div class="map-cards-submenu"></div>')
 
                               // Добавляем пункт меню.
-                              menuItem.appendTo(menu);
+                              menuItem.appendTo(menu)
 
                               // Добавляем подменю.
-                              submenu.appendTo(menuCards);
+                              submenu.appendTo(menuCards)
 
                               // Создаем подменю для группы.
                               for (var j = 0, m = group.items.length; j < m; j++) {
-                                   createSubMenu(group.items[j], collection, submenu);
+                                   createSubMenu(group.items[j], collection, submenu)
                               }
 
                               // При старте: все geoObjects добавляются, submenu показываются.
-                              myMap.geoObjects.add(collection);
-                              submenu.show();
+                              myMap.geoObjects.add(collection)
+                              submenu.show()
 
                               // Обработчик клика.
                               menuItem.on('click', function () {
                                    // Убираем active-класс у всех элементов, скрываем их подменю и удаляем их geoObjects.
-                                   $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active');
-                                   $('.map-cards-submenu').hide();
-                                   myMap.geoObjects.removeAll();
+                                   $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
+                                   $('.map-cards-submenu').hide()
+                                   myMap.geoObjects.removeAll()
 
                                    // Назначаем active-класс текущему элементу.
-                                   $(this).addClass('nav-radio__elem-active');
+                                   $(this).addClass('nav-radio__elem-active')
 
                                    // Добавляем geoObjects и показываем подменю.
-                                   myMap.geoObjects.add(collection);
-                                   submenu.show();
+                                   myMap.geoObjects.add(collection)
+                                   submenu.show()
                               });
 
                               $('#app #mapRegion .nav-radio__elem-all').on('click', ()=>{
-                                   $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active');
-                                   $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active');
-                                   myMap.geoObjects.add(collection);
-                                   submenu.show();
+                                   $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
+                                   $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active')
+                                   myMap.geoObjects.add(collection)
+                                   submenu.show()
                               })
 
                          }
@@ -1662,10 +1669,10 @@
                                                   </div>
                                                   `),
                                    // Создаем метку.
-                                   placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
+                                   placemark = new ymaps.Placemark(item.center, { balloonContent: item.name })
 
                               // Добавляем метку в коллекцию.
-                              collection.add(placemark);
+                              collection.add(placemark)
                               // Добавляем пункт в подменю.
                               submenuItem
                                    .appendTo(submenu)
@@ -1673,11 +1680,11 @@
                                    .find('div')
                                    .bind('click', function () {
                                         if (!placemark.balloon.isOpen()) {
-                                             placemark.balloon.open();
+                                             placemark.balloon.open()
                                         } else {
-                                             placemark.balloon.close();
+                                             placemark.balloon.close()
                                         }
-                                        return false;
+                                        return false
                                    });
                          }
 
@@ -1701,24 +1708,29 @@
                          const nameList = document.querySelectorAll('#app #mapRegion .nav-radio__elem:not(:first-child)')
                          nameList.forEach(element => {
                               element.remove()
-                         });
+                         })
                     },
                     filterTable(name) {
                          if (name != '') {
                               this.filteredTerms = name
                               // Находим группу с соответствующим именем
-                              const group = this.groups.find(group => group.name === name);
+                              const group = this.groups.find(group => group.name === name)
                               // Если группа найдена, возвращаем её items, иначе пустой массив
-                              return group ? this.filteredTableItems = group.items : this.filteredTableItems = [];
+                              return group ? this.filteredTableItems = group.items : this.filteredTableItems = []
                          } else {
                               this.filteredTerms = ''
                               // Если name не указан, возвращаем все items из всех групп
-                              return this.filteredTableItems = this.groups.reduce((acc, group) => acc.concat(group.items), []);
+                              return this.filteredTableItems = this.groups.reduce((acc, group) => acc.concat(group.items), [])
                          }
+                    },
+                    handleResize() {
+                         this.isLargeScreen = window.innerWidth > 1090
                     }
                     // filterTable(name){}
                },
-               created(){},
+               created(){
+                    window.addEventListener('resize', this.handleResize)
+               },
                mounted(){
                     ymaps.ready(this.init)
                }
