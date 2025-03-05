@@ -222,3 +222,21 @@ $layer-modal: 4;
 .top-3{
      top: 1rem;
 }
+
+@layer component {
+     .px-lg-100{
+          @media #{$ui-bs-lg} {
+               padding-right: 6.25rem !important;
+               padding-left: 6.25rem !important;
+          }
+     }
+}
+
+
+@layer component {
+     .fs-lg-14{
+          @media #{$ui-bs-lg} {
+               font-size: .875rem;
+          }
+     }
+}
