@@ -127,6 +127,7 @@ $touch-device: '(hover: none)';
 $ui-mobile: 'screen and (max-width: 768px)'; //md
 $ui-tablet: 'screen and (max-width: 992px)'; //lg
 $ui-laptop: 'screen and (max-width: 1200px)'; //xl
+$ui-bs-sm: 'screen and (min-width: 576px)'; //sm
 $ui-bs-md: 'screen and (min-width: 768px)'; //md
 $ui-bs-lg: 'screen and (min-width: 992px)'; //lg
 $ui-bs-xl: 'screen and (min-width: 1200px)'; //xl
