@@ -165,6 +165,21 @@
 }
 
 @layer component {
+  @media screen and (min-width: 992px) {
+    .px-lg-100 {
+      padding-right: 6.25rem !important;
+      padding-left: 6.25rem !important;
+    }
+  }
+}
+@layer component {
+  @media screen and (min-width: 992px) {
+    .fs-lg-14 {
+      font-size: 0.875rem;
+    }
+  }
+}
+@layer component {
   .bg-black {
     background-color: #030303 !important;
   }
@@ -192,6 +207,9 @@
     }
   }
   .border-1-5-black {
+    border: 1.5px solid #030303;
+  }
+  .border-1-color-black {
     border: 1.5px solid #030303;
   }
   .border-color-black {
@@ -226,6 +244,9 @@
   .border-1-5-white {
     border: 1.5px solid #FBFBFB;
   }
+  .border-1-color-white {
+    border: 1.5px solid #FBFBFB;
+  }
   .border-color-white {
     border-color: #FBFBFB !important;
   }
@@ -256,6 +277,9 @@
     }
   }
   .border-1-5-gray-txt {
+    border: 1.5px solid #66605B;
+  }
+  .border-1-color-gray-txt {
     border: 1.5px solid #66605B;
   }
   .border-color-gray-txt {
@@ -290,6 +314,9 @@
   .border-1-5-gray-inputs {
     border: 1.5px solid #B9B9B9;
   }
+  .border-1-color-gray-inputs {
+    border: 1.5px solid #B9B9B9;
+  }
   .border-color-gray-inputs {
     border-color: #B9B9B9 !important;
   }
@@ -320,6 +347,9 @@
     }
   }
   .border-1-5-gray-stroke {
+    border: 1.5px solid #DADADA;
+  }
+  .border-1-color-gray-stroke {
     border: 1.5px solid #DADADA;
   }
   .border-color-gray-stroke {
@@ -354,6 +384,9 @@
   .border-1-5-gray-bg-illustr {
     border: 1.5px solid #F0F0F0;
   }
+  .border-1-color-gray-bg-illustr {
+    border: 1.5px solid #F0F0F0;
+  }
   .border-color-gray-bg-illustr {
     border-color: #F0F0F0 !important;
   }
@@ -384,6 +417,9 @@
     }
   }
   .border-1-5-violet {
+    border: 1.5px solid #5E60CE;
+  }
+  .border-1-color-violet {
     border: 1.5px solid #5E60CE;
   }
   .border-color-violet {
@@ -418,6 +454,9 @@
   .border-1-5-yellow {
     border: 1.5px solid #F6C679;
   }
+  .border-1-color-yellow {
+    border: 1.5px solid #F6C679;
+  }
   .border-color-yellow {
     border-color: #F6C679 !important;
   }
@@ -448,6 +487,9 @@
     }
   }
   .border-1-5-yellow-light {
+    border: 1.5px solid #F6D39B;
+  }
+  .border-1-color-yellow-light {
     border: 1.5px solid #F6D39B;
   }
   .border-color-yellow-light {
@@ -482,6 +524,9 @@
   .border-1-5-violet-light {
     border: 1.5px solid #D6D6FF;
   }
+  .border-1-color-violet-light {
+    border: 1.5px solid #D6D6FF;
+  }
   .border-color-violet-light {
     border-color: #D6D6FF !important;
   }
@@ -512,6 +557,9 @@
     }
   }
   .border-1-5-green {
+    border: 1.5px solid #92EDC1;
+  }
+  .border-1-color-green {
     border: 1.5px solid #92EDC1;
   }
   .border-color-green {
@@ -546,6 +594,9 @@
   .border-1-5-green-light {
     border: 1.5px solid #DFF5F0;
   }
+  .border-1-color-green-light {
+    border: 1.5px solid #DFF5F0;
+  }
   .border-color-green-light {
     border-color: #DFF5F0 !important;
   }
@@ -576,6 +627,9 @@
     }
   }
   .border-1-5-dark-violet {
+    border: 1.5px solid #2A2B87;
+  }
+  .border-1-color-dark-violet {
     border: 1.5px solid #2A2B87;
   }
   .border-color-dark-violet {
@@ -610,6 +664,9 @@
   .border-1-5-violet-hover {
     border: 1.5px solid #8C8EEA;
   }
+  .border-1-color-violet-hover {
+    border: 1.5px solid #8C8EEA;
+  }
   .border-color-violet-hover {
     border-color: #8C8EEA !important;
   }
@@ -640,6 +697,9 @@
     }
   }
   .border-1-5-red-error {
+    border: 1.5px solid #E31B1B;
+  }
+  .border-1-color-red-error {
     border: 1.5px solid #E31B1B;
   }
   .border-color-red-error {
@@ -674,6 +734,9 @@
   .border-1-5-transparent {
     border: 1.5px solid transparent;
   }
+  .border-1-color-transparent {
+    border: 1.5px solid transparent;
+  }
   .border-color-transparent {
     border-color: transparent !important;
   }
@@ -704,6 +767,9 @@
     }
   }
   .border-1-5-red-attention {
+    border: 1.5px solid #D03D3D;
+  }
+  .border-1-color-red-attention {
     border: 1.5px solid #D03D3D;
   }
   .border-color-red-attention {
@@ -738,6 +804,9 @@
   .border-1-5-red-hover {
     border: 1.5px solid #F86565;
   }
+  .border-1-color-red-hover {
+    border: 1.5px solid #F86565;
+  }
   .border-color-red-hover {
     border-color: #F86565 !important;
   }
@@ -768,6 +837,9 @@
     }
   }
   .border-1-5-red-pressed {
+    border: 1.5px solid #BC2929;
+  }
+  .border-1-color-red-pressed {
     border: 1.5px solid #BC2929;
   }
   .border-color-red-pressed {
@@ -802,6 +874,9 @@
   .border-1-5-green-success {
     border: 1.5px solid #48B16E;
   }
+  .border-1-color-green-success {
+    border: 1.5px solid #48B16E;
+  }
   .border-color-green-success {
     border-color: #48B16E !important;
   }
@@ -832,6 +907,9 @@
     }
   }
   .border-1-5-gold-light {
+    border: 1.5px solid #F6C679;
+  }
+  .border-1-color-gold-light {
     border: 1.5px solid #F6C679;
   }
   .border-color-gold-light {
@@ -866,6 +944,9 @@
   .border-1-5-red-light {
     border: 1.5px solid #F5DDDD;
   }
+  .border-1-color-red-light {
+    border: 1.5px solid #F5DDDD;
+  }
   .border-color-red-light {
     border-color: #F5DDDD !important;
   }
@@ -896,6 +977,9 @@
     }
   }
   .border-1-5-yellow-system {
+    border: 1.5px solid #FFF3E0;
+  }
+  .border-1-color-yellow-system {
     border: 1.5px solid #FFF3E0;
   }
   .border-color-yellow-system {
@@ -930,6 +1014,9 @@
   .border-1-5-info-light {
     border: 1.5px solid #D8E9FF;
   }
+  .border-1-color-info-light {
+    border: 1.5px solid #D8E9FF;
+  }
   .border-color-info-light {
     border-color: #D8E9FF !important;
   }
@@ -960,6 +1047,9 @@
     }
   }
   .border-1-5-info {
+    border: 1.5px solid #3B9BF4;
+  }
+  .border-1-color-info {
     border: 1.5px solid #3B9BF4;
   }
   .border-color-info {
