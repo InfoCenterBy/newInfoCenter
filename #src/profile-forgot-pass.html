@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Восстановить пароль",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Восстановить пароль
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-12">
+               <div class="row">
+                    <div class="col-12 text-center">
+                         <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                              Восстановить пароль
+                         </h2>
+                    </div>
+                    <div class="col-12 mt-3"></div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                         <div class="col-lg-5 col-12">
+                              <div class="border-1-color-violet border-20 p-lg-5 p-4 w-100">
+                                   <div class="">
+                                        <p class="mb-2">
+                                             Если вы забыли пароль, введите ваш email, указанный при регистрации.
+                                        </p>
+                                        <p class="mb-0">
+                                             Контрольная строка для смены пароля будет выслана вам по email.
+                                        </p>
+                                   </div>
+                                   <form action="">
+                                        <div class="mt-4">
+                                             <div class="">
+                                                  <div class="floating-label-content w-100">
+                                                       <input class="floating-input" type="email" placeholder="" required="" autocomplete="email">
+                                                       <label class="floating-label">
+                                                            <span>Электронная почта</span><span class="color-red-attention">*</span>
+                                                       </label>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="mt-32">
+                                             <button type="button" class="btn-default w-100" data-bs-toggle="modal" data-bs-target="#successDeleteModal">
+                                                  Восстановить пароль
+                                             </button>
+                                        </div>
+                                   </form>
+                                   <div class="mt-4">
+                                        <p class="text-center">
+                                             Вспомнили пароль? <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">Войти в аккаунт</a>
+                                        </p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     <div class="modal fade" id="successDeleteModal" tabindex="-1" aria-labelledby="successDeleteModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                         <div class="mb-2 text-center">
+                              <i class="bi bi-check2-circle fs-64 color-green-success lh-sm"></i>
+                         </div>
+                         <div class="color-black text-center">
+                              <h4 class="h4 ff-exo fw-bold fs-20 lh-normal mb-2">
+                                   На вашу почту отправлено письмо для восстановления пароля
+                              </h4>
+                         </div>
+                         <div class="mt-4">
+                              <a type="button" class="btn-default w-100" data-bs-dismiss="modal">
+                                   Закрыть
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+</body>
+
+</html>
