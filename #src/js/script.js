@@ -1,5 +1,6 @@
 @@include('app.js', {})
 @@include('sliders.js', {})
-@@include('show-password.js', {})
+@@include('showPassword.js', {})
 @@include('agreeDeleteModal.js',{})
 @@include('stepForm.js',{})
+@@include('checkPassword.js',{})
