@@ -1,0 +1,40 @@
+.step-card {
+  position: relative;
+}
+
+.step-card:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  transform: translateX(70%);
+  top: 26px;
+  width: 50%;
+  height: 1px;
+  background-color: var(--color-gray-stroke);
+  z-index: -2;
+
+  @media #{$ui-laptop} {
+    width: 0;
+  }
+
+  @media #{$ui-mobile} {
+    top: 106%;
+    width: 6%;
+    left: 47%;
+    transform: rotate(90deg)
+  }
+}
+
+.step-card:not(:first-child)::before {
+  position: absolute;
+  content: "";
+  transform: translateX(-70%);
+  top: 26px;
+  width: 50%;
+  height: 1px;
+  background-color: var(--color-gray-stroke);
+  z-index: -2;
+
+  @media #{$ui-laptop} {
+    width: 0;
+  }
+}

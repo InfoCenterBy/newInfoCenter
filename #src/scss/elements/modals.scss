@@ -32,6 +32,9 @@
           overflow-y: auto;
           outline: 0;
      }
+     .modal-large {
+          --bs-modal-width: 700px;
+     }
      // .modal-content {
      //      position: relative;
      //      display: flex;
