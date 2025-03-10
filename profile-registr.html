@@ -10,6 +10,7 @@
      <script src="./js/bootstrap.bundle.min.js"></script>
      <script src="./js/jquery.js"></script>
      <link rel="stylesheet" href="">
+     <script src="./js/imask.js"></script>
      <script src="./js/swiper-bundle.min.js"></script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -888,7 +889,7 @@
                     <div class="col-12 mt-3"></div>
                     <div class="col-lg-5 d-flex my-2">
                          <div class="border-1-color-violet border-20 p-lg-5 p-4 w-100">
-                              <form action="" class="d-flex flex-column gap-4">
+                              <form action="" class="d-flex flex-column gap-4 form-validation">
                                    <div class="">
                                         <div class="floating-label-content w-100">
                                              <input class="floating-input" type="text" placeholder="" required="" autocomplete="name">
@@ -907,7 +908,7 @@
                                    </div>
                                    <div class="">
                                         <div class="floating-label-content w-100">
-                                             <input class="floating-input" type="tel" placeholder="" required="" autocomplete="tel">
+                                             <input class="floating-input tel-with-mask" type="tel" placeholder="" required="" autocomplete="tel">
                                              <label class="floating-label">
                                                   <span>Телефон</span><span class="color-red-attention">*</span>
                                              </label>
@@ -916,7 +917,7 @@
                                    <div class="">
                                         <div class="floating-label-content w-100">
                                              <input class="floating-input password-input" id="new-pass" type="password" required="" placeholder=""
-                                                  autocomplete="new-password">
+                                                  autocomplete="new-password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$">
                                              <label class="floating-label">
                                                   <span>Пароль</span><span class="color-red-attention">*</span>
                                              </label>
@@ -938,7 +939,7 @@
                                    <div class="">
                                         <div class="floating-label-content w-100">
                                              <input class="floating-input password-input" id="current-pass" type="password" required="" placeholder=""
-                                                  autocomplete="current-password">
+                                                  autocomplete="current-password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$">
                                              <label class="floating-label">
                                                   <span>Подтвердите пароль</span><span class="color-red-attention">*</span>
                                              </label>
@@ -952,14 +953,14 @@
                                    </div>
                                    <div class="">
                                         <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                             <input type="checkbox" class="form-check-input" id="exampleCheck4" required data-bs-toggle="modal" data-bs-target="#confirmPersonalDataModal">
                                              <label class="form-check-label fs-16" for="exampleCheck4">
                                                   Согласие на обработку <a class="link-activity">персональных данных</a>
                                              </label>
                                         </div>
                                    </div>
                                    <div class="mt-2">
-                                        <button type="submit" class="btn-default w-100">
+                                        <button type="submit" class="btn-default w-100" id="submitBtn">
                                              Зарегистрироваться
                                         </button>
                                    </div>
@@ -1037,6 +1038,230 @@
                </div>
           </div>
      </main>
+     <div class="modal fade" id="confirmPersonalDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="confirmPersonalDataModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+               <div class="modal-content">
+                    <form action="" class="form-modal-validation">
+                         <div class="modal-header flex-column align-items-start">
+                              <h1 class="modal-title fs-5 d-block" id="confirmPersonalDataModalLabel">Получение согласий на обработку персональных данных</h1>
+                              <p class="mb-0 ff-roboto mt-4 color-gray-txt">
+                                   Для регистрации на портале вам необходимо ознакомиться со следующей информацией.
+                              </p>
+                         </div>
+                         <div class="modal-body overflow-hidden">
+                              <div class="scrollable-modal-body">
+                                   <strong class="d-block fs-18 ff-exo">
+                                        У вас есть следующие права при обработке ваших персональных данных:
+                                   </strong>
+                                   <ol class="mt-2">
+                                        <li>
+                                             на отзыв предоставленного нам согласия без объяснения причин такого решения;
+                                        </li>
+                                        <li>
+                                             получить от нас информацию об обработке ваших персональных данных;
+                                        </li>
+                                        <li>
+                                             требовать внесения изменений в ваши персональные данные в случае, если персональные данные являются неполными,
+                                             устаревшими или неточными;
+                                        </li>
+                                        <li>
+                                             получить от нас информацию о предоставлении ваших персональных данных третьим лицам один раз в календарный
+                                             год бесплатно, если иное не предусмотрено законодательными актами;
+                                        </li>
+                                        <li>
+                                             требовать от нас прекращения обработки ваших персональных данных, включая их удаление, при отсутствии
+                                             оснований
+                                             для обработки персональных данных, предусмотренных Законом Республики Беларусь от 7 мая 2021г. № 99–3
+                                             «О защите
+                                             персональных данных» и иными законодательными актами;
+                                        </li>
+                                        <li>
+                                             обжаловать наши действия или решения, нарушающие ваши права при обработке персональных данных, в Национальный
+                                             центр
+                                             защиты персональных данных в порядке, установленном законодательством об обращениях граждан и юридических лиц.
+                                        </li>
+                                   </ol>
+                                   <strong class="d-block fs-18 ff-exo mt-4">
+                                        У вас есть следующие права при обработке ваших персональных данных:
+                                   </strong>
+                                   <ol class="mt-2">
+                                        <li>
+                                             для отзыва согласия на обработку ваших персональных данных в личном кабинете снять соответствующую отметку
+                                             напротив
+                                             выбранной цели обработки персональных данных или удалить свой личный кабинет;
+                                        </li>
+                                        <li>
+                                             для реализации иных прав подать нам заявление в письменной форме, по адресу: 220005, г. Минск, пр-т Машерова,
+                                             7 или в виде электронного документа: по адресу электронной почты info@info-center.by.
+                                        </li>
+                                        <li>
+                                             <span class="d-block">Заявление должно содержать:</span>
+                                             <ul>
+                                                  <li>
+                                                       вашу фамилию, имя, отчество (если таковое имеется);
+                                                  </li>
+                                                  <li>
+                                                       адрес вашего места жительства (места пребывания) с почтовым индексом;
+                                                  </li>
+                                                  <li>
+                                                       дату вашего рождения;
+                                                  </li>
+                                                  <li>
+                                                       изложение сути ваших требований;
+                                                  </li>
+                                                  <li>
+                                                       вашу личную подпись либо электронную цифровую подпись».
+                                                  </li>
+                                             </ul>
+                                        </li>
+                                   </ol>
+                                        <div class="form-check mt-4">
+                                             <input type="checkbox" class="form-check-input" id="exampleCheck5" required="">
+                                             <label class="form-check-label fs-16" for="exampleCheck5">
+                                                  Я подтверждаю, что ознакомился(лась) с правами субъекта персональных данных и механизмом их реализации.
+                                             </label>
+                                        </div>
+
+                                                                      </div>
+                         </div>
+                         <div class="modal-footer">
+                              <div class="d-flex justify-content-end">
+                                   <button type="submit" class="btn-default">Далее</button>
+                              </div>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+     <div class="modal fade" id="checkDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="checkDataModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+               <div class="modal-content">
+                    <div class="modal-header flex-column align-items-start">
+                         <h1 class="modal-title fs-5 d-block" id="checkDataModalLabel">
+                              Получение согласий на обработку персональных данных</h1>
+                         <p class="mb-0 ff-roboto mt-4 color-gray-txt">
+                              Для регистрации на портале вам необходимо ознакомиться со следующей информацией.
+                         </p>
+                    </div>
+                    <div class="modal-body">
+                         <div class="">
+                              <p class="mb-0">
+                                   Мы принимаем все необходимые организационные и технические меры для защиты ваших персональных данных от неправомерного
+                                   или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных
+                                   неправомерных действий.
+                              </p>
+                              <p class="mt-3 mb-0">
+                                   Пожалуйста, предоставьте согласия на обработку ваших персональных данных для следующих целей
+                              </p>
+                              <div class="mt-3 d-flex flex-column gap-2">
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck6" data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal">
+                                        <label class="form-check-label" for="exampleCheck6">Выбрать все</label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck7">
+                                        <label class="form-check-label" for="exampleCheck7">
+                                             Я согласен(а) на обработку персональных данных с целью создания и использования личного кабинета *
+                                        </label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck8">
+                                        <label class="form-check-label" for="exampleCheck8">
+                                             Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки на электронную
+                                             почту
+                                        </label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck9" data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal">
+                                        <label class="form-check-label" for="exampleCheck9">
+                                             Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки посредством
+                                             Viber/СМС
+                                        </label>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn-empty" data-bs-toggle="modal" data-bs-target="#confirmPersonalDataModal">Назад</button>
+                         <button type="button" class="btn-default" data-bs-dismiss="modal">Далее</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="modal fade" id="confirmPhoneDataModal" tabindex="-1" data-bs-backdrop="static"
+          aria-labelledby="confirmPhoneDataModalModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+               <div class="modal-content">
+                    <form action="" class="form-modal-validation">
+                         <div class="modal-header flex-column align-items-start">
+                              <h1 class="modal-title fs-5 d-block" id="confirmPhoneDataModalModalLabel">
+                                   Получение согласий на обработку персональных данных
+                              </h1>
+                              <p class="mb-0 ff-roboto mt-4 color-gray-txt">
+                                   Для продолжения работы на портале вам необходимо ознакомиться со следующей информацией.
+                              </p>
+                         </div>
+                         <div class="modal-body overflow-hidden">
+                              <div class="scrollable-modal-body">
+                                   <p class="mb-0">
+                                        При осуществлении информационной и рекламной рассылки посредством Viber/email-сообщений мы осуществляем трансграничную
+                                        передачу ваших персональных данных:
+                                   </p>
+                                   <ol class="mt-3">
+                                        <li>
+                                             номера телефона — оператору сервиса обмена электронными сообщениями Viber Media S.à r.l., чьи коммуникационные серверы
+                                             находятся в иностранных государствах;
+                                        </li>
+                                        <li>
+                                             адреса электронной почты — почтовым сервисам обмена электронными сообщениями, чьи коммуникационные серверы могут
+                                             располагаться за пределами Республики Беларусь;
+                                        </li>
+                                   </ol>
+                                   <p class="mt-3 mb-0">
+                                        Информируем вас о существовании рисков, возникающих в связи с возможным отсутствием надлежащего уровня защиты
+                                        персональных данных в иностранных государствах:
+                                   </p>
+                                   <ol class="mt-3">
+                                        <li>
+                                             отсутствие специального законодательства, регулирующего обработку персональных данных на территории иностранных
+                                             государств;
+                                        </li>
+                                        <li>
+                                             отсутствие независимого уполномоченного государственного органа по защите прав субъектов персональных данных;
+                                        </li>
+                                        <li>
+                                             ограниченный круг прав субъектов персональных данных;
+                                        </li>
+                                        <li>
+                                             широкий доступ к персональным данным у органов государственной власти иностранных государств.
+                                        </li>
+                                   </ol>
+                                   <p class="mb-0">
+                                        С дополнительной информацией о порядке обработки ваших персональных данных Viber Media S.à r.l. можно ознакомиться
+                                        на официальном сайте компании, размещенном в сети Интернет по адресу
+                                        <a href="https://www.viber.com/ru/terms/viber-privacy-policy/" target="_blank" rel="noopener noreferrer" class="link-activity">https://www.viber.com/ru/terms/viber-privacy-policy/</a>.
+                                   </p>
+                                   <p class="mt-2 mb-0">
+                                        С дополнительной информацией о порядке обработки персональных данных почтовыми сервисами можно ознакомиться
+                                        на официальных сайтах компаний, владеющих такими сервисами.
+                                   </p>
+                                   <div class="form-check mt-4">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck10" required="">
+                                        <label class="form-check-label fs-16" for="exampleCheck10">
+                                             Я подтверждаю, что ознакомился(лась) с рисками, существующими при трансграничной передаче моих персональных данных.
+                                        </label>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn-empty" data-bs-toggle="modal"
+                                   data-bs-target="#checkDataModal">Назад</button>
+                              <button type="submit" class="btn-default">Далее</button>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
      <footer class="footer">
      <div class="container">
           <div class="row">

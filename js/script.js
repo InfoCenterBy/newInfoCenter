@@ -2,6 +2,22 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 
 document.addEventListener('DOMContentLoaded', function () {
+	const formModalValidation = document.querySelector('form.form-modal-validation');
+	const parentModal = new bootstrap.Modal('#confirmPersonalDataModal', {});
+	if (formModalValidation && parentModal) {
+		formModalValidation.addEventListener('submit', (e) => {
+			e.preventDefault();
+			parentModal.toggle();
+
+			let checkDataModal = new bootstrap.Modal('#checkDataModal', {});
+			checkDataModal.show();
+			// formModalValidation.requestSubmit();
+			// let submitBtn = formModalValidation.querySelector('button[type="submit"]')
+		});
+	}
+});
+
+document.addEventListener('DOMContentLoaded', function () {
 	const swiperMainBanner = new Swiper('.swiper.main-banner', {
 		direction: 'horizontal',
 		// loop: true,
@@ -179,3 +195,51 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleGroupProcess(radioGroupsSideNav);
 	toggleGroupProcess(radioGroupsModal);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	const newPasswordInput = document.getElementById('new-pass');
+	const confirmPasswordInput = document.getElementById('current-pass');
+	const form = document.querySelector('form.form-validation');
+	const submitBtn = document.querySelector('form.form-validation button[type="submit]"');
+
+	function validatePasswords() {
+		const newPassword = newPasswordInput.value.trim();
+		const confirmPassword = confirmPasswordInput.value.trim();
+
+		const newPassParent = newPasswordInput.closest('.floating-label-content');
+		const confirmPassParent = confirmPasswordInput.closest('.floating-label-content');
+
+		if (newPassword && confirmPassword && newPassword !== confirmPassword) {
+			confirmPassParent.classList.add('invalid');
+			return false;
+		} else {
+			confirmPassParent.classList.remove('invalid');
+			return true;
+		}
+	}
+
+	confirmPasswordInput.addEventListener('input', validatePasswords);
+	newPasswordInput.addEventListener('input', validatePasswords);
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		submitBtn.addEventListener('click', () => {
+			if (validatePasswords()) {
+				form.requestSubmit();
+				// console.log(form);
+			}
+			if (!validatePasswords()) {
+				form.submit();
+			}
+		});
+	});
+});
+
+const phoneInput = document.querySelector('input[type=tel].tel-with-mask');
+
+if (phoneInput) {
+	IMask(phoneInput, {
+		mask: '+{375} (00) 000-00-00',
+		lazy: false,
+	});
+}

@@ -3050,6 +3050,11 @@ nav.breadcrumb a:last-child {
     }
   }
 }
+.scrollable-modal-body {
+  height: 644px;
+  overflow-y: auto;
+}
+
 .notification-card {
   font-family: "Roboto";
   border: 1.5px solid var(--color-gray-stroke);
