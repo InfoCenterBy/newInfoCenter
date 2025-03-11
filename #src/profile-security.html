@@ -95,7 +95,7 @@
                                         </a>
                                    </form>
                               </div>
-                              <form class="mt-5 d-flex flex-column gap-4">
+                              <form class="mt-5 d-flex flex-column gap-4 pending-check-block">
                                    <h3 class="h2 ff-exo fw-semibold fs-4 lh-normal text-uppercase">
                                         отзыв согласия на обработку персональных данных
                                    </h3>
@@ -152,19 +152,21 @@
                                              </li>
                                         </ol>
                                    </div>
-                                   <div class="">
-                                        <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                                             <label class="form-check-label fs-16" for="exampleCheck4">
-                                                  Я понимаю и принимаю последствия отзыва согласия на обработку моих персональных данных
-                                             </label>
+                                        <div class="">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input agree-delete-check" id="exampleCheck4">
+                                                  <label class="form-check-label fs-16" for="exampleCheck4">
+                                                       Я понимаю и принимаю последствия отзыва согласия на обработку моих персональных данных
+                                                  </label>
+                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="">
-                                        <a href="" class="btn-default">
-                                             Отозвать согласие
-                                        </a>
-                                   </div>
+                                        <div class="">
+                                             <button href="" class="btn-default delete-agree-btn" disabled>
+                                                  Отозвать согласие
+                                             </button>
+                                        </div>
+                                   
+                                   
                                    <div class="d-flex flex-row gap-3 align-items-center flex-lg-nowrap flex-wrap">
                                         <p class="mb-0">
                                              Отозвать согласие возможно также посредством удаления личного кабинета.

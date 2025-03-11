@@ -7,3 +7,4 @@
 @@include('radioTabs.js',{})
 @@include('phoneMask.js',{})
 @@include('fixAnchorScroll.js',{})
+@@include('fixModalBackdrop.js',{})
