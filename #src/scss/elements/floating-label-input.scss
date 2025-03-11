@@ -1,8 +1,8 @@
-@layer base{
-     .floating-label-content { 
-          position:relative;
+@layer base {
+     .floating-label-content {
+          position: relative;
           z-index: 2;
-          input[type = "date"]{
+          input[type='date'] {
                display: block;
                -webkit-appearance: none;
                -moz-appearance: none;
@@ -14,29 +14,29 @@
           letter-spacing: 0%;
           color: var(--color-gray-txt);
           @include adaptiv-value('font-size', 16, 12, 1);
-          position:absolute;
+          position: absolute;
           z-index: 2;
-          pointer-events:none;
+          pointer-events: none;
           left: 16px;
           top: 13px;
-          padding:0 5px;
-          background-color:var(--color-white);
+          padding: 0 5px;
+          background-color: var(--color-white);
           @include transition($transition-2);
      }
 
-     header.header{
-          .floating-label-content{
+     header.header {
+          .floating-label-content {
                z-index: 1057;
           }
-          .floating-label{
+          .floating-label {
                z-index: 1057;
           }
      }
 
      .floating-input {
           @include adaptiv-value('font-size', 16, 12, 1);
-          display:block;
-          width:100%;
+          display: block;
+          width: 100%;
           @include adaptiv-value('height', 48, 40, 1);
           padding: 0 1rem;
           background-color: var(--color-white);
@@ -46,55 +46,54 @@
           box-sizing: border-box;
           @include transition($transition-2);
           font-size: 1rem;
-          &:focus{
-               outline:none;
+          &:focus {
+               outline: none;
                border: 1.5px solid var(--color-violet);
-               ~ .floating-label{
-                    top:-8px;
+               ~ .floating-label {
+                    top: -8px;
                     @include adaptiv-value('font-size', 12, 10, 1);
                }
           }
      }
 
-
-
-     .floating-label-content:not(.floating-input-error){
-          .floating-input:not(:focus, :disabled){
+     .floating-label-content:not(.floating-input-error) {
+          .floating-input:not(:focus, :disabled) {
                @include hover('border-color', var(--color-violet-hover));
           }
      }
 
-     .floating-input:disabled, .floating-input.disabled{
+     .floating-input:disabled,
+     .floating-input.disabled {
           cursor: not-allowed;
      }
 
      .floating-input:not(:placeholder-shown) ~ .floating-label {
-          top:-8px;
+          top: -8px;
           @include adaptiv-value('font-size', 12, 10, 1);
      }
 
-     .floating-input:not(:placeholder-shown){
+     .floating-input:not(:placeholder-shown) {
           color: var(--color-black);
      }
 
-     .floating-input-error{
-          .floating-input{
+     .floating-input-error {
+          .floating-input {
                border: 1px solid var(--color-red-error);
-               color:var(--color-red-error);
+               color: var(--color-red-error);
           }
-          .floating-label{
+          .floating-label {
                font-weight: 600;
-               color:var(--color-red-error);
+               color: var(--color-red-error);
           }
      }
 
-     body:has(.modal-backdrop.fade.show){
-          .floating-input{
-               cursor: not-allowed;
-          }
-     }
+     // body:has(.modal-backdrop.fade.show){
+     //      .floating-input{
+     //           cursor: not-allowed;
+     //      }
+     // }
 
-     .password-icon{
+     .password-icon {
           background-color: var(--color-white);
           position: relative;
           width: 0;
@@ -109,27 +108,25 @@
                top: -60px;
           }
      }
-
-     
 }
 
-@layer component{
-     .floating-label-content.invalid{
-          .floating-input{
+@layer component {
+     .floating-label-content.invalid {
+          .floating-input {
                border-color: var(--color-red-error);
                // &:focus{
                //      border-color: var(--color-violet);
                // }
           }
-          .floating-label-error{
+          .floating-label-error {
                display: block;
                color: var(--color-red-attention);
-               font-size: .875rem;
+               font-size: 0.875rem;
                user-select: none;
           }
      }
-     .floating-label-content:not(.invalid){
-          .floating-label-error{
+     .floating-label-content:not(.invalid) {
+          .floating-label-error {
                display: none;
           }
      }

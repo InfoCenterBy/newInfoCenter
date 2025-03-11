@@ -4,4 +4,5 @@
 @@include('agreeDeleteModal.js',{})
 @@include('stepForm.js',{})
 @@include('checkPassword.js',{})
-@@include('telMask.js',{})
+@@include('radio-tabs.js',{})
+@@include('phone-mask.js',{})

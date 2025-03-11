@@ -37,9 +37,11 @@
 @import './elements/file-link.scss';
 @import './elements/radio.scss';
 @import './elements/map-cards.scss';
+@import './elements/step-card.scss';
+@import './elements/payment-method-card.scss';
 //! end imports
 
-html{
+html {
      height: auto;
      scroll-behavior: smooth;
      width: 100%;
@@ -48,10 +50,10 @@ html{
 }
 html,
 body {
-	min-width: $minWidth;
+     min-width: $minWidth;
      width: 100%;
 }
-body{
+body {
      font-size: $fontSize;
      display: flex;
      flex-direction: column;
@@ -59,9 +61,8 @@ body{
      background-color: var(--color-white);
      // overflow-y: scroll;
      color: var(--color-black);
-
 }
-main{
+main {
      flex-grow: 1;
      width: 100%;
      min-width: $minWidth;
@@ -70,28 +71,28 @@ main{
      // scrollbar-gutter: stable;
 }
 
-@layer base{
-     main.main-container .container:not(:first-of-type){
+@layer base {
+     main.main-container .container:not(:first-of-type) {
           margin-top: 6.25rem;
-               @media #{$ui-tablet} {
-                    margin-top: 3.5rem;
-               }
+          @media #{$ui-tablet} {
+               margin-top: 3.5rem;
+          }
      }
 
-     main .container:first-of-type:not(:has(.breadcrumb)){
+     main .container:first-of-type:not(:has(.breadcrumb)) {
           margin-top: 2rem;
      }
 
-     main.main-container:has(.breadcrumb) .container:nth-of-type(2){
+     main.main-container:has(.breadcrumb) .container:nth-of-type(2) {
           margin-top: 0;
      }
 }
 
-:root{
+:root {
      font-size: 16px;
 }
 
-.main-section{
+.main-section {
      padding: 3rem 3.5rem;
      @media #{$ui-tablet} {
           padding: 2rem 2rem;
@@ -102,33 +103,48 @@ main{
 }
 
 //! *container*
-@layer variations{
+@layer variations {
      @media (min-width: 576px) {
-          .container, .container-sm{
+          .container,
+          .container-sm {
                max-width: 740px;
           }
      }
 
-     @media (min-width: 768px){
-          .container, .container-md, .container-sm{
+     @media (min-width: 768px) {
+          .container,
+          .container-md,
+          .container-sm {
                max-width: 1020px;
           }
      }
 
-     @media (min-width: 992px){
-          .container, .container-lg, .container-md, .container-sm{
-               max-width: 1160px
+     @media (min-width: 992px) {
+          .container,
+          .container-lg,
+          .container-md,
+          .container-sm {
+               max-width: 1160px;
           }
      }
 
      @media (min-width: 1200px) {
-          .container, .container-lg, .container-md, .container-sm, .container-xl{
+          .container,
+          .container-lg,
+          .container-md,
+          .container-sm,
+          .container-xl {
                max-width: 1200px;
           }
      }
 
      @media (min-width: 1400px) {
-          .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+          .container,
+          .container-lg,
+          .container-md,
+          .container-sm,
+          .container-xl,
+          .container-xxl {
                max-width: 1440px;
           }
      }
