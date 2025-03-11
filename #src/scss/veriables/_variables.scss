@@ -224,10 +224,19 @@ $layer-modal: 4;
 }
 
 @layer component {
-     .px-lg-100{
+     .px-xl-100{
+          @media #{$ui-bs-xl} {
+               padding-right: 6.25rem;
+               padding-left: 6.25rem;
+          }
+     }
+}
+
+@layer component {
+     .px-lg-60{
           @media #{$ui-bs-lg} {
-               padding-right: 6.25rem !important;
-               padding-left: 6.25rem !important;
+               padding-right: 3.75rem;
+               padding-left: 3.75rem;
           }
      }
 }

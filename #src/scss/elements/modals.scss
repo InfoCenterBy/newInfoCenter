@@ -64,3 +64,18 @@
           }
      }
 }
+
+.scrollable-modal-body{
+     height: 444px;
+     overflow-y: auto;
+}
+
+.modal-content{
+     margin-top: 2.5rem;
+}
+
+@media #{$ui-bs-lg} {
+     .modal-content{
+          margin-top: 8.75rem;
+     }
+}
