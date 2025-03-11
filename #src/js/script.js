@@ -3,3 +3,5 @@
 @@include('show-password.js', {})
 @@include('agreeDeleteModal.js',{})
 @@include('stepForm.js',{})
+@@include('radio-tabs.js',{})
+@@include('phone-mask.js',{})

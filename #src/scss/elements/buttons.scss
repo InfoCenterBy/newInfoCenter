@@ -1,177 +1,188 @@
-@layer base{
-     button:not(.btn-close){
-          border: 0;
-          background: none;
-     }
-     button:disabled, button.disabled{
-          cursor: not-allowed;
-     }
-     button{
-          @media (hover: none) {
-               &:focus,&:active{
-                    outline: 1px solid transparent;
-                    // box-shadow: 0 0 0 1px var(--color-violet-hover);
-                    // border-radius: .25rem;
-               }
-          }
-     }
-     .btn-base-style{
-          display: grid;
-          place-items: center;
-          text-align: center;
-          padding: .75rem 1.5rem;
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 400;
-          line-height: 100%;
-          letter-spacing: 0;
-          border-radius: 6.25rem;
-          width: fit-content;
-          @include transition($transition-3);
-          @media #{$ui-laptop} {
-               font-size: 1.125rem;
-               padding: .75rem 1rem;
-          }
-     }
-     .btn-default, .btn-empty, .btn-deny, .btn-round{
-          @extend .btn-base-style;
-     }
+@layer base {
+  button:not(.btn-close) {
+    border: 0;
+    background: none;
+  }
+  button:disabled,
+  button.disabled {
+    cursor: not-allowed;
+  }
+  button {
+    @media (hover: none) {
+      &:focus,
+      &:active {
+        outline: 1px solid transparent;
+        // box-shadow: 0 0 0 1px var(--color-violet-hover);
+        // border-radius: .25rem;
+      }
+    }
+  }
+  .btn-base-style {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    font-family: $ff-exo;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+    border-radius: 6.25rem;
+    width: fit-content;
+    @include transition($transition-3);
+    @media #{$ui-laptop} {
+      font-size: 1.125rem;
+      padding: 0.75rem 1rem;
+    }
+  }
+  .btn-default,
+  .btn-empty,
+  .btn-deny,
+  .btn-round {
+    @extend .btn-base-style;
+  }
 }
 
-@layer component{
-     .language-block{
-     }
-     .language-button {
-     }
-     .blind-block {
-     }
-     .blind-button {
-          gap: .75rem;
-          .bi{
-               max-height: 18px;
-          }
-     }
-     .top-header-button{
-          font-size: var(--base-font);
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 0;
-          font-family: $ff-roboto;
-          color: var(--color-violet);
-          @include transition($transition-3);
-          @include hover('color', var(--color-violet-hover));
-          padding: 0;
-          &.active{
-               text-decoration: underline var(--color-violet);
-               text-underline-offset: .25rem;
-          }
-     }
-     .btn-collapse-more{
-          display: none;
-          &.collapsed{
-               display: block;
-          }
-          &::after{
-               @extend .bootsrtap-icon;
-               content: '\F282';
-          }
-     }
-     .header{
-          .btn-collapse-more, .btn-collapse-more-hidden{
-               color: var(--color-gray-txt);
-               font-family: $ff-roboto;
-               font-size: 1rem;
-               font-weight: 400;
-               line-height: 130%;
-               letter-spacing: 0;
-               user-select: none;
-               @include transition($transition-3);
-               @include hover('color', var(--color-violet));
-          }
-     }
-     .btn-collapse-more-hidden{
-          display: block;
-          &.collapsed{
-               display: none;
-          }
-          &::after{
-               @extend .bootsrtap-icon;
-               content: '\F286';
-          }
-     }
-     .collapsed-more-btn-flex{
-          display: none;
-          &.collapsed{
-               display: flex;
-          }
-     }
-     .btn-default{
-          color: var(--color-white);
-          background-color: var(--color-violet);
-          border: 1.5px solid transparent;
-          width: fit-content;
-          &:not([disabled], .disabled){
-               @include hover('background-color', var(--color-violet-hover));
-          }
-          &:focus, &:active{
-               background-color: var(--color-dark-violet);
-          }
-          &:disabled, &.disabled{
-               background-color: var(--color-gray-stroke);
-               cursor: not-allowed;
-          }
-          
-     }
-     .btn-empty {
-          border: 1px solid var(--color-violet);
-          color: var(--color-violet);
-          background-color: var(--color-white);
-          &:not([disabled], .disabled){
-               @include hover('background-color', var(--color-violet-hover));
-               @include hover('border-color', var(--color-violet-hover));
-               @include hover('color', var(--color-white));
-          }
-          &:focus, &:active{
-               border-color: var(--color-dark-violet);
-          }
-          &:disabled, &.disabled{
-               color: var(--color-gray-stroke);
-               border-color: var(--color-gray-stroke);
-               cursor: not-allowed;
-          }
-     }
-     .btn-deny {
-          background-color: var(--color-red-attention);
-          color: var(--color-white);
-          &:not([disabled], .disabled){
-               @include hover('background-color', var(--color-red-hover));
-          }
-          &:focus, &:active{
-               background-color: var(--color-red-pressed);
-          }
-          &:disabled, &.disabled{
-               background-color: var(--color-gray-stroke);
-               cursor: not-allowed;
-          }
-     }
-     .btn-close:focus {
-          box-shadow: none;
-     }
+@layer component {
+  .language-block {
+  }
+  .language-button {
+  }
+  .blind-block {
+  }
+  .blind-button {
+    gap: 0.75rem;
+    .bi {
+      max-height: 18px;
+    }
+  }
+  .top-header-button {
+    font-size: var(--base-font);
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+    font-family: $ff-roboto;
+    color: var(--color-violet);
+    @include transition($transition-3);
+    @include hover("color", var(--color-violet-hover));
+    padding: 0;
+    &.active {
+      text-decoration: underline var(--color-violet);
+      text-underline-offset: 0.25rem;
+    }
+  }
+  .btn-collapse-more {
+    display: none;
+    &.collapsed {
+      display: block;
+    }
+    &::after {
+      @extend .bootsrtap-icon;
+      content: "\F282";
+    }
+  }
+  .header {
+    .btn-collapse-more,
+    .btn-collapse-more-hidden {
+      color: var(--color-gray-txt);
+      font-family: $ff-roboto;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0;
+      user-select: none;
+      @include transition($transition-3);
+      @include hover("color", var(--color-violet));
+    }
+  }
+  .btn-collapse-more-hidden {
+    display: block;
+    &.collapsed {
+      display: none;
+    }
+    &::after {
+      @extend .bootsrtap-icon;
+      content: "\F286";
+    }
+  }
+  .collapsed-more-btn-flex {
+    display: none;
+    &.collapsed {
+      display: flex;
+    }
+  }
+  .btn-default {
+    color: var(--color-white);
+    background-color: var(--color-violet);
+    border: 1.5px solid transparent;
+    width: fit-content;
+    &:not([disabled], .disabled) {
+      @include hover("background-color", var(--color-violet-hover));
+    }
+    &:focus,
+    &:active {
+      background-color: var(--color-dark-violet);
+    }
+    &:disabled,
+    &.disabled {
+      background-color: var(--color-gray-stroke);
+      cursor: not-allowed;
+    }
+  }
+  .btn-empty {
+    border: 1px solid var(--color-violet);
+    color: var(--color-violet);
+    background-color: transparent;
+    &:not([disabled], .disabled) {
+      @include hover("background-color", var(--color-violet-hover));
+      @include hover("border-color", var(--color-violet-hover));
+      @include hover("color", var(--color-white));
+    }
+    &:focus,
+    &:active {
+      border-color: var(--color-dark-violet);
+    }
+    &:disabled,
+    &.disabled {
+      color: var(--color-gray-stroke);
+      border-color: var(--color-gray-stroke);
+      cursor: not-allowed;
+    }
+  }
+  .btn-deny {
+    background-color: var(--color-red-attention);
+    color: var(--color-white);
+    &:not([disabled], .disabled) {
+      @include hover("background-color", var(--color-red-hover));
+    }
+    &:focus,
+    &:active {
+      background-color: var(--color-red-pressed);
+    }
+    &:disabled,
+    &.disabled {
+      background-color: var(--color-gray-stroke);
+      cursor: not-allowed;
+    }
+  }
+  .btn-close:focus {
+    box-shadow: none;
+  }
 
-     .button-bin{
-          font-size: 1.25rem;
-          color: var(--color-gray-txt);
-          @include transition($transition-3);
-          @include hover('color', var(--color-violet-hover));
-     }
+  .button-bin {
+    font-size: 1.25rem;
+    color: var(--color-gray-txt);
+    @include transition($transition-3);
+    @include hover("color", var(--color-violet-hover));
+  }
 }
 
-@layer variations{
-     .btn-round {
-          border-radius: 50%;
-          padding: .875rem;
-          @media #{$ui-tablet} {
-               padding: .5rem;
-          }
-     }
+@layer variations {
+  .btn-round {
+    border-radius: 50%;
+    padding: 0.875rem;
+    @media #{$ui-tablet} {
+      padding: 0.5rem;
+    }
+  }
 }
