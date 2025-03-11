@@ -236,6 +236,34 @@ $layer-modal: 4;
   }
 }
 
-.top-3 {
-  top: 1rem;
+.top-3{
+     top: 1rem;
 }
+
+@layer component {
+     .px-xl-100{
+          @media #{$ui-bs-xl} {
+               padding-right: 6.25rem;
+               padding-left: 6.25rem;
+          }
+     }
+}
+
+@layer component {
+     .px-lg-60{
+          @media #{$ui-bs-lg} {
+               padding-right: 3.75rem;
+               padding-left: 3.75rem;
+          }
+     }
+}
+
+
+@layer component {
+     .fs-lg-14{
+          @media #{$ui-bs-lg} {
+               font-size: .875rem;
+          }
+     }
+}
+

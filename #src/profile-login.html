@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Авторизация",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Авторизация
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-12">
+               <div class="row">
+                    <div class="col-12">
+                         <h2 class="h2 ff-exo fw-bold fs-3 lh-normal text-uppercase">
+                              Авторизация
+                         </h2>
+                    </div>
+                    <div class="col-12 mt-3"></div>
+                    <div class="col-lg-5 d-flex my-2">
+                         <div class="border-1-color-violet border-20 p-lg-5 p-4 w-100">
+                              <form action="">
+                                   <div  class="d-flex flex-column gap-4">
+                                        <div class="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="email" placeholder="" required="" autocomplete="email">
+                                                  <label class="floating-label">
+                                                       <span>Электронная почта</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                        </div>
+                                        <div class="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input password-input" id="current-pass" type="password" required="" placeholder=""
+                                                       autocomplete="current-password">
+                                                  <label class="floating-label">
+                                                       <span>Пароль</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                                  <span class="floating-label-error">Данные введены неверно</span>
+                                                  <div class="d-flex justify-content-end">
+                                                       <div class="position-absolute">
+                                                            <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="mt-2">
+                                                  <div class="text-end">
+                                                       <a href="profile-forgot-pass.html" target="_self" rel="noopener noreferrer" class="color-dark-violet ff-roboto">
+                                                            Забыли пароль?
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="mt-3">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                             <label class="form-check-label fs-16" for="exampleCheck4">
+                                                  Запомнить меня
+                                             </label>
+                                        </div>
+                                   </div>
+                                   <div class="mt-32">
+                                        <button type="submit" class="btn-default w-100">
+                                             Войти
+                                        </button>
+                                   </div>
+                                   <div class="mt-4">
+                                        <p class="mb-0 text-center">
+                                             Еще нет аккаунта? <a href="profile-registr.html" target="_self"
+                                                  rel="noopener noreferrer" class="link-activity">Зарегистрироваться</a>
+                                        </p>
+                                   </div>
+                              </form>
+                         </div>
+                    </div>
+                    <div class="col-lg-7 d-flex my-2">
+                         <div
+                              class="border-1-color-gray-stroke border-20 d-flex justify-content-center align-items-center py-lg-5 py-4 px-lg-60 px-xl-100">
+                              <div class="px-lg-0 px-5">
+                                   <div class="">
+                                        <h3 class="h3 ff-exo fw-bold fs-4 lh-normal text-uppercase text-center">
+                                             Личный кабинет позволит:
+                                        </h3>
+                                   </div>
+                                   <div class="mt-32">
+                                        <div class="row">
+                                             <div class="col-lg-6 d-flex my-3">
+                                                  <a href="" target="_blank" rel="noopener noreferrer"
+                                                       class="d-flex flex-column highlight-block bg-violet-light">
+                                                       <picture>
+                                                            <source media="(min-width: 576px)" srcset="./img/png/highlight-block/highlight-2-x2.png">
+                                                            <img src="./img/png/highlight-block/highlight-2-x1.png" alt="">
+                                                       </picture>
+                                                       <p class="fs-16">
+                                                            Читать журнал «Налоги Беларуси»
+                                                       </p>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex my-3">
+                                                  <a href="" target="_blank" rel="noopener noreferrer"
+                                                       class="d-flex flex-column highlight-block bg-yellow-light">
+                                                       <picture>
+                                                            <source media="(min-width: 576px)" srcset="./img/png/highlight-block/highlight-1-x2.png">
+                                                            <img src="./img/png/highlight-block/highlight-1-x1.png" alt="">
+                                                       </picture>
+                                                       <p class="fs-16">
+                                                            Иметь быстрый доступ <br> к предварительной записи в регистрационный центр
+                                                       </p>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex my-3">
+                                                  <a href="" target="_blank" rel="noopener noreferrer"
+                                                       class="d-flex flex-column highlight-block bg-gray-bg-illustr">
+                                                       <picture>
+                                                            <source media="(min-width: 576px)"
+                                                                 srcset="./img/png/highlight-block/highlight-5-x2.png">
+                                                            <img src="./img/png/highlight-block/highlight-5-x1.png"
+                                                                 alt="">
+                                                       </picture>
+                                                       <p class="fs-16">
+                                                            Пройти онлайн-школу «О налогах и не только для ИП простыми словами»
+                                                       </p>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex my-3">
+                                                  <a href="" target="_blank" rel="noopener noreferrer"
+                                                       class="d-flex flex-column highlight-block bg-green-light">
+                                                       <picture>
+                                                            <source media="(min-width: 576px)"
+                                                                 srcset="./img/png/highlight-block/highlight-6-x2.png">
+                                                            <img src="./img/png/highlight-block/highlight-6-x1.png"
+                                                                 alt="">
+                                                       </picture>
+                                                       <p class="fs-16">
+                                                            Получать уведомления и информацию о заказах
+                                                       </p>
+                                                  </a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+</body>
+
+</html>

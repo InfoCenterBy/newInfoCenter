@@ -154,3 +154,9 @@ main {
 ol ul {
      list-style: disc;
 }
+
+@layer base{
+     li{
+          font-family: $ff-roboto;
+     }
+}
