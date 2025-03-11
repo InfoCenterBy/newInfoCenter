@@ -1,20 +1,26 @@
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+const tooltipTriggerList = document.querySelectorAll(
+     '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+     (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
 
 document.addEventListener('DOMContentLoaded', function () {
-	const formModalValidation = document.querySelector('form.form-modal-validation');
-	const parentModal = new bootstrap.Modal('#confirmPersonalDataModal', {});
-	if (formModalValidation && parentModal) {
-		formModalValidation.addEventListener('submit', (e) => {
-			e.preventDefault();
-			parentModal.toggle();
+     const formModalValidation = document.querySelector(
+          'form.form-modal-validation'
+     );
+     const parentModal = new bootstrap.Modal('#confirmPersonalDataModal', {});
+     if (formModalValidation && parentModal) {
+          formModalValidation.addEventListener('submit', (e) => {
+               e.preventDefault();
+               parentModal.toggle();
 
-			let checkDataModal = new bootstrap.Modal('#checkDataModal', {});
-			checkDataModal.show();
-			// formModalValidation.requestSubmit();
-			// let submitBtn = formModalValidation.querySelector('button[type="submit"]')
-		});
-	}
+               let checkDataModal = new bootstrap.Modal('#checkDataModal', {});
+               checkDataModal.show();
+               // formModalValidation.requestSubmit();
+               // let submitBtn = formModalValidation.querySelector('button[type="submit"]')
+          });
+     }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -138,31 +144,35 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-const agreeDeleteCheck = document.querySelector('#agreeDeleteCheck');
-const deleteAgreeBtn = document.querySelector('#deleteAgreeBtn');
+const pendingCheckContainer = document.querySelectorAll('.pending-check-block');
 
-function agreeCheckIsTrue(checkBox) {
-	if (checkBox.checked) {
-		return true;
-	} else {
-		return false;
-	}
-}
+pendingCheckContainer.forEach((container) => {
+     let checkbox = container.querySelector('.agree-delete-check');
+     let button = container.querySelector('.delete-agree-btn');
 
-if (agreeDeleteCheck) {
-	if (agreeCheckIsTrue(agreeDeleteCheck)) {
-		deleteAgreeBtn.disabled = false;
-	} else {
-		deleteAgreeBtn.disabled = true;
-	}
-	agreeDeleteCheck.addEventListener('change', () => {
-		if (agreeCheckIsTrue(agreeDeleteCheck)) {
-			deleteAgreeBtn.disabled = false;
-		} else {
-			deleteAgreeBtn.disabled = true;
-		}
-	});
-}
+     function agreeCheckIsTrue(checkBox) {
+          if (checkBox.checked) {
+               return true;
+          } else {
+               return false;
+          }
+     }
+
+     if (checkbox) {
+          if (agreeCheckIsTrue(checkbox)) {
+               button.disabled = false;
+          } else {
+               button.disabled = true;
+          }
+          checkbox.addEventListener('change', () => {
+               if (agreeCheckIsTrue(checkbox)) {
+                    button.disabled = false;
+               } else {
+                    button.disabled = true;
+               }
+          });
+     }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 	const radioGroupsSideNav = document.querySelectorAll('.side-nav-step .radio-group-step');
@@ -235,11 +245,99 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-const phoneInput = document.querySelector('input[type=tel].tel-with-mask');
+document.addEventListener('DOMContentLoaded', function () {
+     const radioButtons = document.querySelectorAll('input[name="tabRadio"]');
 
-if (phoneInput) {
-	IMask(phoneInput, {
-		mask: '+{375} (00) 000-00-00',
-		lazy: false,
-	});
+     const tabPanes = document.querySelectorAll('.tab-pane');
+
+     radioButtons.forEach((radio) => {
+          radio.addEventListener('change', () => {
+               tabPanes.forEach((pane) =>
+                    pane.classList.remove('active', 'show')
+               );
+
+               const targetPane = document.querySelector(
+                    radio.getAttribute('data-bs-target')
+               );
+
+               if (targetPane) {
+                    targetPane.classList.add('active', 'show');
+               }
+          });
+     });
+});
+
+const phoneInputs = document.querySelectorAll('input[type=tel].tel-with-mask');
+
+if (phoneInputs) {
+     phoneInputs.forEach((input) => {
+          let mask;
+          input.addEventListener('focus', function () {
+               if (!mask) {
+                    mask = IMask(input, {
+                         mask: '+{375}(00)000-00-00',
+                         lazy: false,
+                         blocks: {
+                              375: {
+                                   mask: '375',
+                                   immutable: true,
+                              },
+
+                              '00': {
+                                   mask: '00',
+                              },
+                              '000': {
+                                   mask: '000',
+                              },
+                              '00': {
+                                   mask: '00',
+                              },
+                         },
+                    });
+               }
+          });
+     });
+
+     phoneInputs.forEach((input) => {
+          input.addEventListener('blur', function () {
+               if (mask && !input.value) {
+                    mask.destroy();
+                    mask = null;
+               }
+          });
+     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+     // Find all anchor links
+     const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+     // Add a click event listener to each anchor link
+     anchorLinks.forEach((link) => {
+          link.addEventListener('click', function (e) {
+               e.preventDefault(); // Prevent the default link behavior
+
+               // Get the target element's ID from the href attribute
+               const targetId = this.getAttribute('href').substring(1);
+               const targetElement = document.getElementById(targetId);
+
+               if (targetElement) {
+                    // Determine the offset based on screen width
+                    const offset = window.innerWidth <= 768 ? 50 : 100; // 768px is a common breakpoint for mobile devices
+
+                    // Calculate the target position with the offset
+                    const targetPosition =
+                         targetElement.getBoundingClientRect().top +
+                         window.pageYOffset -
+                         offset;
+
+                    // Scroll to the target position
+                    window.scrollTo({
+                         top: targetPosition,
+                         behavior: 'smooth', // Enable smooth scrolling
+                    });
+               }
+          });
+     });
+});
+

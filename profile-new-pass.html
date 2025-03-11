@@ -19,7 +19,7 @@
 
      <link rel="stylesheet" @@style-path />
      <link rel="stylesheet" href="css/style.css" />
-     <title>Предварительные записи в РЦ</title>
+     <title>Восстановить пароль</title>
 </head>
 
 <body>
@@ -893,462 +893,76 @@
                          Главная
                     </a>
                     <a href="" target="_blank" rel="noopener noreferrer">
-                         Предварительные записи в РЦ
+                         Восстановить пароль
                     </a>
                </nav>
           </div>
-          <div class="container">
+          <div class="container mt-12">
                <div class="row">
-                    <div class="col-12 d-lg-none d-block">
+                    <div class="col-12 text-center">
                          <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
-                              Предварительные записи в РЦ
+                              Восстановить пароль
                          </h2>
                     </div>
-                    <div class="col-lg-3 d-flex my-2 pe-lg-5">
-                         <nav class="sidenav-profile w-100">
-
-
-               <a href="./profile-main.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Профиль</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-
-               <a href="./profile-security.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Безопасность и&nbsp;конфиденциальность</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-
-               <a href="./profile-notification.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Уведомления</span>
-          </div>
-          <div class="sidenav-profile__notification sidenav-profile__notification-active">
-               <span>1</span>
-          </div>
-     </a>
-
-
-               <a href="./profile-order.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Заказы</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-          <a href="./profile-records.html" target="_self" class="sidenav-profile__link sidenav-profile__link-active">
-
-
-                    <div class="sidenav-profile__text">
-               <span>Предварительные записи в РЦ</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-
-               <a href="./profile-journals.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Журналы</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-
-               <a href="./profile-school.html" target="_self" class="sidenav-profile__link">
-
-               <div class="sidenav-profile__text">
-               <span>Онлайн-школа</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-
-          <a class="sidenav-profile__link" data-bs-toggle="modal" data-bs-target="#exitModal">
-          <div class="sidenav-profile__text">
-               <i class="bi bi-box-arrow-left"></i>
-               <span>Выйти</span>
-          </div>
-          <div class="sidenav-profile__notification"></div>
-     </a>
-</nav>
-
-<div class="modal fade" id="exitModal" tabindex="-1" aria-labelledby="exitModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-               <div class="modal-header pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body d-flex flex-column justify-content-center gap-2 text-center pt-0">
-                    <div class="fs-64">
-                         <i class="bi bi-box-arrow-left"></i>
-                    </div>
-                    <div class="">
-                         <b class="fs-20 lh-lg">
-                              Выйти из личного кабинета?
-                         </b>
-                    </div>
-                    <div class="">
-                         <p class="mb-0">
-                              Вы действительно хотите выйти из личного кабинета?
-                         </p>
-                    </div>
-               </div>
-               <div class="modal-footer justify-content-center">
-                    <div class="d-flex flex-column gap-3 w-100">
-                         <a href="" target="_blank" class="btn-default w-100 px-lg-4 px-3">
-                              Выйти
-                         </a>
-                         <a href="" target="_blank" class="btn-empty w-100 px-lg-4 px-3" data-bs-dismiss="modal">
-                              Отменить
-                         </a>
-                    </div>
-               </div>
-          </div>
-     </div>
-</div>
-
-                    </div>
-                    <div class="col-lg-9 d-flex my-2">
-                         <div class="w-100">
-                              <div class="d-lg-block d-none">
-                                   <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
-                                        Предварительные записи в РЦ
-                                   </h2>
-                              </div>
-                              <div class="mt-32">
-                                   <table class="w-100 records-table d-none d-xl-block">
-                                        <thead>
-                                             <tr class="text-center ff-roboto fs-16 table-gray-head">
-                                                  <th class="border-top-left-20 ">
-                                                       №
-                                                  </th>
-                                                  <th class="">
-                                                       Дата
-                                                  </th>
-                                                  <th class="">
-                                                       Время
-                                                  </th>
-                                                  <th class="" colspan="2">
-                                                       Адрес
-                                                  </th>
-                                                  <th class="">
-                                                       Код записи
-                                                  </th>
-                                                  <th class="">
-                                                       Статус
-                                                  </th>
-                                                  <th class="" colspan="2">
-
-                                                                                                         </th>
-                                                  <th class="border-top-right-20 " >
-
-                                                                                                         </th>
-                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                             <tr class="border-bottom">
-                                                  <td class=" text-center">
-                                                       <span>1</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>14.11.2023</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>12:00</span>
-                                                  </td>
-                                                  <td class="" colspan="2">
-                                                       <p class="mb-0">
-                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
-                                                       </p>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>ekbN8kSEFy</span>
-                                                  </td>
-                                                  <td class="">
-                                                       <div class="card-status card-status-active text-center">
-                                                            <span>Активный</span>
-                                                       </div>
-                                                  </td>
-                                                  <td class="" colspan="2">
-                                                       <a href="" target="_blank" class="btn-default">
-                                                            Отменить
-                                                       </a>
-                                                  </td>
-                                                  <td class="">
-                                                       <div class="d-flex justify-content-center align-items-center">
-                                                            <button data-bs-toggle="modal" class="link-gray" data-bs-target="#recordModal">
-                                                                 <i class="bi bi-eye fs-24"></i>
-                                                            </button>
-                                                       </div>
-                                                  </td>
-                                             </tr>
-
-                                             <tr class="border-bottom">
-                                                  <td class=" text-center">
-                                                       <span>2</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>14.11.2023</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>12:00</span>
-                                                  </td>
-                                                  <td class="" colspan="2">
-                                                       <p class="mb-0">
-                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
-                                                       </p>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>ekbN8kSEFy</span>
-                                                  </td>
-                                                  <td class="">
-                                                       <div class="card-status card-status-archive text-center">
-                                                            <span>Архив</span>
-                                                       </div>
-                                                  </td>
-                                                  <td class="" colspan="2">
-
-                                                                                                         </td>
-                                                  <td class="">
-                                                       <div class="d-flex justify-content-center">
-                                                            <button data-bs-toggle="modal" class="link-gray" data-bs-target="#recordModal">
-                                                                 <i class="bi bi-eye fs-24"></i>
-                                                            </button>
-                                                       </div>
-                                                  </td>
-                                             </tr>
-
-                                             <tr class="border-bottom">
-                                                  <td class=" text-center">
-                                                       <span>2</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>14.11.2023</span>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>12:00</span>
-                                                  </td>
-                                                  <td class="" colspan="2">
-                                                       <p class="mb-0">
-                                                            г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
-                                                       </p>
-                                                  </td>
-                                                  <td class=" text-center">
-                                                       <span>ekbN8kSEFy</span>
-                                                  </td>
-                                                  <td class="">
-                                                       <div class="card-status card-status-deny text-center">
-                                                            <span>Отменен</span>
-                                                       </div>
-                                                  </td>
-                                                  <td class="" colspan="2">
-
-                                                                                                         </td>
-                                                  <td class="">
-                                                       <div class="d-flex justify-content-center">
-                                                            <button data-bs-toggle="modal" class="link-gray" data-bs-target="#recordModal">
-                                                                 <i class="bi bi-eye fs-24"></i>
-                                                            </button>
-                                                       </div>
-                                                  </td>
-                                             </tr>
-
-                                                                                     </tbody>
-                                   </table>
-                                   <div class="d-flex flex-column gap-3 d-xl-none d-block">
-                                        <div class="records-card d-flex flex-column gap-3">
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>№</b>
-                                                  <span>
-                                                       1
-                                                  </span>
-                                             </div>
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>
-                                                       Дата
-                                                  </b>
-                                                  <span>
-                                                       14.11.2023
-                                                  </span>
-                                             </div>
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>
-                                                       Время
-                                                  </b>
-                                                  <span>
-                                                       12:00
-                                                  </span>
-                                             </div>
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>
-                                                       Адрес
-                                                  </b>
-                                                  <span>
-                                                       г. Минск, пр-т Пушкина, д. 11, к. 101 (ИМНС по Фрунзенсскому району № 2)
-                                                  </span>
-                                             </div>
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>
-                                                       Код записи
-                                                  </b>
-                                                  <span>
-                                                       ekbN8kSEFy
-                                                  </span>
-                                             </div>
-                                             <div class="d-flex flex-column gap-2">
-                                                  <b>
-                                                       Статус
-                                                  </b>
-                                                  <div class="card-status card-status-active w-fit">
-                                                       <span>Активный</span>
-                                                  </div>
-                                             </div>
-                                             <div class="row justify-content-md-start justify-content-between align-items-center">
-                                                  <div class="col-md-4 col-8">
-                                                       <a href="" target="_blank" class="btn-default w-100">
-                                                            Отменить
-                                                       </a>
-                                                  </div>
-                                                  <div class="col-md-1 col-3">
-                                                       <div class="d-flex justify-content-center align-items-center">
-                                                            <button data-bs-toggle="modal" data-bs-target="#recordModal">
-                                                                 <i class="bi bi-eye fs-24"></i>
-                                                            </button>
+                    <div class="col-12 mt-3"></div>
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                         <div class="col-lg-5 col-12">
+                              <div class="border-1-color-violet border-20 p-lg-5 p-4 w-100">
+                                   <div class="">
+                                        <p class="mb-2">
+                                             Придумайте новый пароль для входа в личный кабинет
+                                        </p>
+                                   </div>
+                                   <form action="" class="form-validation d-flex flex-column gap-4 mt-4">
+                                        <div class="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input password-input" id="new-pass" type="password" required="" placeholder=""
+                                                       autocomplete="new-password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$">
+                                                  <label class="floating-label">
+                                                       <span>Пароль</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                                  <span class="floating-label-error">Данные введены неверно</span>
+                                                  <div class="d-flex justify-content-end">
+                                                       <div class="position-absolute">
+                                                            <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
                                                        </div>
                                                   </div>
                                              </div>
                                         </div>
-                                   </div>
-                              </div>
-                              <div class="mt-40">
-                                   <div class="border-20 p-4 bg-gray-bg-illustr">
-                                        <b class="d-block ff-exo fs-20">Выбирайте услугу и оформляйте предварительную запись</b>
-                                        <p class="mb-0 mt-3 ff-roboto fs-16">
-                                             При необходимости получения более одной услуги по Предварительной записи (код активации),
-                                             необходимо получить дополнительное время (дополнительную Предварительную запись - рекомендуем последовательно) для
-                                             возможности получения остальных услуг.
-                                        </p>
-                                        <p class="mb-0 ff-roboto fs-16 mt-2">
-                                             При получении первой услуги сообщите регистратору о наличии у Вас записи на другие услуги.
-                                        </p>
-                                        <a href="" target="_blank" class="btn-default mt-3">
-                                             Выбрать услугу
-                                        </a>
-                                   </div>
+                                        <div class="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input password-input" id="current-pass" type="password" required="" placeholder=""
+                                                       autocomplete="current-password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$">
+                                                  <label class="floating-label">
+                                                       <span>Подтвердите пароль</span><span class="color-red-attention">*</span>
+                                                  </label>
+                                                  <span class="floating-label-error">Данные введены неверно</span>
+                                                  <div class="d-flex justify-content-end">
+                                                       <div class="position-absolute">
+                                                            <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="mt-2">
+                                                  <p class="mb-0 fs-lg-14 fs-12 lh-base fw-normal color-gray-txt">
+                                                       Пароль должен быть не менее 6 символов длиной, содержать латинские символы верхнего регистра (A-Z),
+                                                       содержать латинские
+                                                       символы нижнего регистра (a-z), содержать цифры (0-9).
+                                                  </p>
+                                             </div>
+                                        </div>
+                                        <button type="submit" class="btn-default w-100" >
+                                             Войти
+                                        </button>
+                                   </form>
                               </div>
                          </div>
                     </div>
                </div>
           </div>
      </main>
-     <div class="modal fade" id="recordModal" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-               <div class="modal-content">
-                    <div class="modal-header">
-                         <h1 class="modal-title fs-5" id="recordModalLabel">Данные о записи</h1>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="row record-modal-data">
-                              <div class="col-3 my-2">
-                                   <b>
-                                        ФИО:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        Иванов Иван Иванович
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        УНП:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        12699053
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        Телефон:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        +375 (33) 844 32 11
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        E-mail:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        ivanov@mail.ru
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        РЦ:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        г. Полоцк, пр-т Ф. Скорины, д.13, пом.222
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        Код записи:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        ekbN8kSEFy
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        Дата:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        13.10.2024
-                                   </p>
-                              </div>
-                              <div class="col-3 my-2">
-                                   <b>
-                                        Время:
-                                   </b>
-                              </div>
-                              <div class="col-9 my-2">
-                                   <p>
-                                        09:00
-                                   </p>
-                              </div>
-                         </div>
-                         <div class="border w-100 mt-24"></div>
-                    </div>
-                    <div class="modal-footer">
-                         <button type="button" class="btn-default" data-bs-dismiss="modal">Закрыть</button>
-                    </div>
-               </div>
-          </div>
-     </div>
-<footer class="footer">
+
+          <footer class="footer">
      <div class="container">
           <div class="row">
                <div class="col-xl-3 d-flex flex-column">
@@ -1532,7 +1146,7 @@
           </div>
      </div>
 </footer>
-<script src="js/script.js"></script>
+     <script src="js/script.js"></script>
 </body>
 
 </html>
