@@ -76,12 +76,10 @@
      overflow-y: auto;
 }
 
-.modal-content{
-     margin-top: 2.5rem;
-}
-
-@media #{$ui-bs-lg} {
-     .modal-content{
-          margin-top: 8.75rem;
+.modal:not(.header-modal) .modal-content{
+          margin-top: 2.5rem;
+     
+     @media #{$ui-bs-lg} {
+               margin-top: 8.75rem;
      }
 }
