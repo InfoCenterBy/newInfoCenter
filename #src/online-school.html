@@ -1035,14 +1035,14 @@
                   </label>
                 </div>
                 <div class="floating-label-content w-100">
-                  <input class="floating-input" type="email" placeholder="">
+                  <input class="floating-input" type="email" placeholder="" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" autocomplete="email">
                   <label class="floating-label">
                     <span>E-mail</span><span class="color-red-attention">*</span>
                   </label>
                 </div>
                 <div class="floating-label-content w-100">
-                  <input class="phone floating-input" type="text" placeholder=""
-                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
+                  <input class="tel-with-mask floating-input" type="tel" placeholder=""
+                    autocomplete="tel">
                   <label class="floating-label">
                     <span>Телефон</span><span class="color-red-attention">*</span>
                   </label>
@@ -1089,7 +1089,7 @@
                 </div>
                 <div class="floating-label-content w-100">
                   <input class="floating-input" type="email" placeholder=""
-                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$">
+                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"  autocomplete="email">
                   <label class="floating-label">
                     <span>E-mail</span><span class="color-red-attention">*</span>
                   </label>
@@ -1101,7 +1101,7 @@
                   </label>
                 </div>
                 <div class="floating-label-content w-100">
-                  <input class="phone floating-input" type="text" placeholder="">
+                  <input class="tel-with-mask floating-input" type="tel" placeholder="" autocomplete="tel">
                   <label class="floating-label">
                     <span>Телефон</span><span class="color-red-attention">*</span>
                   </label>
@@ -1137,13 +1137,13 @@
                 </div>
                 <div class="floating-label-content w-100">
                   <input class="floating-input" type="email" placeholder=""
-                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required  autocomplete="email">
                   <label class="floating-label">
                     <span>E-mail</span><span class="color-red-attention">*</span>
                   </label>
                 </div>
                 <div class="floating-label-content w-100">
-                  <input class="phone floating-input" type="text" placeholder="" required>
+                  <input class="tel-with-mask floating-input" type="tel" placeholder="" required autocomplete="tel">
                   <label class="floating-label">
                     <span>Телефон</span><span class="color-red-attention">*</span>
                   </label>
@@ -1208,14 +1208,13 @@
               </label>
             </div>
             <div class="floating-label-content w-100">
-              <input class="floating-input" type="email" placeholder="" disabled>
+              <input class="floating-input" type="email" placeholder="" disabled pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"  autocomplete="email">
               <label class="floating-label">
                 <span>E-mail</span><span class="color-red-attention">*</span>
               </label>
             </div>
             <div class="floating-label-content w-100">
-              <input class="phone floating-input" type="text" placeholder=""
-                pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" disabled>
+              <input class="tel-with-mask floating-input" type="tel" placeholder="" disabled autocomplete="tel">
               <label class="floating-label">
                 <span>Телефон</span><span class="color-red-attention">*</span>
               </label>

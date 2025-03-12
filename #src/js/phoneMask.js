@@ -1,4 +1,4 @@
-const phoneInputs = document.querySelectorAll('.phone');
+const phoneInputs = document.querySelectorAll('input[type=tel].tel-with-mask');
 
 if (phoneInputs) {
      phoneInputs.forEach((input) => {
