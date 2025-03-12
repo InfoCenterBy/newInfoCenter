@@ -207,42 +207,54 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	const newPasswordInput = document.getElementById('new-pass');
-	const confirmPasswordInput = document.getElementById('current-pass');
-	const form = document.querySelector('form.form-validation');
-	const submitBtn = document.querySelector('form.form-validation button[type="submit]"');
+     const newPasswordInput = document.getElementById('new-pass');
+     const confirmPasswordInput = document.getElementById('current-pass');
+     const form = document.querySelector('form.form-validation');
+     const submitBtn = document.querySelector(
+          'form.form-validation button[type="submit]"'
+     );
 
-	function validatePasswords() {
-		const newPassword = newPasswordInput.value.trim();
-		const confirmPassword = confirmPasswordInput.value.trim();
+     function validatePasswords() {
+          const newPassword = newPasswordInput.value.trim();
+          const confirmPassword = confirmPasswordInput.value.trim();
 
-		const newPassParent = newPasswordInput.closest('.floating-label-content');
-		const confirmPassParent = confirmPasswordInput.closest('.floating-label-content');
+          const newPassParent = newPasswordInput.closest(
+               '.floating-label-content'
+          );
+          const confirmPassParent = confirmPasswordInput.closest(
+               '.floating-label-content'
+          );
 
-		if (newPassword && confirmPassword && newPassword !== confirmPassword) {
-			confirmPassParent.classList.add('invalid');
-			return false;
-		} else {
-			confirmPassParent.classList.remove('invalid');
-			return true;
-		}
-	}
+          if (
+               newPassword &&
+               confirmPassword &&
+               newPassword !== confirmPassword
+          ) {
+               confirmPassParent.classList.add('invalid');
+               return false;
+          } else {
+               confirmPassParent.classList.remove('invalid');
+               return true;
+          }
+     }
 
-	confirmPasswordInput.addEventListener('input', validatePasswords);
-	newPasswordInput.addEventListener('input', validatePasswords);
+     if (newPasswordInput && confirmPasswordInput && form && submitBtn) {
+          confirmPasswordInput.addEventListener('input', validatePasswords);
+          newPasswordInput.addEventListener('input', validatePasswords);
 
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
-		submitBtn.addEventListener('click', () => {
-			if (validatePasswords()) {
-				form.requestSubmit();
-				// console.log(form);
-			}
-			if (!validatePasswords()) {
-				form.submit();
-			}
-		});
-	});
+          form.addEventListener('submit', (e) => {
+               e.preventDefault();
+               submitBtn.addEventListener('click', () => {
+                    if (validatePasswords()) {
+                         form.requestSubmit();
+                         // console.log(form);
+                    }
+                    if (!validatePasswords()) {
+                         form.submit();
+                    }
+               });
+          });
+     }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -339,5 +351,49 @@ document.addEventListener('DOMContentLoaded', function () {
                }
           });
      });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+     function handleModalZIndex() {
+          // Find all modal elements on the page
+          const modals = document.querySelectorAll('.modal');
+
+          // Loop through each modal
+          modals.forEach((modal) => {
+               // Listen for the 'show.bs.modal' event, which fires BEFORE the modal is shown
+               modal.addEventListener('show.bs.modal', function (event) {
+                    // Check if the modal does NOT have the 'header-modal' class
+                    if (!modal.classList.contains('header-modal')) {
+                         // Set the modal's z-index to 1060 BEFORE it is displayed
+                         modal.style.zIndex = '1060';
+
+                         // Create the backdrop manually (if it doesn't exist) and set its z-index
+                         const backdrop = document.createElement('div');
+                         backdrop.classList.add(
+                              'modal-backdrop',
+                              'fade',
+                              'show'
+                         );
+                         backdrop.style.zIndex = '1059'; // Backdrop should be below the modal
+                         document.body.appendChild(backdrop);
+                    }
+               });
+
+               // Listen for the 'hidden.bs.modal' event, which fires AFTER the modal is hidden
+               modal.addEventListener('hidden.bs.modal', function (event) {
+                    // Reset the modal's z-index to its default value
+                    modal.style.zIndex = '';
+
+                    // Remove the backdrop when the modal is closed
+                    const backdrop = document.querySelector('.modal-backdrop');
+                    if (backdrop) {
+                         backdrop.remove();
+                    }
+               });
+          });
+     }
+
+     // Initialize the function
+     handleModalZIndex();
 });
 
