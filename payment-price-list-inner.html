@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
      <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
      <link rel="stylesheet" @@style-path />
      <link rel="stylesheet" href="css/style.css" />
-     <title>Регистрационный центр Госсуок</title>
+     <title>Система контроля кассового оборудования</title>
 </head>
 
 <body>
@@ -886,641 +886,341 @@
           </div>
      </div>
 </div>
-     <main class="main main-container">
+     <main class="main">
           <div class="container">
-               <nav class="breadcrumb mb-4">
-                    <a href="main.html">Главная</a>
-                    <a href="contacts.html">Контакты</a>
-                    <a>Регистрационный центр Госсуок</a>
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./payment-main.html" target="_blank" rel="noopener noreferrer">
+                         Оплата услуг
+                    </a>
+                    <a href="./payment-price-list.html" target="_blank" rel="noopener noreferrer">
+                         Прейскуранты
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Система контроля кассового оборудования
+                    </a>
                </nav>
-               <h2 class="fs-28 ff-exo fw-semibold color-black text-uppercase">Регистрационный центр Госсуок</h2>
-               <section class="mt-32">
-                    <div class="p-3 bg-gray-bg-illustr border-20">
-                         <div class="row row-cols-1 row-cols-md-2 gy-3">
-                              <div class="col">
-                                   <p class="fw-semibold">
-                                        По вопросам информационно-справочной поддержки:
-                                   </p>
-                                   <a href="telto:+375172691919" target="_blank" rel="noopener noreferrer"
-                                        class="link-activity d-flex flex-row gap-2 align-items-center mt-3">
-                                        <i class="bi bi-phone color-dark-violet"></i>
-                                        <span>+375 (17) 269–19–19 <span
-                                                  class="color-black">(многоканальный)</span></span>
-                                   </a>
-                                   <a href="mailto:support@ca.info-center.by" target="_blank" rel="noopener noreferrer"
-                                        class="link-activity d-flex flex-row gap-2 align-items-center mt-2">
-                                        <i class="bi bi-envelope color-dark-violet"></i>
-                                        <span>support@ca.info-center.by</span>
-                                   </a>
-                              </div>
-                              <div class="col">
-                                   <p class="fw-semibold">По вопросам технической поддержки:</p>
-                                   <a href="telto:200" target="_blank" rel="noopener noreferrer"
-                                        class="link-activity d-flex flex-row gap-2 align-items-center mt-3">
-                                        <i class="bi bi-phone color-dark-violet"></i>
-                                        <span>200<span class="color-black"> (платная линия для всех мобильных
-                                                  операторов)</span></span>
-                                   </a>
-                              </div>
-                         </div>
-                         <div class="mt-2">
-                              <a href="#" target="_blank" rel="noopener noreferrer" class="link-activity">
-                                   Памятка по консультационной и технической поддержке
-                                   подписчиков РУЦ
-                                   ГосСУОК
-                              </a>
-                         </div>
-
-                    </div>
-                    <div class="container mt-32">
-
-                         <script src=""></script>
-                         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-                         <div id="app">
-                              <div class="row">
-                                   <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
-                                        <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio overflow-auto flex-nowrap align-items-start"
-                                             id="mapRegion">
-                                             <button
-                                                  class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty nav-radio__elem-all"
-                                                  v-if="activeTab == 1">
-                                                  <span>Все</span>
-                                             </button>
-                                             <template v-if="activeTab == 2">
-                                                  <button
-                                                       class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty nav-radio__elem-all"
-                                                       @click="filterTable('')"
-                                                       :class="[filteredTerms == '' ? 'nav-radio__elem-active' : '']">
-                                                       <span>Все</span>
-                                                  </button>
-                                                  <button v-for="item in uniqueCities"
-                                                       class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
-                                                       @click="filterTable(item)"
-                                                       :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
-                                                       <span>{{item}}</span>
-                                                  </button>
-                                             </template>
-                                        </div>
-                                   </div>
-                                   <div class="col-lg-3 d-flex justify-content-lg-end my-2 order-lg-2 order-1">
-                                        <div
-                                             class="d-flex flex-row flex-lg-wrap gap-3 nav-radio flex-nowrap align-items-start justify-content-end">
-                                             <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
-                                                  :class="[activeTab == 1 ? 'nav-radio__elem-active' : '']"
-                                                  @click="changeTab(1)">
-                                                  <span>На карте</span>
-                                             </button>
-                                             <button class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
-                                                  :class="[activeTab == 2 ? 'nav-radio__elem-active' : '']"
-                                                  @click="changeTab(2)" v-if="isLargeScreen">
-                                                  <span>Таблица</span>
-                                             </button>
-                                        </div>
-                                   </div>
-                              </div>
-                              <div v-if="activeTab == 1">
-                                   <div class="map-cards-wrapper">
-                                        <div class="" id="mapCards">
-                                             <div class="map-cards">
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div id="contact_map" class="mt-3" style="width:100%; height:754px"></div>
-                              </div>
-                              <div v-if="activeTab == 2 && isLargeScreen">
-                                   <table
-                                        class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
-                                        <thead>
-                                             <tr class="bg-gray-bg-illustr">
-                                                  <td colspan="2" class="px-2 py-3">
-                                                       <strong>Контакты</strong>
-                                                  </td>
-                                                  <td colspan="2" class="px-2 py-3">
-                                                       <strong>Режим работы</strong>
-                                                  </td>
-                                                  <td colspan="3" class="px-2 py-3">
-                                                       <strong>Статус</strong>
-                                                  </td>
-                                                  <td colspan="2" class="px-2 py-3">
-                                                       <strong>Комментарий</strong>
-                                                  </td>
-                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                             <tr v-for="item in filteredTableItems" class="border-bottom">
-                                                  <td colspan="2" class="px-2 py-3">
-                                                       {{item.contacts?.adress}} ({{item.name}}) <br>
-                                                       <span v-if="item.contacts.tel">тел: {{item.contacts.tel}}</span>
-                                                       <br>
-                                                       <span v-if="item.contacts.fax">факс: {{item.contacts.fax}}</span>
-                                                       <br>
-                                                       <span v-if="item.contacts.email">email:
-                                                            {{item.contacts.email}}</span> <br>
-                                                  </td>
-                                                  <td colspan="2" class="px-2 py-3">
-                                                       <span v-if="item.workTime != 0" v-html="item.workTime"></span>
-                                                  </td>
-                                                  <td colspan="3" class="px-2 py-3">
-                                                       <div class="map-cards-item__status text-center"
-                                                            :class="[item.status.active ? 'map-cards-item__status-active' : 'map-cards-item__status-disabled']">
-                                                            <span
-                                                                 class="text-wrap text-center">{{item.status.text}}</span>
-                                                       </div>
-                                                  </td>
-                                                  <td colspan="3" class="px-2 py-3">
-                                                       <span v-if="item.comment != 0" v-html="item.comment"></span>
-                                                  </td>
-                                             </tr>
-                                        </tbody>
-                                   </table>
-                              </div>
-                         </div>
-                         <script>
-                              const { createApp, ref } = Vue
-
-                              createApp({
-                                   data() {
-                                        return {
-                                             groups: [
-                                                  {
-                                                       name: "Минск",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.91373, 27.574237],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "ИМНС по Центральному району",
-                                                                 contacts: {
-                                                                      adress: 'Минск, проспект Машерова, 7',
-                                                                      tel: '+375 (17) 269-19-19',
-                                                                      fax: '+375 (17) 269-19-43',
-                                                                      email: 'support@ca.info-center.by',
-                                                                 },
-                                                                 workTime: 'пн-чт: 8.45-18.00 <br> пт: 8.45-16.45 <br> перерыв: 13.00-14.00 <br> сб-вс: выходной',
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: '<strong>Прием осуществляется по предварительной записи</strong>, телефон <a href="tel:+375(17)269-19-19" class="color-dark-violet">+375 17 269 19 19</a> <br>В свободное от предварительной записи время прием ведется посредством системы «Электронная очередь»'
-                                                            },
-                                                            {
-                                                                 center: [53.897191, 27.494987],
-                                                                 name: "ИМНС по Фрунзенскому району №2",
-                                                                 contacts: {
-                                                                      adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
-                                                                      tel: '+375 (17) 269-19-19',
-                                                                      fax: '+375 (17) 323-25-94',
-                                                                      email: 0
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Минская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Брестская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Витебская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Гомельская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Гродненская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                                  {
-                                                       name: "Могилевская область",
-                                                       style: "islands#violetGovernmentIcon",
-                                                       items: [
-                                                            {
-                                                                 center: [53.02264, 27.558256],
-                                                                 // name: "Минск, проспект Машерова, 7"
-                                                                 name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: true,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                            {
-                                                                 center: [53.02264, 28.558256],
-                                                                 // name: "Минск, проспекулт Машерова, 7"
-                                                                 name: "г.sdfsdf23609",
-                                                                 contacts: {
-                                                                      adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                                      tel: '+375(17) 952 49 92',
-                                                                      fax: 0,
-                                                                      email: 0,
-                                                                 },
-                                                                 workTime: 0,
-                                                                 status: {
-                                                                      active: false,
-                                                                      text: 'Функционирует согласно режиму работы'
-                                                                 },
-                                                                 comment: 0
-                                                            },
-                                                       ]
-                                                  },
-                                             ],
-                                             cityList: [],
-                                             activeTab: 1,
-                                             filteredTableItems: [],
-                                             filteredTerms: '',
-                                             isLargeScreen: window.innerWidth > 1090
-                                        }
-                                   },
-                                   computed: {
-                                        uniqueCities() {
-                                             const citySet = new Set()
-
-                                             this.groups.forEach(el => {
-                                                  if (el.name) {
-                                                       citySet.add(el.name)
-                                                  }
-                                             });
-
-                                             return Array.from(citySet)
-                                             // console.log(this.cityList)
-                                        },
-
-                                   },
-                                   methods: {
-                                        init() {
-                                             // Создание экземпляра карты.
-                                             var myMap = new ymaps.Map('contact_map', {
-                                                  center: [53.902735, 27.555696],
-                                                  zoom: 12,
-                                                  // controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'routeButtonControl']
-                                                  controls: ['zoomControl', 'routeButtonControl']
-                                             }),
-                                                  // Контейнер для меню.
-                                                  menu = $('#app .nav-radio#mapRegion')
-                                             menuCards = $('#app .map-cards')
-
-                                             for (var i = 0, l = this.groups.length; i < l; i++) {
-                                                  createMenuGroup(this.groups[i])
-                                             }
-
-                                             function createMenuGroup(group) {
-                                                  // Пункт меню.
-                                                  document.querySelector('#app #mapRegion .nav-radio__elem-all').classList.add('nav-radio__elem-active')
-
-                                                  var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
-                                                       // Коллекция для геообъектов группы.
-                                                       collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
-                                                       // Контейнер для подменю.
-                                                       submenu = $('<div class="map-cards-submenu"></div>')
-
-                                                  // Добавляем пункт меню.
-                                                  menuItem.appendTo(menu)
-
-                                                  // Добавляем подменю.
-                                                  submenu.appendTo(menuCards)
-
-                                                  // Создаем подменю для группы.
-                                                  for (var j = 0, m = group.items.length; j < m; j++) {
-                                                       createSubMenu(group.items[j], collection, submenu)
-                                                  }
-
-                                                  // При старте: все geoObjects добавляются, submenu показываются.
-                                                  myMap.geoObjects.add(collection)
-                                                  submenu.show()
-
-                                                  // Обработчик клика.
-                                                  menuItem.on('click', function () {
-                                                       // Убираем active-класс у всех элементов, скрываем их подменю и удаляем их geoObjects.
-                                                       $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
-                                                       $('.map-cards-submenu').hide()
-                                                       myMap.geoObjects.removeAll()
-
-                                                       // Назначаем active-класс текущему элементу.
-                                                       $(this).addClass('nav-radio__elem-active')
-
-                                                       // Добавляем geoObjects и показываем подменю.
-                                                       myMap.geoObjects.add(collection)
-                                                       submenu.show()
-                                                  });
-
-                                                  $('#app #mapRegion .nav-radio__elem-all').on('click', () => {
-                                                       $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
-                                                       $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active')
-                                                       myMap.geoObjects.add(collection)
-                                                       submenu.show()
-                                                  })
-
-                                             }
-
-                                             function createSubMenu(item, collection, submenu) {
-                                                  // Пункт подменю.
-                                                  // ${item.workTime }
-                                                  var submenuItem = $(`
-                                                                      <div class="map-cards-item">
-                                                                           <div>
-                                                                                <strong class="d-block map-cards-item__title">
-                                                                                     ${item.contacts?.adress} (${item.name})
-                                                                                </strong>
-                                                                           </div>
-                                                                           <div class="d-flex flex-column gap-2">
-                                                                                <div class=" d-flex flex-row flex-lg-nowrap flex-wrap align-items-center gap-1 mt-12">
-                                                                                     <strong>Статус</strong>
-                                                                                     <div class="map-cards-item__status ${item.status.active ? "map-cards-item__status-active" : "map-cards-item__status-disabled"}">
-                                                                                          <span>${item.status?.text || "Не указан"}</span>
-                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="row">
-                                                                                     <div class="col-lg-6 d-flex flex-column">
-                                                                                          <strong>Режим работы</strong>
-                                                                                          <p>${item?.workTime || "Не указан"}</p>
-                                                                                     </div>
-                                                                                     <div class="col-lg-6 d-flex flex-column gap-2">
-                                                                                          <strong>Контакты</strong>
-                                                                                          <span>тел: ${item.contacts?.tel || "Не указан"}</span>
-                                                                                          <span>факс: ${item.contacts?.fax || "Не указан"}</span>
-                                                                                          <span>электронная почта: <br> <span class="color-dark-violet">${item.contacts?.email || "Не указана"}</span></span>
-                                                                                     </div>
-                                                                                </div>
-                                                                                <div>
-                                                                                     ${item?.comment || ""}
-                                                                                </div>
-                                                                           </div>
-                                                                      </div>
-                                                                      `),
-                                                       // Создаем метку.
-                                                       placemark = new ymaps.Placemark(item.center, { balloonContent: item.name })
-
-                                                  // Добавляем метку в коллекцию.
-                                                  collection.add(placemark)
-                                                  // Добавляем пункт в подменю.
-                                                  submenuItem
-                                                       .appendTo(submenu)
-                                                       // При клике по пункту подменю открываем/закрываем баллун у метки.
-                                                       .find('div')
-                                                       .bind('click', function () {
-                                                            if (!placemark.balloon.isOpen()) {
-                                                                 placemark.balloon.open()
-                                                            } else {
-                                                                 placemark.balloon.close()
-                                                            }
-                                                            return false
-                                                       });
-                                             }
-
-                                             // Добавляем меню в тэг BODY.
-                                             menu.appendTo($('body #mapRegion'));
-                                             menuCards.appendTo($('body #mapCards'));
-                                             // Выставляем масштаб карты чтобы были видны все группы.
-                                             // myMap.setBounds(myMap.geoObjects.getBounds());
-                                        },
-                                        changeTab(number) {
-                                             this.activeTab = number
-                                             this.deleteOldNav()
-                                             if (number == 1) {
-                                                  ymaps.ready(this.init)
-                                             }
-                                             if (number == 2) {
-                                                  this.filterTable('')
-                                             }
-                                        },
-                                        deleteOldNav() {
-                                             const nameList = document.querySelectorAll('#app #mapRegion .nav-radio__elem:not(:first-child)')
-                                             nameList.forEach(element => {
-                                                  element.remove()
-                                             })
-                                        },
-                                        filterTable(name) {
-                                             if (name != '') {
-                                                  this.filteredTerms = name
-                                                  // Находим группу с соответствующим именем
-                                                  const group = this.groups.find(group => group.name === name)
-                                                  // Если группа найдена, возвращаем её items, иначе пустой массив
-                                                  return group ? this.filteredTableItems = group.items : this.filteredTableItems = []
-                                             } else {
-                                                  this.filteredTerms = ''
-                                                  // Если name не указан, возвращаем все items из всех групп
-                                                  return this.filteredTableItems = this.groups.reduce((acc, group) => acc.concat(group.items), [])
-                                             }
-                                        },
-                                        handleResize() {
-                                             this.isLargeScreen = window.innerWidth > 1090
-                                        }
-                                        // filterTable(name){}
-                                   },
-                                   created() {
-                                        window.addEventListener('resize', this.handleResize)
-                                   },
-                                   mounted() {
-                                        ymaps.ready(this.init)
-                                   }
-                              }).mount('#app')
-                         </script>
-                    </div>
-
-
-               </section>
           </div>
-     </main>
+          <div class="container mt-12">
+                    <div class="">
+                         <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
+                              Система контроля кассового оборудования
+                         </h2>
+                    </div>
+                    <div class="mt-32"></div>
+                    <div class="d-flex flex-column gap-3">
 
-     <script src="./js/imask.js"></script>
+                                                       <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                              <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                              <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                              <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                              <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                              <div class="">
+     <a href="#" class="link-anchor-block">
+          <div class="d-flex flex-row align-items-start gap-12">
+               <div class="link-anchor-block__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.7909 16.3638L8.36095 19.7938C6.95431 21.2004 6.16406 23.1082 6.16406 25.0975C6.16406 27.0868 6.95431 28.9946 8.36095 30.4013C9.76759 31.8079 11.6754 32.5981 13.6647 32.5981C15.654 32.5981 17.5618 31.8079 18.9684 30.4013L23.5384 25.8288C24.3867 24.9804 25.019 23.9409 25.3824 22.7976C25.7458 21.6543 25.8296 20.4405 25.6268 19.2581C25.4241 18.0757 24.9406 16.9592 24.217 16.0023C23.4935 15.0454 22.5509 14.276 21.4684 13.7588L20.0034 15.2238C19.8547 15.3728 19.7254 15.5399 19.6184 15.7213C20.4548 15.9617 21.2139 16.4162 21.8207 17.0399C22.4275 17.6636 22.861 18.4349 23.0784 19.2775C23.2959 20.1201 23.2896 21.0048 23.0603 21.8442C22.831 22.6837 22.3865 23.4487 21.7709 24.0638L17.2034 28.6338C16.2652 29.572 14.9928 30.099 13.6659 30.099C12.3391 30.099 11.0667 29.572 10.1284 28.6338C9.19024 27.6956 8.66317 26.4231 8.66317 25.0963C8.66317 23.7694 9.19024 22.497 10.1284 21.5588L12.1109 19.5788C11.8312 18.5306 11.7232 17.4465 11.7909 16.3638Z"
+                              fill="#2A2B87" />
+                         <path d="M16.4684 11.6888C15.6202 12.5371 14.9879 13.5766 14.6245 14.7199C14.2611 15.8632 14.1773 17.077 14.38 18.2594C14.5828 19.4418 15.0663 20.5583 15.7899 21.5152C16.5134 22.4721 17.456 23.2415 18.5384 23.7588L20.4759 21.8188C19.6283 21.5914 18.8555 21.1449 18.235 20.5243C17.6146 19.9036 17.1685 19.1305 16.9415 18.2828C16.7145 17.4351 16.7146 16.5425 16.9418 15.6949C17.169 14.8472 17.6154 14.0743 18.2359 13.4538L22.8034 8.88376C23.7417 7.94556 25.0141 7.41848 26.3409 7.41848C27.6678 7.41848 28.9402 7.94556 29.8784 8.88376C30.8167 9.82196 31.3437 11.0944 31.3437 12.4213C31.3437 13.7481 30.8167 15.0206 29.8784 15.9588L27.8959 17.9388C28.1759 18.9888 28.2834 20.0763 28.2159 21.1563L31.6459 17.7263C33.0526 16.3196 33.8428 14.4118 33.8428 12.4225C33.8428 10.4332 33.0526 8.5254 31.6459 7.11876C30.2393 5.71212 28.3315 4.92188 26.3422 4.92188C24.3529 4.92188 22.4451 5.71212 21.0384 7.11876L16.4684 11.6888Z"
+                              fill="#2A2B87" />
+                    </svg>
+               </div>
+               <div class="link-anchor-block__text">
+                    <p>
+                         ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев
+                         кассовых
+                         суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                    </p>
+               </div>
+          </div>
+          <div class="ms-2 link-anchor-block__arrow">
+               <i class="bi bi-reply"></i>
+          </div>
+     </a>
+</div>
+                         
+                    </div>
+                    <div class="mt-64"></div>
+                    <div class="bg-gray-bg-illustr border-30 p-lg-5 p-3 d-flex flex-column gap-3">
+                         <h4 class="h4 ff-exo fw-bold d-block">
+                              ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев кассовых
+                              суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                         </h4>
+                         <p class="mb-0 color-gray-txt ff-roboto">
+                              Вводится в действие <span class="fw-semibold">с 1 января 2025 года</span> и действует до выхода нового прейскуранта
+                         </p>
+                         <div class="table-default accent-table">
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>
+                                                  № п/п
+                                             </th>
+                                             <th>
+                                                  Наименование услуг
+                                             </th>
+                                             <th>
+                                                  Единица измерения услуг
+                                             </th>
+                                             <th>
+                                                  Тариф без НДС, руб., коп.
+                                             </th>
+                                             <th>
+                                                  Сумма НДС, руб., коп.
+                                             </th>
+                                             <th>
+                                                  Тариф с НДС, руб., коп.
+                                             </th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr>
+                                             <td>
+                                                  1
+                                             </td>
+                                             <td>
+                                                  Регистрация и подключение одной единицы кассового оборудования в СККО
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  7,50
+                                             </td>
+                                             <td>
+                                                  1,50
+                                             </td>
+                                             <td>
+                                                  9,00
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2
+                                             </td>
+                                             <td>
+                                                  Информационное обслуживание пользователя СККО за одну единицу кассового оборудования (включая
+                                                  абонентскую плату и
+                                                  месячный тариф):
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  9,90
+                                             </td>
+                                             <td>
+                                                  1,98
+                                             </td>
+                                             <td>
+                                                  11,88
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2.1
+                                             </td>
+                                             <td>
+                                                  абонентская плата за месяц
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  1,85
+                                             </td>
+                                             <td>
+                                                  1,50
+                                             </td>
+                                             <td>
+                                                  9,00
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2.2
+                                             </td>
+                                             <td>
+                                                  Информационное обслуживание пользователя СККО за одну единицу кассового оборудования (включая
+                                                  абонентскую плату и
+                                                  месячный тариф):
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  9,90
+                                             </td>
+                                             <td>
+                                                  1,98
+                                             </td>
+                                             <td>
+                                                  11,88
+                                             </td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+                         <div class="info-block bg-info-light">
+                              <div class="info-block__icon color-info">
+                                   <i class="bi bi-info-circle"></i>
+                              </div>
+                              <div class="info-block__text">
+                                   <p>
+                                        1) СККО - система контроля кассового оборудования; <br>
+                                        2) Выбор тарифного плана с учетом п. 2 и п. 3 осуществляется по усмотрению пользователя СККО в
+                                        соответствии с договором.
+                                   </p>
+                              </div>
+                         </div>
+                         <div class="info-block bg-info-light">
+                              <div class="info-block__icon color-info">
+                                   <i class="bi bi-info-circle"></i>
+                              </div>
+                              <div class="info-block__text">
+                                   <p>
+                                        Залоговая стоимость на изделие «Средство контроля налоговых органов» (далее – СКНО), используемое для подключения
+                                        кассового оборудования к системе контроля кассового оборудования составляет:
+                                        <ul class="mb-0">
+                                             <li>
+                                                  для юридических лиц и индивидуальных предпринимателей – 130,00 (сто тридцать белорусских рублей 00 копеек);
+                                             </li>
+                                             <li>
+                                                  для юридических лиц и индивидуальных предпринимателей осуществляющих деятельность по перевозке пассажиров
+                                                  автомобилями-такси – 150,00 (сто пятьдесят белорусских рублей 00 копеек).
+                                             </li>
+                                        </ul>
+                                        До внесения залоговой стоимости СКНО подключение и регистрация кассового оборудования к СККО не осуществляется.
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+
+                         </div>
+     </main>
      <footer class="footer">
      <div class="container">
           <div class="row">
@@ -1704,7 +1404,8 @@
                </div>
           </div>
      </div>
-</footer> <script src="js/script.js"></script>
+</footer>
+     <script src="js/script.js"></script>
 </body>
 
 </html>
