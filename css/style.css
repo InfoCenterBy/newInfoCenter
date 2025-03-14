@@ -170,6 +170,14 @@
   top: 1rem;
 }
 
+.border-b-gray {
+  border-bottom: 1px solid var(--color-gray-stroke);
+}
+
+.margin-inline-n-16 {
+  margin-inline: -16px;
+}
+
 @layer component {
   @media screen and (min-width: 1200px) {
     .px-xl-100 {
@@ -1441,6 +1449,11 @@ html:has(.ui-page) {
   .activity-block-lg, .activity-block-sm {
     padding: 1rem 1.5rem;
   }
+  @media screen and (max-width: 992px) {
+    .activity-block-lg, .activity-block-sm {
+      padding: 0.75rem 0.75rem;
+    }
+  }
   .activity-block-lg .activity-block-title, .activity-block-sm .activity-block-title {
     font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
   }
@@ -1938,6 +1951,29 @@ html:has(.ui-page) {
     }
     .social-links__block:hover svg path {
       fill: var(--color-white);
+    }
+  }
+  .social-links-violet__block {
+    min-width: 2rem;
+    min-height: 2rem;
+    width: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-violet);
+    display: grid;
+    place-items: center;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  .social-links-violet__block svg path {
+    fill: var(--color-white);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .social-links-violet__block:hover {
+      background-color: var(--color-white);
+    }
+    .social-links-violet__block:hover svg path {
+      fill: var(--color-violet);
     }
   }
   .footer-link {
