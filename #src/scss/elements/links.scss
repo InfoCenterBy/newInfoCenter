@@ -78,6 +78,31 @@
                }
 	     }
      }
+     .social-links-violet {
+	     &__block {
+               min-width: 2rem;
+               min-height: 2rem;
+               width: 2rem;
+               width: 2rem;
+               border-radius: 50%;
+               background-color: var(--color-violet);
+               display: grid;
+               place-items: center;
+
+               & svg path {
+                    fill: var(--color-white)
+               }
+               @include transition($transition-3);
+               @media #{$mouse-device} {
+                    &:hover{
+                         background-color: var(--color-white);
+                         svg path{
+                              fill: var(--color-violet);
+                         }
+                    }
+               }
+	     }
+     }
      .footer-link{
           color: var(--color-white);
           font-family: $ff-roboto;

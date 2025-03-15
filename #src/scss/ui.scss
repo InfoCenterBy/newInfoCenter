@@ -154,9 +154,9 @@ html:has(.ui-page){
           }
           &-lg,&-sm{
                padding: 1rem 1.5rem;
-               // @media #{$ui-tablet} {
-               //      padding: .5rem .75rem;
-               // }
+               @media #{$ui-tablet} {
+                    padding: .75rem .75rem;
+               }
                .activity-block-title {
                     font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
                }
