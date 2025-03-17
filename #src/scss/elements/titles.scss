@@ -1,0 +1,11 @@
+.h3-title {
+     font-size: 28px;
+     font-family: 'Exo 2';
+     font-weight: 600;
+     color: var(--color-black);
+     text-transform: uppercase;
+
+     @media #{$ui-tablet} {
+          font-size: 24px;
+     }
+}

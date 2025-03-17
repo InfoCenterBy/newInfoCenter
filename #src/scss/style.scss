@@ -43,6 +43,7 @@
 @import './elements/link-anchor-block.scss';
 @import './elements/accent-table.scss';
 @import './elements/info-block.scss';
+@import './elements/titles.scss';
 //! end imports
 
 html {
@@ -159,8 +160,8 @@ ol ul {
      list-style: disc;
 }
 
-@layer base{
-     li{
+@layer base {
+     li {
           font-family: $ff-roboto;
      }
 }
