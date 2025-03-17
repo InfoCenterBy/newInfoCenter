@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                if (targetElement) {
                     // Determine the offset based on screen width
-                    const offset = window.innerWidth <= 768 ? 50 : 100; // 768px is a common breakpoint for mobile devices
+                    const offset = window.innerWidth <= 768 ? 50 : 100; // 768px breakpoint for mobile
 
                     // Calculate the target position with the offset
                     const targetPosition =
