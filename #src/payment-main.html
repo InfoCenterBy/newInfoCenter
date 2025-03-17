@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Оплата услуг",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Оплата услуг
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-12">
+               <div class="row">
+                    <div class="col-12">
+                         <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
+                              оплата услуг
+                         </h2>
+                    </div>
+                    <div class="col-12 mt-32"></div>
+                    <div class="col-lg-6 d-flex my-lg-0 my-2">
+                         <a href="./payment-price-list.html" target="_self" class="activity-block activity-block-lg bg-gray-bg-illustr">
+                              <div class="activity-block-title activity-block-title-violet align-items-center">
+                                   <div class="d-flex flex-row gap-2 align-items-center">
+                                        <div class="activity-block-title__icon bg-violet">
+                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M23.25 7.875V7.375H22.75H19.25C18.6864 7.375 18.1459 7.15112 17.7474 6.7526C17.3489 6.35409 17.125 5.81358 17.125 5.25V1.75V1.25H16.625H7C6.40326 1.25 5.83097 1.48705 5.40901 1.90901C4.98705 2.33097 4.75 2.90326 4.75 3.5V15.75V16.25H5.25H22.75H23.25V15.75V7.875ZM4.75 21V21.5H5.25H8.75H9.25V21V17.5V17H8.75H5.25H4.75V17.5V21ZM5.25 22.25H4.75V22.75V24.5C4.75 25.0967 4.98705 25.669 5.40901 26.091C5.83097 26.5129 6.40326 26.75 7 26.75H8.75H9.25V26.25V22.75V22.25H8.75H5.25ZM10 26.25V26.75H10.5H15.75H16.25V26.25V22.75V22.25H15.75H10.5H10V22.75V26.25ZM17 26.25V26.75H17.5H21C21.5967 26.75 22.169 26.5129 22.591 26.091C23.0129 25.669 23.25 25.0967 23.25 24.5V22.75V22.25H22.75H17.5H17V22.75V26.25ZM22.75 21.5H23.25V21V17.5V17H22.75H17.5H17V17.5V21V21.5H17.5H22.75ZM10 21V21.5H10.5H15.75H16.25V21V17.5V17H15.75H10.5H10V17.5V21ZM24 8.08211V24.5C24 25.2956 23.6839 26.0587 23.1213 26.6213C22.5587 27.1839 21.7956 27.5 21 27.5H7C6.20435 27.5 5.44129 27.1839 4.87868 26.6213C4.31607 26.0587 4 25.2956 4 24.5V3.5C4 2.70435 4.31607 1.94129 4.87868 1.37868C5.44129 0.816071 6.20435 0.5 7 0.5H16.4179L24 8.08211Z"
+                                                       fill="#FBFBFB" stroke="#FBFBFB" />
+                                             </svg>
+                                        </div>
+                                        Прейскуранты
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+                    <div class="col-lg-6 d-flex my-lg-0 my-2">
+                         <a href="./payment-choice-list.html" target="_self" class="activity-block activity-block-lg bg-gray-bg-illustr">
+                              <div class="activity-block-title activity-block-title-violet align-items-center">
+                                   <div class="d-flex flex-row gap-2 align-items-center">
+                                        <div class="activity-block-title__icon bg-violet">
+                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <g clip-path="url(#clip0_9015_29365)">
+                                                       <path d="M21.3592 1.05573L21.3593 1.0557C21.6725 0.977368 21.9994 0.97141 22.3152 1.03828C22.631 1.10516 22.9275 1.24311 23.182 1.44166C23.4365 1.6402 23.6425 1.89413 23.7842 2.18417C23.926 2.47421 23.9998 2.79272 24 3.11554V5.25015V5.75015H24.5H25.375C25.9386 5.75015 26.4791 5.97403 26.8776 6.37255C27.2761 6.77106 27.5 7.31156 27.5 7.87515V23.6251C27.5 24.1887 27.2761 24.7292 26.8776 25.1278C26.4791 25.5263 25.9386 25.7501 25.375 25.7501H2.625C2.06142 25.7501 1.52091 25.5263 1.1224 25.1278C0.723883 24.7292 0.5 24.1887 0.5 23.6251V7.87515L0.5 7.87497C0.499802 7.32793 0.710577 6.80189 1.08845 6.40633C1.46633 6.01078 1.98219 5.77618 2.52867 5.75139L2.57867 5.74912L2.62723 5.73698L21.3592 1.05573ZM9.61225 4.76507L9.7335 5.75015H22.75H23.25V5.25015L23.25 3.11515L23.25 3.11401C23.2495 2.90538 23.2016 2.6996 23.1098 2.51225C23.018 2.32489 22.8848 2.16088 22.7203 2.03263C22.5557 1.90438 22.3641 1.81525 22.16 1.77201C21.9559 1.72876 21.7447 1.73252 21.5422 1.78301L21.542 1.78307L9.61225 4.76507ZM2.625 6.50015C2.26033 6.50015 1.91059 6.64502 1.65273 6.90288C1.39487 7.16074 1.25 7.51048 1.25 7.87515V23.6251C1.25 23.9898 1.39487 24.3396 1.65273 24.5974C1.91059 24.8553 2.26033 25.0001 2.625 25.0001H25.375C25.7397 25.0001 26.0894 24.8553 26.3473 24.5974C26.6051 24.3396 26.75 23.9898 26.75 23.6251V7.87515C26.75 7.51048 26.6051 7.16074 26.3473 6.90288C26.0894 6.64502 25.7397 6.50015 25.375 6.50015H2.625Z"
+                                                            fill="#FBFBFB" stroke="#FBFBFB" />
+                                                  </g>
+                                                  <defs>
+                                                       <clipPath id="clip0_9015_29365">
+                                                            <rect width="28" height="28" fill="white" />
+                                                       </clipPath>
+                                                  </defs>
+                                             </svg>
+                                        </div>
+                                        Способы оплаты
+                                   </div>
+                              </div>
+                         </a>
+                    </div>
+               </div>
+          </div>
+     </main>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+     </body>
+</html>

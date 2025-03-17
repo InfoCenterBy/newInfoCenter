@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html-comp/_head.html',{
+"title":"Система контроля кассового оборудования",
+})
+
+<body>
+     @@include('./html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./payment-main.html" target="_blank" rel="noopener noreferrer">
+                         Оплата услуг
+                    </a>
+                    <a href="./payment-price-list.html" target="_blank" rel="noopener noreferrer">
+                         Прейскуранты
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Система контроля кассового оборудования
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-12">
+                    <div class="">
+                         <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
+                              Система контроля кассового оборудования
+                         </h2>
+                    </div>
+                    <div class="mt-32"></div>
+                    <div class="d-flex flex-column gap-3">
+                         @@for (var i = 0; i < 6; i++){
+                              @@include('./html-comp/_link-anchor-block.html')
+                         }
+                    </div>
+                    <div class="mt-64"></div>
+                    <div class="bg-gray-bg-illustr border-30 p-lg-5 p-3 d-flex flex-column gap-3" id="tableInner1">
+                         <h5 class="h5 ff-exo fw-bold d-block text-uppercase">
+                              ПРЕЙСКУРАНТ на услуги, оказываемые пользователям системы контроля кассового оборудования (для владельцев кассовых
+                              суммирующих аппаратов, в том числе совмещенных с таксометрами, билетопечатающих машин) от 20.12.2024 № 33-10
+                         </h5>
+                         <p class="mb-0 color-gray-txt ff-roboto">
+                              Вводится в действие <span class="fw-semibold">с 1 января 2025 года</span> и действует до выхода нового прейскуранта
+                         </p>
+                         <div class="table-default accent-table">
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>
+                                                  № п/п
+                                             </th>
+                                             <th>
+                                                  Наименование услуг
+                                             </th>
+                                             <th>
+                                                  Единица измерения услуг
+                                             </th>
+                                             <th>
+                                                  Тариф без НДС, руб., коп.
+                                             </th>
+                                             <th>
+                                                  Сумма НДС, руб., коп.
+                                             </th>
+                                             <th>
+                                                  Тариф с НДС, руб., коп.
+                                             </th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr>
+                                             <td>
+                                                  1
+                                             </td>
+                                             <td>
+                                                  Регистрация и подключение одной единицы кассового оборудования в СККО
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  7,50
+                                             </td>
+                                             <td>
+                                                  1,50
+                                             </td>
+                                             <td>
+                                                  9,00
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2
+                                             </td>
+                                             <td>
+                                                  Информационное обслуживание пользователя СККО за одну единицу кассового оборудования (включая
+                                                  абонентскую плату и
+                                                  месячный тариф):
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  9,90
+                                             </td>
+                                             <td>
+                                                  1,98
+                                             </td>
+                                             <td>
+                                                  11,88
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2.1
+                                             </td>
+                                             <td>
+                                                  абонентская плата за месяц
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  1,85
+                                             </td>
+                                             <td>
+                                                  1,50
+                                             </td>
+                                             <td>
+                                                  9,00
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                             <td>
+                                                  2.2
+                                             </td>
+                                             <td>
+                                                  Информационное обслуживание пользователя СККО за одну единицу кассового оборудования (включая
+                                                  абонентскую плату и
+                                                  месячный тариф):
+                                             </td>
+                                             <td>
+                                                  услуга
+                                             </td>
+                                             <td>
+                                                  9,90
+                                             </td>
+                                             <td>
+                                                  1,98
+                                             </td>
+                                             <td>
+                                                  11,88
+                                             </td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+                         <div class="info-block bg-info-light">
+                              <div class="info-block__icon color-info">
+                                   <i class="bi bi-info-circle"></i>
+                              </div>
+                              <div class="info-block__text">
+                                   <p>
+                                        1) СККО - система контроля кассового оборудования; <br>
+                                        2) Выбор тарифного плана с учетом п. 2 и п. 3 осуществляется по усмотрению пользователя СККО в
+                                        соответствии с договором.
+                                   </p>
+                              </div>
+                         </div>
+                         <div class="info-block bg-info-light">
+                              <div class="info-block__icon color-info">
+                                   <i class="bi bi-info-circle"></i>
+                              </div>
+                              <div class="info-block__text">
+                                   <p>
+                                        Залоговая стоимость на изделие «Средство контроля налоговых органов» (далее – СКНО), используемое для подключения
+                                        кассового оборудования к системе контроля кассового оборудования составляет:
+                                        <ul class="mb-0">
+                                             <li>
+                                                  для юридических лиц и индивидуальных предпринимателей – 130,00 (сто тридцать белорусских рублей 00 копеек);
+                                             </li>
+                                             <li>
+                                                  для юридических лиц и индивидуальных предпринимателей осуществляющих деятельность по перевозке пассажиров
+                                                  автомобилями-такси – 150,00 (сто пятьдесят белорусских рублей 00 копеек).
+                                             </li>
+                                        </ul>
+                                        До внесения залоговой стоимости СКНО подключение и регистрация кассового оборудования к СККО не осуществляется.
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+               
+          </div>
+     </main>
+     @@include('./html-comp/_footer.html')
+     @@include('./html-comp/_script.html')
+</body>
+
+</html>
