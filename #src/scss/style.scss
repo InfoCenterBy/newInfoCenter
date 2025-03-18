@@ -6,6 +6,7 @@
 @import url('./font-roboto.css');
 @import url('./bootstrap-icons.css');
 @import './veriables/variables';
+@import './elements/titles.scss';
 @import './functional/_mixins.scss';
 @import './veriables/veriables-mix';
 @import './layers.scss';
@@ -43,7 +44,7 @@
 @import './elements/link-anchor-block.scss';
 @import './elements/accent-table.scss';
 @import './elements/info-block.scss';
-@import './elements/titles.scss';
+
 //! end imports
 
 html {
