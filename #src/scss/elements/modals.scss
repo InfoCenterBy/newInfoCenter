@@ -37,6 +37,9 @@
      .modal-large {
           --bs-modal-width: 700px;
      }
+     .modal-small {
+          --bs-modal-width: 400px;
+     }
      // .modal-content {
      //      position: relative;
      //      display: flex;
@@ -71,15 +74,15 @@
      }
 }
 
-.scrollable-modal-body{
+.scrollable-modal-body {
      height: 444px;
      overflow-y: auto;
 }
 
-.modal:not(.header-modal) .modal-content{
-          margin-top: 2.5rem;
-     
+.modal:not(.header-modal) .modal-content {
+     margin-top: 2.5rem;
+
      @media #{$ui-bs-lg} {
-               margin-top: 8.75rem;
+          margin-top: 8.75rem;
      }
 }
