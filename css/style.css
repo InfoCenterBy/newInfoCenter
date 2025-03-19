@@ -206,6 +206,32 @@
 }
 
 @layer component {
+  .h2-title {
+    font-size: 28px;
+    font-family: "Exo 2";
+    font-weight: 600;
+    color: var(--color-black);
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 992px) {
+    .h2-title {
+      font-size: 24px;
+    }
+  }
+  .h3-title {
+    font-size: 24px;
+    font-family: "Exo 2";
+    font-weight: 600;
+    color: var(--color-black);
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 992px) {
+    .h3-title {
+      font-size: 20px;
+    }
+  }
+}
+@layer component {
   .bg-black {
     background-color: #030303 !important;
   }
@@ -4299,17 +4325,13 @@ nav.breadcrumb a:last-child {
     margin-bottom: 0;
   }
 }
-.h3-title {
-  font-size: 28px;
-  font-family: "Exo 2";
-  font-weight: 600;
-  color: var(--color-black);
-  text-transform: uppercase;
+.hidden-file-input {
+  display: none;
 }
-@media screen and (max-width: 992px) {
-  .h3-title {
-    font-size: 24px;
-  }
+
+.file-name {
+  margin-left: 10px;
+  color: #333;
 }
 
 html {
