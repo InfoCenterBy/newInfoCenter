@@ -3125,7 +3125,7 @@ nav.breadcrumb a:last-child {
     --bs-modal-padding: 1rem;
     --bs-modal-margin: 0.5rem;
     --bs-modal-color: ;
-    --bs-modal-bg: var(--bs-body-bg);
+    --bs-modal-bg: var(--color-white);
     --bs-modal-border-color: var(--color-transparent);
     --bs-modal-border-width: 0;
     --bs-modal-border-radius: 1.25rem;
@@ -3156,6 +3156,9 @@ nav.breadcrumb a:last-child {
   }
   .modal-large {
     --bs-modal-width: 700px;
+  }
+  .modal-small {
+    --bs-modal-width: 400px;
   }
   .modal-header {
     padding-bottom: 0;
