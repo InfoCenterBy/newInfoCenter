@@ -1,0 +1,68 @@
+.slider-tax-consultants {
+     position: relative;
+     .swiper-button-prev-custom::before {
+          content: '\F12F';
+     }
+     .swiper-button-next-custom::before {
+          content: '\F138';
+     }
+     .swiper-button-next-custom::before,
+     .swiper-button-prev-custom::before {
+          @extend .bootsrtap-icon;
+     }
+     .swiper-button-prev-custom,
+     .swiper-button-next-custom {
+          position: absolute;
+          border: 1.5px solid var(--color-violet);
+          color: var(--color-violet);
+          border-radius: 50%; //100px
+          background-color: var(--color-white);
+          font-size: 2rem;
+          text-align: center;
+          min-width: 3rem;
+          min-height: 3rem;
+          @include transition($transition-3);
+          @media #{$mouse-device} {
+               &:not([disabled]):hover {
+                    background-color: var(--color-violet-hover);
+                    color: var(--color-white);
+                    border-color: var(--color-violet-hover);
+               }
+          }
+          @media #{$touch-device} {
+               &:active {
+                    background-color: var(--color-violet-hover);
+                    color: var(--color-white);
+                    border-color: var(--color-violet-hover);
+               }
+          }
+          &:disabled,
+          &.disabled {
+               border-color: var(--color-gray-stroke);
+               color: var(--color-gray-stroke);
+          }
+     }
+
+     .swiper-button-next-custom {
+          z-index: 100;
+          top: 50%;
+          right: 0;
+     }
+
+     .swiper-button-prev-custom {
+          z-index: 100;
+          top: 50%;
+          left: 0;
+     }
+}
+
+.slider-tax-consultants__element {
+     display: flex;
+     justify-content: center;
+     max-height: 660px;
+
+     & img {
+          width: 100%;
+          height: auto;
+     }
+}
