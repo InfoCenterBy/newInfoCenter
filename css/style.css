@@ -71,6 +71,14 @@
   .p-40 {
     padding: 40px;
   }
+  .custom-pb-33 {
+    padding-bottom: 33px;
+  }
+  @media (max-width: 1200px) {
+    .custom-pb-33 {
+      padding-bottom: 16px;
+    }
+  }
 }
 @layer variations {
   .ff-exo {
@@ -91,7 +99,9 @@
   z-index: 3;
 }
 
-.bootsrtap-icon, nav.breadcrumb a:nth-child(n):not(:last-child)::after, .main-banner-wrapper .swiper-button-next-custom::before, .main-banner-wrapper .swiper-button-prev-custom::before, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .header-nav-link-person-logged::after, .link-default-arrow::after, .arrow-link-back::before, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .activity-block .activity-block-title::after, .button-serach::before {
+.bootsrtap-icon, nav.breadcrumb a:nth-child(n):not(:last-child)::after, .slider-tax-consultants .swiper-button-next-custom::before,
+.slider-tax-consultants .swiper-button-prev-custom::before, .main-banner-wrapper .swiper-button-next-custom::before,
+.main-banner-wrapper .swiper-button-prev-custom::before, .menu-tabs-sub-btn::before, .menu-tabs-inner-sub-btn::before, .menu-tabs-main-btn-arrow::after, .menu-tabs-inner-main-btn-arrow::after, .header-nav-link-dropdown::after, .header-nav-link-person-logged::after, .link-default-arrow::after, .arrow-link-back::before, .arrow-link::after, .btn-collapse-more-hidden::after, .btn-collapse-more::after, .activity-block .activity-block-title::after, .button-serach::before {
   display: inline-block;
   font-family: bootstrap-icons !important;
   font-style: normal;
@@ -228,6 +238,18 @@
   @media screen and (max-width: 992px) {
     .h3-title {
       font-size: 20px;
+    }
+  }
+  .h4-title {
+    font-size: 20px;
+    font-family: "Exo 2";
+    font-weight: 600;
+    color: var(--color-black);
+    text-transform: uppercase;
+  }
+  @media screen and (max-width: 992px) {
+    .h4-title {
+      font-size: 18px;
     }
   }
 }
@@ -1162,6 +1184,9 @@
   }
   .fs-28 {
     font-size: 1.75rem !important;
+  }
+  .fs-44 {
+    font-size: 2.75rem !important;
   }
   .fs-64 {
     font-size: 4rem !important;
@@ -2787,11 +2812,11 @@ html:has(.ui-page) {
     --swiper-pagination-progressbar-size: 4px;
     --swiper-pagination-bullet-size: 8px;
     --swiper-pagination-bullet-width: 1.25rem;
-    --swiper-pagination-bullet-height: .375rem;
+    --swiper-pagination-bullet-height: 0.375rem;
     --swiper-pagination-bullet-inactive-color: var(--color-violet-hover);
     --swiper-pagination-bullet-inactive-opacity: 0.2;
     --swiper-pagination-bullet-opacity: 1;
-    --swiper-pagination-bullet-horizontal-gap: .375rem;
+    --swiper-pagination-bullet-horizontal-gap: 0.375rem;
     --swiper-pagination-bullet-vertical-gap: 6px;
     --swiper-pagination-bullet-border-radius: 2px;
   }
@@ -2801,7 +2826,8 @@ html:has(.ui-page) {
   .main-banner-wrapper .swiper-button-next-custom::before {
     content: "\f138";
   }
-  .main-banner-wrapper .swiper-button-prev-custom, .main-banner-wrapper .swiper-button-next-custom {
+  .main-banner-wrapper .swiper-button-prev-custom,
+  .main-banner-wrapper .swiper-button-next-custom {
     border: 1.5px solid var(--color-violet);
     color: var(--color-violet);
     border-radius: 6.25rem;
@@ -2816,25 +2842,30 @@ html:has(.ui-page) {
     transition: all ease-out 0.3s;
   }
   @media (hover: hover) and (pointer: fine) {
-    .main-banner-wrapper .swiper-button-prev-custom:not([disabled]):hover, .main-banner-wrapper .swiper-button-next-custom:not([disabled]):hover {
+    .main-banner-wrapper .swiper-button-prev-custom:not([disabled]):hover,
+    .main-banner-wrapper .swiper-button-next-custom:not([disabled]):hover {
       background-color: var(--color-violet-hover);
       color: var(--color-white);
       border-color: var(--color-violet-hover);
     }
   }
   @media (hover: none) {
-    .main-banner-wrapper .swiper-button-prev-custom:active, .main-banner-wrapper .swiper-button-next-custom:active {
+    .main-banner-wrapper .swiper-button-prev-custom:active,
+    .main-banner-wrapper .swiper-button-next-custom:active {
       background-color: var(--color-violet-hover);
       color: var(--color-white);
       border-color: var(--color-violet-hover);
     }
   }
-  .main-banner-wrapper .swiper-button-prev-custom:disabled, .main-banner-wrapper .swiper-button-prev-custom.disabled, .main-banner-wrapper .swiper-button-next-custom:disabled, .main-banner-wrapper .swiper-button-next-custom.disabled {
+  .main-banner-wrapper .swiper-button-prev-custom:disabled, .main-banner-wrapper .swiper-button-prev-custom.disabled,
+  .main-banner-wrapper .swiper-button-next-custom:disabled,
+  .main-banner-wrapper .swiper-button-next-custom.disabled {
     border-color: var(--color-gray-stroke);
     color: var(--color-gray-stroke);
   }
   @media screen and (max-width: 992px) {
-    .main-banner-wrapper .swiper-button-prev-custom, .main-banner-wrapper .swiper-button-next-custom {
+    .main-banner-wrapper .swiper-button-prev-custom,
+    .main-banner-wrapper .swiper-button-next-custom {
       display: none;
     }
   }
@@ -2954,6 +2985,76 @@ html:has(.ui-page) {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
   }
+}
+
+.slider-tax-consultants {
+  position: relative;
+}
+.slider-tax-consultants .swiper-button-prev-custom::before {
+  content: "\f12f";
+}
+.slider-tax-consultants .swiper-button-next-custom::before {
+  content: "\f138";
+}
+.slider-tax-consultants .swiper-button-prev-custom,
+.slider-tax-consultants .swiper-button-next-custom {
+  position: absolute;
+  border: 1.5px solid var(--color-violet);
+  color: var(--color-violet);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  font-size: 2rem;
+  text-align: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .slider-tax-consultants .swiper-button-prev-custom:not([disabled]):hover,
+  .slider-tax-consultants .swiper-button-next-custom:not([disabled]):hover {
+    background-color: var(--color-violet-hover);
+    color: var(--color-white);
+    border-color: var(--color-violet-hover);
+  }
+}
+@media (hover: none) {
+  .slider-tax-consultants .swiper-button-prev-custom:active,
+  .slider-tax-consultants .swiper-button-next-custom:active {
+    background-color: var(--color-violet-hover);
+    color: var(--color-white);
+    border-color: var(--color-violet-hover);
+  }
+}
+.slider-tax-consultants .swiper-button-prev-custom:disabled, .slider-tax-consultants .swiper-button-prev-custom.disabled,
+.slider-tax-consultants .swiper-button-next-custom:disabled,
+.slider-tax-consultants .swiper-button-next-custom.disabled {
+  border-color: var(--color-gray-stroke);
+  color: var(--color-gray-stroke);
+}
+.slider-tax-consultants .swiper-button-next-custom {
+  z-index: 100;
+  top: 50%;
+  right: 0;
+}
+.slider-tax-consultants .swiper-button-prev-custom {
+  z-index: 100;
+  top: 50%;
+  left: 0;
+}
+
+.slider-tax-consultants__element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 660px;
+}
+.slider-tax-consultants__element img {
+  width: 100%;
+  height: auto;
 }
 
 nav.breadcrumb {
@@ -4083,6 +4184,12 @@ nav.breadcrumb a:last-child {
   cursor: pointer;
   -webkit-transition: all ease-out 0.2s;
   transition: all ease-out 0.2s;
+}
+.payment-method-card.disabled {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 .payment-method-card__img {
   display: -webkit-box;
