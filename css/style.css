@@ -2110,7 +2110,8 @@ html:has(.ui-page) {
     padding: 0 1rem;
     background-color: var(--color-white);
     color: var(--color-gray-txt);
-    border: 1.5px solid var(--color-gray-stroke);
+    border: 1.5px solid var(--color-transparent);
+    border-color: var(--color-gray-stroke);
     border-radius: 9.375rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -2140,6 +2141,16 @@ html:has(.ui-page) {
     .floating-input:focus ~ .floating-label {
       font-size: calc(10px + 2 * (100vw - 320px) / 1120);
     }
+  }
+  .floating-input.disabled, .floating-input:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-gray-bg-illustr);
+    color: var(--color-gray-txt);
+    border-color: var(--color-gray-stroke);
+  }
+  .floating-input.disabled ~ .floating-label, .floating-input:disabled ~ .floating-label {
+    color: var(--color-gray-txt);
+    background-color: var(--color-gray-bg-illustr);
   }
   @media (hover: hover) and (pointer: fine) {
     .floating-label-content:not(.floating-input-error) .floating-input:not(:focus, :disabled):hover {
@@ -4296,8 +4307,8 @@ nav.breadcrumb a:last-child {
   }
   .info-block__icon {
     font-size: 1.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
   }
   .info-block__text {
     font-family: "Roboto";
