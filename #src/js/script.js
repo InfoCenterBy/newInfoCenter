@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
 @@include('app.js', {})
 @@include('sliders.js', {})
 @@include('showPassword.js', {})
@@ -9,4 +8,3 @@ document.addEventListener('DOMContentLoaded', function () {
 @@include('phoneMask.js',{})
 @@include('fixAnchorScroll.js',{})
 @@include('fixModalBackdrop.js',{})
-});
