@@ -1,13 +1,16 @@
 nav.breadcrumb{
      display: flex;
      gap: .25rem;
-     margin-top: 2.5rem;
-     @media #{$ui-tablet} {
-          margin-top: 1.25rem;
+     margin-top: 1.25rem;
+     @media #{$ui-bs-lg} {
+          margin-top: 2.5rem;
      }
      a{
           font-family: $ff-roboto;
-          font-size: 1rem;
+          font-size: .875rem;
+          @media #{$ui-bs-lg} {
+               font-size: 1rem;
+          }
           font-weight: 400;
           line-height: 1.3;
      }

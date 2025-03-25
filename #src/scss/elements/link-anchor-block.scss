@@ -1,0 +1,78 @@
+@layer base{
+     .link-anchor-block {
+          display: flex;
+          flex-direction: row;
+          gap: .75rem;
+          align-items: start;
+          background-color: var(--color-gray-bg-illustr);
+          padding: 1rem 1.5rem;
+          border-radius: .9375rem;
+          width: 100%;
+          justify-content: space-between;
+          @media #{$mouse-device} {
+               &:hover{
+                    .link-anchor-block__arrow{
+                         color: var(--color-dark-violet);
+                    }
+                    .link-anchor-block__text{
+                         color: var(--color-dark-violet);
+                    }
+               }
+          }
+          @media #{$touch-device} {
+               &:active{
+                    .link-anchor-block__arrow{
+                         color: var(--color-dark-violet);
+                    }
+                    .link-anchor-block__text{
+                         color: var(--color-dark-violet);
+                    }
+               }
+          }
+               &__icon {
+               }
+               &__arrow{
+                    font-size: 1.75rem;
+                    transform: rotate(90deg) scale( -1, 1);
+                    color: var(--color-black);
+                    @include transition($transition-3);
+               }
+
+               &__text {
+                    p{
+                         margin-bottom: 0;
+                    }
+                    font-family: $ff-roboto;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 130%;
+                    color: var(--color-black);
+                    @include transition($transition-3);
+               }
+     }
+}
+
+@layer component{
+     .link-anchor-block.link-anchor-block-accent{
+          align-items: center;
+          .link-anchor-block__icon {
+               background-color: var(--color-violet);
+               border-radius: 100%;
+               padding: 10px;
+               color: var(--color-white);
+               svg{
+                    path{
+                         // fill: var(--color-white);
+                         // delete later if will be no needs
+                    }
+               }
+          }
+          .link-anchor-block__text {
+               font-family: $ff-exo;
+               font-size: 1.25rem;
+               line-height: 120%;
+               text-transform: uppercase;
+               font-weight: 600;
+          }
+     }
+}

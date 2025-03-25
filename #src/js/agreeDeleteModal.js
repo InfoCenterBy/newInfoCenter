@@ -1,25 +1,29 @@
-const agreeDeleteCheck = document.querySelector('#agreeDeleteCheck');
-const deleteAgreeBtn = document.querySelector('#deleteAgreeBtn');
+const pendingCheckContainer = document.querySelectorAll('.pending-check-block');
 
-function agreeCheckIsTrue(checkBox) {
-	if (checkBox.checked) {
-		return true;
-	} else {
-		return false;
-	}
-}
+pendingCheckContainer.forEach((container) => {
+     let checkbox = container.querySelector('.agree-delete-check');
+     let button = container.querySelector('.delete-agree-btn');
 
-if (agreeDeleteCheck) {
-	if (agreeCheckIsTrue(agreeDeleteCheck)) {
-		deleteAgreeBtn.disabled = false;
-	} else {
-		deleteAgreeBtn.disabled = true;
-	}
-	agreeDeleteCheck.addEventListener('change', () => {
-		if (agreeCheckIsTrue(agreeDeleteCheck)) {
-			deleteAgreeBtn.disabled = false;
-		} else {
-			deleteAgreeBtn.disabled = true;
-		}
-	});
-}
+     function agreeCheckIsTrue(checkBox) {
+          if (checkBox.checked) {
+               return true;
+          } else {
+               return false;
+          }
+     }
+
+     if (checkbox) {
+          if (agreeCheckIsTrue(checkbox)) {
+               button.disabled = false;
+          } else {
+               button.disabled = true;
+          }
+          checkbox.addEventListener('change', () => {
+               if (agreeCheckIsTrue(checkbox)) {
+                    button.disabled = false;
+               } else {
+                    button.disabled = true;
+               }
+          });
+     }
+});

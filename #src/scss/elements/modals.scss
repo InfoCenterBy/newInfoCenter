@@ -1,16 +1,18 @@
-@layer component{
+@layer component {
      .modal {
           --bs-modal-zindex: 1055;
           --bs-modal-width: 500px;
           --bs-modal-padding: 1rem;
           --bs-modal-margin: 0.5rem;
           --bs-modal-color: ;
-          --bs-modal-bg: var(--bs-body-bg);
+          --bs-modal-bg: var(--color-white);
           --bs-modal-border-color: var(--color-transparent);
           --bs-modal-border-width: 0;
           --bs-modal-border-radius: 1.25rem;
           --bs-modal-box-shadow: var(--bs-box-shadow-sm);
-          --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
+          --bs-modal-inner-border-radius: calc(
+               var(--bs-border-radius-lg) - (var(--bs-border-width))
+          );
           --bs-modal-header-padding-x: 1rem;
           --bs-modal-header-padding-y: 1rem;
           --bs-modal-header-padding: 1rem 1rem;
@@ -32,6 +34,12 @@
           overflow-y: auto;
           outline: 0;
      }
+     .modal-large {
+          --bs-modal-width: 700px;
+     }
+     .modal-small {
+          --bs-modal-width: 400px;
+     }
      // .modal-content {
      //      position: relative;
      //      display: flex;
@@ -45,10 +53,11 @@
      //      border-radius: var(--bs-modal-border-radius);
      //      outline: 0;
      // }
-     .modal-header{
+     .modal-header {
           padding-bottom: 0;
+          align-items: flex-start;
      }
-     .modal-footer{
+     .modal-footer {
           padding-bottom: 1.5rem;
      }
      // @media #{$ui-mobile} {
@@ -56,11 +65,24 @@
      //           margin-top: 5.625rem;
      //      }
      // }
-     .success-record{
+     .success-record {
           @media #{$ui-mobile} {
-               .modal-content{
+               .modal-content {
                     margin-top: 5.625rem;
                }
           }
+     }
+}
+
+.scrollable-modal-body {
+     height: 444px;
+     overflow-y: auto;
+}
+
+.modal:not(.header-modal) .modal-content {
+     margin-top: 2.5rem;
+
+     @media #{$ui-bs-lg} {
+          margin-top: 8.75rem;
      }
 }

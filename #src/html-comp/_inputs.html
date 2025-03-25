@@ -8,6 +8,14 @@
           </div>
      </div>
      <div class="">
+          <div class="floating-label-content w-100">
+               <input class="floating-input disabled" type="text" placeholder="" required="" disabled>
+               <label class="floating-label">
+                    <span>ФИО</span><span class="color-red-attention">*</span>
+               </label>
+          </div>
+     </div>
+     <div class="">
           <div class="floating-label-content invalid w-100">
                <input class="floating-input" type="text" placeholder="" required="">
                <label class="floating-label">
@@ -19,6 +27,20 @@
      <div class="">
           <div class="floating-label-content w-100">
                <input class="floating-input password-input" id="old-pass" type="password" required placeholder>
+               <label class="floating-label">
+                    <span>Пароль</span><span class="color-red-attention">*</span>
+               </label>
+               <span class="floating-label-error">Данные введены неверно</span>
+               <div class="d-flex justify-content-end">
+                    <div class="position-absolute">
+                         <i id="toggle-password" class="password-icon bi bi-eye-slash"></i>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="">
+          <div class="floating-label-content invalid w-100">
+               <input class="floating-input password-input " id="old-pass" type="password" required placeholder>
                <label class="floating-label">
                     <span>Пароль</span><span class="color-red-attention">*</span>
                </label>
