@@ -1,0 +1,54 @@
+@layer base{
+     .list-lg-numbers{
+          list-style: none;
+          counter-reset: custom-counter;
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.5rem;
+          padding-left: 0;
+          margin-bottom: 0;
+          li{
+               counter-increment: custom-counter;
+               display: flex;
+               flex-direction: column;
+               column-gap: 1.5rem;
+               align-items: start;
+               row-gap: 1rem;
+               @media #{$ui-bs-lg} {
+                    flex-direction: row;
+               }
+               p{
+                    margin-bottom: 0;
+               }
+          }
+          li::before{
+               content: counter(custom-counter);
+               font-size: 1.75rem;
+               font-family: $ff-exo;
+               line-height: 1;
+               text-transform: uppercase;
+               font-weight: 600;
+               background-color: var(--color-transparent);
+               padding: 1.5rem 2.5rem;
+               border-radius: .625rem;
+               display: grid;
+               place-items: center;
+               min-width: 120px;
+          }
+     }
+}
+
+@layer component{
+     @each $name, $color in $colorsMap {
+          .list-lg-numbers.list-lg-numbers--bg-color-#{$name}{
+               li::before{
+                    background-color: #{$color};
+               }
+          }
+          .list-lg-numbers.list-lg-numbers--color-#{$name}{
+               li::before{
+                    color: #{$color};
+               }
+          }
+     }
+}

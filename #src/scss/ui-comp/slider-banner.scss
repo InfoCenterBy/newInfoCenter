@@ -133,8 +133,9 @@
 
 .main-banner-sm{
   .main-banner-img{
-    max-height: 12.5rem;
+    max-height: 17.5rem;
     margin-top: 1.5rem;
+    min-height: 12.5rem;
   }
   &__title{
     font-size: 1.125rem;
