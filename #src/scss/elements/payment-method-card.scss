@@ -1,30 +1,34 @@
 .payment-method-card {
-  border: 1px solid var(--color-gray-stroke);
-  padding: 12px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  cursor: pointer;
-  transition: $transition-2;
+     border: 1px solid var(--color-gray-stroke);
+     padding: 12px;
+     border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     cursor: pointer;
+     transition: $transition-2;
 
+     &.disabled {
+          filter: grayscale(100%);
+          opacity: 0.6;
+          pointer-events: none;
+     }
 
-  &__img {
-    display: flex;
-    height: 60px;
-    align-items: center;
-    flex-grow: 1;
-  }
+     &__img {
+          display: flex;
+          height: 60px;
+          align-items: center;
+          flex-grow: 1;
+     }
 
-  &__text {
-    margin: 0;
-    text-align: center;
-    padding-inline: 16px;
-  }
+     &__text {
+          margin: 0;
+          text-align: center;
+          padding-inline: 16px;
+     }
 
-  @include hover('border-color', var(--color-violet))
-  
+     @include hover('border-color', var(--color-violet));
 }

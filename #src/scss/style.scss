@@ -6,6 +6,7 @@
 @import url('./font-roboto.css');
 @import url('./bootstrap-icons.css');
 @import './veriables/variables';
+@import './elements/titles.scss';
 @import './functional/_mixins.scss';
 @import './veriables/veriables-mix';
 @import './layers.scss';
@@ -20,6 +21,7 @@
 @import './ui-comp/slider-banner.scss';
 @import './ui-comp/slider-nav.scss';
 @import './ui-comp/slider-partner.scss';
+@import './ui-comp/slider-tax-consultants.scss';
 @import './elements/breadcrumb.scss';
 @import './elements/profile-side-nav.scss';
 @import './elements/checkbox.scss';
@@ -45,6 +47,7 @@
 @import './elements/info-block.scss';
 @import './ui-comp/slider-banner-sm.scss';
 @import './elements/list-lg-numbers.scss';
+@import './elements/upload-file.scss';
 //! end imports
 
 html {
@@ -161,8 +164,8 @@ ol ul {
      list-style: disc;
 }
 
-@layer base{
-     li{
+@layer base {
+     li {
           font-family: $ff-roboto;
      }
 }
