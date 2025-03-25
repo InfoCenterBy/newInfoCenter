@@ -1,0 +1,18 @@
+@layer componet{
+     .slider-banner-sm{
+          .swiper-button-next-custom, .swiper-button-next-custom{
+          }
+          .swiper{
+               border-radius: 1.25rem;
+          }
+          .swiper-slide{
+               height: 9.375rem;
+               display: flex;
+               justify-content: center;
+               img{
+                    object-fit: contain;
+                    width: 100%;
+               }
+          }
+     }
+}

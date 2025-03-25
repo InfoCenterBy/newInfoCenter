@@ -2,6 +2,7 @@
 		background-color: var(--color-gray-bg-illustr);
 		border-radius: 15px;
 		padding: 1rem;
+		width: 100%;
 		@media #{$ui-bs-lg} {
 			padding: 1rem 1.5rem;
 		}

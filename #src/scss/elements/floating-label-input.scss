@@ -22,6 +22,11 @@
           padding: 0 5px;
           background-color: var(--color-white);
           @include transition($transition-2);
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          line-clamp: 1;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
      }
 
      header.header {
@@ -41,7 +46,8 @@
           padding: 0 1rem;
           background-color: var(--color-white);
           color: var(--color-gray-txt);
-          border: 1.5px solid var(--color-gray-stroke);
+          border: 1.5px solid var(--color-transparent);
+          border-color: var(--color-gray-stroke);
           border-radius: 9.375rem;
           box-sizing: border-box;
           @include transition($transition-2);
@@ -52,6 +58,16 @@
                ~ .floating-label {
                     top: -8px;
                     @include adaptiv-value('font-size', 12, 10, 1);
+               }
+          }
+          &.disabled, &:disabled{
+               cursor: not-allowed;
+               background-color: var(--color-gray-bg-illustr);
+               color: var(--color-gray-txt);
+               border-color: var(--color-gray-stroke);
+               ~ .floating-label{
+                    color: var(--color-gray-txt);
+                    background-color: var(--color-gray-bg-illustr);
                }
           }
      }
