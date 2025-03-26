@@ -288,3 +288,9 @@ $layer-modal: 4;
 .fw-500{
      font-weight: 500;
 }
+
+@layer base{
+     .object-fit-contain{
+          object-fit: contain;
+     }
+}
