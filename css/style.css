@@ -219,6 +219,12 @@
   font-weight: 500;
 }
 
+@layer base {
+  .object-fit-contain {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 @layer component {
   .h2-title {
     font-size: 28px;
