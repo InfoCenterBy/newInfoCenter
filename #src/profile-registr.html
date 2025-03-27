@@ -27,7 +27,7 @@
                     <div class="col-12 mt-3"></div>
                     <div class="col-lg-5 d-flex my-2">
                          <div class="border-1-color-violet border-20 p-lg-5 p-4 w-100">
-                              <form action="" class="d-flex flex-column gap-4 form-validation">
+                              <form action="" class="d-flex flex-column gap-4 form-validation pending-check-block">
                                    <div class="">
                                         <div class="floating-label-content w-100">
                                              <input class="floating-input" type="text" placeholder="" required="" autocomplete="name">
@@ -91,14 +91,15 @@
                                    </div>
                                    <div class="">
                                         <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck4" required data-bs-toggle="modal" data-bs-target="#confirmPersonalDataModal">
+                                             <input type="checkbox" class="form-check-input agree-delete-check" id="exampleCheck4" required data-bs-toggle="modal" data-bs-target="#checkDataModal">
                                              <label class="form-check-label fs-16" for="exampleCheck4">
-                                                  Согласие на обработку <a class="link-activity">персональных данных</a>
+                                                  Для регистрации, создания и пользования личным кабинетом предлагаем дать согласие на обработку персональных данных
+                                                  и ознакомиться с <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">Положением о политике в отношении обработки персональных данных</a>
                                              </label>
                                         </div>
                                    </div>
                                    <div class="mt-2">
-                                        <button type="submit" class="btn-default w-100" id="submitBtn">
+                                        <button type="submit" class="btn-default w-100 delete-agree-btn" id="submitBtn">
                                              Зарегистрироваться
                                         </button>
                                    </div>
@@ -181,7 +182,7 @@
                </div>
           </div>
      </main>
-     <div class="modal fade" id="confirmPersonalDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="confirmPersonalDataModalLabel" aria-hidden="true">
+     <!-- <div class="modal fade" id="confirmPersonalDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="confirmPersonalDataModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg">
                <div class="modal-content">
                     <form action="" class="form-modal-validation">
@@ -275,63 +276,58 @@
                     </form>
                </div>
           </div>
-     </div>
+     </div> -->
      <div class="modal fade" id="checkDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="checkDataModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg">
-               <div class="modal-content">
-                    <div class="modal-header flex-column align-items-start">
+               <div class="modal-content pending-check-block">
+                    <div class="modal-header">
                          <h1 class="modal-title fs-5 d-block" id="checkDataModalLabel">
-                              Получение согласий на обработку персональных данных</h1>
-                         <p class="mb-0 ff-roboto mt-4 color-gray-txt">
-                              Для регистрации на портале вам необходимо ознакомиться со следующей информацией.
-                         </p>
+                              Получение согласий на обработку персональных данных
+                         </h1>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                          <div class="">
                               <p class="mb-0">
-                                   Мы принимаем все необходимые организационные и технические меры для защиты ваших персональных данных от неправомерного
-                                   или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных
-                                   неправомерных действий.
+                                   Пожалуйста, предоставьте согласия на обработку ваших персональных данных для следующих целей:
                               </p>
-                              <p class="mt-3 mb-0">
-                                   Пожалуйста, предоставьте согласия на обработку ваших персональных данных для следующих целей
-                              </p>
-                              <div class="mt-3 d-flex flex-column gap-2">
+                              <div class="mt-3 d-flex flex-column gap-2 check-all-block">
                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck6" data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal">
+                                        <!-- data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal" -->
+                                        <input type="checkbox" class="form-check-input check-all-input" id="exampleCheck6" >
                                         <label class="form-check-label" for="exampleCheck6">Выбрать все</label>
                                    </div>
                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck7">
+                                        <input type="checkbox" class="form-check-input agree-delete-check" id="exampleCheck7">
                                         <label class="form-check-label" for="exampleCheck7">
-                                             Я согласен(а) на обработку персональных данных с целью создания и использования личного кабинета <span class="color-red-attention">*</span>
+                                             Я согласен(а) на обработку персональных данных с целью создания и использования личного кабинета (<a href="" target="_blank" rel="noopener noreferrer" class="link-activity">подробнее</a>)
                                         </label>
                                    </div>
                                    <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck8">
                                         <label class="form-check-label" for="exampleCheck8">
                                              Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки на электронную
-                                             почту
+                                             почту (<a href="" target="_blank" rel="noopener noreferrer" class="link-activity">подробнее</a>)
                                         </label>
                                    </div>
                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck9" data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal">
+                                        <!-- data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal" -->
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck9" >
                                         <label class="form-check-label" for="exampleCheck9">
                                              Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки посредством
-                                             Viber/СМС
+                                             Viber/СМС (<a href="" target="_blank" rel="noopener noreferrer" class="link-activity">подробнее</a>)
                                         </label>
                                    </div>
                               </div>
                          </div>
                     </div>
                     <div class="modal-footer">
-                         <button type="button" class="btn-empty" data-bs-toggle="modal" data-bs-target="#confirmPersonalDataModal">Назад</button>
-                         <button type="button" class="btn-default" data-bs-dismiss="modal">Далее</button>
+                         <button type="button" class="btn-default delete-agree-btn" data-bs-dismiss="modal">Согласиться</button>
                     </div>
                </div>
           </div>
      </div>
-     <div class="modal fade" id="confirmPhoneDataModal" tabindex="-1" data-bs-backdrop="static"
+     <!-- <div class="modal fade" id="confirmPhoneDataModal" tabindex="-1" data-bs-backdrop="static"
           aria-labelledby="confirmPhoneDataModalModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg">
                <div class="modal-content">
@@ -404,7 +400,7 @@
                     </form>
                </div>
           </div>
-     </div>
+     </div> -->
      @@include('./html-comp/_footer.html')
      @@include('./html-comp/_script.html')
 </body>
