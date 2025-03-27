@@ -23,17 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
      }
 });
 
-$('.dont-touch-me').on('mouseenter', function (e) {
-     var maxX = $(window).width() - $(this).width();
-     var maxY = $(window).height() - $(this).height();
-     $(this).css({
-          position: 'absolute',
-          zIndex: 1070,
-          left: getRandomInt(0, maxX),
-          top: getRandomInt(0, maxY),
-     });
-});
-
 function getRandomInt(min, max) {
      return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -452,5 +441,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
      // Initialize the function
      handleModalZIndex();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+     // Find all check-all blocks on the page
+     const checkAllBlocks = document.querySelectorAll('.check-all-block');
+
+     checkAllBlocks.forEach((block) => {
+          // Find the master checkbox (check-all-input) within this block
+          const masterCheckbox = block.querySelector('.check-all-input');
+
+          // Find all regular checkboxes within this block (excluding the master checkbox)
+          const checkboxes = block.querySelectorAll(
+               'input[type="checkbox"]:not(.check-all-input)'
+          );
+
+          if (masterCheckbox) {
+               masterCheckbox.addEventListener('change', function () {
+                    // Toggle all regular checkboxes based on master checkbox state
+                    const isChecked = this.checked;
+                    checkboxes.forEach((checkbox) => {
+                         checkbox.checked = isChecked;
+
+                         // Trigger change event on each checkbox in case other code listens to it
+                         checkbox.dispatchEvent(new Event('change'));
+                    });
+               });
+
+               // Optional: Uncheck master checkbox if any regular checkbox is unchecked
+               checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener('change', function () {
+                         if (!this.checked && masterCheckbox.checked) {
+                              masterCheckbox.checked = false;
+                         }
+                    });
+               });
+          }
+     });
 });
 
