@@ -138,4 +138,21 @@ document.addEventListener('DOMContentLoaded', function () {
                },
           },
      });
+
+     const sliderInfoInner = new Swiper('.slider-info-inner .swiper', {
+          direction: 'horizontal',
+          loop: true,
+          allowTouchMove: true,
+          autoplay: {
+               delay: 4000,
+               pauseOnMouseEnter: true,
+          },
+          navigation: {
+               nextEl: '.slider-info-inner .swiper-button-next-custom',
+               prevEl: '.slider-info-inner .swiper-button-prev-custom',
+               // disabledClass: 'disabled',
+               // navigationDisabledClass: 'disabled',
+          },
+          slidesPerView: 1,
+     });
 });
