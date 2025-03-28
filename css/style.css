@@ -4802,6 +4802,21 @@ nav.breadcrumb a:last-child {
   color: #333;
 }
 
+@layer base {
+  .slider-info-inner .swiper-slide img {
+    max-width: 43.75rem;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+@layer component {
+  .slider-info-inner .swiper-button-prev-custom, .slider-info-inner .swiper-button-next-custom {
+    font-size: 1.75rem;
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+}
 html {
   height: auto;
   scroll-behavior: smooth;
