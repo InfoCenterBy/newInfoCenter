@@ -1,7 +1,7 @@
 <div class="container">
      <!-- @@include('../../html-comp/_script-file.html', {'src-path': link}) -->
      <!-- <div class="map-cards"></div> -->
-     <script src=""></script>
+     <script src="https://api-maps.yandex.ru/2.1/?apikey=&lang=ru_RU"></script>
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
      <div id="app">
           <div class="row">
@@ -98,7 +98,7 @@
                                    style: "islands#violetGovernmentIcon",
                                    items: [
                                         {
-                                             center: [53.91373, 27.574237],
+                                             center: '',
                                              // name: "Минск, проспект Машерова, 7"
                                              name: "ИМНС по Центральному району",
                                              contacts: {
@@ -114,64 +114,64 @@
                                              },
                                              comment: '<strong>Прием осуществляется по предварительной записи</strong>, телефон <a href="tel:+375(17)269-19-19" class="color-dark-violet">+375 17 269 19 19</a> <br>В свободное от предварительной записи время прием ведется посредством системы «Электронная очередь»'
                                         },
-                                        {
-                                             center: [53.897191, 27.494987],
-                                             name: "ИМНС по Фрунзенскому району №2",
-                                             contacts:{
-                                                  adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
-                                                  tel: '+375 (17) 269-19-19',
-                                                  fax: '+375 (17) 323-25-94',
-                                                  email: 0
-                                             },
-                                             workTime: 0,
-                                             status: {
-                                                  active: true,
-                                                  text: 'Функционирует согласно режиму работы'
-                                             },
-                                             comment:0
-                                        },
+                                        // {
+                                        //      center: [53.897191, 27.494987],
+                                        //      name: "ИМНС по Фрунзенскому району №2",
+                                        //      contacts:{
+                                        //           adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
+                                        //           tel: '+375 (17) 269-19-19',
+                                        //           fax: '+375 (17) 323-25-94',
+                                        //           email: 0
+                                        //      },
+                                        //      workTime: 0,
+                                        //      status: {
+                                        //           active: true,
+                                        //           text: 'Функционирует согласно режиму работы'
+                                        //      },
+                                        //      comment:0
+                                        // },
                                    ]
                               },
-                              {
-                                   name: "Слуцк",
-                                   style: "islands#violetGovernmentIcon",
-                                   items: [
-                                        {
-                                             center: [53.02264, 27.558256],
-                                             // name: "Минск, проспект Машерова, 7"
-                                             name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                                             contacts: {
-                                                  adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                  tel: '+375(17) 952 49 92',
-                                                  fax: 0,
-                                                  email: 0,
-                                             },
-                                             workTime: 0,
-                                             status: {
-                                                  active: true,
-                                                  text: 'Функционирует согласно режиму работы'
-                                             },
-                                             comment: 0
-                                        },
-                                        {
-                                             center: [53.02264, 28.558256],
-                                             // name: "Минск, проспекулт Машерова, 7"
-                                             name: "г.sdfsdf23609",
-                                             contacts: {
-                                                  adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                                                  tel: '+375(17) 952 49 92',
-                                                  fax: 0,
-                                                  email: 0,
-                                             },
-                                             workTime: 0,
-                                             status: {
-                                                  active: false,
-                                                  text: 'Функционирует согласно режиму работы'
-                                             },
-                                             comment: 0
-                                        },
-                                   ]
-                              },
+                              // {
+                              //      name: "Слуцк",
+                              //      style: "islands#violetGovernmentIcon",
+                              //      items: [
+                              //           {
+                              //                center: [53.02264, 27.558256],
+                              //                // name: "Минск, проспект Машерова, 7"
+                              //                name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                              //                contacts: {
+                              //                     adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                              //                     tel: '+375(17) 952 49 92',
+                              //                     fax: 0,
+                              //                     email: 0,
+                              //                },
+                              //                workTime: 0,
+                              //                status: {
+                              //                     active: true,
+                              //                     text: 'Функционирует согласно режиму работы'
+                              //                },
+                              //                comment: 0
+                              //           },
+                              //           {
+                              //                center: [53.02264, 28.558256],
+                              //                // name: "Минск, проспекулт Машерова, 7"
+                              //                name: "г.sdfsdf23609",
+                              //                contacts: {
+                              //                     adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                              //                     tel: '+375(17) 952 49 92',
+                              //                     fax: 0,
+                              //                     email: 0,
+                              //                },
+                              //                workTime: 0,
+                              //                status: {
+                              //                     active: false,
+                              //                     text: 'Функционирует согласно режиму работы'
+                              //                },
+                              //                comment: 0
+                              //           },
+                              //      ]
+                              // },
                          ],
                          cityList: [],
                          activeTab: 1,
@@ -353,14 +353,85 @@
                     },
                     handleResize() {
                          this.isLargeScreen = window.innerWidth > 1090
-                    }
+                    },
+                    async fetchCoordinatesForItems() {
+                         // Проходим по всем группам и их элементам
+                         for (const group of this.groups) {
+                              for (const item of group.items) {
+                                   // Если координаты отсутствуют или невалидны
+                                   if (!item.center || item.center.length !== 2 || !item.center.every(coord => typeof coord === 'number')) {
+                                        try {
+                                             // Получаем адрес из контактов
+                                             const address = item.contacts?.adress
+                                             // console.log('address', address);
+
+                                             if (address) {
+                                                  // Вызываем метод геокодирования
+                                                  const coordinates = await this.geocodeAddress(address)
+                                                  if (coordinates) {
+                                                       // Обновляем координаты
+                                                       item.center = coordinates
+
+                                                       // console.log(`Координаты для "${item.name}" успешно получены:`, coordinates)
+                                                  }
+                                             }
+                                        } catch (error) {
+                                             console.error(`Ошибка при получении координат для "${item.name}":`, error)
+                                        }
+                                   }
+                              }
+                         }
+                    },
+
+                    async geocodeAddress(address) {
+                         try {
+                              // 1. Нормализация адреса (удаляем "помещение", "комната" и т.д.)
+                              const normalizedAddress = address
+                                   .replace(/(помещение|комната|офис|кабинет|пом.|к.)\s*\d+/i, '')
+                                   .replace(/\s+/g, ' ')
+                                   .trim();
+
+
+                              // 2. Формируем URL для Yandex Maps API
+                              const apiUrl = `https://geocode-maps.yandex.ru/v1/?format=json&apikey=&geocode=${encodeURIComponent(normalizedAddress)}`;
+
+                              // 3. Делаем запрос к API
+                              const response = await fetch(apiUrl);
+                              const data = await response.json();
+
+                              // 4. Парсим координаты из ответа
+                              const pos = data?.response?.GeoObjectCollection?.featureMember?.[0]?.GeoObject?.Point?.pos;
+                              if (pos) {
+                                   const [lon, lat] = pos.split(' ').map(Number);
+                                   return [lat, lon]; // Возвращаем в формате [широта, долгота]
+                              }
+
+                              // 5. Если точный адрес не найден, пробуем найти только город
+                              if (normalizedAddress.includes(',')) {
+                                   const cityOnly = normalizedAddress.split(',')[0];
+                                   return this.geocodeAddress(cityOnly);
+                              }
+
+                         } catch (error) {
+                              console.error('Ошибка геокодирования:', error);
+                         }
+                         return null;
+                    },
+                    async initializeMap() {
+                         // Сначала получаем все координаты
+                         await this.fetchCoordinatesForItems()
+
+                         // Только после этого инициализируем карту
+                         ymaps.ready(this.init)
+                    },
+
                     // filterTable(name){}
                },
                created(){
                     window.addEventListener('resize', this.handleResize)
+                    this.initializeMap()
                },
                mounted(){
-                    ymaps.ready(this.init)
                }
           }).mount('#app')
      </script>
