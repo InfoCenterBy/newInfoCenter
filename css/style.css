@@ -146,6 +146,14 @@
   border-top-right-radius: 20px;
 }
 
+.border-bottom-left-20 {
+  border-bottom-left-radius: 20px;
+}
+
+.border-bottom-right-20 {
+  border-bottom-right-radius: 20px;
+}
+
 @media screen and (max-width: 992px) {
   .bg-lg-transparent {
     background-color: var(--color-transparent);
@@ -211,6 +219,15 @@
     }
   }
 }
+.fs-24-to-20 {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .fs-24-to-20 {
+    font-size: 1.5rem;
+  }
+}
+
 .mt-64 {
   margin-top: 4rem;
 }
