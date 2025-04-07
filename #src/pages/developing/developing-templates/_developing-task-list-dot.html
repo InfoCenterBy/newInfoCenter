@@ -1,0 +1,38 @@
+<div class="">
+     <div class="">
+          <span class="ff-exo fw-semibold text-uppercase fs-24 fs-md-28">задачи</span>
+     </div>
+     @@if(taskList.length > 6){
+          <div class="mt-4">
+               <div class="row">
+                    @@for(var i = 0; i < taskList.length; i++){ 
+                         @@if(i <= 6){ 
+                              <div class='col-md-6 d-flex'>
+                                   <div class='d-flex flex-column'>
+                                        <li>
+                                             `+taskList[i]+`
+                                        </li>
+                                   </div>
+                              </div>
+                         }
+                         @@if(+i+ > 6){
+                         <div class='col-md-6 d-flex'>
+                              <div class='d-flex flex-column'>
+                                   <li>
+                                        `+taskList[i]+`
+                                   </li>
+                              </div>
+                         </div>
+                         }
+                    }
+               </div>
+          </div>
+     }
+     @@if(taskList.length < 6){
+          <ul class="mb-0 mt-4 ps-3">
+               @@for(var i = 0; i < taskList.length; i++){ 
+                    <li>`+taskList[i]+`</li>
+               }
+          </ul>
+     }
+</div>
