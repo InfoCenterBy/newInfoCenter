@@ -142,6 +142,7 @@ $breakPointsMap: (
      'lg': 992,
      'xl': 1200,
      'xxl': 1400,
+     '3xl' : 1600,
 );
 // *------*
 
@@ -151,11 +152,13 @@ $touch-device: '(hover: none)';
 $ui-mobile: 'screen and (max-width: 768px)'; //md
 $ui-tablet: 'screen and (max-width: 992px)'; //lg
 $ui-laptop: 'screen and (max-width: 1200px)'; //xl
+$ui-bs-xs: 'screen and (max-width: 576px)'; //sm
 $ui-bs-sm: 'screen and (min-width: 576px)'; //sm
 $ui-bs-md: 'screen and (min-width: 768px)'; //md
 $ui-bs-lg: 'screen and (min-width: 992px)'; //lg
 $ui-bs-xl: 'screen and (min-width: 1200px)'; //xl
 $ui-bs-xxl: 'screen and (min-width: 1400px)'; //xxl
+$ui-bs-3xl: 'screen and (min-width: 1600px)'; //3xl
 
 // *! z-indexs*
 $layer-back: -1;
@@ -292,5 +295,14 @@ $layer-modal: 4;
 @layer base{
      .object-fit-contain{
           object-fit: contain;
+     }
+}
+
+@layer base{
+     .p-12{
+          padding-left: .75rem;
+          padding-right: .75rem;
+          padding-top: .75rem;
+          padding-bottom: .75rem;
      }
 }
