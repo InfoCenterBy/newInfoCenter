@@ -71,14 +71,6 @@
   .p-40 {
     padding: 40px;
   }
-  .custom-pb-33 {
-    padding-bottom: 33px;
-  }
-  @media (max-width: 1200px) {
-    .custom-pb-33 {
-      padding-bottom: 16px;
-    }
-  }
 }
 @layer variations {
   .ff-exo {
@@ -146,14 +138,6 @@
   border-top-right-radius: 20px;
 }
 
-.border-bottom-left-20 {
-  border-bottom-left-radius: 20px;
-}
-
-.border-bottom-right-20 {
-  border-bottom-right-radius: 20px;
-}
-
 @media screen and (max-width: 992px) {
   .bg-lg-transparent {
     background-color: var(--color-transparent);
@@ -219,15 +203,6 @@
     }
   }
 }
-.fs-24-to-20 {
-  font-size: 1.25rem;
-}
-@media screen and (min-width: 768px) {
-  .fs-24-to-20 {
-    font-size: 1.5rem;
-  }
-}
-
 .mt-64 {
   margin-top: 4rem;
 }
@@ -240,6 +215,14 @@
   .object-fit-contain {
     -o-object-fit: contain;
        object-fit: contain;
+  }
+}
+@layer base {
+  .p-12 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 @layer component {
@@ -1182,43 +1165,559 @@
     -webkit-transition: all ease-out .3s;
     transition: all ease-out .3s;
   }
-  .fs-10 {
+}
+.fs-10 {
+  font-size: 0.625rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-10 {
     font-size: 0.625rem !important;
   }
-  .fs-12 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-10 {
+    font-size: 0.625rem !important;
+  }
+}
+
+.fs-12 {
+  font-size: 0.75rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-12 {
     font-size: 0.75rem !important;
   }
-  .fs-14 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-12 {
+    font-size: 0.75rem !important;
+  }
+}
+
+.fs-14 {
+  font-size: 0.875rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-14 {
     font-size: 0.875rem !important;
   }
-  .fs-16 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-14 {
+    font-size: 0.875rem !important;
+  }
+}
+
+.fs-16 {
+  font-size: 1rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-16 {
     font-size: 1rem !important;
   }
-  .fs-18 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-16 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-16 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-16 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-16 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-16 {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-16 {
+    font-size: 1rem !important;
+  }
+}
+
+.fs-18 {
+  font-size: 1.125rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-18 {
     font-size: 1.125rem !important;
   }
-  .fs-20 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-18 {
+    font-size: 1.125rem !important;
+  }
+}
+
+.fs-20 {
+  font-size: 1.25rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-20 {
     font-size: 1.25rem !important;
   }
-  .fs-22 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-20 {
+    font-size: 1.25rem !important;
+  }
+}
+
+.fs-22 {
+  font-size: 1.375rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-22 {
     font-size: 1.375rem !important;
   }
-  .fs-24 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-22 {
+    font-size: 1.375rem !important;
+  }
+}
+
+.fs-24 {
+  font-size: 1.5rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-24 {
     font-size: 1.5rem !important;
   }
-  .fs-26 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-24 {
+    font-size: 1.5rem !important;
+  }
+}
+
+.fs-26 {
+  font-size: 1.625rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-26 {
     font-size: 1.625rem !important;
   }
-  .fs-28 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-26 {
+    font-size: 1.625rem !important;
+  }
+}
+
+.fs-28 {
+  font-size: 1.75rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-28 {
     font-size: 1.75rem !important;
   }
-  .fs-44 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-28 {
+    font-size: 1.75rem !important;
+  }
+}
+
+.fs-44 {
+  font-size: 2.75rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-44 {
     font-size: 2.75rem !important;
   }
-  .fs-64 {
+}
+
+@media screen and (min-width: 576px) {
+  .fs-sm-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-44 {
+    font-size: 2.75rem !important;
+  }
+}
+
+.fs-64 {
+  font-size: 4rem !important;
+}
+
+@media screen and (min-width: 576px) {
+  .fs-xs-64 {
     font-size: 4rem !important;
   }
 }
+
+@media screen and (min-width: 576px) {
+  .fs-sm-64 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fs-md-64 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .fs-lg-64 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fs-xl-64 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-xxl-64 {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .fs-3xl-64 {
+    font-size: 4rem !important;
+  }
+}
+
 @layer base {}
 @layer component {}
 @layer component {
@@ -1643,6 +2142,23 @@ html:has(.ui-page) {
   }
   @media (max-width: 1400px) {
     .reg-line {
+      width: 72%;
+      left: 164px;
+    }
+  }
+  .reg-line-3-dot {
+    background-image: url("../img/png/reg-center/reg-line-3-dot.svg");
+    background-repeat: space;
+    background-size: 45% auto;
+    position: absolute;
+    width: 55%;
+    height: 1px;
+    top: 42px;
+    left: 320px;
+    z-index: -1;
+  }
+  @media (max-width: 1400px) {
+    .reg-line-3-dot {
       width: 72%;
       left: 164px;
     }
