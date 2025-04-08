@@ -5,9 +5,7 @@
      @@if(taskList.length > 6){
           <div class="mt-4">
                <div class="row">
-                    <!-- TODO: -->
                     @@for(var i = 0; i < taskList.length; i++){ 
-                         @@if(i <= 6){ 
                               <div class='col-md-6 d-flex'>
                                    <div class='d-flex flex-column'>
                                         <li>
@@ -15,16 +13,6 @@
                                         </li>
                                    </div>
                               </div>
-                         }
-                         @@if(+i+ > 6){
-                         <div class='col-md-6 d-flex'>
-                              <div class='d-flex flex-column'>
-                                   <li>
-                                        `+taskList[i]+`
-                                   </li>
-                              </div>
-                         </div>
-                         }
                     }
                </div>
           </div>

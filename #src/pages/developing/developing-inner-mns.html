@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../../html-comp/_head.html',{
+"title":"Министерство по налогам и сборам Республики Беларусь»",
+})
+
+<body>
+     @@include('../../html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./developing-list.html" target="_blank" rel="noopener noreferrer">
+                         Разработка сайтов
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Министерство по налогам и сборам Республики Беларусь
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-32">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/mns/developing-inner-main-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/mns/developing-inner-main-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-about.html', {
+               "textLeft": 'Официальный сайт Министерства по налогам и сборам Республики Беларусь.',
+               "textRight": 'Разработать сайт, который предоставит удобный доступ к актуальной информации о налоговом законодательстве, а также улучшит пользовательский опыт для всех субъектов хозяйствования.'
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/mns/developing-inner-second-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/mns/developing-inner-second-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-task-list.html', {
+               "taskList": [
+               'выбор, установка, настройка системы управления сайтом (CMS);',
+               'разработка программных модулей сайта;',
+               'оптимизация и структуризация имеющейся информации о Министерстве по налогам и сборам и его работе, размещение ее в удобном для поиска и просмотра формате;',
+               'переработка и изменение дизайна сайта.'
+               ]
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-two-banner.html', {
+               "imgPathX2first": "./img/png/developing/developing-inner/mns/developing-inner-two-banner-first-x2.png",
+               "imgPathX1first": "./img/png/developing/developing-inner/mns/developing-inner-two-banner-first-x1.png",
+               "imgPathX2second": "./img/png/developing/developing-inner/mns/developing-inner-two-banner-second-x2.png",
+               "imgPathX1second": "./img/png/developing/developing-inner/mns/developing-inner-two-banner-second-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-result.html', {
+               "resultText": "Новый сайт имеет современный и лаконичный дизайн в корпоративных цветах налоговых органов. Удобная навигационная структура нового сайта позволяет пользователям в простой и доступной форме получать всю необходимую информацию о деятельности налоговых органов. <br> <br> Сайт содержит основную версию на русском, белорусском и английском языках, версию для слабовидящих (для инвалидов по зрению и людей с разной степенью отсутствия зрения или другими ограниченными возможностями зрения), а также имеет адаптивную версию для корректного отображения на мобильных устройства, а также доступен в таких браузерах, как Microsoft Internet Explorer, Microsoft Edge, Chrome, Firefox, Safari, Opera."
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/mns/developing-inner-end-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/mns/developing-inner-end-banner-x1.png",
+               })
+          </div>
+     </main>
+     @@include('../../html-comp/_footer.html')
+     @@include('../../html-comp/_script.html')
+</body>
+
+</html>
