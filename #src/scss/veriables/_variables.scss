@@ -210,6 +210,14 @@ $layer-modal: 4;
      border-top-right-radius: 20px;
 }
 
+.border-bottom-left-20 {
+     border-bottom-left-radius: 20px;
+}
+
+.border-bottom-right-20 {
+     border-bottom-right-radius: 20px;
+}
+
 .bg-lg-transparent {
      @media #{$ui-tablet} {
           background-color: var(--color-transparent);
@@ -278,16 +286,24 @@ $layer-modal: 4;
      }
 }
 
-.mt-64{
-  margin-top: 4rem;
+.fs-24-to-20 {
+     font-size: 1.25rem;
+
+     @media #{$ui-bs-md} {
+          font-size: 1.5rem;
+     }
 }
 
-.fw-500{
+.mt-64 {
+     margin-top: 4rem;
+}
+
+.fw-500 {
      font-weight: 500;
 }
 
-@layer base{
-     .object-fit-contain{
+@layer base {
+     .object-fit-contain {
           object-fit: contain;
      }
 }
