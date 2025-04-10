@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../../html-comp/_head.html',{
+"title":"Ассоциация Налогоплательщиков РБ»",
+})
+
+<body>
+     @@include('../../html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./developing-list.html" target="_blank" rel="noopener noreferrer">
+                         Разработка сайтов
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Ассоциация Налогоплательщиков РБ
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-32">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/tax/developing-inner-main-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/tax/developing-inner-main-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-about.html', {
+                    "textLeft": 'Ассоциация налогоплательщиков Республики Беларусь — некоммерческая организация, которая создана в 2015 году с целью объединения налогоплательщиков Республики Беларусь, поддержки деятельности, направленной на повышение уровня правового сознания налогоплательщиков и формирования налоговой культуры в Республике Беларусь. <br> <br> Так как результатами работы становятся диалоги между представителями заинтересованных министерств и налогоплательщиков, понадобился сайт, который позволит узнавать о круглых столах, конференциях, форумах и рабочих группах.',
+                    "textRight": 'Разработать сайт, который даст представление об организации, расскажет о преимуществах вступления в Ассоциацию, а также позволит узнавать о мероприятиях, круглых столах и конференциях.'
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/tax/developing-inner-second-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/tax/developing-inner-second-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-task-list-dot.html', {
+               "taskList": [
+               'Собрать требования заказчика и проанализировать конкурентов', 
+               'Разработать серверную часть на PHP, настроить безопасность и защиту данных',
+               'Разработать структуру сайта с новым функционалом', 
+               'Интеграция с «1С-Битрикс»',
+               'Создать прототипы для проработки пользовательских сценариев и утвердить с заказчиком',
+               'Функциональное и кроссбраузерное тестирование',
+               'Разработать UX/UI дизайн для всех типов устройств (десктоп, планшет, мобильные)',
+               'Обучить сотрудников заказчика использованию административной панели',
+               'Сверстать страницы на основе утвержденных макетов (HTML5, CSS3, JavaScript)',
+               'Техническая поддержка',
+               'Создать интерактивные элементы и анимации',
+               ]
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-two-banner.html', {
+               "imgPathX2first": "./img/png/developing/developing-inner/tax/developing-inner-two-banner-first-x2.png",
+               "imgPathX1first": "./img/png/developing/developing-inner/tax/developing-inner-two-banner-first-x1.png",
+               "imgPathX2second": "./img/png/developing/developing-inner/tax/developing-inner-two-banner-second-x2.png",
+               "imgPathX1second": "./img/png/developing/developing-inner/tax/developing-inner-two-banner-second-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-result.html', {
+               "resultText": "В результате выполнения проекта была достигнута поставленная цель: сайт помогает объединить граждан, связанных общими интересами. Дизайн и структура разработаны в соответствии с требованиями заказчика. Регулярно освещаются события, в которых принимали участие работники налоговых и других финансовых органов. Осуществляется информационная поддержка сайта." 
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/tax/developing-inner-end-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/tax/developing-inner-end-banner-x1.png",
+               })
+          </div>
+     </main>
+     @@include('../../html-comp/_footer.html')
+     @@include('../../html-comp/_script.html')
+</body>
+
+</html>

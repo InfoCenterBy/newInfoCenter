@@ -49,8 +49,8 @@ let { src, dest } = require('gulp'),
      ttf2woff = require('gulp-ttf2woff'),
      ttf2woff2 = require('gulp-ttf2woff2'),
      fonter = require('gulp-fonter'),
-     deploy = require('gulp-gh-pages');
-strip = require('gulp-strip-comments');
+     deploy = require('gulp-gh-pages'),
+     strip = require('gulp-strip-comments');
 
 function browserSync(done) {
      browsersync.init({
@@ -67,6 +67,9 @@ function html() {
                fileinclude({
                     context: {
                          link: 1,
+                         aimList: [],
+                         resultList: [],
+                         taskList: [],
                     },
                })
           )
@@ -140,7 +143,7 @@ function images() {
                     progressive: true,
                     svgoPlugins: [{ removeViewBox: false }],
                     interlaced: true,
-                    optimizationLevel: 3, // 0 to 7
+                    // optimizationLevel: 3, // 0 to 7
                })
           )
           .pipe(dest(path.build.img))
