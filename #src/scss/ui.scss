@@ -288,6 +288,21 @@ html:has(.ui-page){
                left: 164px;
           }
      }
+     .reg-line-3-dot{
+          background-image: url('../img/png/reg-center/reg-line-3-dot.svg');
+          background-repeat: space;
+          background-size: 45% auto;
+          position: absolute;
+          width: 60%;
+          height: 1px;
+          top: 42px;
+          left: 285px;
+          z-index: -1;
+          @media (max-width:1400px) {
+               width: 72%;
+               left: 164px;
+          }
+     }
 }
 
 @layer component{

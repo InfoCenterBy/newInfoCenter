@@ -50,5 +50,9 @@
                box-shadow: none;
                border-color: var(--color-violet);
           }
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-right: 2rem;
      }
 }
