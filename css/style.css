@@ -138,6 +138,14 @@
   border-top-right-radius: 20px;
 }
 
+.border-bottom-left-20 {
+  border-bottom-left-radius: 20px;
+}
+
+.border-bottom-right-20 {
+  border-bottom-right-radius: 20px;
+}
+
 @media screen and (max-width: 992px) {
   .bg-lg-transparent {
     background-color: var(--color-transparent);
@@ -203,6 +211,15 @@
     }
   }
 }
+.fs-24-to-20 {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .fs-24-to-20 {
+    font-size: 1.5rem;
+  }
+}
+
 .mt-64 {
   margin-top: 4rem;
 }
@@ -2151,10 +2168,10 @@ html:has(.ui-page) {
     background-repeat: space;
     background-size: 45% auto;
     position: absolute;
-    width: 55%;
+    width: 60%;
     height: 1px;
     top: 42px;
-    left: 320px;
+    left: 285px;
     z-index: -1;
   }
   @media (max-width: 1400px) {
@@ -4422,6 +4439,10 @@ nav.breadcrumb a:last-child {
     transition: all ease-out 0.3s;
     padding: 0.6563rem 1rem;
     background-color: var(--color-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 2rem;
   }
   @media (hover: hover) and (pointer: fine) {
     .form-select:hover {
