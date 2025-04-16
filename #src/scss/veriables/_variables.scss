@@ -316,3 +316,10 @@ $layer-modal: 4;
           padding-bottom: .75rem;
      }
 }
+
+
+@layer base{
+     .text-transform-none{
+          text-transform: none !important;
+     }
+}
