@@ -191,7 +191,7 @@
 @layer component{
   .btn-up-wrapper {
     position: relative;
-    left: 85%;
+    left: 94%;
   }
 
   .btn-up {
@@ -209,7 +209,7 @@
     opacity: 0;
     visibility: hidden;
     transition: $transition-3;
-    background: transparent;
+    background: var(--color-white);
     
     /* Hide default border when progress is visible */
     &.progress-active {
