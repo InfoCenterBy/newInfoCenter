@@ -189,23 +189,19 @@
 
 
 @layer component{
-  .btn-up-wrapper {
-    position: relative;
-    left: 94%;
-  }
-
   .btn-up {
     position: fixed;
     width: 2.625rem;
     height: 42px;
     font-size: 1.5rem;
     padding: .5rem;
-    border: 1.5px solid var(--color-gray-stroke); /* Default border color */
+    border: 1.5px solid var(--color-gray-stroke);
     color: var(--color-violet);
     border-radius: 50%;
     display: grid;
     place-items: center;
     bottom: 27%;
+    left: 94%;
     opacity: 0;
     visibility: hidden;
     transition: $transition-3;
