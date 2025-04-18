@@ -84,7 +84,7 @@ html:has(.ui-page){
                border-radius: 1.25rem;
                @include transition($transition-3);
                img{
-                    max-width: 27rem; //432px
+                    max-width: 29rem; //464px
                     width: 100%;
                     object-fit: contain;
                     @media #{$ui-mobile} {
