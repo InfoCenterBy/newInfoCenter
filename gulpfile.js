@@ -70,6 +70,7 @@ function html() {
                          aimList: [],
                          resultList: [],
                          taskList: [],
+                         scriptList: [],
                     },
                })
           )

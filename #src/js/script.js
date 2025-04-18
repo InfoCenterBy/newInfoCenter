@@ -9,3 +9,4 @@
 @@include('fixAnchorScroll.js',{})
 @@include('fixModalBackdrop.js',{})
 @@include('checkAll.js',{})
+@@include('backToTopBtn.js',{})
