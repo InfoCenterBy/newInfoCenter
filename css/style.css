@@ -1980,7 +1980,7 @@ html:has(.ui-page) {
     transition: all ease-out 0.3s;
   }
   .news-element__img img {
-    max-width: 27rem;
+    max-width: 29rem;
     width: 100%;
     -o-object-fit: contain;
        object-fit: contain;
@@ -2459,22 +2459,19 @@ html:has(.ui-page) {
   }
 }
 @layer component {
-  .btn-up-wrapper {
-    position: relative;
-    left: 94%;
-  }
   .btn-up {
     position: fixed;
     width: 2.625rem;
     height: 42px;
     font-size: 1.5rem;
     padding: 0.5rem;
-    border: 1.5px solid var(--color-gray-stroke); /* Default border color */
+    border: 1.5px solid var(--color-gray-stroke);
     color: var(--color-violet);
     border-radius: 50%;
     display: grid;
     place-items: center;
     bottom: 27%;
+    left: 94%;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all ease-out 0.3s;
