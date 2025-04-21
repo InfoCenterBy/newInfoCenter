@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                if (targetElement) {
                     // Determine the offset based on screen width
-                    const offset = window.innerWidth <= 768 ? 50 : 100; // 768px breakpoint for mobile
+                    const offset = window.innerWidth <= 768 ? 50 : 160; // 768px breakpoint for mobile
 
                     // Calculate the target position with the offset
                     const targetPosition =
@@ -421,36 +421,47 @@ document.addEventListener('DOMContentLoaded', function () {
           // Find all modal elements on the page
           const modals = document.querySelectorAll('.modal');
 
+          // Track currently open modal
+          let currentModal = null;
+
           // Loop through each modal
           modals.forEach((modal) => {
-               // Listen for the 'show.bs.modal' event, which fires BEFORE the modal is shown
+               // Listen for the 'show.bs.modal' event
                modal.addEventListener('show.bs.modal', function (event) {
                     // Check if the modal does NOT have the 'header-modal' class
                     if (!modal.classList.contains('header-modal')) {
-                         // Set the modal's z-index to 1060 BEFORE it is displayed
+                         // Set the modal's z-index to 1060
                          modal.style.zIndex = '1060';
 
-                         // Create the backdrop manually (if it doesn't exist) and set its z-index
-                         const backdrop = document.createElement('div');
-                         backdrop.classList.add(
-                              'modal-backdrop',
-                              'fade',
-                              'show'
-                         );
-                         backdrop.style.zIndex = '1059'; // Backdrop should be below the modal
-                         document.body.appendChild(backdrop);
+                         // Update current modal reference
+                         currentModal = modal;
+
+                         // Wait for Bootstrap to create backdrop then modify it
+                         setTimeout(() => {
+                              const backdrop =
+                                   document.querySelector('.modal-backdrop');
+                              if (backdrop) {
+                                   backdrop.style.zIndex = '1059';
+                              }
+                         }, 10);
                     }
                });
 
-               // Listen for the 'hidden.bs.modal' event, which fires AFTER the modal is hidden
+               // Listen for the 'hidden.bs.modal' event
                modal.addEventListener('hidden.bs.modal', function (event) {
-                    // Reset the modal's z-index to its default value
-                    modal.style.zIndex = '';
+                    // Only reset if this is the current modal
+                    if (currentModal === modal) {
+                         // Reset the modal's z-index
+                         modal.style.zIndex = '';
+                         currentModal = null;
 
-                    // Remove the backdrop when the modal is closed
-                    const backdrop = document.querySelector('.modal-backdrop');
-                    if (backdrop) {
-                         backdrop.remove();
+                         // Don't remove backdrop - let Bootstrap handle it
+                         // Just reset its z-index if needed
+                         const backdrop =
+                              document.querySelector('.modal-backdrop');
+                         if (backdrop) {
+                              backdrop.style.zIndex = '';
+                         }
                     }
                });
           });
@@ -495,5 +506,57 @@ document.addEventListener('DOMContentLoaded', function () {
                });
           }
      });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+     const backToTopButton = document.getElementById('btnUp');
+     const progressFill = document.querySelector('.btn-up-progress-fill');
+     const circumference = 2 * Math.PI * 19; // Radius 19 (42px width - 2px border)
+
+     // Store max scroll value
+     let maxScroll = document.body.scrollHeight - window.innerHeight;
+
+     window.addEventListener('scroll', function () {
+          const scrollPosition = window.pageYOffset;
+          const scrollPercentage = scrollPosition / maxScroll;
+
+          // Show/hide button
+          if (scrollPosition > 300) {
+               backToTopButton.classList.add('show');
+
+               // Calculate progress (from 0 to 100%)
+               const progress = Math.min(scrollPercentage * 100, 100);
+
+               // Update border progress
+               const offset = circumference - (circumference * progress) / 100;
+               progressFill.style.strokeDashoffset = offset;
+
+               // Toggle progress-active class
+               if (progress > 5) {
+                    backToTopButton.classList.add('progress-active');
+               } else {
+                    backToTopButton.classList.remove('progress-active');
+               }
+          } else {
+               backToTopButton.classList.remove('show');
+               backToTopButton.classList.remove('progress-active');
+               progressFill.style.strokeDashoffset = circumference; // Reset progress
+          }
+
+          // Update max scroll on resize/load
+          maxScroll = document.body.scrollHeight - window.innerHeight;
+     });
+
+     // Smooth scroll to top
+     backToTopButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({
+               top: 0,
+               behavior: 'smooth',
+          });
+     });
+
+     // Initialize max scroll on load
+     maxScroll = document.body.scrollHeight - window.innerHeight;
 });
 
