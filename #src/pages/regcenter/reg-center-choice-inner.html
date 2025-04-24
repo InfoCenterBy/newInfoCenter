@@ -34,7 +34,7 @@
                          <span>Выбрать услугу</span>
                     </a>
                     <a href="" target="_blank" rel="noopener noreferrer"
-                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill" data-bs-toggle="modal" data-bs-target="#choiceForm">
                          <span>Предварительная запись</span>
                     </a>
                     <a href="" target="_blank" rel="noopener noreferrer"
@@ -143,19 +143,67 @@
                     <div class="col-lg-6 d-flex flex-wrap mt-4 gap-2">
                          <div class="col-12 d-flex flex-wrap">
                               <div class="pe-lg-2 col-lg-6 col-12 d-flex mt-lg-0">
-                                   <div class="w-100 border-20 bg-violet-light"></div>
+                                   <a href="" target="_blank" class="w-100 border-20 bg-violet-light">
+                                        <div class="d-flex flex-column gap-2 justify-content-center align-items-center text-center w-100">
+                                             <div class="contain col-lg-12 col-md-4 col-8">
+                                                  <picture>
+                                                       <source media="(min-width: 992px)" srcset="./img/png/reg-center/choice/choice-inner-1-x2.png">
+                                                       <img src="./img/png/reg-center/choice/choice-inner-1-x1.png" alt="" class="w-100">
+                                                  </picture>
+                                             </div>
+                                             <p class="ff-exo fs-20 fw-semibold mb-0 color-black">
+                                                  Предварительная запись
+                                             </p>
+                                        </div>
+                                   </a>
                               </div>
                               <div class="ps-lg-2 col-lg-6 col-12 d-flex mt-lg-0 mt-4">
-                                   <div class="w-100 border-20 bg-gray-bg-illustr"></div>
+                                   <a href="" target="_blank" class="w-100 border-20 bg-gray-bg-illustr">
+                                        <div class="d-flex flex-column gap-2 justify-content-center align-items-center text-center w-100">
+                                             <div class="contain col-lg-12 col-md-4 col-8">
+                                                  <picture>
+                                                       <source media="(min-width: 992px)" srcset="./img/png/reg-center/choice/choice-inner-2-x2.png">
+                                                       <img src="./img/png/reg-center/choice/choice-inner-2-x1.png" alt="" class="w-100">
+                                                  </picture>
+                                             </div>
+                                             <p class="ff-exo fs-20 fw-semibold mb-0 color-black">
+                                                  Адреса и контакты РЦ
+                                             </p>
+                                        </div>
+                                   </a>
                               </div>
                               <div class="col-12 d-flex mt-4">
-                                   <div class="w-100 border-20 bg-violet-light"></div>
+                                   <div class="w-100 bg-violet-light px-lg-5 p-lg-4 py-4 px-3 border-20">
+                                        <div class="row justify-content-end">
+                                             <div class="col-12 d-flex flex-column gap-3">
+                                                  <div class="">
+                                                       <b class="ff-exo fs-20">Не знаете какая услуга вам необходима?</b>
+                                                  </div>
+                                                  <div class="">
+                                                       <p class="mb-0 ff-roboto">
+                                                            Ознакомьтесь с инструкцией по подбору услуги
+                                                       </p>
+                                                  </div>
+                                                  <div class="">
+                                                       <a href="./reg-center-choice.html" target="_blank" class="btn-default">
+                                                            Выбрать услугу
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                             <div class="col-xl-8 d-xl-flex d-none">
+                                                  <div class="contain">
+                                                       <img src="./img/png/reg-center/reg-choice-banner.png" alt="" class="w-100">
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
                               </div>
                          </div>
                     </div>
                </div>
           </div>
      </main>
+     @@include('./_vue-form.html')
      @@include('../../html-comp/_footer.html')
      @@include('../../html-comp/_script.html')
 </body>

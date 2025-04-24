@@ -86,3 +86,20 @@
           margin-top: 8.75rem;
      }
 }
+
+
+@layer component{
+     .modal.choice-form{
+          .modal-dialog{
+               max-width: 43.75rem;
+               width: 100%;
+          }
+     }
+     .choice-form{
+          &__wrapper{
+               max-height: 27rem;
+               overflow-y: auto;
+               height: 100%;
+          }
+     }
+}
