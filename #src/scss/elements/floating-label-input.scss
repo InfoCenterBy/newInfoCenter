@@ -13,7 +13,7 @@
           line-height: 120%;
           letter-spacing: 0%;
           color: var(--color-gray-txt);
-          @include adaptiv-value('font-size', 16, 12, 1);
+          @include adaptiv-value('font-size', 16, 14, 1);
           position: absolute;
           z-index: 2;
           pointer-events: none;
@@ -39,7 +39,7 @@
      }
 
      .floating-input {
-          @include adaptiv-value('font-size', 16, 12, 1);
+          @include adaptiv-value('font-size', 16, 14, 1);
           display: block;
           width: 100%;
           @include adaptiv-value('height', 48, 40, 1);
@@ -60,12 +60,13 @@
                     @include adaptiv-value('font-size', 12, 10, 1);
                }
           }
-          &.disabled, &:disabled{
+          &.disabled,
+          &:disabled {
                cursor: not-allowed;
                background-color: var(--color-gray-bg-illustr);
                color: var(--color-gray-txt);
                border-color: var(--color-gray-stroke);
-               ~ .floating-label{
+               ~ .floating-label {
                     color: var(--color-gray-txt);
                     background-color: var(--color-gray-bg-illustr);
                }
@@ -119,8 +120,8 @@
           color: var(--color-gray-txt);
      }
 
-     .floating-label-content.invalid{
-          .password-icon{
+     .floating-label-content.invalid {
+          .password-icon {
                top: -60px;
           }
      }
