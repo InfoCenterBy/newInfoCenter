@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
+document.addEventListener('DOMContentLoaded', function() {
 const pendingCheckContainer = document.querySelectorAll('.pending-check-block');
 
 pendingCheckContainer.forEach((container) => {
@@ -237,6 +238,7 @@ pendingCheckContainer.forEach((container) => {
                }
           });
      }
+})
 });
 
 document.addEventListener('DOMContentLoaded', () => {
