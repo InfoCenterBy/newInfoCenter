@@ -29,6 +29,8 @@ $colorsMap: (
      'yellow-system': '#FFF3E0',
      'info-light': '#D8E9FF',
      'info': '#3B9BF4',
+     'mns-green': '#00654D',
+     'yellow-hover': '#FFE3B5',
 );
 
 :root {
@@ -64,6 +66,10 @@ $colorsMap: (
 
      .mt-40 {
           margin-top: 2.5rem;
+     }
+
+     .mt-80{
+          margin-top: 5rem;
      }
 
      .mt-32 {

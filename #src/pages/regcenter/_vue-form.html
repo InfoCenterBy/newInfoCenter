@@ -1,5 +1,6 @@
 <div class="">
-     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+     <script src="./js/vue.js"></script>
+     <script src="./js/vue-datepicker.js"></script>
      <div id="app">
           <div class="modal fade choice-form pb-5" id="choiceForm" tabindex="-1" aria-labelledby="choiceFormLabel" aria-hidden="true">
                <div class="modal-dialog modal-dialog-centered">
@@ -109,20 +110,20 @@
                                                   <!-- Выбор РЦ -->
                                                   <div class="form-input" :class="{ 'invalid': errors.center && touched.center }">
                                                        <select v-model="form.center" @change="onCenterChange" @blur="validateField('center')"
-                                                            class="form-select" aria-label="Default select example" required>
-                                                            <option selected disabled value="">Выберите РЦ*</option>
+                                                            class="form-select" aria-label="Center Select" required>
+                                                            <option selected disabled value="Выберите РЦ">Выберите РЦ*</option>
                                                             <option v-for="center in centers" :key="center.id" :value="center.id">
                                                                  {{ center.address }}
                                                             </option>
                                                        </select>
                                                        <span class="input-label-error" v-if="errors.center && touched.center">Данные введены неверно</span>
                                                   </div>
-                                   
+                                                  <vue-date-picker :min-date="new Date()" utc ></vue-date-picker>
                                                   <!-- Выбор даты -->
                                                   <div class="floating-label-content w-100" :class="{ 'invalid': errors.date && touched.date }">
-                                                       <input v-model="form.date" @change="onDateChange" @blur="validateField('date')"
-                                                            class="floating-input w-100" type="date" placeholder="" required
-                                                            :min="new Date().toISOString().split('T')[0]">
+                                                       <div class="floating-input w-100 d-flex justify-content-center align-items-center">
+                                                            
+                                                       </div>
                                                        <label class="floating-label">
                                                             <span>Выберите дату</span><span class="color-red-attention">*</span>
                                                        </label>
@@ -175,7 +176,7 @@
                               email: '',
                               phone: '',
                               unp: '',
-                              center: null,
+                              center: 'Выберите РЦ',
                               date: null,
                               time: null,
                               agreement: false
@@ -237,9 +238,12 @@
                               center: false,
                               date: false,
                               time: false
-                         }
+                         },
+                         flow: ['month, calendar'],
+                         pickerDate: ''
                     }
                },
+               components: { VueDatePicker },
                computed: {
                     filteredDates() {
                          if (!this.form.center) return [];
@@ -339,9 +343,6 @@
                     }
                },
                mounted() {
-                    // Initialize date input min value to today
-                    const today = new Date().toISOString().split('T')[0];
-                    document.querySelector('input[type="date"]').min = today;
                }
           }).mount('#app');
      </script>

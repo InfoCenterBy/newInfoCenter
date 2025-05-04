@@ -328,3 +328,11 @@ html:has(.ui-page){
           height: 0;
      }
 }
+
+@layer component{
+     .after-no{
+          &::after{
+               content: none;
+          }
+     }
+}

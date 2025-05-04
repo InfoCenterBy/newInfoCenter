@@ -243,3 +243,17 @@
     }
   }
 }
+
+@layer variations{
+  .btn-default.btn-default-yellow{
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    @include hover('background-color', var(--color-yellow-hover));
+    &.disabled {
+      background-color: var(--color-gray-stroke);
+      color: var(--color-white);
+      border-color: var(--color-transparent);
+      cursor: not-allowed;
+    }
+  }
+}
