@@ -256,4 +256,15 @@
       cursor: not-allowed;
     }
   }
+  .btn-default.btn-default-green{
+    background-color: var(--color-mns-green);
+    color: var(--color-white);
+    @include hover('background-color', var(--color-mns-green-hover));
+    &.disabled{
+      background-color: var(--color-gray-stroke);
+      color: var(--color-white);
+      border-color: var(--color-transparent);
+      cursor: not-allowed;
+    }
+  }
 }

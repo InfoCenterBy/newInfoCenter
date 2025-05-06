@@ -19,5 +19,6 @@
           "titleBar.inactiveForeground": "#e7e7e799"
      },
      "peacock.color": "#5E60CE",
-     "cSpell.language": "en,ru"
+     "cSpell.language": "en,ru",
+     "px-to-rem.px-per-rem": 16
 }
