@@ -336,3 +336,9 @@ html:has(.ui-page){
           }
      }
 }
+
+@layer base{
+     .textarea-resize-no{
+          resize: none;
+     }
+}
