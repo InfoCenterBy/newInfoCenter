@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
      }
 });
 
-function getRandomInt(min, max) {
-     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+//reduce char max length in options
+document.querySelectorAll('select').forEach((select) => {
+     select.addEventListener('focus', function () {
+          const options = this.options;
+          const maxLength = 30;
+
+          for (let i = 0; i < options.length; i++) {
+               if (options[i].text.length > maxLength) {
+                    options[i].text =
+                         options[i].text.substring(0, maxLength) + '...';
+               }
+          }
+     });
+});

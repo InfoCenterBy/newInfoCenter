@@ -23,9 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
      }
 });
 
-function getRandomInt(min, max) {
-     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+//reduce char max length in options
+document.querySelectorAll('select').forEach((select) => {
+     select.addEventListener('focus', function () {
+          const options = this.options;
+          const maxLength = 30;
+
+          for (let i = 0; i < options.length; i++) {
+               if (options[i].text.length > maxLength) {
+                    options[i].text =
+                         options[i].text.substring(0, maxLength) + '...';
+               }
+          }
+     });
+});
 
 document.addEventListener('DOMContentLoaded', function () {
      try {
@@ -209,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-document.addEventListener('DOMContentLoaded', function() {
 const pendingCheckContainer = document.querySelectorAll('.pending-check-block');
 
 pendingCheckContainer.forEach((container) => {
@@ -238,7 +248,6 @@ pendingCheckContainer.forEach((container) => {
                }
           });
      }
-})
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -562,5 +571,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
      // Initialize max scroll on load
      maxScroll = document.body.scrollHeight - window.innerHeight;
+});
+
+document.querySelectorAll('.btn-collapse-programm').forEach((button) => {
+     const collapsedText =
+          button.dataset.btnTextCollapsed || 'Читать полностью';
+     const showText = button.dataset.btnTextShow || 'Свернуть';
+
+     // Set base text for btn
+     button.textContent = button.classList.contains('collapsed')
+          ? collapsedText
+          : showText;
+
+     button.addEventListener('click', function () {
+          this.textContent = this.classList.contains('collapsed')
+               ? collapsedText
+               : showText;
+     });
 });
 
