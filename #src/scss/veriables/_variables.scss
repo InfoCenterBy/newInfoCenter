@@ -29,6 +29,9 @@ $colorsMap: (
      'yellow-system': '#FFF3E0',
      'info-light': '#D8E9FF',
      'info': '#3B9BF4',
+     'mns-green': '#00654D',
+     'yellow-hover': '#FFE3B5',
+     'mns-green-hover': '#014A37'
 );
 
 :root {
@@ -64,6 +67,10 @@ $colorsMap: (
 
      .mt-40 {
           margin-top: 2.5rem;
+     }
+
+     .mt-80{
+          margin-top: 5rem;
      }
 
      .mt-32 {
@@ -321,5 +328,11 @@ $layer-modal: 4;
 @layer base{
      .text-transform-none{
           text-transform: none !important;
+     }
+}
+
+@layer component{
+     .h-90{
+          height: 90%;
      }
 }

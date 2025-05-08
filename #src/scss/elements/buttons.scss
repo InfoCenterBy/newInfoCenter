@@ -201,7 +201,7 @@
     display: grid;
     place-items: center;
     bottom: 27%;
-    left: 94%;
+    left: 86%;
     opacity: 0;
     visibility: hidden;
     transition: $transition-3;
@@ -222,6 +222,12 @@
       opacity: 1;
       visibility: visible;
     }
+    @media #{$ui-bs-sm} {
+      left: 90%;
+    }
+    @media #{$ui-bs-md} {
+      left: 94%;
+    }
   }
 
   /* SVG progress circle styles */
@@ -240,6 +246,31 @@
         stroke: var(--color-gray-stroke);
         stroke-width: 1.5px;
         opacity: 0.3;
+    }
+  }
+}
+
+@layer variations{
+  .btn-default.btn-default-yellow{
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    @include hover('background-color', var(--color-yellow-hover));
+    &.disabled {
+      background-color: var(--color-gray-stroke);
+      color: var(--color-white);
+      border-color: var(--color-transparent);
+      cursor: not-allowed;
+    }
+  }
+  .btn-default.btn-default-green{
+    background-color: var(--color-mns-green);
+    color: var(--color-white);
+    @include hover('background-color', var(--color-mns-green-hover));
+    &.disabled{
+      background-color: var(--color-gray-stroke);
+      color: var(--color-white);
+      border-color: var(--color-transparent);
+      cursor: not-allowed;
     }
   }
 }

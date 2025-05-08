@@ -1,4 +1,4 @@
-@layer component{
+@layer variations{
      @each $name, $color in $colorsMap {
           .bg-#{$name}{
                background-color: #{$color} !important;
@@ -16,7 +16,7 @@
                border: 1.5px solid #{$color};
           }
           .border-1-color-#{$name}{
-               border: 1.5px solid #{$color};
+               border: 1px solid #{$color};
           }
           .border-color-#{$name}{
                border-color: #{$color} !important;

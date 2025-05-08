@@ -10,3 +10,4 @@
 @@include('fixModalBackdrop.js',{})
 @@include('checkAll.js',{})
 @@include('backToTopBtn.js',{})
+@@include('btnCollapseText.js',{})

@@ -71,6 +71,7 @@ function html() {
                          resultList: [],
                          taskList: [],
                          scriptList: [],
+                         styleList: [],
                     },
                })
           )

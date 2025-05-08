@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../../html-comp/_head.html',{
+"title":"Архив. Информация о проведенных мероприятиях и документы по ним",
+})
+
+<body>
+     @@include('../../html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Семинары/Вебинары/Конференции
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Архив. Информация о проведенных мероприятиях и документы по ним
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-12">
+               <div class="">
+                    <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
+                         Архив. Информация о проведенных мероприятиях и документы по ним
+                    </h2>
+               </div>
+               <div class="mt-32"></div>
+               <div class="row row-gap-3">
+                    <div class="col-xl-2 col-lg-3 d-flex">
+                         <div class="form-date form-input w-100">
+                              <label for="inputDateForm">от</label>
+                              <input type="date" name="" id="inputDateForm" class="form-control">
+                              <span class="input-label-error">Данные введены неверно</span>
+                         </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 d-flex">
+                         <div class="form-date form-input w-100">
+                              <label for="inputDateForm">до</label>
+                              <input type="date" name="" id="inputDateForm" class="form-control">
+                              <span class="input-label-error">Данные введены неверно</span>
+                         </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 d-flex">
+                         <div class="form-input w-100">
+                              <select class="form-select" aria-label="Default select example">
+                                   <option selected="">Open this select menu</option>
+                                   <option value="1">Очень длинная строка Очень длинная строка Очень длинная строка Очень длинная строка Очень длинная строка</option>
+                                   <option value="2">Two</option>
+                                   <option value="3">Three</option>
+                              </select>
+                              <span class="input-label-error">Данные введены неверно</span>
+                         </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 d-flex">
+                         <div class="d-flex flex-row gap-3">
+                              <a href="" target="_blank" class="btn-default">
+                                   Подробнее
+                              </a>
+                              <a href="" target="_blank" class="btn-empty">
+                                   Отменить
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="container mt-40">
+               <div class="d-flex flex-column gap-4">
+                    @@for(var i = 0; i < 9; i++){ 
+                              <div class="border border-color-gray-stroke border-20 p-4">
+                                   <div class="d-flex flex-column gap-12">
+                                        <div class="d-flex align-items-start">
+                                             <div class="notification-card__type bg-violet color-white">
+                                                  <span>
+                                                       Вебинары
+                                                  </span>
+                                             </div>
+                                        </div>
+                                        <div class="">
+                                             <h4 class="fs-20 ff-exo fw-semibold text-uppercase">
+                                                  Механизмы маркировки и прослеживаемости товаров в вопросах и ответах. Реализация маркированных
+                                                  товаров с использованием
+                                                  кассового оборудования, соответствующего новым требованиям
+                                             </h4>
+                                        </div>
+                                        <div class="row">
+                                             <div class="col-lg-3 d-flex">
+                                                  <div class="d-flex flex-row gap-2 ff-roboto">
+                                                       <span class="color-gray-txt">Дата:</span>
+                                                       <span class="color-dark-violet">16.04.2025</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-lg-3 d-flex">
+                                                  <div class="d-flex flex-row gap-2 ff-roboto">
+                                                       <span class="color-gray-txt">Время:</span>
+                                                       <span class="color-dark-violet">14.30 - 16.30</span>
+                                                  </div>
+                                             </div>
+                                             <div class="col-lg-3 d-flex">
+                                                  <div class="d-flex flex-row gap-2 ff-roboto">
+                                                       <span class="color-gray-txt">Стоимость:</span>
+                                                       <span class="color-dark-violet">54 руб. 00 коп.</span>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="row row-gap-3">
+                                             <div class="col-lg-6 d-flex">
+                                                  <a href="#" target="_self" class="document-card">
+                                                       <div class="d-flex flex-row align-items-start gap-2">
+                                                            <div class="document-card__icon">
+                                                                 <i class="bi bi-filetype-doc"></i>
+                                                            </div>
+                                                            <div class="document-card__text">
+                                                                 <p class="mb-0">
+                                                                      Публичный договор
+                                                                 </p>
+                                                            </div>
+                                                       </div>
+                                                       <div class="document-card__foter d-flex flex-row flex-wrap gap-2 justify-content-start mt-2">
+                                                            <div class="document-card__date">
+                                                                 <span>Опубликован: </span><span>11.11.2024</span>
+                                                            </div>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex">
+                                                  <a href="#" target="_self" class="document-card">
+                                                       <div class="d-flex flex-row align-items-start gap-2">
+                                                            <div class="document-card__icon">
+                                                                 <i class="bi bi-filetype-pdf"></i>
+                                                            </div>
+                                                            <div class="document-card__text">
+                                                                 <p class="mb-0">
+                                                                      Копия свидетельства о гос.регистрации
+                                                                 </p>
+                                                            </div>
+                                                       </div>
+                                                       <div class="document-card__foter d-flex flex-row flex-wrap gap-2 justify-content-start mt-2">
+                                                            <div class="document-card__date">
+                                                                 <span>Опубликован: </span><span>11.11.2024</span>
+                                                            </div>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex">
+                                                  <a href="#" target="_self" class="document-card">
+                                                       <div class="d-flex flex-row align-items-start gap-2">
+                                                            <div class="document-card__icon">
+                                                                 <i class="bi bi-filetype-pdf"></i>
+                                                            </div>
+                                                            <div class="document-card__text">
+                                                                 <p class="mb-0">
+                                                                      Доверенность уполномоченного на подписание документов лица
+                                                                 </p>
+                                                            </div>
+                                                       </div>
+                                                       <div class="document-card__foter d-flex flex-row flex-wrap gap-2 justify-content-start mt-2">
+                                                            <div class="document-card__date">
+                                                                 <span>Опубликован: </span><span>11.11.2024</span>
+                                                            </div>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                             <div class="col-lg-6 d-flex">
+                                                  <a href="#" target="_self" class="document-card">
+                                                       <div class="d-flex flex-row align-items-start gap-2">
+                                                            <div class="document-card__icon">
+                                                                 <i class="bi bi-filetype-pdf"></i>
+                                                            </div>
+                                                            <div class="document-card__text">
+                                                                 <p class="mb-0">
+                                                                      Копия счет-фактуры
+                                                                 </p>
+                                                            </div>
+                                                       </div>
+                                                       <div class="document-card__foter d-flex flex-row flex-wrap gap-2 justify-content-start mt-2">
+                                                            <div class="document-card__date">
+                                                                 <span>Опубликован: </span><span>11.11.2024</span>
+                                                            </div>
+                                                       </div>
+                                                  </a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         }
+               </div>
+               <div class="mt-40 d-flex justify-content-center">
+                    <a href="" target="_blank" class="btn-default">
+                         Показать еще
+                    </a>
+               </div>
+          </div>
+     </main>
+     @@include('../../html-comp/_footer.html')
+     @@include('../../html-comp/_script.html')
+</body>
+
+</html>
