@@ -2965,7 +2965,7 @@ html:has(.ui-page) {
   }
   @media (max-width: 1440px) {
     .floating-label {
-      font-size: calc(12px + 4 * (100vw - 320px) / 1120);
+      font-size: calc(14px + 2 * (100vw - 320px) / 1120);
     }
   }
   header.header .floating-label-content {
@@ -2993,7 +2993,7 @@ html:has(.ui-page) {
   }
   @media (max-width: 1440px) {
     .floating-input {
-      font-size: calc(12px + 4 * (100vw - 320px) / 1120);
+      font-size: calc(14px + 2 * (100vw - 320px) / 1120);
     }
   }
   @media (max-width: 1440px) {
