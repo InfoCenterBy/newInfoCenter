@@ -113,11 +113,10 @@
                                                        </select>
                                                        <span class="input-label-error" v-if="errors.center && touched.center">Данные введены неверно</span>
                                                   </div>
-                                                  <vue-date-picker :min-date="new Date()" utc ></vue-date-picker>
                                                   <div class="floating-label-content w-100" :class="{ 'invalid': errors.date && touched.date }">
                                                        <div class="floating-input w-100 d-flex justify-content-center align-items-center">
-
-                                                                                                                   </div>
+                                                            <vue-date-picker :min-date="new Date()" utc v-model="form.date"></vue-date-picker>
+                                                       </div>
                                                        <label class="floating-label">
                                                             <span>Выберите дату</span><span class="color-red-attention">*</span>
                                                        </label>
@@ -171,7 +170,8 @@
                               center: 'Выберите РЦ',
                               date: null,
                               time: null,
-                              agreement: false
+                              agreement: false,
+                              datePic: new Date(),
                          },
                          centers: [
                               {

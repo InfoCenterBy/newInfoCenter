@@ -3,7 +3,7 @@
 @import url("./font-exo-2.css");
 @import url("./font-roboto.css");
 @import url("./bootstrap-icons.css");
-@import url("./vue-datepicker.css") layer(vendor);
+@import url("./datepicker.css") layer(vendor);
 @layer base, vendor, component, variations;
 :root {
   --color-black: #030303;
@@ -4246,6 +4246,24 @@ nav.breadcrumb a:last-child {
     --dp-animation-duration: 0.1s; /*Transition duration*/
     --dp-menu-appear-transition-timing: cubic-bezier(.4, 0, 1, 1); /*Timing on menu appear animation*/
     --dp-transition-timing: ease-out; /*Timing on slide animations*/
+  }
+  .choice-form .dp__input {
+    background-color: var(--color-transparent);
+    border-color: var(--color-transparent);
+  }
+  .choice-form .dp__action_select {
+    background-color: var(--color-violet);
+  }
+  .choice-form .dp__input_wrap {
+    width: 104%;
+    left: -10px;
+  }
+  .choice-form .dp__icon {
+    stroke: var(--color-black);
+    fill: var(--color-black);
+  }
+  .choice-form .dp__input_icon {
+    color: var(--color-black);
   }
 }
 .notification-card {
