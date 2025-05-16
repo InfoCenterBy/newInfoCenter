@@ -87,7 +87,7 @@
      }
 }
 
-@import url('./vue-datepicker.css') layer(vendor);
+@import url('./datepicker.css') layer(vendor);
 
 @layer component{
      .modal.choice-form{
@@ -141,8 +141,22 @@
                --dp-transition-timing: ease-out; /*Timing on slide animations*/
           }
           .dp__input{
-               // background-color: var(--color-transparent);
-               // border-color: var(--color-transparent);
+               background-color: var(--color-transparent);
+               border-color: var(--color-transparent);
+          }
+          .dp__action_select{
+               background-color: var(--color-violet);
+          }
+          .dp__input_wrap{
+               width: 104%;
+               left: -10px;
+          }
+          .dp__icon{
+               stroke: var(--color-black);
+               fill: var(--color-black);
+          }
+          .dp__input_icon{
+               color: var(--color-black);
           }
      }
 }
