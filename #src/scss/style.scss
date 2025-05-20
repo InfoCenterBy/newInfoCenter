@@ -50,6 +50,7 @@
 @import './elements/upload-file.scss';
 @import './ui-comp/slider-info-inner.scss';
 @import './elements/check-list.scss';
+@import './elements/publication-author-avatar.scss';
 //! end imports
 
 html {
@@ -172,11 +173,11 @@ ol ul {
      }
 }
 
-@layer component{
-     .row-gap-3{
+@layer component {
+     .row-gap-3 {
           row-gap: 1rem;
      }
-     .row-gap-4{
+     .row-gap-4 {
           row-gap: 1.5rem;
      }
 }

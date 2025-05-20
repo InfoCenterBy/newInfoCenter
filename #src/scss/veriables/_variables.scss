@@ -31,7 +31,7 @@ $colorsMap: (
      'info': '#3B9BF4',
      'mns-green': '#00654D',
      'yellow-hover': '#FFE3B5',
-     'mns-green-hover': '#014A37'
+     'mns-green-hover': '#014A37',
 );
 
 :root {
@@ -69,8 +69,8 @@ $colorsMap: (
           margin-top: 2.5rem;
      }
 
-     .mt-80{
-          margin-top: 5rem;
+     .mt-80 {
+          margin-top: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
      }
 
      .mt-32 {
@@ -93,10 +93,13 @@ $colorsMap: (
           margin-top: clamp(5rem, 4.545rem + 2.27vw, 6.25rem);
      }
 
+     .mt-64 {
+          margin-top: clamp(2rem, 1.273rem + 3.64vw, 4rem);
+     }
+
      .p-40 {
           padding: 40px;
      }
-     
 }
 //?
 
@@ -143,7 +146,7 @@ $breakPointsMap: (
      'lg': 992,
      'xl': 1200,
      'xxl': 1400,
-     '3xl' : 1600,
+     '3xl': 1600,
 );
 // *------*
 
@@ -315,24 +318,23 @@ $layer-modal: 4;
      }
 }
 
-@layer base{
-     .p-12{
-          padding-left: .75rem;
-          padding-right: .75rem;
-          padding-top: .75rem;
-          padding-bottom: .75rem;
+@layer base {
+     .p-12 {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
      }
 }
 
-
-@layer base{
-     .text-transform-none{
+@layer base {
+     .text-transform-none {
           text-transform: none !important;
      }
 }
 
-@layer component{
-     .h-90{
+@layer component {
+     .h-90 {
           height: 90%;
      }
 }
