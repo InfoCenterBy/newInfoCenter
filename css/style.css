@@ -3,7 +3,7 @@
 @import url("./font-exo-2.css");
 @import url("./font-roboto.css");
 @import url("./bootstrap-icons.css");
-@import url("./datepicker.css") layer(vendor);
+@import url("./vue-datepicker.css") layer(vendor);
 @layer base, vendor, component, variations;
 :root {
   --color-black: #030303;
@@ -58,7 +58,7 @@
     margin-top: 2.5rem;
   }
   .mt-80 {
-    margin-top: 5rem;
+    margin-top: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
   }
   .mt-32 {
     margin-top: 2rem;
@@ -74,6 +74,9 @@
   }
   .mt-100 {
     margin-top: clamp(5rem, 4.545rem + 2.27vw, 6.25rem);
+  }
+  .mt-64 {
+    margin-top: clamp(2rem, 1.273rem + 3.64vw, 4rem);
   }
   .p-40 {
     padding: 40px;
@@ -4247,24 +4250,6 @@ nav.breadcrumb a:last-child {
     --dp-menu-appear-transition-timing: cubic-bezier(.4, 0, 1, 1); /*Timing on menu appear animation*/
     --dp-transition-timing: ease-out; /*Timing on slide animations*/
   }
-  .choice-form .dp__input {
-    background-color: var(--color-transparent);
-    border-color: var(--color-transparent);
-  }
-  .choice-form .dp__action_select {
-    background-color: var(--color-violet);
-  }
-  .choice-form .dp__input_wrap {
-    width: 104%;
-    left: -10px;
-  }
-  .choice-form .dp__icon {
-    stroke: var(--color-black);
-    fill: var(--color-black);
-  }
-  .choice-form .dp__input_icon {
-    color: var(--color-black);
-  }
 }
 .notification-card {
   font-family: "Roboto";
@@ -5749,6 +5734,14 @@ nav.breadcrumb a:last-child {
     color: var(--color-mns-green);
   }
 }
+.author-avatar {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
 html {
   height: auto;
   scroll-behavior: smooth;
