@@ -32,6 +32,10 @@ $colorsMap: (
      'mns-green': '#00654D',
      'yellow-hover': '#FFE3B5',
      'mns-green-hover': '#014A37',
+     'taxes-green': '#025A4A',
+     'taxes-brown': '#F0D8B6',
+     'taxes-gold': '#C47A2D',
+     'taxes-gold-light': '#F9B974',
 );
 
 :root {
@@ -65,20 +69,32 @@ $colorsMap: (
           margin-top: 1.5rem;
      }
 
+     .mt-32 {
+          margin-top: 2rem;
+     }
+
      .mt-40 {
           margin-top: 2.5rem;
+     }
+
+     .mt-64 {
+          margin-top: clamp(2rem, 1.273rem + 3.64vw, 4rem);
      }
 
      .mt-80 {
           margin-top: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
      }
 
-     .mt-32 {
-          margin-top: 2rem;
-     }
-
      .mt-92 {
           margin-top: 5.75rem;
+     }
+
+     .mt-100 {
+          margin-top: clamp(5rem, 4.545rem + 2.27vw, 6.25rem);
+     }
+
+     .mt-140 {
+          margin-top: clamp(3.75rem, 1.932rem + 9.09vw, 8.75rem);
      }
 
      .gap-12 {
@@ -89,18 +105,11 @@ $colorsMap: (
           gap: 1.25rem;
      }
 
-     .mt-100 {
-          margin-top: clamp(5rem, 4.545rem + 2.27vw, 6.25rem);
-     }
-
-     .mt-64 {
-          margin-top: clamp(2rem, 1.273rem + 3.64vw, 4rem);
-     }
-
      .p-40 {
           padding: 40px;
      }
 }
+
 //?
 
 // *! Fonts*
@@ -117,7 +126,7 @@ $ff-roboto: 'Roboto';
      }
 }
 $fontSize: 16px;
-$fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 44, 64);
+$fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 34, 44, 64);
 @layer variations {
      .ls-0 {
           letter-spacing: 0;
@@ -310,6 +319,12 @@ $layer-modal: 4;
 
 .fw-500 {
      font-weight: 500;
+}
+
+@media (max-width: 576px) {
+     .mobile-w-100 {
+          width: 100%;
+     }
 }
 
 @layer base {
