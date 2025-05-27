@@ -374,7 +374,14 @@
                                              <img class="w-100" src="./img/png/editors/bel-taxes-comp.png"
                                                   alt="Журнал" />
                                         </div>
-                                        <a class="btn-default btn-default-gold" href="#">Оформить подписку</a>
+                                        <button class="btn-default btn-default-gold" data-bs-toggle="modal"
+                                             data-bs-target="#digitalSubscribe">
+                                             С регистрацией Оформить подписку
+                                        </button>
+                                        <button class="btn-default btn-default-gold" data-bs-toggle="modal"
+                                             data-bs-target="#digitalSubscribeNotRegister">
+                                             без регистрации Оформить подписку
+                                        </button>
                                         <p class="mb-0 mt-2 text-center" style="max-width: 500px">
                                              Оформить подписку на любой период можно онлайн, минимальный
                                              подписной период - 1 месяц
@@ -512,10 +519,193 @@
                          </div>
                     </div>
                </section>
+
           </div>
      </main>
+     @@include('../../html-comp/_footer.html')
+
+     <div class="modal modal-large fade" id="digitalSubscribeNotRegister" tabindex="-1"
+          aria-labelledby="digitalSubscribeNotRegisterModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+               <div class="modal-content mt-92">
+                    <div class="modal-header d-flex flex-column gap-2">
+                         <div class="d-flex justify-content-between align-items-center w-100">
+                              <p class="fs-20 fw-semibold mb-0 ff-exo">Оформление подписки</p>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                         </div>
+                         <p class="mb-0 color-gray-txt">Электронная версия журнала «Налоги Беларуси»</p>
+                    </div>
+                    <div class="modal-body">
+                         <div class="attention-block d-flex flex-row gap-3 align-items-center">
+                              <div class="attention-block__icon">
+                                   <i class="bi bi-exclamation-triangle"></i>
+                              </div>
+                              <div class="d-flex flex-column">
+                                   <div class="attention-block__title fw-normal">
+                                        Для оформления заказа необходимо <a href="#"
+                                             class="link-green">войти</a> или
+                                        <a href="#" class="link-green">зарегистрироваться</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="modal modal-large fade" id="digitalSubscribe" tabindex="-1"
+          aria-labelledby="digitalSubscribeModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+               <div class="modal-content mt-92">
+                    <div class="modal-header d-flex flex-column gap-2">
+                         <div class="d-flex justify-content-between align-items-center w-100">
+                              <p class="fs-20 fw-semibold mb-0 ff-exo">Оформление подписки</p>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                         </div>
+                         <p class="mb-0 color-gray-txt">Электронная версия журнала «Налоги Беларуси»</p>
+                    </div>
+                    <div class="modal-body">
+                         <div class="form-step active" data-step="1">
+                              <div class="d-flex flex-wrap gap-3 align-items-center">
+                                   <div class="form-check">
+                                        <input class="form-check-input form-check-input-green" type="radio"
+                                             name="tabRadio" id="ip-radio" checked
+                                             data-bs-target="#ip-pane" />
+                                        <label class="form-check-label" for="ip-radio">Индивидуальный
+                                             предприниматель</label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tabRadio"
+                                             id="legal-entity-radio" data-bs-target="#legal-entity-pane" />
+                                        <label class="form-check-label" for="legal-entity-radio">Юридическое
+                                             лицо</label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tabRadio"
+                                             id="phisical-person-radio"
+                                             data-bs-target="#phisical-person-pane" />
+                                        <label class="form-check-label" for="phisical-person-radio">Физическое
+                                             лицо</label>
+                                   </div>
+                              </div>
+
+                              <div class="tab-content" id="myTabContent">
+                                   <div class="tab-pane fade show active" id="ip-pane" role="tabpanel"
+                                        aria-labelledby="ip" tabindex="0">
+                                        <form class="pending-check-block d-flex flex-column gap-3  mt-4"
+                                             action="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="text"
+                                                       placeholder="" />
+                                                  <label class="floating-label">
+                                                       <span>Ф.И.О. индивидуального
+                                                            предпринимателя</span><span
+                                                            class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="text"
+                                                       placeholder="" pattern="[A-Za-z0-9]{9}" required />
+                                                  <label class="floating-label"> <span>УНП</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="email"
+                                                       placeholder="" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
+                                                       autocomplete="email" />
+                                                  <label class="floating-label"> <span>E-mail</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="tel-with-mask floating-input-green" type="tel"
+                                                       placeholder="" autocomplete="tel" />
+                                                  <label class="floating-label"> <span>Телефон</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                        </form>
+                                   </div>
+                                   <div class="tab-pane fade" id="legal-entity-pane" role="tabpanel"
+                                        aria-labelledby="legal-entity-tab" tabindex="0">
+                                        <form class="pending-check-block d-flex flex-column gap-3  mt-4"
+                                             action="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="text"
+                                                       placeholder="" />
+                                                  <label class="floating-label">
+                                                       <span>Наименование юридического лица</span><span
+                                                            class="color-red-attention">*</span>
+                                                  </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="text"
+                                                       placeholder="" pattern="[A-Za-z0-9]{9}" required />
+                                                  <label class="floating-label"> <span>УНП</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="email"
+                                                       placeholder="" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
+                                                       autocomplete="email" />
+                                                  <label class="floating-label"> <span>E-mail</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="tel-with-mask floating-input-green" type="tel"
+                                                       placeholder="" autocomplete="tel" />
+                                                  <label class="floating-label"> <span>Телефон</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                        </form>
+                                   </div>
+                                   <div class="tab-pane fade" id="phisical-person-pane" role="tabpanel"
+                                        aria-labelledby="phisical-person-tab" tabindex="0">
+                                        <form class="pending-check-block d-flex flex-column gap-3  mt-4"
+                                             action="">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="text"
+                                                       placeholder="" required />
+                                                  <label class="floating-label"> <span>Ф.И.О</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input-green" type="email"
+                                                       placeholder="" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
+                                                       required autocomplete="email" />
+                                                  <label class="floating-label"> <span>E-mail</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                             <div class="floating-label-content w-100">
+                                                  <input class="tel-with-mask floating-input-green" type="tel"
+                                                       placeholder="" required autocomplete="tel" />
+                                                  <label class="floating-label"> <span>Телефон</span><span
+                                                            class="color-red-attention">*</span> </label>
+                                             </div>
+                                        </form>
+                                   </div>
+                                   <hr class="border-color-gray-stroke mb-3" />
+                                   <button class="btn-default btn-default-green mx-auto delete-agree-btn"
+                                        id="nextBtn">Далее</button>
+                              </div>
+                         </div>
+                         <div class="form-step" data-step="2">
+                              <p class="fw-semibold fs-18 ff-exo">Выберите период </p>
+                              <button class="btn-default btn-default-green mx-auto delete-agree-btn"
+                                   id="prevBtn">Назад</button>
+                              <button class="btn-default btn-default-green mx-auto delete-agree-btn"
+                                   id="submitBtn">Отправить</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
      <script src="./js/swiper-bundle.min.js"></script>
-     @@include('../../html-comp/_footer.html') @@include('../../html-comp/_script.html')
+     <script src="./js/subscribe-step-form.js"></script>
+     <script src="./js/imask.js"></script>
+
+     @@include('../../html-comp/_script.html')
 </body>
 
 </html>

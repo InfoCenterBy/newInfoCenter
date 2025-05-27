@@ -108,10 +108,15 @@
           }
      }
 
-
      .floating-label-content:not(.floating-input-error) {
           .floating-input:not(:focus, :disabled) {
                @include hover('border-color', var(--color-violet-hover));
+          }
+     }
+
+     .floating-label-content:not(.floating-input-error) {
+          .floating-input-green:not(:focus, :disabled) {
+               @include hover('border-color', var(--color-taxes-green));
           }
      }
 
@@ -125,7 +130,16 @@
           @include adaptiv-value('font-size', 12, 10, 1);
      }
 
+     .floating-input-green:not(:placeholder-shown) ~ .floating-label {
+          top: -8px;
+          @include adaptiv-value('font-size', 12, 10, 1);
+     }
+
      .floating-input:not(:placeholder-shown) {
+          color: var(--color-black);
+     }
+
+     .floating-input-green:not(:placeholder-shown) {
           color: var(--color-black);
      }
 
