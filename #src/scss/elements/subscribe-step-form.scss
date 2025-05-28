@@ -1,6 +1,33 @@
 .form-step {
-  display: none;
+     display: none;
 }
 .form-step.active {
-  display: block;
+     display: block;
+}
+
+.year-option {
+     display: none;
+}
+
+.year-label {
+     display: inline-block;
+     padding: 10px 20px;
+     background-color: #f0f0f0;
+     border: 2px solid #ccc;
+     border-radius: 5px;
+     cursor: pointer;
+     text-align: center;
+     font-family: Arial, sans-serif;
+     font-size: 16px;
+     transition: all 0.3s ease;
+}
+
+.year-option:checked + .year-label {
+     background-color: #4caf50;
+     color: white;
+     border-color: #4caf50;
+}
+
+.year-label:hover {
+     background-color: #e0e0e0;
 }
