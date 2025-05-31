@@ -79,24 +79,22 @@ document.addEventListener('DOMContentLoaded', function () {
      }
 
      // Валидация шага
-     // function validateStep(step) {
-     //     const stepElement = document.querySelector(`.form-step[data-step="${step}"]`);
-     //     const inputs = stepElement.querySelectorAll('input[required], select[required], textarea[required]');
-     //     let isValid = true;
+     function validateStep(step) {
+         const stepElement = document.querySelector(`.form-step[data-step="1"]`);
+         const inputs = stepElement.querySelectorAll('input[required], select[required], textarea[required]');
+         
+         let isValid = true;
 
-     //     inputs.forEach(input => {
-     //         if (!input.value.trim()) {
-     //             input.style.borderColor = 'red';
-     //             isValid = false;
-     //         } else {
-     //             input.style.borderColor = '#ddd';
-     //         }
-     //     });
+         inputs.forEach(input => {
+          if (!input.checkValidity()) {
+               isValid = false;
+          }
+         });
 
-     //     if (!isValid) {
-     //         alert('Пожалуйста, заполните все обязательные поля');
-     //     }
+         if (!isValid) {
+             nextBtn.setAttribute('disable', true)
+         }
 
-     //     return isValid;
-     // }
+         return isValid;
+     }
 });

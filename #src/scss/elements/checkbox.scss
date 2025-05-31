@@ -24,6 +24,12 @@
           background-color: var(--color-violet);
           border-color: var(--color-violet);
      }
+
+     .check-green:checked {
+          background-color: var(--color-taxes-green);
+          border-color: var(--color-taxes-green);
+     }
+
      .form-check-input:active {
           filter: brightness(90%);
      }
