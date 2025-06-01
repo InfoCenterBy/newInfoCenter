@@ -4,5 +4,10 @@
      }
      .radio-green:checked {
           background-color: var(--color-taxes-green);
+          border-color: var(--color-taxes-green);
+     }
+     .check-green:checked {
+          background-color: var(--color-taxes-green);
+          border-color: var(--color-taxes-green);
      }
 }

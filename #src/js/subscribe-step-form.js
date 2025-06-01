@@ -3,11 +3,58 @@ document.addEventListener('DOMContentLoaded', function () {
      const prevBtn = document.getElementById('prevBtn');
      const nextBtn = document.getElementById('nextBtn');
      const submitBtn = document.getElementById('submitBtn');
-
-     let currentStep = 1;
+     const activePane = document.querySelector('.tab-pane.show.active');
+     const getCurrentYear = new Date().getFullYear();
+     const years = document.querySelectorAll('.year-option')
+     const currentYearSelects = document.getElementById('current-year-selects')
+     const monthsSelects = document.getElementById('months-selects')
+     const currentYearMonths = document.querySelector('#current-year-months')
+     const currentYearQuarters = document.querySelector('#current-year-quarters')
      const formData = {};
 
-     // Переход к следующему шагу
+     function checkCurrentYear() {
+          const currentYear = document.getElementById(`year${getCurrentYear}`)
+          currentYear.setAttribute('checked', true)
+          document.querySelector('#select-months').checked = true
+          currentYearQuarters.classList.add('d-none')
+     }
+     checkCurrentYear()
+
+     years.forEach(year => {
+          year.addEventListener('change', () => {
+               const isCurrentYear = year.value == getCurrentYear
+
+               if (!isCurrentYear) {
+                    currentYearSelects.classList.add('d-none')
+                    monthsSelects.classList.remove('d-none')
+               } else {
+                    currentYearSelects.classList.remove('d-none')
+                    monthsSelects.classList.add('d-none')
+
+               }
+          })
+     })
+
+     currentYearSelects.querySelectorAll('input[type=radio]').forEach(radio => {
+          radio.addEventListener('change', () => {
+
+               if (radio.id == 'select-months') {
+                    currentYearMonths.classList.remove('d-none')
+                    currentYearQuarters.classList.add('d-none')
+               } else if (radio.id == 'select-quarters') {
+                    currentYearMonths.classList.add('d-none')
+                    currentYearQuarters.classList.remove('d-none')
+               } else {
+                    currentYearMonths.classList.add('d-none')
+                    currentYearQuarters.classList.add('d-none')
+               }
+          })
+     })
+
+
+
+     let currentStep = 1;
+
      nextBtn.addEventListener('click', function () {
           // if (validateStep(currentStep)) {
           saveStepData(currentStep);
@@ -31,12 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           let data = {};
 
-          //   const formData = {
-          //        subscriptionPeriod: document.querySelector('input[name="subscriptionPeriod"]:checked').value,
-          //   };
-
           // Добавляем данные из активной формы
-          const activePane = document.querySelector('.tab-pane.show.active');
           activePane.querySelectorAll('input').forEach((input) => {
                data[input.name] = input.value;
           });
@@ -77,6 +119,29 @@ document.addEventListener('DOMContentLoaded', function () {
                }
           });
      }
+
+     function checkInputs() {
+
+          const inputs = activePane.querySelectorAll('input');
+          let allFilled = true;
+          
+          inputs.forEach(input => {
+            if (!input.value.trim()) {
+              allFilled = false;
+            }
+          });
+          
+          nextBtn.disabled = !allFilled;
+        }
+        
+        // Добавляем обработчики на все инпуты
+        activePane.querySelectorAll('input').forEach(input => {
+          input.addEventListener('input', checkInputs);
+        });
+        
+        // Первоначальная проверка
+        //checkInputs();
+        
 
      // Валидация шага
      function validateStep(step) {

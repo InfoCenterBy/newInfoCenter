@@ -698,43 +698,314 @@
                          <div class="form-step" data-step="2">
                               <p class="fw-semibold fs-18 ff-exo">Выберите период </p>
 
-                              <div class="d-flex gap-3 flex-wrap">
-                                   <div class="">
+                              <div id="subscribe-years" class="d-flex gap-3 flex-wrap">
+                                   <div>
                                         <input type="radio" id="year2025" name="year" value="2025"
                                              class="year-option">
                                         <label for="year2025" class="year-label">2025</label>
                                    </div>
-                                   <div class="">
+                                   <div>
                                         <input type="radio" id="year2024" name="year" value="2024"
                                              class="year-option">
                                         <label for="year2024" class="year-label">2024</label>
                                    </div>
-                                   <div class="">
+                                   <div>
                                         <input type="radio" id="year2023" name="year" value="2023"
                                              class="year-option">
                                         <label for="year2023" class="year-label">2023</label>
                                    </div>
-                                   <div class="">
+                                   <div>
                                         <input type="radio" id="year2022" name="year" value="2022"
                                              class="year-option">
                                         <label for="year2022" class="year-label">2022</label>
                                    </div>
-                                   <div class="">
+                                   <div>
                                         <input type="radio" id="year2021" name="year" value="2021"
                                              class="year-option">
                                         <label for="year2021" class="year-label">2021</label>
                                    </div>
-                                   <div class="">
+                                   <div>
                                         <input type="radio" id="year2020" name="year" value="2020"
                                              class="year-option">
                                         <label for="year2020" class="year-label">2020</label>
                                    </div>
                               </div>
 
-                              <button class="btn-empty btn-empty-green mx-auto delete-agree-btn"
-                                   id="prevBtn">Назад</button>
-                              <button class="btn-default btn-default-green mx-auto delete-agree-btn"
-                                   id="submitBtn">Оформить подписку</button>
+                              <div id="current-year-selects" class="d-flex flex-column gap-2 mt-3">
+                                   <div class="form-check">
+                                        <input class="form-check-input radio-green" type="radio"
+                                             name="subscribe-period" id="select-months" />
+                                        <label class="form-check-label" for="select-months">Выбрать
+                                             месяц(ы)</label>
+                                   </div>
+
+                                   <div id="current-year-months"
+                                        class="ms-3 row row-cols-4 row-cols-md-6 row-gap-3">
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="january">
+                                                  <label class="form-check-label" for="january">Янв</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="february">
+                                                  <label class="form-check-label" for="february">Фев</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="march">
+                                                  <label class="form-check-label" for="march">Март</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="april">
+                                                  <label class="form-check-label" for="april">Апр</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="may">
+                                                  <label class="form-check-label" for="may">Май</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="june">
+                                                  <label class="form-check-label" for="june">Июнь</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="july">
+                                                  <label class="form-check-label" for="july">Июль</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="august">
+                                                  <label class="form-check-label" for="august">Авг</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="september">
+                                                  <label class="form-check-label" for="september">Сент</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="october">
+                                                  <label class="form-check-label" for="october">Окт</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="november">
+                                                  <label class="form-check-label" for="november">Ноя</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="december">
+                                                  <label class="form-check-label" for="december">Дек</label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input radio-green" type="radio"
+                                             name="subscribe-period" id="select-quarters" />
+                                        <label class="form-check-label" for="select-quarters">Выбрать
+                                             квартал</label>
+                                   </div>
+
+                                   <div id="current-year-quarters" class="row row-cols-lg-2 ms-3 row-gap-3">
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="1-quater">
+                                                  <label class="form-check-label" for="1-quater">1 квартал
+                                                       (№1-№12)</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="2-quater">
+                                                  <label class="form-check-label" for="2-quater">2 квартал
+                                                       (№12-№24)</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="3-quater">
+                                                  <label class="form-check-label" for="3-quater">3 квартал
+                                                       (№25-№36)</label>
+                                             </div>
+                                        </div>
+                                        <div class="col">
+                                             <div class="form-check">
+                                                  <input type="checkbox" class="form-check-input check-green"
+                                                       id="4-quater">
+                                                  <label class="form-check-label" for="4-quater">4 квартал
+                                                       (№36-№48)</label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input radio-green" type="radio"
+                                             name="subscribe-period" id="select-first-half" />
+                                        <label class="form-check-label" for="select-first-half">1
+                                             полугодие</label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input radio-green" type="radio"
+                                             name="subscribe-period" id="select-second-half" />
+                                        <label class="form-check-label" for="select-second-half">2
+                                             полугодие</label>
+                                   </div>
+                                   <div class="form-check">
+                                        <input class="form-check-input radio-green" type="radio"
+                                             name="subscribe-period" id="select-year" />
+                                        <label class="form-check-label" for="select-year">Год</label>
+                                   </div>
+                              </div>
+
+                              <div id="months-selects"
+                                   class="d-none row row-cols-4 row-cols-md-6 row-gap-3 mt-32">
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="january">
+                                             <label class="form-check-label" for="january">Янв</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="february">
+                                             <label class="form-check-label" for="february">Фев</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="march">
+                                             <label class="form-check-label" for="march">Март</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="april">
+                                             <label class="form-check-label" for="april">Апр</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="may">
+                                             <label class="form-check-label" for="may">Май</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="june">
+                                             <label class="form-check-label" for="june">Июнь</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="july">
+                                             <label class="form-check-label" for="july">Июль</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="august">
+                                             <label class="form-check-label" for="august">Авг</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="september">
+                                             <label class="form-check-label" for="september">Сент</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="october">
+                                             <label class="form-check-label" for="october">Окт</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="november">
+                                             <label class="form-check-label" for="november">Ноя</label>
+                                        </div>
+                                   </div>
+                                   <div class="col">
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input check-green"
+                                                  id="december">
+                                             <label class="form-check-label" for="december">Дек</label>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="d-flex gap-3 gap-lg-4 flex-wrap flex-lg-nowrap w-100 mt-32">
+                                   <div class="floating-label-content w-100">
+                                        <input class="floating-input-green" type="text" placeholder=""
+                                             name="promo" />
+                                        <label class="floating-label">Введите промокод</label>
+                                   </div>
+                                   <button class="btn-empty btn-empty-green mobile-w-100">Применить</button>
+                              </div>
+
+
+                              <div class="form-check mt-32">
+                                   <input type="checkbox" class="form-check-input check-green"
+                                        id="government-purchase">
+                                   <label class="form-check-label" for="government-purchase">Оформить
+                                        подписку по
+                                        процедуре госзакупки</label>
+                              </div>
+
+                              <p class="ff-exo fs-20 fw-semibold text-end mt-32">Сумма: 40 руб. 80 коп.</p>
+
+
+                              <hr class="border-color-gray-stroke mb-3" />
+
+                              <div class="d-flex gap-3 flex-wrap justify-content-center">
+                                   <button class="btn-empty btn-empty-green delete-agree-btn mobile-w-100"
+                                        id="prevBtn">Назад</button>
+                                   <button class="btn-default btn-default-green delete-agree-btn mobile-w-100"
+                                        id="submitBtn">Оформить
+                                        подписку</button>
+                              </div>
                          </div>
                     </div>
                </div>

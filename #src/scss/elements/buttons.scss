@@ -265,7 +265,8 @@
           background-color: var(--color-mns-green);
           color: var(--color-white);
           @include hover('background-color', var(--color-mns-green-hover));
-          &.disabled {
+          &.disabled,
+          &:disabled {
                background-color: var(--color-gray-stroke);
                color: var(--color-white);
                border-color: var(--color-transparent);
