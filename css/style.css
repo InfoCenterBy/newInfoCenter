@@ -3,7 +3,6 @@
 @import url("./font-exo-2.css");
 @import url("./font-roboto.css");
 @import url("./bootstrap-icons.css");
-@import url("./vue-datepicker.css") layer(vendor);
 @layer base, vendor, component, variations;
 :root {
   --color-black: #030303;
@@ -2885,7 +2884,7 @@ html:has(.ui-page) {
       background-color: var(--color-mns-green-hover);
     }
   }
-  .btn-default.btn-default-green.disabled {
+  .btn-default.btn-default-green.disabled, .btn-default.btn-default-green:disabled {
     background-color: var(--color-gray-stroke);
     color: var(--color-white);
     border-color: var(--color-transparent);
@@ -2921,32 +2920,32 @@ html:has(.ui-page) {
     border-color: var(--color-transparent);
     cursor: not-allowed;
   }
-  .btn-empty.btn-default-empty-green {
+  .btn-empty.btn-empty-green {
     background-color: transparent;
     border: 1px solid var(--color-taxes-green);
     color: var(--color-taxes-green);
   }
   @media (hover: hover) and (pointer: fine) {
-    .btn-empty.btn-default-empty-green:hover {
+    .btn-empty.btn-empty-green:hover {
       background-color: var(--color-taxes-green);
     }
   }
   @media (hover: none) {
-    .btn-empty.btn-default-empty-green:active {
+    .btn-empty.btn-empty-green:active {
       background-color: var(--color-taxes-green);
     }
   }
   @media (hover: hover) and (pointer: fine) {
-    .btn-empty.btn-default-empty-green:hover {
+    .btn-empty.btn-empty-green:hover {
       color: var(--color-white);
     }
   }
   @media (hover: none) {
-    .btn-empty.btn-default-empty-green:active {
+    .btn-empty.btn-empty-green:active {
       color: var(--color-white);
     }
   }
-  .btn-empty.btn-default-empty-green.disabled {
+  .btn-empty.btn-empty-green.disabled {
     background-color: var(--color-gray-stroke);
     color: var(--color-white);
     border-color: var(--color-transparent);
@@ -3183,6 +3182,26 @@ html:has(.ui-page) {
       color: var(--color-black);
     }
   }
+  .link-green {
+    color: var(--color-taxes-green);
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .link-green:hover {
+      color: var(--color-black);
+    }
+  }
+  @media (hover: none) {
+    .link-green:active {
+      color: var(--color-black);
+    }
+  }
   .link-gray {
     color: var(--color-gray-txt);
   }
@@ -3289,6 +3308,51 @@ html:has(.ui-page) {
     color: var(--color-gray-txt);
     background-color: var(--color-gray-bg-illustr);
   }
+  .floating-input-green {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 0 1rem;
+    background-color: var(--color-white);
+    color: var(--color-gray-txt);
+    border: 1px solid var(--color-transparent);
+    border-color: var(--color-gray-stroke);
+    border-radius: 9.375rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: all ease-out 0.2s;
+    transition: all ease-out 0.2s;
+    font-size: 1rem;
+  }
+  @media (max-width: 1440px) {
+    .floating-input-green {
+      font-size: calc(14px + 2 * (100vw - 320px) / 1120);
+    }
+  }
+  .floating-input-green:focus {
+    outline: none;
+    border: 1.5px solid var(--color-taxes-green);
+  }
+  .floating-input-green:focus ~ .floating-label {
+    top: -8px;
+    font-size: 12px;
+  }
+  @media (max-width: 1440px) {
+    .floating-input-green:focus ~ .floating-label {
+      font-size: calc(10px + 2 * (100vw - 320px) / 1120);
+    }
+  }
+  .floating-input-green.disabled, .floating-input-green:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-gray-bg-illustr);
+    color: var(--color-gray-txt);
+    border-color: var(--color-gray-stroke);
+  }
+  .floating-input-green.disabled ~ .floating-label, .floating-input-green:disabled ~ .floating-label {
+    color: var(--color-gray-txt);
+    background-color: var(--color-gray-bg-illustr);
+  }
   @media (hover: hover) and (pointer: fine) {
     .floating-label-content:not(.floating-input-error) .floating-input:not(:focus, :disabled):hover {
       border-color: var(--color-violet-hover);
@@ -3297,6 +3361,16 @@ html:has(.ui-page) {
   @media (hover: none) {
     .floating-label-content:not(.floating-input-error) .floating-input:not(:focus, :disabled):active {
       border-color: var(--color-violet-hover);
+    }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .floating-label-content:not(.floating-input-error) .floating-input-green:not(:focus, :disabled):hover {
+      border-color: var(--color-taxes-green);
+    }
+  }
+  @media (hover: none) {
+    .floating-label-content:not(.floating-input-error) .floating-input-green:not(:focus, :disabled):active {
+      border-color: var(--color-taxes-green);
     }
   }
   .floating-input:disabled,
@@ -3326,6 +3400,29 @@ html:has(.ui-page) {
       font-size: calc(10px + 2 * (100vw - 320px) / 1120);
     }
   }
+  .floating-input-green:not(:-moz-placeholder-shown) ~ .floating-label {
+    top: -8px;
+    font-size: 12px;
+  }
+  .floating-input-green:not(:-ms-input-placeholder) ~ .floating-label {
+    top: -8px;
+    font-size: 12px;
+  }
+  .floating-input-green:not(:placeholder-shown) ~ .floating-label {
+    top: -8px;
+    font-size: 12px;
+  }
+  @media (max-width: 1440px) {
+    .floating-input-green:not(:-moz-placeholder-shown) ~ .floating-label {
+      font-size: calc(10px + 2 * (100vw - 320px) / 1120);
+    }
+    .floating-input-green:not(:-ms-input-placeholder) ~ .floating-label {
+      font-size: calc(10px + 2 * (100vw - 320px) / 1120);
+    }
+    .floating-input-green:not(:placeholder-shown) ~ .floating-label {
+      font-size: calc(10px + 2 * (100vw - 320px) / 1120);
+    }
+  }
   .floating-input:not(:-moz-placeholder-shown) {
     color: var(--color-black);
   }
@@ -3333,6 +3430,15 @@ html:has(.ui-page) {
     color: var(--color-black);
   }
   .floating-input:not(:placeholder-shown) {
+    color: var(--color-black);
+  }
+  .floating-input-green:not(:-moz-placeholder-shown) {
+    color: var(--color-black);
+  }
+  .floating-input-green:not(:-ms-input-placeholder) {
+    color: var(--color-black);
+  }
+  .floating-input-green:not(:placeholder-shown) {
     color: var(--color-black);
   }
   .floating-input-error .floating-input {
@@ -4381,6 +4487,10 @@ nav.breadcrumb a:last-child {
     background-color: var(--color-violet);
     border-color: var(--color-violet);
   }
+  .check-green:checked {
+    background-color: var(--color-taxes-green);
+    border-color: var(--color-taxes-green);
+  }
   .form-check-input:active {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
@@ -4961,6 +5071,31 @@ nav.breadcrumb a:last-child {
             box-shadow: none;
     border-color: var(--color-violet);
   }
+  .form-date input.form-control-green {
+    border-radius: 9.375rem;
+    padding: 10.5px;
+    padding-left: 2.375rem;
+    font-family: "Roboto";
+    border: 1px solid --color-gray-stroke;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+    background-color: var(--color-white);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .form-date input.form-control-green:hover {
+      border-color: var(--color-taxes-green);
+    }
+  }
+  @media (hover: none) {
+    .form-date input.form-control-green:active {
+      border-color: var(--color-taxes-green);
+    }
+  }
+  .form-date input.form-control-green:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-color: var(--color-taxes-green);
+  }
   .form-input.invalid .form-control, .form-input.invalid .form-select {
     border-color: var(--color-red-error);
   }
@@ -5149,6 +5284,10 @@ nav.breadcrumb a:last-child {
   .accordion .accordion-item {
     border-radius: 15px;
   }
+  .accordion .accordion-taxes-brown {
+    background-color: var(--color-taxes-brown);
+    border-radius: 15px;
+  }
   .accordion .accordion-button {
     font-family: "Exo 2";
     font-weight: 600;
@@ -5228,6 +5367,14 @@ nav.breadcrumb a:last-child {
 @layer component {
   .form-check-input:checked[type=radio] {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  }
+  .radio-green:checked {
+    background-color: var(--color-taxes-green);
+    border-color: var(--color-taxes-green);
+  }
+  .check-green:checked {
+    background-color: var(--color-taxes-green);
+    border-color: var(--color-taxes-green);
   }
 }
 .map-cards-wrapper {
@@ -6026,6 +6173,77 @@ nav.breadcrumb a:last-child {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--color-white);
+  --bs-tooltip-color: var(--color-black);
+  --bs-tooltip-max-width: 380px;
+  --bs-tooltip-opacity: 1;
+  --bs-tooltip-arrow-color: var(--color-taxes-gold);
+}
+
+.tooltip-inner {
+  border: 1px solid var(--color-taxes-gold);
+  border-color: var(--color-taxes-gold);
+  padding: 16px;
+  font-family: "Roboto";
+}
+
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: var(--color-taxes-gold);
+}
+
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: var(--color-taxes-gold);
+}
+
+.text-highlight {
+  padding-block: 8px;
+  padding-left: 24px;
+  border-left: 4px solid var(--color-taxes-gold);
+  margin-left: 80px;
+}
+@media (max-width: 576px) {
+  .text-highlight {
+    margin-left: 30px;
+  }
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.year-option {
+  display: none;
+}
+
+.year-label {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-stroke);
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.year-option:checked + .year-label {
+  background-color: var(--color-taxes-green);
+  color: var(--color-white);
+  border-color: var(--color-taxes-green);
+}
+
+.year-label:hover {
+  background-color: var(--color-mns-green-hover);
+  color: var(--color-white);
+  border-color: var(--color-mns-green-hover);
 }
 
 html {
