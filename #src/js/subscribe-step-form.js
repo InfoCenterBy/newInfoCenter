@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
      const monthsSelects = document.getElementById('months-selects')
      const currentYearMonths = document.querySelector('#current-year-months')
      const currentYearQuarters = document.querySelector('#current-year-quarters')
-     const formData = {};
+
+     let currentStep = 1;
 
      function checkCurrentYear() {
           const currentYear = document.getElementById(`year${getCurrentYear}`)
@@ -52,70 +53,86 @@ document.addEventListener('DOMContentLoaded', function () {
      })
 
 
-
-     let currentStep = 1;
-
      nextBtn.addEventListener('click', function () {
-          // if (validateStep(currentStep)) {
-          saveStepData(currentStep);
           currentStep++;
           showStep(currentStep);
-          // }
      });
 
-     // Возврат к предыдущему шагу
      prevBtn.addEventListener('click', function () {
-          saveStepData(currentStep);
           currentStep--;
           showStep(currentStep);
-          restoreStepData(currentStep);
      });
 
-     // Отправка формы
+     function collectFormData() {
+          const formData = {
+              year: null,
+              periodType: null,
+              months: [],
+              quarters: [],
+              halfYear: null,
+              fullYear: false
+          };
+
+          activePane.querySelectorAll('input').forEach((input) => {
+               formData[input.name] = input.value;
+           });
+  
+          const selectedYear = document.querySelector('input[name="year"]:checked');
+          if (selectedYear) {
+              formData.year = selectedYear.value;
+          }
+  
+          const isCurrentYear = formData.year == getCurrentYear;
+  
+          if (isCurrentYear) {
+              const selectedPeriod = document.querySelector('input[name="subscribe-period"]:checked');
+              if (selectedPeriod) {
+                  formData.periodType = selectedPeriod.id;
+  
+                  switch (selectedPeriod.id) {
+                      case 'select-months':
+                          document.querySelectorAll('#current-year-months input[type="checkbox"]:checked').forEach(checkbox => {
+                              formData.months.push(checkbox.nextElementSibling.textContent.trim());
+                          });
+                          break;
+                      case 'select-quarters':
+                          document.querySelectorAll('#current-year-quarters input[type="checkbox"]:checked').forEach(checkbox => {
+                              formData.quarters.push(checkbox.nextElementSibling.textContent.trim());
+                          });
+                          break;
+                      case 'select-first-half':
+                          formData.halfYear = 'first';
+                          break;
+                      case 'select-second-half':
+                          formData.halfYear = 'second';
+                          break;
+                      case 'select-year':
+                          formData.fullYear = true;
+                          break;
+                  }
+              }
+          } else {
+              document.querySelectorAll('#months-selects input[type="checkbox"]:checked').forEach(checkbox => {
+                  formData.months.push(checkbox.nextElementSibling.textContent.trim());
+              });
+          }
+  
+          return formData;
+      }
+
      submitBtn.addEventListener('click', function (e) {
           e.preventDefault();
-          saveStepData(currentStep);
+          const formData = collectFormData();
 
-          let data = {};
-
-          // Добавляем данные из активной формы
-          activePane.querySelectorAll('input').forEach((input) => {
-               data[input.name] = input.value;
-          });
-          console.log(data);
-          // Здесь можно отправить данные на сервер
           console.log('Данные формы:', formData);
-          alert('Форма успешно отправлена! Данные: ' + JSON.stringify(data));
+          alert('Форма успешно отправлена! Данные: ' + JSON.stringify(formData, null, 2));
      });
 
-     // Показать определенный шаг
      function showStep(step) {
           steps.forEach((stepElement) => {
                stepElement.classList.remove('active');
                if (parseInt(stepElement.dataset.step) === step) {
                     stepElement.classList.add('active');
-               }
-          });
-     }
-
-     // Сохранение данных шага
-     function saveStepData(step) {
-          const stepElement = document.querySelector(`.form-step[data-step="${step}"]`);
-          const inputs = stepElement.querySelectorAll('input, select, textarea');
-
-          inputs.forEach((input) => {
-               formData[input.name] = input.value;
-          });
-     }
-
-     // Восстановление данных шага
-     function restoreStepData(step) {
-          const stepElement = document.querySelector(`.form-step[data-step="${step}"]`);
-          const inputs = stepElement.querySelectorAll('input, select, textarea');
-
-          inputs.forEach((input) => {
-               if (formData[input.name] !== undefined) {
-                    input.value = formData[input.name];
                }
           });
      }
@@ -132,34 +149,11 @@ document.addEventListener('DOMContentLoaded', function () {
           });
           
           nextBtn.disabled = !allFilled;
-        }
-        
-        // Добавляем обработчики на все инпуты
-        activePane.querySelectorAll('input').forEach(input => {
-          input.addEventListener('input', checkInputs);
-        });
-        
-        // Первоначальная проверка
-        //checkInputs();
-        
-
-     // Валидация шага
-     function validateStep(step) {
-         const stepElement = document.querySelector(`.form-step[data-step="1"]`);
-         const inputs = stepElement.querySelectorAll('input[required], select[required], textarea[required]');
-         
-         let isValid = true;
-
-         inputs.forEach(input => {
-          if (!input.checkValidity()) {
-               isValid = false;
-          }
-         });
-
-         if (!isValid) {
-             nextBtn.setAttribute('disable', true)
-         }
-
-         return isValid;
      }
+        
+     activePane.querySelectorAll('input').forEach(input => {
+          input.addEventListener('input', checkInputs);
+     });
+        
+     checkInputs();
 });
