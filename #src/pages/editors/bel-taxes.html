@@ -887,7 +887,7 @@
                                    </div>
                               </div>
 
-                              <div id="months-selects"
+                              <!-- <div id="months-selects"
                                    class="d-none row row-cols-4 row-cols-md-6 row-gap-3 mt-32">
                                    <div class="col">
                                         <div class="form-check">
@@ -974,15 +974,17 @@
                                              <label class="form-check-label" for="december">Дек</label>
                                         </div>
                                    </div>
-                              </div>
+                              </div> -->
 
-                              <div class="d-flex gap-3 gap-lg-4 flex-wrap flex-lg-nowrap w-100 mt-32">
+                              <div id="promo-container"
+                                   class="d-flex gap-3 gap-lg-4 flex-wrap flex-lg-nowrap w-100 mt-32">
                                    <div class="floating-label-content w-100">
                                         <input class="floating-input-green" type="text" placeholder=""
                                              name="promo" />
                                         <label class="floating-label">Введите промокод</label>
                                    </div>
-                                   <button class="btn-empty btn-empty-green mobile-w-100">Применить</button>
+                                   <button id="apply-promo"
+                                        class="btn-empty btn-empty-green mobile-w-100">Применить</button>
                               </div>
 
                               <div class="form-check mt-32">
@@ -993,7 +995,8 @@
                                         процедуре госзакупки</label>
                               </div>
 
-                              <p class="ff-exo fs-20 fw-semibold text-end mt-32">Сумма: 40 руб. 80 коп.</p>
+                              <p class="ff-exo fs-20 fw-semibold text-end mt-32"><span class="price"></span>
+                              </p>
 
                               <hr class="border-color-gray-stroke mb-3" />
 
