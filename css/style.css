@@ -5596,6 +5596,17 @@ nav.breadcrumb a:last-child {
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .payment-method-card.green-border-hover:hover {
+    border-color: var(--color-taxes-green);
+  }
+}
+@media (hover: none) {
+  .payment-method-card.green-border-hover:active {
+    border-color: var(--color-taxes-green);
+  }
+}
+
 .document-card {
   background-color: var(--color-gray-bg-illustr);
   border-radius: 15px;
