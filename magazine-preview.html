@@ -19,20 +19,25 @@
      <title>Налоги Беларуси №2 2024</title>
 </head>
 <style>
-     #book {
-          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
+     #book2 {
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
           border-radius: 20px;
           overflow: hidden;
      }
 
-     .my-page img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
+     .page {
+          overflow: hidden;
+          box-shadow: inset -7px 0 10px -7px rgba(0, 0, 0, 0.4);
+          padding: 10px;
+          background-color: #fdfaf7;
+          color: #785e3a;
+          border: solid 1px var(--color-taxes-brown);
+          overflow: hidden;
      }
 
-     .my-page.--left img {
+     .page img {
+          width: 100%;
+          height: 100%;
           box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
      }
 </style>
@@ -912,16 +917,6 @@
                <h2 class="fs-28 ff-exo fw-semibold color-black text-uppercase">Налоги Беларуси №2 2024</h2>
 
                <section class="mt-32">
-                    <div id="book2">
-                         <div class="my-page">
-                              <img src="./img/magazine/NB_17_2025 (1)-01.png" alt="">
-                         </div>
-                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-02.png" alt=""></div>
-                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-03.png" alt=""></div>
-                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-04.png" alt=""></div>
-                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-05.png" alt=""></div>
-                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-06.png" alt=""></div>
-                    </div>
                </section>
 
                <button class="btn-default" data-bs-toggle="modal"
@@ -936,7 +931,19 @@
                                         aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
-                                   <div id="book" style="width: 100%; height: 100%; margin-inline: auto;">
+                                   <div id="book2" style="width: 100%; height: 100%; margin-inline: auto;">
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-01.png"
+                                                  alt=""></div>
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-02.png"
+                                                  alt=""></div>
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-03.png"
+                                                  alt=""></div>
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-04.png"
+                                                  alt=""></div>
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-05.png"
+                                                  alt=""></div>
+                                        <div class="page"><img src="./img/magazine/NB_17_2025 (1)-06.png"
+                                                  alt=""></div>
                                    </div>
                               </div>
                          </div>
@@ -1146,16 +1153,16 @@
                // width: 340, // required parameter - base page width
                // height: 600, // required parameter - base page height
                size: 'stretch',
-               height: 800,
-               width: 600,
+               height: 700,
+               width: 560,
                minWidth: 340,
                minHeight: 600,
-               maxWidth: 800,
+               maxWidth: 700,
                maxHeight: 1200,
                flippingTime: 600,
           });
 
-          pageFlip2.loadFromHTML(document.querySelectorAll('.my-page'));
+          pageFlip2.loadFromHTML(document.querySelectorAll('.page'));
 
           const pageFlip = new St.PageFlip(document.getElementById('book'), {
                size: 'stretch',
