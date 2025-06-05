@@ -913,6 +913,8 @@
                <h2 class="fs-28 ff-exo fw-semibold color-black text-uppercase">Налоги Беларуси №2 2024</h2>
 
                <section class="mt-32">
+                    <div id="book" style="width: 100%; height: 100%; margin-inline: auto;">
+                    </div>
                </section>
 
                <button class="btn-default" data-bs-toggle="modal"
@@ -1135,25 +1137,19 @@
      <script>
           const pageFlip = new St.PageFlip(document.getElementById('book'), {
                size: 'stretch',
-               height: 300,
-               width: 200,
+               height: 500,
+               width: 400,
                minWidth: 200,
                minHeight: 300,
                maxWidth: 500,
                maxHeight: 800,
-               flippingTime: 600
-               // size: "stretch", // Растягиваем по контейнеру
-               // width: "100%",   // Занимает всю ширину
-               // height: "100%",  // Занимает всю высоту
-               // minWidth: 200,   // Минимальные размеры (можно настроить)
-               // minHeight: 300,
-               // maxWidth: "70%", // Максимальная ширина — 100% контейнера
-               // maxHeight: "100%", // Максимальная высота — 100% контейнера
-               // flippingTime: 600,
+               flippingTime: 600,
+               usePortrait: true,
+               autoSize: true
           });
 
           document.getElementById('magazine-modal').addEventListener('shown.bs.modal', function () {
-               pageFlip.update(); // Обновляем размеры
+               pageFlip.update();
           });
 
           window.addEventListener('resize', function () {
@@ -1173,6 +1169,7 @@
           loadImages(50)
 
           pageFlip.loadFromImages(pagesArray);
+          pageFlip.update();
      </script>
      <script src="js/script.js"></script>
 </body>
