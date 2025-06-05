@@ -30,7 +30,6 @@
           height: 100%;
           object-fit: cover;
           box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
-
      }
 
      .my-page.--left img {
@@ -913,7 +912,15 @@
                <h2 class="fs-28 ff-exo fw-semibold color-black text-uppercase">Налоги Беларуси №2 2024</h2>
 
                <section class="mt-32">
-                    <div id="book" style="width: 100%; height: 100%; margin-inline: auto;">
+                    <div id="book2">
+                         <div class="my-page">
+                              <img src="./img/magazine/NB_17_2025 (1)-01.png" alt="">
+                         </div>
+                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-02.png" alt=""></div>
+                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-03.png" alt=""></div>
+                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-04.png" alt=""></div>
+                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-05.png" alt=""></div>
+                         <div class="my-page"><img src="./img/magazine/NB_17_2025 (1)-06.png" alt=""></div>
                     </div>
                </section>
 
@@ -1135,10 +1142,25 @@
 </footer>
      <script src="./js/page-flip.browser.js"></script>
      <script>
+          const pageFlip2 = new St.PageFlip(document.getElementById('book2'), {
+               // width: 340, // required parameter - base page width
+               // height: 600, // required parameter - base page height
+               size: 'stretch',
+               height: 800,
+               width: 600,
+               minWidth: 340,
+               minHeight: 600,
+               maxWidth: 800,
+               maxHeight: 1200,
+               flippingTime: 600,
+          });
+
+          pageFlip2.loadFromHTML(document.querySelectorAll('.my-page'));
+
           const pageFlip = new St.PageFlip(document.getElementById('book'), {
                size: 'stretch',
-               height: 1200,
-               width: 800,
+               height: 800,
+               width: 600,
                minWidth: 340,
                minHeight: 600,
                maxWidth: 800,
@@ -1170,6 +1192,8 @@
 
           pageFlip.loadFromImages(pagesArray);
           pageFlip.update();
+
+
      </script>
      <script src="js/script.js"></script>
 </body>
