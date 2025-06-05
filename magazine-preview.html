@@ -1137,12 +1137,12 @@
      <script>
           const pageFlip = new St.PageFlip(document.getElementById('book'), {
                size: 'stretch',
-               height: 500,
-               width: 400,
-               minWidth: 200,
-               minHeight: 300,
-               maxWidth: 500,
-               maxHeight: 800,
+               height: 1200,
+               width: 800,
+               minWidth: 340,
+               minHeight: 600,
+               maxWidth: 800,
+               maxHeight: 1200,
                flippingTime: 600,
                usePortrait: true,
                autoSize: true
@@ -1154,7 +1154,7 @@
 
           window.addEventListener('resize', function () {
                if (document.getElementById('magazine-modal').classList.contains('show')) {
-                    pageFlip.update(); // Обновляем, если модальное окно открыто
+                    pageFlip.update();
                }
           });
 
