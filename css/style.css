@@ -4520,9 +4520,7 @@ nav.breadcrumb a:last-child {
     --bs-modal-border-width: 0;
     --bs-modal-border-radius: 1.25rem;
     --bs-modal-box-shadow: var(--bs-box-shadow-sm);
-    --bs-modal-inner-border-radius: calc(
-         var(--bs-border-radius-lg) - (var(--bs-border-width))
-    );
+    --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
     --bs-modal-header-padding-x: 1rem;
     --bs-modal-header-padding-y: 1rem;
     --bs-modal-header-padding: 1rem 1rem;
@@ -4570,11 +4568,11 @@ nav.breadcrumb a:last-child {
   overflow-y: auto;
 }
 
-.modal:not(.header-modal) .modal-content {
+.modal:not(.header-modal, .modal-mobile-menu) .modal-content {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 992px) {
-  .modal:not(.header-modal) .modal-content {
+  .modal:not(.header-modal, .modal-mobile-menu) .modal-content {
     margin-top: 8.75rem;
   }
 }
@@ -4619,7 +4617,7 @@ nav.breadcrumb a:last-child {
     --dp-time-font-size: 0.8rem; /*Font size in the time picker*/
     /*Transitions*/
     --dp-animation-duration: 0.1s; /*Transition duration*/
-    --dp-menu-appear-transition-timing: cubic-bezier(.4, 0, 1, 1); /*Timing on menu appear animation*/
+    --dp-menu-appear-transition-timing: cubic-bezier(0.4, 0, 1, 1); /*Timing on menu appear animation*/
     --dp-transition-timing: ease-out; /*Timing on slide animations*/
   }
 }
