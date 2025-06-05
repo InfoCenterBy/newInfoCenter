@@ -1,0 +1,153 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div class="" id="app">
+     <!-- Первый этап: выбор метода ввода -->
+     <div class="d-flex justify-content-center">
+          <h4 class="h4 d-block">Метод ввода данных</h4>
+     </div>
+     <div class="d-flex flex-row justify-content-center gap-3 mt-3">
+          <button class="" :class="[inputMethod === 'manual'? 'btn-default' : 'btn-empty']" @click="inputMethod = 'manual'">Ручной ввод</button>
+          <button class="" :class="[inputMethod === 'file'? 'btn-default' : 'btn-empty']" @click=" inputMethod = 'file'">Загрузка файла</button>
+     </div>
+     <div class="mt-4"></div>
+     <!-- Ручной ввод -->
+     <div v-if="inputMethod === 'manual'">
+          <form @submit.prevent="submitForm">
+               <div class="form-group">
+                    <label>Название:</label>
+                    <input type="text" v-model="formData.title" required />
+               </div>
+
+               <div class="form-group">
+                    <label>Описание:</label>
+                    <textarea v-model="formData.description" rows="3"></textarea>
+               </div>
+
+               <div class="positions-form">
+                    <h3>Добавить позицию</h3>
+                    <div class="form-group">
+                         <label>Наименование позиции:</label>
+                         <input type="text" v-model="newPosition.name" required />
+                    </div>
+
+                    <div class="form-group">
+                         <label>Количество:</label>
+                         <input type="number" v-model="newPosition.quantity" required min="1" />
+                    </div>
+
+                    <div class="form-group">
+                         <label>Цена:</label>
+                         <input type="number" v-model="newPosition.price" required min="0" step="0.01" />
+                    </div>
+
+                    <button type="button" @click="addPosition">Добавить позицию</button>
+               </div>
+
+               <div class="positions-list" v-if="hasPositions">
+                    <h3>Добавленные позиции</h3>
+                    <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
+                         <p><strong>{{ position.name }}</strong></p>
+                         <p>Количество: {{ position.quantity }}</p>
+                         <p>Цена: {{ position.price }}</p>
+                         <button type="button" @click="removePosition(index)">Удалить</button>
+                    </div>
+               </div>
+
+               <button type="submit">Отправить данные</button>
+          </form>
+     </div>
+
+     <!-- Загрузка файла -->
+     <div v-if="inputMethod === 'file'">
+          <div class="form-group">
+               <label>Выберите файл для загрузки:</label>
+               <input type="file" @change="handleFileUpload" accept=".json" />
+          </div>
+
+          <div v-if="fileData">
+               <h3>Предпросмотр данных из файла:</h3>
+               <pre>{{ fileData }}</pre>
+               <button @click="submitFileData">Отправить данные</button>
+          </div>
+     </div>
+</div>
+
+<script>
+     const { createApp, ref } = Vue;
+
+     createApp({
+          data() {
+               return {
+                    inputMethod: 'manual',
+                    formData: {
+                         title: '',
+                         description: '',
+                         positions: [],
+                    },
+                    newPosition: {
+                         name: '',
+                         quantity: 1,
+                         price: 0,
+                    },
+                    fileData: null,
+               };
+          },
+          computed: {
+               hasPositions() {
+                    return this.formData.positions.length > 0;
+               },
+          },
+          methods: {
+               addPosition() {
+                    this.formData.positions.push({
+                         name: this.newPosition.name,
+                         quantity: parseInt(this.newPosition.quantity),
+                         price: parseFloat(this.newPosition.price),
+                    });
+
+                    // Сброс формы позиции
+                    this.newPosition = {
+                         name: '',
+                         quantity: 1,
+                         price: 0,
+                    };
+               },
+               removePosition(index) {
+                    this.formData.positions.splice(index, 1);
+               },
+               submitForm() {
+                    const result = {
+                         ...this.formData,
+                         positions: [...this.formData.positions],
+                    };
+
+                    console.log('Итоговые данные:', result);
+                    alert('Данные успешно сформированы (см. консоль)');
+               },
+               handleFileUpload(event) {
+                    const file = event.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                         try {
+                              this.fileData = JSON.parse(e.target.result);
+                         } catch (error) {
+                              console.error('Ошибка чтения файла:', error);
+                              alert('Неверный формат файла');
+                         }
+                    };
+                    reader.readAsText(file);
+               },
+               submitFileData() {
+                    if (!this.fileData) {
+                         alert('Нет данных для отправки');
+                         return;
+                    }
+
+                    console.log('Данные из файла:', this.fileData);
+                    alert('Данные из файла готовы к отправке (см. консоль)');
+               },
+          },
+     }).mount('#app');
+</script>
