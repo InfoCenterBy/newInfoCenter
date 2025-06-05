@@ -931,7 +931,7 @@
                                         aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
-                                   <div id="book2" style="width: 100%; height: 100%; margin-inline: auto;">
+                                   <div id="book2" style="width: 100%; margin-inline: auto;">
                                         <div class="page"><img src="./img/magazine/NB_17_2025 (1)-01.png"
                                                   alt=""></div>
                                         <div class="page"><img src="./img/magazine/NB_17_2025 (1)-02.png"
@@ -1156,51 +1156,52 @@
                height: 700,
                width: 560,
                minWidth: 340,
-               minHeight: 600,
+               minHeight: 400,
                maxWidth: 700,
                maxHeight: 1200,
                flippingTime: 600,
           });
 
           pageFlip2.loadFromHTML(document.querySelectorAll('.page'));
+          pageFlip2.update();
 
-          const pageFlip = new St.PageFlip(document.getElementById('book'), {
-               size: 'stretch',
-               height: 800,
-               width: 600,
-               minWidth: 340,
-               minHeight: 600,
-               maxWidth: 800,
-               maxHeight: 1200,
-               flippingTime: 600,
-               usePortrait: true,
-               autoSize: true
-          });
+          // const pageFlip = new St.PageFlip(document.getElementById('book'), {
+          //      size: 'stretch',
+          //      height: 800,
+          //      width: 600,
+          //      minWidth: 340,
+          //      minHeight: 600,
+          //      maxWidth: 800,
+          //      maxHeight: 1200,
+          //      flippingTime: 600,
+          //      usePortrait: true,
+          //      autoSize: true
+          // });
 
           document.getElementById('magazine-modal').addEventListener('shown.bs.modal', function () {
                pageFlip2.update();
-               pageFlip.update();
+               // pageFlip.update();
           });
 
           window.addEventListener('resize', function () {
                if (document.getElementById('magazine-modal').classList.contains('show')) {
                     pageFlip2.update();
-                    pageFlip.update();
+                    // pageFlip.update();
                }
           });
 
-          let pagesArray = []
+          // let pagesArray = []
 
-          function loadImages(pagesCount) {
-               for (let i = 1; i <= pagesCount; i++) {
-                    const num = i < 10 ? `0${i}` : i;
-                    pagesArray.push(`./img/magazine/NB_17_2025 (1)-${num}.png`);
-               }
-          }
-          loadImages(50)
+          // function loadImages(pagesCount) {
+          //      for (let i = 1; i <= pagesCount; i++) {
+          //           const num = i < 10 ? `0${i}` : i;
+          //           pagesArray.push(`./img/magazine/NB_17_2025 (1)-${num}.png`);
+          //      }
+          // }
+          // loadImages(50)
 
-          pageFlip.loadFromImages(pagesArray);
-          pageFlip.update();
+          // pageFlip.loadFromImages(pagesArray);
+          // pageFlip.update();
 
 
      </script>
