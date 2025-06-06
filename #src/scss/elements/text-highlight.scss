@@ -1,0 +1,10 @@
+.text-highlight {
+  padding-block: 8px;
+  padding-left: 24px;
+  border-left: 4px solid var(--color-taxes-gold);
+  margin-left: 80px;
+
+  @media (max-width: 576px) {
+    margin-left: 30px;
+  }
+}

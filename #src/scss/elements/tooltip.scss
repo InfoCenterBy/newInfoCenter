@@ -1,0 +1,22 @@
+.custom-tooltip {
+  --bs-tooltip-bg: var(--color-white);
+  --bs-tooltip-color: var(--color-black);
+  --bs-tooltip-max-width: 380px;
+  --bs-tooltip-opacity: 1;
+  --bs-tooltip-arrow-color: var(--color-taxes-gold);
+}
+
+.tooltip-inner {
+  border: 1px solid var(--color-taxes-gold);
+  border-color: var(--color-taxes-gold);
+  padding: 16px;
+  font-family: $ff-roboto;
+}
+
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+  border-top-color: var(--color-taxes-gold);
+}
+
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+  border-right-color: var(--color-taxes-gold);
+}

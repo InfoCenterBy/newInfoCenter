@@ -168,6 +168,17 @@
           @include hover('color', var(--color-black));
      }
 
+     .link-green {
+          color: var(--color-taxes-green);
+          font-family: $ff-roboto;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 130%;
+          letter-spacing: 0;
+          @include transition($transition-3);
+          @include hover('color', var(--color-black));
+     }
+
      .link-gray {
           color: var(--color-gray-txt);
           @include hover('color', var(--color-dark-violet));
