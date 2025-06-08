@@ -12,49 +12,122 @@
      <div class="mt-4"></div>
      <!-- Ручной ввод -->
      <div v-if="inputMethod === 'manual'">
-          <form @submit.prevent="submitForm">
-               <div class="form-group">
-                    <label>Название:</label>
-                    <input type="text" v-model="formData.title" required />
-               </div>
-
-               <div class="form-group">
-                    <label>Описание:</label>
-                    <textarea v-model="formData.description" rows="3"></textarea>
-               </div>
-
-               <div class="positions-form">
-                    <h3>Добавить позицию</h3>
-                    <div class="form-group">
-                         <label>Наименование позиции:</label>
-                         <input type="text" v-model="newPosition.name" required />
+          <div class="col-lg-8">
+               <form @submit.prevent="submitForm" class="needs-validation vue-form d-flex flex-column gap-3" novalidate>
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="nameObject"
+                                   placeholder=""
+                                   v-model="formData.title"
+                                   @input="updateCharCount('title', formData.title)"
+                                   required
+                                   :maxlength="charLimits.title.max"
+                                   pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{3,200})$' />
+                              <label for="nameObject">Наименование объекта</label>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                         <div class="char-counter-wrapper">
+                              <div class="char-counter">{{ updateCharCount('title', formData.title) }}</div>
+                         </div>
                     </div>
 
-                    <div class="form-group">
-                         <label>Количество:</label>
-                         <input type="number" v-model="newPosition.quantity" required min="1" />
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="unp"
+                                   placeholder=""
+                                   v-model="formData.unp"
+                                   @input="updateCharCount('title', formData.unp)"
+                                   required
+                                   :maxlength="charLimits.unp.max"
+                                   pattern="^[А-Яа-яA-Za-z0-9]{9}$" />
+                              <label for="unp">УНП</label>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                         <div class="char-counter-wrapper">
+                              <div class="char-counter">{{ updateCharCount('unp', formData.unp) }}</div>
+                         </div>
                     </div>
 
-                    <div class="form-group">
-                         <label>Цена:</label>
-                         <input type="number" v-model="newPosition.price" required min="0" step="0.01" />
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="gniLocation"
+                                   placeholder=""
+                                   v-model="formData.gniLocation"
+                                   @input="updateCharCount('title', formData.gniLocation)"
+                                   required
+                                   :maxlength="charLimits.gniLocation.max"
+                                   pattern="^[0-9]{4}$" />
+                              <label for="gniLocation">Код ИМНС</label>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                         <div class="char-counter-wrapper">
+                              <div class="char-counter">{{ updateCharCount('gniLocation', formData.gniLocation) }}</div>
+                         </div>
                     </div>
 
-                    <button type="button" @click="addPosition">Добавить позицию</button>
-               </div>
+                    <!-- <div class="form-group">
+                         <label>Описание:</label>
+                         <textarea
+                              v-model="formData.description"
+                              @input="updateCharCount('description', formData.description)"
+                              rows="3"
+                              :maxlength="charLimits.description.max"></textarea>
+                         <div class="char-counter">{{ updateCharCount('description', formData.description) }}</div>
+                    </div> -->
+                    <button class="btn-default" @click="addPositionFlag = true" v-if="!addPositionFlag" type="button">Добавить позицию</button>
 
-               <div class="positions-list" v-if="hasPositions">
-                    <h3>Добавленные позиции</h3>
-                    <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
-                         <p><strong>{{ position.name }}</strong></p>
-                         <p>Количество: {{ position.quantity }}</p>
-                         <p>Цена: {{ position.price }}</p>
-                         <button type="button" @click="removePosition(index)">Удалить</button>
+                    <div class="border-20 p-4 bg-gray-bg-illustr" v-if="addPositionFlag">
+                         <div class="positions-form">
+                              <div class="form-group">
+                                   <label>Наименование позиции:</label>
+                                   <input
+                                        type="text"
+                                        v-model="newPosition.name"
+                                        @input="updateCharCount('positionName', newPosition.name)"
+                                        required
+                                        :maxlength="charLimits.positionName.max" />
+                                   <div class="char-counter">{{ updateCharCount('positionName', newPosition.name) }}</div>
+                              </div>
+
+                              <div class="form-group">
+                                   <label>Количество:</label>
+                                   <input type="number" v-model="newPosition.quantity" required min="1" />
+                              </div>
+
+                              <div class="form-group">
+                                   <label>Цена:</label>
+                                   <input type="number" v-model="newPosition.price" required min="0" step="0.01" />
+                              </div>
+
+                              <button type="button" @click="addPosition">Добавить позицию</button>
+                         </div>
+                         <div class="mt-5"></div>
                     </div>
-               </div>
 
-               <button type="submit">Отправить данные</button>
-          </form>
+                    <div class="mt-5 border-20 p-4 bg-gray-bg-illustr" v-if="hasPositions > 0">
+                         <div class="positions-list">
+                              <h3>Добавленные позиции:</h3>
+                              <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
+                                   <p><strong>{{ position.name }}</strong></p>
+                                   <p>Количество: {{ position.quantity }}</p>
+                                   <p>Цена: {{ position.price }}</p>
+                                   <button type="button" @click="removePosition(index)">Удалить</button>
+                              </div>
+                         </div>
+                    </div>
+
+                    <button type="submit" class="btn-default" :class="[!hasPositions ? 'disabled' : '']" :disabled="!hasPositions">Отправить данные</button>
+               </form>
+          </div>
      </div>
 
      <!-- Загрузка файла -->
@@ -83,6 +156,9 @@
                          title: '',
                          description: '',
                          positions: [],
+                         unp: '',
+                         messageNumber: '',
+                         gniLocation: '',
                     },
                     newPosition: {
                          name: '',
@@ -90,8 +166,36 @@
                          price: 0,
                     },
                     fileData: null,
+                    charLimits: {
+                         title: {
+                              max: 200, // Максимальное количество символов для title
+                              current: 0,
+                         },
+                         unp: {
+                              max: 9,
+                              current: 0,
+                         },
+                         messageNumber: {
+                              max: 100,
+                              current: 0,
+                         },
+                         gniLocation: {
+                              max: 4,
+                              current: 0,
+                         },
+                         description: {
+                              max: 500, // Максимальное количество символов для description
+                              current: 0,
+                         },
+                         positionName: {
+                              max: 50, // Максимальное количество символов для имени позиции
+                              current: 0,
+                         },
+                    },
+                    addPositionFlag: false,
                };
           },
+          watch: {},
           computed: {
                hasPositions() {
                     return this.formData.positions.length > 0;
@@ -111,18 +215,33 @@
                          quantity: 1,
                          price: 0,
                     };
+                    // Сброс счетчика символов для имени позиции
+                    this.charLimits.positionName.current = 0;
+                    this.addPositionFlag = false;
                },
                removePosition(index) {
                     this.formData.positions.splice(index, 1);
                },
                submitForm() {
-                    const result = {
-                         ...this.formData,
-                         positions: [...this.formData.positions],
-                    };
+                    if (this.hasPositions) {
+                    }
+                    const form = document.querySelector('.needs-validation.vue-form');
 
-                    console.log('Итоговые данные:', result);
-                    alert('Данные успешно сформированы (см. консоль)');
+                    if (!form.checkValidity()) {
+                         event.preventDefault();
+                         event.stopPropagation();
+                    }
+                    if (form.checkValidity()) {
+                         const result = {
+                              ...this.formData,
+                              positions: [...this.formData.positions],
+                         };
+
+                         console.log('Итоговые данные:', result);
+                         alert('Данные успешно сформированы (см. консоль)');
+                    }
+
+                    form.classList.add('was-validated');
                },
                handleFileUpload(event) {
                     const file = event.target.files[0];
@@ -148,6 +267,15 @@
                     console.log('Данные из файла:', this.fileData);
                     alert('Данные из файла готовы к отправке (см. консоль)');
                },
+               updateCharCount(field, value) {
+                    // Обновляем текущее количество символов
+                    this.charLimits[field].current = value.length;
+
+                    // Возвращаем строку с информацией об оставшихся символах
+                    const remaining = this.charLimits[field].max - value.length;
+                    return `${remaining} / ${this.charLimits[field].max}`;
+               },
           },
+          mounted() {},
      }).mount('#app');
 </script>

@@ -1,0 +1,17 @@
+@layer component{
+     .char-counter-wrapper{
+          position: relative;
+          .char-counter{
+               font-family: $ff-roboto;
+               width: 2.875rem;
+               font-size: .625rem;
+               color: var(--color-gray-txt);
+               white-space: nowrap;
+               position: absolute;
+               bottom: 0;
+               text-align: end;
+               z-index: $layer-base;
+               left: -3.75rem;
+          }
+     }
+}
