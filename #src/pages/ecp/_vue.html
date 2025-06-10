@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
 <div class="" id="app">
      <!-- Первый этап: выбор метода ввода -->
      <div class="d-flex justify-content-center">
@@ -15,7 +13,7 @@
      <!-- Ручной ввод -->
      <div v-if="inputMethod === 'manual'">
           <div class="col-lg-8">
-               <form @submit.prevent="submitForm" class="needs-validation vue-form d-flex flex-column gap-3" novalidate>
+               <form @submit.prevent="submitForm('mainForm')" class="needs-validation vue-form d-flex flex-column gap-3" novalidate id="mainForm">
                     <div class="d-flex flex-row">
                          <div class="form-floating w-100">
                               <input
@@ -85,80 +83,87 @@
                               :maxlength="charLimits.description.max"></textarea>
                          <div class="char-counter">{{ updateCharCount('description', formData.description) }}</div>
                     </div> -->
-                    <button class="btn-default" @click="addPositionFlag = true" v-if="!addPositionFlag" type="button">Добавить позицию</button>
+                    <button type="submit" class="btn-default" :class="[!hasPositions ? 'disabled' : '']" :disabled="!hasPositions">Отправить данные</button>
+               </form>
+               <button class="btn-default mt-3" @click="addPositionFlag = true" v-if="!addPositionFlag" type="button">Добавить позицию</button>
 
-                    <div class="border-20 p-4 bg-gray-bg-illustr" v-if="addPositionFlag">
-                         <div class="positions-form d-flex flex-column gap-3">
-                              <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="text"
-                                             class="form-control pb-3 border-20"
-                                             id="namePosition"
-                                             placeholder=""
-                                             v-model="newPosition.name"
-                                             @input="updateCharCount('positionName', newPosition.name)"
-                                             required
-                                             :maxlength="charLimits.positionName.max"
-                                             pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{3,200})$' />
-                                        <label for="namePosition">Наименование маркированного товара</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
-                                   <div class="char-counter-wrapper">
-                                        <div class="char-counter">{{ updateCharCount('positionName', newPosition.name) }}</div>
-                                   </div>
+               <div class="border-20 p-md-4 p-2 bg-gray-bg-illustr mt-4" v-if="addPositionFlag">
+                    <form
+                         @submit.prevent="submitPositionForm('positionForm')"
+                         class="positions-form d-flex flex-column gap-3 needs-validation"
+                         novalidate
+                         id="positionForm">
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="namePosition"
+                                        placeholder=""
+                                        v-model="newPosition.name"
+                                        @input="updateCharCount('positionName', newPosition.name)"
+                                        required
+                                        :maxlength="charLimits.positionName.max"
+                                        pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{3,200})$' />
+                                   <label for="namePosition">Наименование маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
                               </div>
-
-                              <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="number"
-                                             class="form-control pb-3 border-20"
-                                             id="productCountPosition"
-                                             placeholder=""
-                                             v-model="newPosition.productCount"
-                                             required
-                                             pattern="[0-9]{3,549755813887.99}"
-                                             value="" />
-                                        <label for="productCountPosition">Количество товара</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('positionName', newPosition.name) }}</div>
                               </div>
+                         </div>
 
-                              <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="number"
-                                             class="form-control pb-3 border-20"
-                                             id="amountPosition"
-                                             placeholder=""
-                                             v-model="newPosition.amount"
-                                             required
-                                             pattern="[0-9]{3,549755813887.99}"
-                                             value="" />
-                                        <label for="amountPosition">Стоимость продажи единицы маркированного товара</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="productCountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.productCount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="productCountPosition">Количество товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
                               </div>
+                         </div>
 
-                              <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="number"
-                                             class="form-control pb-3 border-20"
-                                             id="discountPosition"
-                                             placeholder=""
-                                             v-model="newPosition.discount"
-                                             required
-                                             pattern="[0-9]{3,549755813887.99}"
-                                             value="" />
-                                        <label for="discountPosition">Сумма скидки для маркированного товара</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="amountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.amount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="amountPosition">Стоимость продажи единицы маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
                               </div>
+                         </div>
 
-                              <div class="d-flex flex-row">
-                                   <div class="input-group d-flex flex-row gap-2">
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="discountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.discount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="discountPosition">Сумма скидки для маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="input-group d-flex flex-row gap-2">
+                                   <div class="d-flex flex-row">
                                         <div class="form-floating">
                                              <input
                                                   type="text"
@@ -167,110 +172,112 @@
                                                   placeholder=""
                                                   v-model="newPosition.ean"
                                                   required
+                                                  :maxlength="charLimits.ean.max"
                                                   pattern="[0-9]{13}" />
                                              <label for="eanPosition">GTIN товара</label>
                                              <div class="invalid-feedback">Данные указаны неверно</div>
                                         </div>
-                                        <button class="input-group-text btn-default rounded fs-24" @click="showModalScanGTIN()" type="button">
-                                             <i class="bi bi-camera"></i>
-                                        </button>
+                                        <div class="char-counter-wrapper">
+                                             <div class="char-counter">{{ updateCharCount('ean', newPosition.ean) }}</div>
+                                        </div>
                                    </div>
+                                   <button class="input-group-text btn-default rounded fs-24" @click="showModalScanGTIN()" type="button">
+                                        <i class="bi bi-camera"></i>
+                                   </button>
                               </div>
+                         </div>
 
-                              <!-- <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="text"
-                                             class="form-control pb-3 border-20"
-                                             id="markingCodePosition"
-                                             placeholder=""
-                                             v-model="newPosition.markingCode"
-                                             @input="updateCharCount('markingCode', newPosition.markingCode)"
-                                             required />
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="markingCodePosition"
+                                        placeholder=""
+                                        v-model="newPosition.markingCode"
+                                        @input="updateCharCount('markingCode', newPosition.markingCode)"
                                         pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{1,256})$'
                                         :maxlength="charLimits.markingCode.max"
-                                        <label for="markingCodePosition">Код маркировки</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
-                                   <div class="char-counter-wrapper">
-                                        <div class="char-counter">{{ updateCharCount('markingCode', newPosition.markingCode) }}</div>
-                                   </div>
-                              </div> -->
-
-                              <!-- <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="text"
-                                             class="form-control pb-3 border-20"
-                                             id="markingTypePosition"
-                                             placeholder=""
-                                             v-model="newPosition.markingType"
-                                             @input="updateCharCount('markingType', newPosition.markingType)"
-                                             required
-                                             :maxlength="charLimits.markingType.max"
-                                             pattern="[0-9]{0,3}" />
-                                        <label for="markingTypePosition">Тип маркировки</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
-                                   <div class="char-counter-wrapper">
-                                        <div class="char-counter">{{ updateCharCount('markingType', newPosition.markingType) }}</div>
-                                   </div>
-                              </div> -->
-
-                              <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="number"
-                                             class="form-control pb-3 border-20"
-                                             id="surchargePosition"
-                                             placeholder=""
-                                             v-model="newPosition.surcharge"
-                                             required
-                                             pattern="[0-9]{3,549755813887.99}" />
-                                        <label for="surchargePosition">Сумма надбавки для маркированного товара</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
+                                        required />
+                                   <label for="markingCodePosition">Код маркировки</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
                               </div>
-
-                              <!-- <div class="d-flex flex-row">
-                                   <div class="form-floating w-100">
-                                        <input
-                                             type="text"
-                                             class="form-control pb-3 border-20"
-                                             id="ukzCodePosition"
-                                             placeholder=""
-                                             v-model="newPosition.ukzCode"
-                                             @input="updateCharCount('ukzCode', newPosition.ukzCode)"
-                                             required
-                                             :maxlength="charLimits.ukzCode.max"
-                                             pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{0,64})$' />
-                                        <label for="ukzCodePosition">Код УКЗ</label>
-                                        <div class="invalid-feedback">Данные указаны неверно</div>
-                                   </div>
-                                   <div class="char-counter-wrapper">
-                                        <div class="char-counter">{{ updateCharCount('ukzCode', newPosition.ukzCode) }}</div>
-                                   </div>
-                              </div> -->
-
-                              <button type="button" class="btn-default" @click="addPosition">Добавить позицию</button>
-                         </div>
-                         <div class="mt-5"></div>
-                    </div>
-
-                    <div class="mt-5 border-20 p-4 bg-gray-bg-illustr" v-if="hasPositions > 0">
-                         <div class="positions-list">
-                              <h3>Добавленные позиции:</h3>
-                              <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
-                                   <p><strong>{{ position.name }}</strong></p>
-                                   <p>Количество: {{ position.quantity }}</p>
-                                   <p>Цена: {{ position.price }}</p>
-                                   <button type="button" @click="removePosition(index)">Удалить</button>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('markingCode', newPosition.markingCode) }}</div>
                               </div>
                          </div>
-                    </div>
 
-                    <button type="submit" class="btn-default" :class="[!hasPositions ? 'disabled' : '']" :disabled="!hasPositions">Отправить данные</button>
-               </form>
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="markingTypePosition"
+                                        placeholder=""
+                                        v-model="newPosition.markingType"
+                                        @input="updateCharCount('markingType', newPosition.markingType)"
+                                        required
+                                        :maxlength="charLimits.markingType.max"
+                                        pattern="[0-9]{0,3}" />
+                                   <label for="markingTypePosition">Тип маркировки</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('markingType', newPosition.markingType) }}</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="surchargePosition"
+                                        placeholder=""
+                                        v-model="newPosition.surcharge"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}" />
+                                   <label for="surchargePosition">Сумма надбавки для маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="ukzCodePosition"
+                                        placeholder=""
+                                        v-model="newPosition.ukzCode"
+                                        @input="updateCharCount('ukzCode', newPosition.ukzCode)"
+                                        required
+                                        :maxlength="charLimits.ukzCode.max"
+                                        pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{0,64})$' />
+                                   <label for="ukzCodePosition">Код УКЗ</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('ukzCode', newPosition.ukzCode) }}</div>
+                              </div>
+                         </div>
+
+                         <button type="submit" class="btn-default">Добавить позицию</button>
+                    </form>
+                    <div class="mt-5"></div>
+               </div>
+
+               <div class="mt-5 border-20 p-md-4 p-2 bg-gray-bg-illustr" v-if="hasPositions > 0">
+                    <div class="positions-list">
+                         <h3>Добавленные позиции:</h3>
+                         <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
+                              <p><strong>{{ position.name }}</strong></p>
+                              <p>Количество: {{ position.quantity }}</p>
+                              <p>Цена: {{ position.price }}</p>
+                              <button type="button" @click="removePosition(index)">Удалить</button>
+                         </div>
+                    </div>
+               </div>
           </div>
      </div>
 
@@ -387,6 +394,10 @@
                               max: 64,
                               current: 0,
                          },
+                         ean: {
+                              max: 13,
+                              current: 0,
+                         },
                     },
                     addPositionFlag: false,
                     codeReader: new ZXing.BrowserMultiFormatReader(),
@@ -419,10 +430,10 @@
                removePosition(index) {
                     this.formData.positions.splice(index, 1);
                },
-               submitForm() {
-                    if (this.hasPositions) {
+               submitForm(formID) {
+                    if (this.hasPositions > 0) {
                     }
-                    const form = document.querySelector('.needs-validation.vue-form');
+                    const form = document.querySelector(`#${formID}`);
 
                     if (!form.checkValidity()) {
                          event.preventDefault();
@@ -436,9 +447,15 @@
 
                          console.log('Итоговые данные:', result);
                          alert('Данные успешно сформированы (см. консоль)');
+                         return true;
                     }
 
                     form.classList.add('was-validated');
+               },
+               submitPositionForm(formID) {
+                    if (this.submitForm(formID)) {
+                         this.addPosition();
+                    }
                },
                handleFileUpload(event) {
                     const file = event.target.files[0];
@@ -465,13 +482,20 @@
                     alert('Данные из файла готовы к отправке (см. консоль)');
                },
                updateCharCount(field, value) {
-                    console.log('field', field, 'value', value);
+                    // Проверка на существование поля в charLimits
+                    if (!this.charLimits[field]) {
+                         console.error(`Поле ${field} не найдено в charLimits`);
+                         return '0 / 0';
+                    }
+
+                    // Проверка что value существует
+                    const length = value ? value.length : 0;
 
                     // Обновляем текущее количество символов
-                    this.charLimits[field].current = value.length;
+                    this.charLimits[field].current = length;
 
-                    // Возвращаем строку с информацией об оставшихся символах
-                    const remaining = this.charLimits[field].max - value.length;
+                    // Возвращаем строку с информацией
+                    const remaining = this.charLimits[field].max - length;
                     return `${remaining} / ${this.charLimits[field].max}`;
                },
                showModalScanGTIN() {
@@ -503,25 +527,25 @@
                                    sourceSelectPanel.style.display = 'block';
                               }
 
-                              document.getElementById('startButton').addEventListener('click', () => {
-                                   this.codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
-                                        if (result) {
-                                             console.log(result);
-                                             document.getElementById('result').textContent = result.text;
-                                        }
-                                        if (err && !(err instanceof ZXing.NotFoundException)) {
-                                             console.error(err);
-                                             document.getElementById('result').textContent = err;
-                                        }
-                                   });
-                                   console.log(`Started continous decode from camera with id ${selectedDeviceId}`);
+                              this.codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
+                                   if (result) {
+                                        console.log(result);
+                                        document.getElementById('result').textContent = result.text;
+                                   }
+                                   if (err && !(err instanceof ZXing.NotFoundException)) {
+                                        console.error(err);
+                                        document.getElementById('result').textContent = err;
+                                   }
                               });
+                              console.log(`Started continous decode from camera with id ${selectedDeviceId}`);
 
-                              document.getElementById('resetButton').addEventListener('click', () => {
-                                   this.codeReader.reset();
-                                   document.getElementById('result').textContent = '';
-                                   console.log('Reset.');
-                              });
+                              document.getElementById('startButton').addEventListener('click', () => {});
+
+                              // document.getElementById('resetButton').addEventListener('click', () => {
+                              //      this.codeReader.reset();
+                              //      document.getElementById('result').textContent = '';
+                              //      console.log('Reset.');
+                              // });
                          })
                          .catch((err) => {
                               console.error(err);

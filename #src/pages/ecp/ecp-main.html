@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-     @@include('../../html-comp/_head.html',{ "title":"ЭЦП", "scriptList": ["./js/jquery.js"] })
+     @@include('../../html-comp/_head.html',{ "title":"ЭЦП", "scriptList": ["./js/vue.js", "./js/scanner.js"] })
 
      <body>
           @@include('./_header.html')
           <main class="main main-container">
-               <div class="container mt-0">
+               <div class="container mt-md-0 mt-100">
                     <div class="w-100 bg-gray-bg-illustr border-30 main-banner-wrapper">
                          <div class="main-banner">
                               <div class="row">
@@ -27,7 +27,7 @@
                     </div>
                </div>
                <div class="container">
-                    <div class="w-100 bg-transparent border border-30 p-5">
+                    <div class="w-100 bg-transparent border border-30 p-lg-5 p-md-3 p-2">
                          @@include('./_vue.html')
                          <!-- <form class="needs-validation skko-form" novalidate>
                               <div class="row w-100">
