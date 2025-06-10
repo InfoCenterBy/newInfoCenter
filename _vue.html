@@ -497,9 +497,8 @@
                     this.codeReader
                          .listVideoInputDevices()
                          .then((videoInputDevices) => {
-                              const sourceSelect = document.getElementById('sourceSelect');
-                              this.selectedDeviceId = videoInputDevices[0].deviceId;
                               this.videoInputDevices = videoInputDevices;
+                              this.selectedDeviceId = this.videoInputDevices[0].deviceId;
 
                               this.codeReader.decodeFromVideoDevice(this.selectedDeviceId, 'video', (result, err) => {
                                    if (result) {
