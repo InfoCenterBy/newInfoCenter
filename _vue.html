@@ -295,7 +295,7 @@
                               <video id="video" width="100%" height="200" class="w-100"></video>
                          </div>
 
-                         <div id="sourceSelectPanel" v-if="videoInputDevices.length > 1">
+                         <div id="sourceSelectPanel" v-if="videoInputDevices.length >= 1">
                               <div class="form-input">
                                    <select class="form-select" aria-label="sourceSelect" id="sourceSelect" v-model="selectedDeviceId">
                                         <option hidden>Устройство ввода</option>
@@ -388,9 +388,9 @@
                          },
                     },
                     addPositionFlag: false,
-                    codeReader: new ZXing.BrowserMultiFormatReader(),
                     selectedDeviceId: '',
                     videoInputDevices: [],
+                    codeReader: '',
                };
           },
           watch: {},
@@ -494,6 +494,7 @@
                     this.scanGTIN();
                },
                scanGTIN() {
+                    this.codeReader = new ZXing.BrowserMultiFormatReader();
                     this.codeReader
                          .listVideoInputDevices()
                          .then((videoInputDevices) => {
