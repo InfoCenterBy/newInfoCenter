@@ -83,6 +83,7 @@ html:has(.ui-page){
                overflow: hidden;
                border-radius: 1.25rem;
                @include transition($transition-3);
+               max-height: 12.875rem;
                img{
                     max-width: 29rem; //464px
                     width: 100%;
