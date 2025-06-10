@@ -564,11 +564,10 @@
                },
                showModalScanGTIN() {
                     const myModalAlternative = new bootstrap.Modal('#exampleModal');
-                    myModalAlternative.show();
                     this.scanGTIN();
+                    myModalAlternative.show();
                },
                scanGTIN() {
-                    this.codeReader = new ZXing.BrowserMultiFormatReader();
                     this.codeReader
                          .listVideoInputDevices()
                          .then((videoInputDevices) => {
@@ -577,13 +576,12 @@
 
                               this.codeReader.decodeFromVideoDevice(this.selectedDeviceId, 'video', (result, err) => {
                                    if (result) {
-                                        console.log(result);
+                                        // console.log(result);
                                         this.newPosition.ean = result.text;
-                                        document.getElementById('result').textContent = result.text;
                                    }
                                    if (err && !(err instanceof ZXing.NotFoundException)) {
-                                        console.error(err);
-                                        document.getElementById('result').textContent = err;
+                                        // console.error(err);
+                                        this.newPosition.ean = err;
                                    }
                               });
                               // console.log(`Started continuous decode from camera with id ${selectedDeviceId}`);
@@ -593,7 +591,9 @@
                          });
                },
           },
-          mounted() {},
+          mounted() {
+               this.codeReader = new ZXing.BrowserMultiFormatReader();
+          },
      }).mount('#app');
 </script>
 
