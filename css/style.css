@@ -2095,6 +2095,7 @@ html:has(.ui-page) {
     border-radius: 1.25rem;
     -webkit-transition: all ease-out 0.3s;
     transition: all ease-out 0.3s;
+    max-height: 12.875rem;
   }
   .news-element__img img {
     max-width: 29rem;
