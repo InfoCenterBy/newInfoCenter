@@ -1,73 +1,118 @@
-@layer component{
-     .form-date{
-          position: relative;
-          label{
-               position: absolute;
-               top: 10.5px;
-               left: 1rem;
-               color: var(--color-gray-txt);
-          }
-          input.form-control{
-               border-radius: 9.375rem;
-               padding: 10.5px;
-               padding-left: 2.375rem;
-               font-family: $ff-roboto;
-               border: 1.5px solid (--color-gray-stroke);
-               transition: $transition-3;
-               @include hover('border-color', var(--color-violet-hover));
-               background-color: var(--color-white);
-               &:focus{
-                    box-shadow: none;
-                    border-color: var(--color-violet);
-               }
-          }
+@layer component {
+	.input {
+		border-radius: 100px;
+		padding-inline: 20px;
+		border-color: var(--color-gray-stroke);
+		border-style: solid;
+		outline: none;
+		box-shadow: none;
+		transition: $transition-3;
+		height: 45px;
+		background-color: var(--color-white);
 
-          input.form-control-green{
-               border-radius: 9.375rem;
-               padding: 10.5px;
-               padding-left: 2.375rem;
-               font-family: $ff-roboto;
-               border: 1px solid (--color-gray-stroke);
-               transition: $transition-3;
-               @include hover('border-color', var(--color-taxes-green));
-               background-color: var(--color-white);
-               &:focus{
-                    box-shadow: none;
-                    border-color: var(--color-taxes-green);
-               }
-          }
-     }
-     .form-input.invalid{
-          .form-control, .form-select {
-               border-color: var(--color-red-error);
-          }
-          .input-label-error{
-               display: block;
-               color: var(--color-red-attention);
-               font-size: .875rem;
-               user-select: none;
-          }
-     }
-     .form-input:not(.invalid){
-          .input-label-error{
-               display: none;
-          }
-     }
-     .form-select{
-          border-radius: 9.375rem;
-          font-family: $ff-roboto;
-          border: 1.5px solid var(--color-gray-stroke);
-          transition: $transition-3;
-          padding: .6563rem 1rem;
-          background-color: var(--color-white);
-          @include hover('border-color', var(--color-violet-hover));
-          &:focus{
-               box-shadow: none;
-               border-color: var(--color-violet);
-          }
-          white-space: nowrap; 
-          overflow: hidden;
-          text-overflow: ellipsis;
-          padding-right: 2rem;
-     }
+		@include hover('border-color', var(--color-violet-hover));
+
+		&:focus {
+			border-color: var(--color-violet);
+		}
+	}
+
+	input[type='search']::-webkit-search-cancel-button {
+		appearance: none;
+		width: 12px;
+		height: 12px;
+		--weight: 0.5px;
+		--aa: 1px;
+		--color: var(--color-gray-txt);
+		border-radius: 1px;
+		background-color: var(--color-gray-txt);
+		background: linear-gradient(
+				45deg,
+				transparent calc(50% - var(--weight) - var(--aa)),
+				var(--color) calc(50% - var(--weight)),
+				var(--color) calc(50% + var(--weight)),
+				transparent calc(50% + var(--weight) + var(--aa))
+			),
+			linear-gradient(
+				-45deg,
+				transparent calc(50% - var(--weight) - var(--aa)),
+				var(--color) calc(50% - var(--weight)),
+				var(--color) calc(50% + var(--weight)),
+				transparent calc(50% + var(--weight) + var(--aa))
+			);
+		cursor: pointer;
+	}
+
+	.form-date {
+		position: relative;
+		label {
+			position: absolute;
+			top: 10.5px;
+			left: 1rem;
+			color: var(--color-gray-txt);
+		}
+		input.form-control {
+			border-radius: 9.375rem;
+			padding: 10.5px;
+			padding-left: 2.375rem;
+			font-family: $ff-roboto;
+			border: 1.5px solid (--color-gray-stroke);
+			transition: $transition-3;
+			@include hover('border-color', var(--color-violet-hover));
+			background-color: var(--color-white);
+			&:focus {
+				box-shadow: none;
+				border-color: var(--color-violet);
+			}
+		}
+
+		input.form-control-green {
+			border-radius: 9.375rem;
+			padding: 10.5px;
+			padding-left: 2.375rem;
+			font-family: $ff-roboto;
+			border: 1px solid (--color-gray-stroke);
+			transition: $transition-3;
+			@include hover('border-color', var(--color-taxes-green));
+			background-color: var(--color-white);
+			&:focus {
+				box-shadow: none;
+				border-color: var(--color-taxes-green);
+			}
+		}
+	}
+	.form-input.invalid {
+		.form-control,
+		.form-select {
+			border-color: var(--color-red-error);
+		}
+		.input-label-error {
+			display: block;
+			color: var(--color-red-attention);
+			font-size: 0.875rem;
+			user-select: none;
+		}
+	}
+	.form-input:not(.invalid) {
+		.input-label-error {
+			display: none;
+		}
+	}
+	.form-select {
+		border-radius: 9.375rem;
+		font-family: $ff-roboto;
+		border: 1.5px solid var(--color-gray-stroke);
+		transition: $transition-3;
+		padding: 0.6563rem 1rem;
+		background-color: var(--color-white);
+		@include hover('border-color', var(--color-violet-hover));
+		&:focus {
+			box-shadow: none;
+			border-color: var(--color-violet);
+		}
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-right: 2rem;
+	}
 }
