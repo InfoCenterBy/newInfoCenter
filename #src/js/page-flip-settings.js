@@ -1,31 +1,39 @@
-document.addEventListener('DOMContentLoaded', function () {
-	const pageFlip2 = new St.PageFlip(document.querySelector('#magazine'), {
-		size: 'stretch',
-		height: 700,
-		width: 560,
-		minWidth: 340,
-		minHeight: 400,
-		maxWidth: 700,
-		maxHeight: 1200,
-		flippingTime: 600,
-	});
+document.addEventListener('DOMContentLoaded', () => {
+	const magazines = document.querySelectorAll('.magazine-container');
+	const pageFlipInstances = [];
 
-	pageFlip2.loadFromHTML(document.querySelectorAll('.page'));
-	pageFlip2.update();
+	for (let i = 0; i <= magazines.length; i++) {
+		const container = document.querySelector(`#magazine-${i}`);
 
-	document
-		.getElementById('magazine-modal')
-		.addEventListener('shown.bs.modal', function () {
-			pageFlip2.update();
+		if (!container) continue;
+
+		pageFlipInstances[i] = new St.PageFlip(container, {
+			size: 'stretch',
+			height: 700,
+			width: 560,
+			minWidth: 340,
+			minHeight: 400,
+			maxWidth: 700,
+			maxHeight: 1200,
+			flippingTime: 600,
 		});
 
-	window.addEventListener('resize', function () {
-		if (
-			document
-				.getElementById('magazine-modal')
-				.classList.contains('show')
-		) {
-			pageFlip2.update();
+		pageFlipInstances[i].loadFromHTML(
+			container.querySelectorAll('.page'),
+		);
+		pageFlipInstances[i].update();
+
+		const modal = document.getElementById(`magazine-modal-${i}`);
+		if (modal) {
+			modal.addEventListener('shown.bs.modal', () => {
+				pageFlipInstances[i].update();
+			});
 		}
-	});
+
+		window.addEventListener('resize', () => {
+			if (modal?.classList.contains('show')) {
+				pageFlipInstances[i].update();
+			}
+		});
+	}
 });
