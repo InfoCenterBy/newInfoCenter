@@ -279,6 +279,14 @@ $layer-modal: 4;
 	margin-inline: -16px;
 }
 
+.border-left-desktop {
+	border-left: 1px solid var(--color-gray-stroke);
+
+	@media (max-width: 768px) {
+		border-left: 0;
+	}
+}
+
 @layer component {
 	.px-xl-100 {
 		@media #{$ui-bs-xl} {
@@ -321,7 +329,7 @@ $layer-modal: 4;
 	font-weight: 500;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
 	.mobile-w-100 {
 		width: 100%;
 	}

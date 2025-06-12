@@ -14,15 +14,15 @@
                <section>
                     <h2 class="h2-title">Результаты поиска</h2>
 
-                    <div class="row row-gap-3 mt-32">
-                         <div class="col-12 col-md-8 col-lg-9">
+                    <div class="row row-gap-4 mt-32">
+                         <div class="col-12 col-md-8 col-lg-9 order-2 order-md-1 mt-4 mt-md-0 border-bottom">
                               <div class="d-flex gap-2 gap-lg-3 flex-wrap flex-lg-nowrap w-100">
                                    <input name="search-input" class="input w-100" type="search" value="">
-                                   <span class="d-block d-lg-none mb-0 color-gray-txt w-100">Найдено 105
+                                   <span class="d-block d-lg-none mb-0 color-gray-txt w-100">Найдено: 105
                                         результатов</span>
                                    <button class="btn-default mobile-w-100 px-5">Найти</button>
                               </div>
-                              <span class="d-none d-lg-block mb-0 color-gray-txt w-100">Найдено 105
+                              <span class="d-none d-lg-block mb-0 color-gray-txt w-100">Найдено: 105
                                    результатов</span>
 
                               <div class="d-flex flex-column gap-4 mt-32">
@@ -152,8 +152,9 @@
                                    </div>
                               </div>
                          </div>
-                         <div class="col-12 col-md-4 col-lg-3">
-                              <form action="#" class="border-start ps-3 d-flex flex-column gap-4">
+                         <div class="col-12 col-md-4 col-lg-3 order-1 order-md-2">
+                              <form id="search-options" action="#"
+                                   class="border-left-desktop ps-0 ps-md-3 d-flex flex-column gap-4">
                                    <div class="d-flex flex-column">
                                         <p class="ff-exo fs-18 color-black mb-3 fw-semibold">
                                              Сортировать
@@ -249,11 +250,11 @@
                                              </div>
                                              <div class="form-check">
                                                   <input class="form-check-input" type="radio" name="period"
-                                                       id="year">
-                                                  <label class="form-check-label" for="year">Выбрать
+                                                       id="custom-period">
+                                                  <label class="form-check-label" for="custom-period">Выбрать
                                                        период</label>
                                              </div>
-                                             <div class="d-flex flex-wrap gap-3">
+                                             <div class="date-inputs flex-wrap gap-3">
                                                   <div class="form-date form-input w-100">
                                                        <label for="inputDateForm1">от</label>
                                                        <input type="date" name="" id="inputDateForm1"
