@@ -6,7 +6,7 @@
                top: -37px;
           }
           .needs-validation.was-validated .floating-label-content:has(.floating-input:invalid) .password-icon {
-               top: -60px;
+               top: -63px;
           }
      </style>
      @@include('./_custom-style.html')
@@ -20,7 +20,7 @@
                                    <div class="col-12">
                                         <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">Авторизация</h2>
                                    </div>
-                                   <div class="col-lg-7 d-flex flex-column gap-3">
+                                   <div class="col-lg-7 d-flex flex-column gap-3 mt-4">
                                         <div class="floating-label-content w-100">
                                              <input
                                                   class="floating-input"
@@ -64,20 +64,81 @@
                                              </div>
                                         </div>
                                         <div class="form-check">
-                                             <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
-                                             <label class="form-check-label fs-16" for="exampleCheck1">
-                                                  Согласие на обработку
-                                                  <a href="" target="_blank" rel="noopener noreferrer" class="link-activity"> персональных данных </a>
+                                             <input
+                                                  type="checkbox"
+                                                  class="form-check-input agree-delete-check"
+                                                  id="exampleCheck4"
+                                                  required
+                                                  data-bs-toggle="modal"
+                                                  data-bs-target="#checkDataModal" />
+                                             <label class="form-check-label fs-16" for="exampleCheck4">
+                                                  Для регистрации, создания и пользования личным кабинетом предлагаем дать согласие на обработку персональных
+                                                  данных и ознакомиться с <a href="" target="_blank" rel="noopener noreferrer" class="link-activity"
+                                                       >Положением о политике в отношении обработки персональных данных</a
+                                                  >
                                              </label>
-                                             <div class="invalid-feedback">Вы не подтвердили согласие.</div>
                                         </div>
-                                        <button type="submit" href="" target="_blank" class="btn-default w-100">Отправить</button>
+                                        <button type="submit" class="btn-default">Отправить</button>
                                    </div>
                               </div>
                          </form>
                     </div>
                </div>
           </main>
+          <div class="modal fade" id="checkDataModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="checkDataModalLabel" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content pending-check-block mt-0">
+                         <div class="modal-header">
+                              <h1 class="modal-title fs-5 d-block" id="checkDataModalLabel">Получение согласий на обработку персональных данных</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                         </div>
+                         <div class="modal-body">
+                              <div class="">
+                                   <p class="mb-0">Пожалуйста, предоставьте согласия на обработку ваших персональных данных для следующих целей:</p>
+                                   <div class="mt-3 d-flex flex-column gap-2 check-all-block">
+                                        <div class="form-check">
+                                             <!-- data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal" -->
+                                             <input type="checkbox" class="form-check-input check-all-input" id="exampleCheck6" />
+                                             <label class="form-check-label" for="exampleCheck6">Выбрать все</label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input agree-delete-check" id="exampleCheck7" />
+                                             <label class="form-check-label" for="exampleCheck7">
+                                                  Я согласен(а) на обработку персональных данных с целью создания и использования личного кабинета (<a
+                                                       href=""
+                                                       target="_blank"
+                                                       rel="noopener noreferrer"
+                                                       class="link-activity"
+                                                       >подробнее</a
+                                                  >)
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input type="checkbox" class="form-check-input" id="exampleCheck8" />
+                                             <label class="form-check-label" for="exampleCheck8">
+                                                  Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки
+                                                  на электронную почту (<a href="" target="_blank" rel="noopener noreferrer" class="link-activity">подробнее</a
+                                                  >)
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <!-- data-bs-toggle="modal" data-bs-target="#confirmPhoneDataModal" -->
+                                             <input type="checkbox" class="form-check-input" id="exampleCheck9" />
+                                             <label class="form-check-label" for="exampleCheck9">
+                                                  Я согласен(а) на обработку персональных данных с целью получения информационной и рекламной рассылки
+                                                  посредством Viber/СМС (<a href="" target="_blank" rel="noopener noreferrer" class="link-activity">подробнее</a
+                                                  >)
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn-default delete-agree-btn" data-bs-dismiss="modal">Согласиться</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
           @@include('./_footer.html')
      </body>
 </html>

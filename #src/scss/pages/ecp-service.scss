@@ -14,4 +14,31 @@
                right: 1.25rem;
           }
      }
+     .ecp-history{
+          .btn-list{
+               text-align: start;
+               border-radius: .25rem;
+               &,*{
+                    @include transition($transition-3);
+               }
+               @media #{$mouse-device} {
+                    &:hover{
+                         background-color: var(--color-violet-hover);
+                         opacity: 80;
+                         &, *{color: var(--color-white);}
+                    }
+               }
+               @media #{$touch-device} {
+                    &:active{
+                         background-color: var(--color-violet-hover);
+                         opacity: 80;
+                         &, *{color: var(--color-white);}
+                    }
+               }
+               &.active{
+                    background-color: var(--color-violet);
+                    &, *{color: var(--color-white);}
+               }
+          }
+     }
 }

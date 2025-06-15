@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
-     @@include('../../html-comp/_head.html',{ "title":"ЭЦП", "scriptList": ["./js/vue.js", "./js/scanner.js"] })
-
+     @@include('../../html-comp/_head.html',{ "title":"ЭЦП", "scriptList": ["./js/vue.js"] }) @@include('./_custom-style.html')
      <body>
           @@include('./_header.html')
-          <main class="main main-container">
-               <div class="container mt-0"></div>
-          </main>
+          <main class="main main-container">@@include('./_vue-history.html')</main>
           @@include('./_footer.html')
      </body>
 </html>

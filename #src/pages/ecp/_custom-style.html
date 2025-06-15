@@ -1,10 +1,104 @@
 <style>
      .main.main-container {
-          margin-top: 180px;
+          margin-top: 2.5rem;
      }
-     @media screen and (min-width: 992px) {
+     /* @media screen and (min-width: 992px) {
           .main.main-container {
                margin-top: 0;
+          }
+     } */
+     .header,
+     .header-container {
+          --header-height: 260px;
+          min-height: var(--header-height);
+          max-height: var(--header-height);
+     }
+     .offcanvas.offcanvas-start {
+          top: 260px;
+     }
+
+     @media screen and (min-width: 576px) {
+          .header,
+          .header-container {
+               --header-height: 160px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 160px;
+          }
+     }
+     @media screen and (min-width: 768px) {
+          .header,
+          .header-container {
+               --header-height: 180px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 180px;
+          }
+     }
+     @media screen and (min-width: 992px) {
+          .header,
+          .header-container {
+               --header-height: 100px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 100px;
+          }
+     }
+     @media screen and (min-width: 1200px) {
+          .header,
+          .header-container {
+               --header-height: 140px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 3rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 140px;
+          }
+     }
+     @media screen and (min-width: 1400px) {
+          .header,
+          .header-container {
+               --header-height: 110px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 110px;
+          }
+     }
+     @media screen and (min-width: 1600px) {
+          .header,
+          .header-container {
+               --header-height: 110px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 110px;
           }
      }
 </style>

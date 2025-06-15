@@ -1,7 +1,7 @@
 <div class="" id="app">
      <!-- Первый этап: выбор метода ввода -->
      <div class="d-flex justify-content-center">
-          <h4 class="h4 d-block">Метод ввода данных</h4>
+          <h4 class="h4 d-block ff-exo">Метод ввода данных</h4>
      </div>
      <div class="col-lg-8">
           <div class="d-flex flex-row justify-content-lg-end justify-content-center gap-3 mt-3">
@@ -182,7 +182,7 @@
                                         </div>
                                    </div>
                                    <button
-                                        class="input-group-text btn-default rounded fs-24"
+                                        class="input-group-text btn-default rounded fs-24 d-flex justify-content-center align-items-center"
                                         @click="showModalScanGTIN()"
                                         type="button"
                                         style="height: 3.625rem; width: 3.625rem">
@@ -451,7 +451,7 @@
                          markingCode: this.newPosition.markingCode, //Код маркировки
                          markingType: this.newPosition.markingType, //Тип маркировки
                          surcharge: parseFloat(this.newPosition.surcharge), //Сумма надбавки для маркированного товара
-                         ukzCode: parseFloat(this.newPosition.ukzCode), //Код УКЗ -унифицированный контрольный знак
+                         ukzCode: this.newPosition.ukzCode, //Код УКЗ -унифицированный контрольный знак
                     });
 
                     // Сброс формы позиции
@@ -544,8 +544,6 @@
                     this.codeReader
                          .listVideoInputDevices()
                          .then((videoInputDevices) => {
-                              console.log(videoInputDevices);
-
                               this.videoInputDevices = videoInputDevices;
                               this.selectedDeviceId = this.videoInputDevices[0].deviceId;
 
@@ -567,12 +565,8 @@
                },
                addPositionFlag() {
                     if (this.flagPosition) {
-                         console.log('test');
-
                          this.flagPosition = false;
                     } else {
-                         console.log('test', true);
-
                          this.flagPosition = true;
                     }
                },
