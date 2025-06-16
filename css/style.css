@@ -2618,6 +2618,7 @@ html:has(.ui-page) {
   .btn-up.show {
     opacity: 1;
     visibility: visible;
+    z-index: 3;
   }
   @media screen and (min-width: 576px) {
     .btn-up {
@@ -5358,6 +5359,7 @@ nav.breadcrumb a:last-child {
   }
   .table-default table {
     min-width: 50rem;
+    width: 100%;
   }
   .table-default thead th {
     padding: 0.5rem 0.75rem;
@@ -5775,6 +5777,38 @@ nav.breadcrumb a:last-child {
     text-align: end;
     z-index: 2;
     right: 1.25rem;
+  }
+  .ecp-history .btn-list {
+    text-align: start;
+    border-radius: 0.25rem;
+  }
+  .ecp-history .btn-list, .ecp-history .btn-list * {
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .ecp-history .btn-list:hover {
+      background-color: var(--color-violet-hover);
+      opacity: 80;
+    }
+    .ecp-history .btn-list:hover, .ecp-history .btn-list:hover * {
+      color: var(--color-white);
+    }
+  }
+  @media (hover: none) {
+    .ecp-history .btn-list:active {
+      background-color: var(--color-violet-hover);
+      opacity: 80;
+    }
+    .ecp-history .btn-list:active, .ecp-history .btn-list:active * {
+      color: var(--color-white);
+    }
+  }
+  .ecp-history .btn-list.active {
+    background-color: var(--color-violet);
+  }
+  .ecp-history .btn-list.active, .ecp-history .btn-list.active * {
+    color: var(--color-white);
   }
 }
 html {

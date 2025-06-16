@@ -1,6 +1,6 @@
 <div class="" id="app">
      <div class="d-flex justify-content-center">
-          <h4 class="h4 d-block">Метод ввода данных</h4>
+          <h4 class="h4 d-block ff-exo">Метод ввода данных</h4>
      </div>
      <div class="col-lg-8">
           <div class="d-flex flex-row justify-content-lg-end justify-content-center gap-3 mt-3">
@@ -74,9 +74,9 @@
 
                     <button type="submit" class="btn-default" :class="[!hasPositions ? 'disabled' : '']" :disabled="!hasPositions">Отправить данные</button>
                </form>
-               <button class="btn-default mt-3" @click="addPositionFlag = true" v-if="!addPositionFlag" type="button">Добавить позицию</button>
+               <button class="btn-default mt-3" @click="addPositionFlag()" type="button">{{!flagPosition ? 'Добавить позицию' : 'Отменить добавление'}}</button>
 
-               <div class="border-20 p-md-4 p-2 bg-gray-bg-illustr mt-4" v-if="addPositionFlag">
+               <div class="border-20 p-md-4 p-2 bg-gray-bg-illustr mt-4" v-if="flagPosition">
                     <form
                          @submit.prevent="submitPositionForm('positionForm')"
                          class="positions-form d-flex flex-column gap-3 needs-validation"
@@ -171,7 +171,7 @@
                                         </div>
                                    </div>
                                    <button
-                                        class="input-group-text btn-default rounded fs-24"
+                                        class="input-group-text btn-default rounded fs-24 d-flex justify-content-center align-items-center"
                                         @click="showModalScanGTIN()"
                                         type="button"
                                         style="height: 3.625rem; width: 3.625rem">
@@ -259,15 +259,45 @@
                     </form>
                     <div class="mt-5"></div>
                </div>
-
-               <div class="mt-5 border-20 p-md-4 p-2 bg-gray-bg-illustr" v-if="hasPositions > 0">
-                    <div class="positions-list">
-                         <h3>Добавленные позиции:</h3>
-                         <div class="position-item" v-for="(position, index) in formData.positions" :key="index">
-                              <p><strong>{{ position.name }}</strong></p>
-                              <p>Количество: {{ position.quantity }}</p>
-                              <p>Цена: {{ position.price }}</p>
-                              <button type="button" @click="removePosition(index)">Удалить</button>
+          </div>
+          <div class="mt-5 p-md-3 p-2" v-if="hasPositions > 0">
+               <div class="positions-list">
+                    <h3 class="h3 ff-exo">Добавленные позиции:</h3>
+                    <div class="">
+                         <div class="table-default accent-table">
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>№</th>
+                                             <th>Наименование</th>
+                                             <th>Количество</th>
+                                             <th>Стоимость</th>
+                                             <th>Сумма скидки</th>
+                                             <th>GTIN</th>
+                                             <th>Код маркировки</th>
+                                             <th>Тип маркировки</th>
+                                             <th>Сумма надбавки</th>
+                                             <th colspan="2">Код УКЗ</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr v-for="(position, index) in formData.positions" :key="index">
+                                             <td>{{index + 1}}</td>
+                                             <td>{{position.name}}</td>
+                                             <td>{{position.productCount}}</td>
+                                             <td>{{position.amount}}</td>
+                                             <td>{{position.discount}}</td>
+                                             <td>{{position.ean}}</td>
+                                             <td>{{position.markingCode}}</td>
+                                             <td>{{position.markingType}}</td>
+                                             <td>{{position.surcharge}}</td>
+                                             <td>{{position.ukzCode}}</td>
+                                             <td>
+                                                  <button type="button btn-empty" @click="removePosition(index)">Удалить</button>
+                                             </td>
+                                        </tr>
+                                   </tbody>
+                              </table>
                          </div>
                     </div>
                </div>
@@ -276,18 +306,19 @@
 
      <div v-if="inputMethod === 'file'">
           <div class="form-group">
-               <label>Выберите файл для загрузки:</label>
-               <input type="file" @change="handleFileUpload" accept=".json" />
+               <label for="formFile" class="form-label">Выберите файл для загрузки:</label>
+               <input class="form-control" type="file" id="formFile" @change="handleFileUpload" accept=".json" multiple />
           </div>
 
           <div v-if="fileData">
+               <button @click="submitFileData" class="btn-default mt-3">Отправить данные</button>
                <h3>Предпросмотр данных из файла:</h3>
-               <pre>{{ fileData }}</pre>
-               <button @click="submitFileData">Отправить данные</button>
+               <div class="overflow-auto mt-3">
+                    <pre>{{ fileData }}</pre>
+               </div>
           </div>
      </div>
-
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" aria-hidden="true">
+     <div class="modal fade" id="scannerModal" tabindex="-1" aria-labelledby="scannerModalLabel" data-bs-backdrop="static" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
                <div class="modal-content mt-0">
                     <div class="modal-body">
@@ -331,9 +362,6 @@
                          gniLocation: '',
                     },
                     newPosition: {
-                         quantity: 1,
-                         price: '',
-
                          name: '',
                          productCount: '', //Количество товара
                          amount: '', //Стоимость продажи единицы маркированного товара
@@ -387,10 +415,10 @@
                               current: 0,
                          },
                     },
-                    addPositionFlag: false,
                     selectedDeviceId: '',
                     videoInputDevices: [],
                     codeReader: '',
+                    flagPosition: false,
                };
           },
           watch: {},
@@ -403,8 +431,14 @@
                addPosition() {
                     this.formData.positions.push({
                          name: this.newPosition.name,
-                         quantity: parseInt(this.newPosition.quantity),
-                         price: parseFloat(this.newPosition.price),
+                         productCount: parseFloat(this.newPosition.productCount), //Количество товара
+                         amount: parseFloat(this.newPosition.amount), //Стоимость продажи единицы маркированного товара
+                         discount: parseFloat(this.newPosition.discount), //Сумма скидки для маркированного товара
+                         ean: parseFloat(this.newPosition.ean), //GTIN товара
+                         markingCode: this.newPosition.markingCode, //Код маркировки
+                         markingType: this.newPosition.markingType, //Тип маркировки
+                         surcharge: parseFloat(this.newPosition.surcharge), //Сумма надбавки для маркированного товара
+                         ukzCode: this.newPosition.ukzCode, //Код УКЗ -унифицированный контрольный знак
                     });
 
                     // Сброс формы позиции
@@ -415,7 +449,7 @@
                     };
                     // Сброс счетчика символов для имени позиции
                     this.charLimits.positionName.current = 0;
-                    this.addPositionFlag = false;
+                    this.flagPosition = false;
                },
                removePosition(index) {
                     this.formData.positions.splice(index, 1);
@@ -489,7 +523,7 @@
                     return `${remaining} / ${this.charLimits[field].max}`;
                },
                showModalScanGTIN() {
-                    const myModalAlternative = new bootstrap.Modal('#exampleModal');
+                    const myModalAlternative = new bootstrap.Modal('#scannerModal');
                     this.scanGTIN();
                     myModalAlternative.show();
                },
@@ -515,6 +549,13 @@
                          .catch((err) => {
                               console.error(err);
                          });
+               },
+               addPositionFlag() {
+                    if (this.flagPosition) {
+                         this.flagPosition = false;
+                    } else {
+                         this.flagPosition = true;
+                    }
                },
           },
           mounted() {
