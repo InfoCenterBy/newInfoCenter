@@ -3187,26 +3187,6 @@ html:has(.ui-page) {
       color: var(--color-black);
     }
   }
-  .link-black {
-    color: var(--color-black);
-    font-family: "Roboto";
-    line-height: 130%;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .link-black:hover {
-      color: var(--color-dark-violet);
-    }
-  }
-  @media (hover: none) {
-    .link-black:active {
-      color: var(--color-dark-violet);
-    }
-  }
   .link-green {
     color: var(--color-taxes-green);
     font-family: "Roboto";
@@ -5094,45 +5074,6 @@ nav.breadcrumb a:last-child {
 }
 
 @layer component {
-  .input {
-    border-radius: 100px;
-    padding-inline: 20px;
-    border-color: var(--color-gray-stroke);
-    border-style: solid;
-    outline: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-    height: 45px;
-    background-color: var(--color-white);
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .input:hover {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  @media (hover: none) {
-    .input:active {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  .input:focus {
-    border-color: var(--color-violet);
-  }
-  input[type=search]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-            appearance: none;
-    width: 12px;
-    height: 12px;
-    --weight: 0.5px;
-    --aa: 1px;
-    --color: var(--color-gray-txt);
-    border-radius: 1px;
-    background-color: var(--color-gray-txt);
-    background: linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))), linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
-    cursor: pointer;
-  }
   .form-date {
     position: relative;
   }
@@ -5192,8 +5133,7 @@ nav.breadcrumb a:last-child {
             box-shadow: none;
     border-color: var(--color-taxes-green);
   }
-  .form-input.invalid .form-control,
-  .form-input.invalid .form-select {
+  .form-input.invalid .form-control, .form-input.invalid .form-select {
     border-color: var(--color-red-error);
   }
   .form-input.invalid .input-label-error {
@@ -6291,18 +6231,18 @@ nav.breadcrumb a:last-child {
   --bs-tooltip-arrow-color: var(--color-taxes-gold);
 }
 
-.custom-tooltip .tooltip-inner {
+.tooltip-inner {
   border: 1px solid var(--color-taxes-gold);
   border-color: var(--color-taxes-gold);
   padding: 16px;
   font-family: "Roboto";
 }
 
-.custom-tooltip.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
   border-top-color: var(--color-taxes-gold);
 }
 
-.custom-tooltip.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
   border-right-color: var(--color-taxes-gold);
 }
 
@@ -6375,6 +6315,62 @@ nav.breadcrumb a:last-child {
   height: 100%;
   -webkit-box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
           box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  left: 12px;
+  right: 8px;
+  bottom: 10px;
+  background-color: var(--color-gray-stroke);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+  border: 2px solid transparent;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: -2px;
+  bottom: -8px;
+  background-color: var(--color-gray-inputs);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch-input:checked + .switch-slider {
+  border: 2px solid var(--color-violet);
+  background-color: var(--color-white);
+}
+
+.switch-input:checked + .switch-slider:before {
+  -webkit-transform: translateX(16px);
+      -ms-transform: translateX(16px);
+          transform: translateX(16px);
+  background-color: var(--color-violet);
+}
+
+.switch-input:checked ~ .accordion-button {
+  color: var(--color-violet);
 }
 
 html {
