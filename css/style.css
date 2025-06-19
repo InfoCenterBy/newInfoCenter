@@ -6333,10 +6333,10 @@ nav.breadcrumb a:last-child {
 .switch-slider {
   position: absolute;
   cursor: pointer;
-  top: 10px;
+  top: 11px;
   left: 12px;
-  right: 8px;
-  bottom: 10px;
+  right: 12px;
+  bottom: 11px;
   background-color: var(--color-gray-stroke);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -6347,10 +6347,10 @@ nav.breadcrumb a:last-child {
 .switch-slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 21px;
+  width: 21px;
   left: -2px;
-  bottom: -8px;
+  bottom: -6px;
   background-color: var(--color-gray-inputs);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -6359,7 +6359,7 @@ nav.breadcrumb a:last-child {
 
 .switch-input:checked + .switch-slider {
   border: 2px solid var(--color-violet);
-  background-color: var(--color-white);
+  background-color: transparent;
 }
 
 .switch-input:checked + .switch-slider:before {
