@@ -1,17 +1,17 @@
 @import './ui-comp/header';
 @import './ui-comp/footer';
 
-html:has(.ui-page){
+html:has(.ui-page) {
      overflow: auto;
 }
 
 .highlight-block {
      border-radius: 1.25rem;
-     padding: .5rem 1.25rem 1.25rem;
+     padding: 0.5rem 1.25rem 1.25rem;
      text-align: center;
      width: 100%;
      @include transition($transition-3);
-     img{
+     img {
           width: 100%;
           object-fit: contain;
           max-width: 18.75rem;
@@ -19,7 +19,7 @@ html:has(.ui-page){
                max-width: 10.625rem;
           }
      }
-     p{
+     p {
           color: var(--color-black);
           font-family: $ff-exo;
           font-size: 1.25rem;
@@ -27,17 +27,17 @@ html:has(.ui-page){
           line-height: 120%;
           letter-spacing: 0;
           margin-bottom: 0;
-          margin-top: .5rem;
+          margin-top: 0.5rem;
      }
      @media #{$mouse-device} {
-          &:hover{
+          &:hover {
                transform: scale(110%);
           }
      }
 }
 
-@layer base{
-     .block-title-main{
+@layer base {
+     .block-title-main {
           color: var(--color-black);
           font-size: clamp(1.5rem, 1.2727rem + 1.1364vw, 2.125rem);
           font-weight: 500;
@@ -47,17 +47,15 @@ html:has(.ui-page){
      }
 }
 
-
-@layer base{
-
+@layer base {
      .news-element {
-          .news-element-tag-wrapper{
+          .news-element-tag-wrapper {
                position: relative;
           }
           &__tag {
-               padding: .25rem .75rem;
+               padding: 0.25rem 0.75rem;
                border-radius: 6.25rem;
-               font-size: .875rem;
+               font-size: 0.875rem;
                font-weight: 400;
                line-height: 130%;
                letter-spacing: 0;
@@ -83,8 +81,12 @@ html:has(.ui-page){
                overflow: hidden;
                border-radius: 1.25rem;
                @include transition($transition-3);
+
                max-height: 12.875rem;
                img{
+
+               img {
+
                     max-width: 29rem; //464px
                     width: 100%;
                     object-fit: contain;
@@ -102,31 +104,28 @@ html:has(.ui-page){
                letter-spacing: 0;
                margin-top: 1rem;
                @include transition($transition-3);
-               p{
+               p {
                     margin-bottom: 0;
                }
           }
           @media #{$mouse-device} {
-               &:hover{
-                    .news-element__img{
+               &:hover {
+                    .news-element__img {
                          scale: 1.05;
                     }
-                    .news-element__text{
+                    .news-element__text {
                          color: var(--color-gray-txt);
                     }
                }
           }
      }
-
 }
 
-
-@layer base{
-     
+@layer base {
      .activity-block {
           border-radius: 1.25rem;
           width: 100%;
-          p{
+          p {
                font-family: $ff-roboto;
                font-size: 1rem;
                font-weight: 400;
@@ -135,16 +134,16 @@ html:has(.ui-page){
           }
           &__img {
                display: flex;
-               @media  #{$ui-tablet} {
+               @media #{$ui-tablet} {
                     display: none;
                }
-               img{
+               img {
                     max-width: 18.75rem;
                     width: 100%;
                     object-fit: contain;
                }
           }
-          &-xl{
+          &-xl {
                padding: 1.5rem;
                // @media #{$ui-tablet} {
                //      padding: 1rem;
@@ -153,18 +152,19 @@ html:has(.ui-page){
                     font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);
                }
           }
-          &-lg,&-sm{
+          &-lg,
+          &-sm {
                padding: 1rem 1.5rem;
                @media #{$ui-tablet} {
-                    padding: .75rem .75rem;
+                    padding: 0.75rem 0.75rem;
                }
                .activity-block-title {
                     font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
                }
           }
-          &-sm{
+          &-sm {
                .activity-block__img {
-                    img{
+                    img {
                          max-width: 150px;
                     }
                }
@@ -181,34 +181,41 @@ html:has(.ui-page){
                color: var(--color-black);
                width: 100%;
                @media #{$mouse-device} {
-                    &:hover{
-                         &::after{
+                    &:hover {
+                         &::after {
                               transform: rotate(45deg);
                          }
                     }
-                    &-violet{
-                         &:hover{
-                              &::after{
+                    &-violet {
+                         &:hover {
+                              &::after {
                                    color: var(--color-violet);
                               }
                          }
                     }
-                    &-yellow{
-                         &:hover{
-                              &::after{
+                    &-yellow {
+                         &:hover {
+                              &::after {
                                    color: var(--color-yellow);
                               }
                          }
                     }
-                    &-green{
-                         &:hover{
-                              &::after{
+                    &-green {
+                         &:hover {
+                              &::after {
                                    color: var(--color-green);
                               }
                          }
                     }
+                    &-taxes-green {
+                         &:hover {
+                              &::after {
+                                   color: var(--color-taxes-green);
+                              }
+                         }
+                    }
                }
-               &::after{
+               &::after {
                     font-size: 2rem;
                     content: '\F144';
                     @extend .bootsrtap-icon;
@@ -222,48 +229,48 @@ html:has(.ui-page){
                     height: 3rem;
                     display: grid;
                     place-items: center;
-                    padding: .25rem;
+                    padding: 0.25rem;
                     border-radius: 50%;
                }
           }
      }
 }
 
-@layer base{
-     .records-card{
+@layer base {
+     .records-card {
           font-family: $ff-roboto;
-          border-radius: .625rem;
+          border-radius: 0.625rem;
           border: 1px solid var(--color-gray-inputs);
           padding: 1rem;
      }
-     .records-table{
-          thead{
-               th{
-                    padding: 1rem .75rem;
+     .records-table {
+          thead {
+               th {
+                    padding: 1rem 0.75rem;
                }
           }
-          tbody{
-               td{
-                    padding: 1rem .75rem;
+          tbody {
+               td {
+                    padding: 1rem 0.75rem;
                }
           }
      }
-     .table-gray-head{
-          th{
+     .table-gray-head {
+          th {
                background-color: var(--color-gray-bg-illustr);
           }
      }
-     .record-modal-data{
+     .record-modal-data {
           font-family: $ff-roboto;
           color: var(--color-black);
-          p{
+          p {
                margin-bottom: 0;
           }
      }
 }
 
-@layer base{
-     .ecp-circle{
+@layer base {
+     .ecp-circle {
           width: 52px;
           height: 52px;
           display: grid;
@@ -273,8 +280,8 @@ html:has(.ui-page){
      }
 }
 
-@layer base{
-     .reg-line{
+@layer base {
+     .reg-line {
           width: 88%;
           height: 1px;
           background-image: url('../img/png/reg-center/reg-main-lines.svg');
@@ -284,12 +291,12 @@ html:has(.ui-page){
           top: 42px;
           left: 85px;
           z-index: -1;
-          @media (max-width:1400px) {
+          @media (max-width: 1400px) {
                width: 72%;
                left: 164px;
           }
      }
-     .reg-line-3-dot{
+     .reg-line-3-dot {
           background-image: url('../img/png/reg-center/reg-line-3-dot.svg');
           background-repeat: space;
           background-size: 45% auto;
@@ -299,47 +306,47 @@ html:has(.ui-page){
           top: 42px;
           left: 285px;
           z-index: -1;
-          @media (max-width:1400px) {
+          @media (max-width: 1400px) {
                width: 72%;
                left: 164px;
           }
      }
 }
 
-@layer component{
+@layer component {
      a:hover {
-     --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+          --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
      }
 }
 
-@layer base{
-     a{
+@layer base {
+     a {
           @include transition($transition-3);
      }
 }
 
-@layer base{
-     p{
+@layer base {
+     p {
           font-family: $ff-roboto;
      }
 }
 
-@layer base{
-     .h-0{
+@layer base {
+     .h-0 {
           height: 0;
      }
 }
 
-@layer component{
-     .after-no{
-          &::after{
+@layer component {
+     .after-no {
+          &::after {
                content: none;
           }
      }
 }
 
-@layer base{
-     .textarea-resize-no{
+@layer base {
+     .textarea-resize-no {
           resize: none;
      }
 }

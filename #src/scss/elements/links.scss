@@ -1,175 +1,197 @@
 @layer base {
-     a {
-          text-decoration: none;
-          @include transition($transition-3);
-     }
-     .link-menu {
-          color: var(--color-black);
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 0;
-          font-family: $ff-roboto;
-          color: var(--color-black);
-          @include hover('color', var(--color-violet));
-     }
-     .link-more {
-     }
-     .link-tel-drop {
-          color: var(--color-violet);
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 400;
-          line-height: 120%;
-          letter-spacing: 0;
-          @include hover('color', var(--color-violet-hover));
-     }
-     .arrow-link {
-          color: var(--color-violet);
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 400;
-          line-height: 120%;
-          letter-spacing: 0;
-          &::after {
-               @extend .bootsrtap-icon;
-               content: '\F144';
-               font-size: 14px;
-               transform: rotate(0deg);
-               @include transition($transition-2);
-          }
-          @include hover('color', var(--color-violet-hover));
-          &:hover {
-               &::after {
-                    transform: rotate(45deg);
-               }
-          }
-     }
+	a {
+		text-decoration: none;
+		@include transition($transition-3);
+	}
+	.link-menu {
+		color: var(--color-black);
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: 0;
+		font-family: $ff-roboto;
+		color: var(--color-black);
+		@include hover('color', var(--color-violet));
+	}
+	.link-more {
+	}
+	.link-tel-drop {
+		color: var(--color-violet);
+		font-family: $ff-exo;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0;
+		@include hover('color', var(--color-violet-hover));
+	}
+	.arrow-link {
+		color: var(--color-violet);
+		font-family: $ff-exo;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0;
+		&::after {
+			@extend .bootsrtap-icon;
+			content: '\F144';
+			font-size: 14px;
+			transform: rotate(0deg);
+			@include transition($transition-2);
+		}
+		@include hover('color', var(--color-violet-hover));
+		&:hover {
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+	}
 
-     .arrow-link-back {
-          color: var(--color-violet);
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 500;
-          line-height: 120%;
-          letter-spacing: 0;
-          &::before {
-               @extend .bootsrtap-icon;
-               content: '\F12F';
-               font-size: 15px;
-               margin-right: 4px;
-               @include transition($transition-2);
-          }
-          @include hover('color', var(--color-violet-hover));
-     }
+	.arrow-link-back {
+		color: var(--color-violet);
+		font-family: $ff-exo;
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 120%;
+		letter-spacing: 0;
+		&::before {
+			@extend .bootsrtap-icon;
+			content: '\F12F';
+			font-size: 15px;
+			margin-right: 4px;
+			@include transition($transition-2);
+		}
+		@include hover('color', var(--color-violet-hover));
+	}
 
-     .footer-title {
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 400;
-          line-height: 110%;
-          letter-spacing: 0;
-          color: var(--color-yellow-light);
-          @include hover('color', var(--color-white));
-          @include transition($transition-3);
-     }
-     .social-links {
-          &__block {
-               min-width: 2rem;
-               min-height: 2rem;
-               width: 2rem;
-               width: 2rem;
-               border-radius: 50%;
-               background-color: var(--color-white);
-               display: grid;
-               place-items: center;
-               @include transition($transition-3);
-               @media #{$mouse-device} {
-                    &:hover {
-                         background-color: var(--color-violet-hover);
-                         svg path {
-                              fill: var(--color-white);
-                         }
-                    }
-               }
-          }
-     }
-     .social-links-violet {
-          &__block {
-               min-width: 2rem;
-               min-height: 2rem;
-               width: 2rem;
-               width: 2rem;
-               border-radius: 50%;
-               background-color: var(--color-violet);
-               display: grid;
-               place-items: center;
+	.footer-title {
+		font-family: $ff-exo;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 110%;
+		letter-spacing: 0;
+		color: var(--color-yellow-light);
+		@include hover('color', var(--color-white));
+		@include transition($transition-3);
+	}
+	.social-links {
+		&__block {
+			min-width: 2rem;
+			min-height: 2rem;
+			width: 2rem;
+			width: 2rem;
+			border-radius: 50%;
+			background-color: var(--color-white);
+			display: grid;
+			place-items: center;
+			@include transition($transition-3);
+			@media #{$mouse-device} {
+				&:hover {
+					background-color: var(--color-violet-hover);
+					svg path {
+						fill: var(--color-white);
+					}
+				}
+			}
+		}
+	}
+	.social-links-violet {
+		&__block {
+			min-width: 2rem;
+			min-height: 2rem;
+			width: 2rem;
+			width: 2rem;
+			border-radius: 50%;
+			background-color: var(--color-violet);
+			display: grid;
+			place-items: center;
 
-               & svg path {
-                    fill: var(--color-white);
-               }
-               @include transition($transition-3);
-               @media #{$mouse-device} {
-                    &:hover {
-                         background-color: var(--color-white);
-                         svg path {
-                              fill: var(--color-violet);
-                         }
-                    }
-               }
-          }
-     }
-     .footer-link {
-          color: var(--color-white);
-          font-family: $ff-roboto;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 0;
-          @include hover('color', var(--color-yellow-light));
-          @include transition($transition-3);
-     }
-     .link-default {
-          color: var(--color-violet);
-          font-family: $ff-exo;
-          font-size: 1.125rem;
-          font-weight: 400;
-          line-height: 120%;
-          letter-spacing: 0;
-          @include transition($transition-3);
-          &-arrow {
-               @media #{$mouse-device} {
-                    &:hover {
-                         &::after {
-                              transform: rotate(45deg);
-                         }
-                    }
-               }
-               &::after {
-                    content: '\F144';
-                    @extend .bootsrtap-icon;
-                    @include transition($transition-3);
-               }
-          }
-          @media #{$mouse-device} {
-               &:hover {
-                    color: var(--color-violet-hover);
-               }
-          }
-     }
-     .link-activity {
-          color: var(--color-dark-violet);
-          font-family: $ff-roboto;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 0;
-          @include transition($transition-3);
-          @include hover('color', var(--color-black));
-     }
+			& svg path {
+				fill: var(--color-white);
+			}
+			@include transition($transition-3);
+			@media #{$mouse-device} {
+				&:hover {
+					background-color: var(--color-white);
+					svg path {
+						fill: var(--color-violet);
+					}
+				}
+			}
+		}
+	}
+	.footer-link {
+		color: var(--color-white);
+		font-family: $ff-roboto;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: 0;
+		@include hover('color', var(--color-yellow-light));
+		@include transition($transition-3);
+	}
+	.link-default {
+		color: var(--color-violet);
+		font-family: $ff-exo;
+		font-size: 1.125rem;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: 0;
+		@include transition($transition-3);
+		&-arrow {
+			@media #{$mouse-device} {
+				&:hover {
+					&::after {
+						transform: rotate(45deg);
+					}
+				}
+			}
+			&::after {
+				content: '\F144';
+				@extend .bootsrtap-icon;
+				@include transition($transition-3);
+			}
+		}
+		@media #{$mouse-device} {
+			&:hover {
+				color: var(--color-violet-hover);
+			}
+		}
+	}
+	.link-activity {
+		color: var(--color-dark-violet);
+		font-family: $ff-roboto;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: 0;
+		@include transition($transition-3);
+		@include hover('color', var(--color-black));
+	}
 
-     .link-gray {
-          color: var(--color-gray-txt);
-          @include hover('color', var(--color-dark-violet));
-     }
+	.link-black {
+		color: var(--color-black);
+		font-family: $ff-roboto;
+		line-height: 130%;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0;
+		@include transition($transition-3);
+		@include hover('color', var(--color-dark-violet));
+	}
+
+	.link-green {
+		color: var(--color-taxes-green);
+		font-family: $ff-roboto;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 130%;
+		letter-spacing: 0;
+		@include transition($transition-3);
+		@include hover('color', var(--color-black));
+	}
+
+	.link-gray {
+		color: var(--color-gray-txt);
+		@include hover('color', var(--color-dark-violet));
+	}
 }
