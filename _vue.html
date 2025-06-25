@@ -1,0 +1,565 @@
+<div class="" id="app">
+     <div class="d-flex justify-content-center">
+          <h4 class="h4 d-block ff-exo">Метод ввода данных</h4>
+     </div>
+     <div class="col-lg-8">
+          <div class="d-flex flex-row justify-content-lg-end justify-content-center gap-3 mt-3">
+               <button class="" :class="[inputMethod === 'manual'? 'btn-default' : 'btn-empty']" @click="inputMethod = 'manual'">Ручной ввод</button>
+               <button class="" :class="[inputMethod === 'file'? 'btn-default' : 'btn-empty']" @click=" inputMethod = 'file'">Загрузка файла</button>
+          </div>
+     </div>
+     <div class="mt-4"></div>
+     <div v-if="inputMethod === 'manual'">
+          <div class="col-lg-8">
+               <form @submit.prevent="submitForm('mainForm')" class="needs-validation vue-form d-flex flex-column gap-3" novalidate id="mainForm">
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="nameObject"
+                                   placeholder=""
+                                   v-model="formData.title"
+                                   @input="updateCharCount('title', formData.title)"
+                                   required
+                                   :maxlength="charLimits.title.max"
+                                   pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{3,200})$' />
+                              <label for="nameObject">Наименование объекта</label>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('title', formData.title) }}</div>
+                              </div>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                    </div>
+
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="unp"
+                                   placeholder=""
+                                   v-model="formData.unp"
+                                   @input="updateCharCount('title', formData.unp)"
+                                   required
+                                   :maxlength="charLimits.unp.max"
+                                   pattern="^[А-Яа-яA-Za-z0-9]{9}$" />
+                              <label for="unp">УНП</label>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('unp', formData.unp) }}</div>
+                              </div>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                    </div>
+
+                    <div class="d-flex flex-row">
+                         <div class="form-floating w-100">
+                              <input
+                                   type="text"
+                                   class="form-control pb-3 border-20"
+                                   id="gniLocation"
+                                   placeholder=""
+                                   v-model="formData.gniLocation"
+                                   @input="updateCharCount('title', formData.gniLocation)"
+                                   required
+                                   :maxlength="charLimits.gniLocation.max"
+                                   pattern="^[0-9]{4}$" />
+                              <label for="gniLocation">Код ИМНС</label>
+                              <div class="char-counter-wrapper">
+                                   <div class="char-counter">{{ updateCharCount('gniLocation', formData.gniLocation) }}</div>
+                              </div>
+                              <div class="invalid-feedback">Данные указаны неверно</div>
+                         </div>
+                    </div>
+
+                    <button type="submit" class="btn-default" :class="[!hasPositions ? 'disabled' : '']" :disabled="!hasPositions">Отправить данные</button>
+               </form>
+               <button class="btn-default mt-3" @click="addPositionFlag()" type="button">{{!flagPosition ? 'Добавить позицию' : 'Отменить добавление'}}</button>
+
+               <div class="border-20 p-md-4 p-2 bg-gray-bg-illustr mt-4" v-if="flagPosition">
+                    <form
+                         @submit.prevent="submitPositionForm('positionForm')"
+                         class="positions-form d-flex flex-column gap-3 needs-validation"
+                         novalidate
+                         id="positionForm">
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="namePosition"
+                                        placeholder=""
+                                        v-model="newPosition.name"
+                                        @input="updateCharCount('positionName', newPosition.name)"
+                                        required
+                                        :maxlength="charLimits.positionName.max"
+                                        pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{3,200})$' />
+                                   <label for="namePosition">Наименование маркированного товара</label>
+                                   <div class="char-counter-wrapper">
+                                        <div class="char-counter">{{ updateCharCount('positionName', newPosition.name) }}</div>
+                                   </div>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="productCountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.productCount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="productCountPosition">Количество товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="amountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.amount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="amountPosition">Стоимость продажи единицы маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="discountPosition"
+                                        placeholder=""
+                                        v-model="newPosition.discount"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}"
+                                        value="" />
+                                   <label for="discountPosition">Сумма скидки для маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="input-group d-flex flex-row gap-2 flex-nowrap align-items-start">
+                                   <div class="d-flex flex-row w-100">
+                                        <div class="form-floating w-100">
+                                             <input
+                                                  type="text"
+                                                  class="form-control pb-3 border-20"
+                                                  id="eanPosition"
+                                                  placeholder=""
+                                                  v-model="newPosition.ean"
+                                                  required
+                                                  :maxlength="charLimits.ean.max"
+                                                  pattern="[0-9]{13}" />
+                                             <label for="eanPosition">GTIN товара</label>
+                                             <div class="char-counter-wrapper">
+                                                  <div class="char-counter">{{ updateCharCount('ean', newPosition.ean) }}</div>
+                                             </div>
+                                             <div class="invalid-feedback">Данные указаны неверно</div>
+                                        </div>
+                                   </div>
+                                   <button
+                                        class="input-group-text btn-default rounded fs-24 d-flex justify-content-center align-items-center"
+                                        @click="showModalScanGTIN()"
+                                        type="button"
+                                        style="height: 3.625rem; width: 3.625rem">
+                                        <i class="bi bi-camera"></i>
+                                   </button>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="markingCodePosition"
+                                        placeholder=""
+                                        v-model="newPosition.markingCode"
+                                        @input="updateCharCount('markingCode', newPosition.markingCode)"
+                                        pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{1,256})$'
+                                        :maxlength="charLimits.markingCode.max"
+                                        required />
+                                   <label for="markingCodePosition">Код маркировки</label>
+                                   <div class="char-counter-wrapper">
+                                        <div class="char-counter">{{ updateCharCount('markingCode', newPosition.markingCode) }}</div>
+                                   </div>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="markingTypePosition"
+                                        placeholder=""
+                                        v-model="newPosition.markingType"
+                                        @input="updateCharCount('markingType', newPosition.markingType)"
+                                        required
+                                        :maxlength="charLimits.markingType.max"
+                                        pattern="[0-9]{0,3}" />
+                                   <label for="markingTypePosition">Тип маркировки</label>
+                                   <div class="char-counter-wrapper">
+                                        <div class="char-counter">{{ updateCharCount('markingType', newPosition.markingType) }}</div>
+                                   </div>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="number"
+                                        class="form-control pb-3 border-20"
+                                        id="surchargePosition"
+                                        placeholder=""
+                                        v-model="newPosition.surcharge"
+                                        required
+                                        pattern="[0-9]{3,549755813887.99}" />
+                                   <label for="surchargePosition">Сумма надбавки для маркированного товара</label>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <div class="d-flex flex-row">
+                              <div class="form-floating w-100">
+                                   <input
+                                        type="text"
+                                        class="form-control pb-3 border-20"
+                                        id="ukzCodePosition"
+                                        placeholder=""
+                                        v-model="newPosition.ukzCode"
+                                        @input="updateCharCount('ukzCode', newPosition.ukzCode)"
+                                        required
+                                        :maxlength="charLimits.ukzCode.max"
+                                        pattern='^(?:[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?|[А-ЯЁа-яё0-9\s\-"«».,]{0,64})$' />
+                                   <label for="ukzCodePosition">Код УКЗ</label>
+                                   <div class="char-counter-wrapper">
+                                        <div class="char-counter">{{ updateCharCount('ukzCode', newPosition.ukzCode) }}</div>
+                                   </div>
+                                   <div class="invalid-feedback">Данные указаны неверно</div>
+                              </div>
+                         </div>
+
+                         <button type="submit" class="btn-default">Добавить позицию</button>
+                    </form>
+                    <div class="mt-5"></div>
+               </div>
+          </div>
+          <div class="mt-5 p-md-3 p-2" v-if="hasPositions > 0">
+               <div class="positions-list">
+                    <h3 class="h3 ff-exo">Добавленные позиции:</h3>
+                    <div class="">
+                         <div class="table-default accent-table">
+                              <table>
+                                   <thead>
+                                        <tr>
+                                             <th>№</th>
+                                             <th>Наименование</th>
+                                             <th>Количество</th>
+                                             <th>Стоимость</th>
+                                             <th>Сумма скидки</th>
+                                             <th>GTIN</th>
+                                             <th>Код маркировки</th>
+                                             <th>Тип маркировки</th>
+                                             <th>Сумма надбавки</th>
+                                             <th colspan="2">Код УКЗ</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr v-for="(position, index) in formData.positions" :key="index">
+                                             <td>{{index + 1}}</td>
+                                             <td>{{position.name}}</td>
+                                             <td>{{position.productCount}}</td>
+                                             <td>{{position.amount}}</td>
+                                             <td>{{position.discount}}</td>
+                                             <td>{{position.ean}}</td>
+                                             <td>{{position.markingCode}}</td>
+                                             <td>{{position.markingType}}</td>
+                                             <td>{{position.surcharge}}</td>
+                                             <td>{{position.ukzCode}}</td>
+                                             <td>
+                                                  <button type="button btn-empty" @click="removePosition(index)">Удалить</button>
+                                             </td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div v-if="inputMethod === 'file'">
+          <div class="form-group">
+               <label for="formFile" class="form-label">Выберите файл для загрузки:</label>
+               <input class="form-control" type="file" id="formFile" @change="handleFileUpload" accept=".json" multiple />
+          </div>
+
+          <div v-if="fileData">
+               <button @click="submitFileData" class="btn-default mt-3">Отправить данные</button>
+               <h3>Предпросмотр данных из файла:</h3>
+               <div class="overflow-auto mt-3">
+                    <pre>{{ fileData }}</pre>
+               </div>
+          </div>
+     </div>
+     <div class="modal fade" id="scannerModal" tabindex="-1" aria-labelledby="scannerModalLabel" data-bs-backdrop="static" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content mt-0">
+                    <div class="modal-body">
+                         <div class="w-100">
+                              <video id="video" width="100%" height="200" class="w-100"></video>
+                         </div>
+
+                         <div id="sourceSelectPanel" v-if="videoInputDevices.length >= 1">
+                              <div class="form-input">
+                                   <select class="form-select" aria-label="sourceSelect" id="sourceSelect" v-model="selectedDeviceId">
+                                        <option hidden>Устройство ввода</option>
+                                        <option :value="device.deviceId" v-for="device in videoInputDevices">{{device.label}}</option>
+                                   </select>
+                              </div>
+                         </div>
+
+                         <div class="mt-3"><span class="fw-semibold fs-18">Код:</span> <span class="color-gray-txt">{{newPosition.ean}}</span></div>
+
+                         <div class="d-flex justify-content-center mt-3">
+                              <button type="button" class="btn-default" data-bs-dismiss="modal" aria-label="Close">Готово</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+<script>
+     const { createApp, ref } = Vue;
+
+     createApp({
+          data() {
+               return {
+                    inputMethod: 'manual',
+                    formData: {
+                         title: '',
+                         description: '',
+                         positions: [],
+                         unp: '',
+                         messageNumber: '',
+                         gniLocation: '',
+                    },
+                    newPosition: {
+                         name: '',
+                         productCount: '', //Количество товара
+                         amount: '', //Стоимость продажи единицы маркированного товара
+                         discount: '', //Сумма скидки для маркированного товара
+                         ean: '', //GTIN товара
+                         markingCode: '', //Код маркировки
+                         markingType: '', //Тип маркировки
+                         surcharge: '', //Сумма надбавки для маркированного товара
+                         ukzCode: '', //Код УКЗ -унифицированный контрольный знак
+                    },
+                    fileData: null,
+                    charLimits: {
+                         title: {
+                              max: 200,
+                              current: 0,
+                         },
+                         unp: {
+                              max: 9,
+                              current: 0,
+                         },
+                         messageNumber: {
+                              max: 100,
+                              current: 0,
+                         },
+                         gniLocation: {
+                              max: 4,
+                              current: 0,
+                         },
+                         description: {
+                              max: 500,
+                              current: 0,
+                         },
+                         positionName: {
+                              max: 200,
+                              current: 0,
+                         },
+                         markingCode: {
+                              max: 256,
+                              current: 0,
+                         },
+                         markingType: {
+                              max: 3,
+                              current: 0,
+                         },
+                         ukzCode: {
+                              max: 64,
+                              current: 0,
+                         },
+                         ean: {
+                              max: 13,
+                              current: 0,
+                         },
+                    },
+                    selectedDeviceId: '',
+                    videoInputDevices: [],
+                    codeReader: '',
+                    flagPosition: false,
+               };
+          },
+          watch: {},
+          computed: {
+               hasPositions() {
+                    return this.formData.positions.length > 0;
+               },
+          },
+          methods: {
+               addPosition() {
+                    this.formData.positions.push({
+                         name: this.newPosition.name,
+                         productCount: parseFloat(this.newPosition.productCount), //Количество товара
+                         amount: parseFloat(this.newPosition.amount), //Стоимость продажи единицы маркированного товара
+                         discount: parseFloat(this.newPosition.discount), //Сумма скидки для маркированного товара
+                         ean: parseFloat(this.newPosition.ean), //GTIN товара
+                         markingCode: this.newPosition.markingCode, //Код маркировки
+                         markingType: this.newPosition.markingType, //Тип маркировки
+                         surcharge: parseFloat(this.newPosition.surcharge), //Сумма надбавки для маркированного товара
+                         ukzCode: this.newPosition.ukzCode, //Код УКЗ -унифицированный контрольный знак
+                    });
+
+                    // Сброс формы позиции
+                    this.newPosition = {
+                         name: '',
+                         quantity: 1,
+                         price: 0,
+                    };
+                    // Сброс счетчика символов для имени позиции
+                    this.charLimits.positionName.current = 0;
+                    this.flagPosition = false;
+               },
+               removePosition(index) {
+                    this.formData.positions.splice(index, 1);
+               },
+               submitForm(formID) {
+                    if (this.hasPositions > 0) {
+                    }
+                    const form = document.querySelector(`#${formID}`);
+
+                    if (!form.checkValidity()) {
+                         event.preventDefault();
+                         event.stopPropagation();
+                    }
+                    if (form.checkValidity()) {
+                         const result = {
+                              ...this.formData,
+                              positions: [...this.formData.positions],
+                         };
+
+                         console.log('Итоговые данные:', result);
+                         alert('Данные успешно сформированы (см. консоль)');
+                         return true;
+                    }
+
+                    form.classList.add('was-validated');
+               },
+               submitPositionForm(formID) {
+                    if (this.submitForm(formID)) {
+                         this.addPosition();
+                    }
+               },
+               handleFileUpload(event) {
+                    const file = event.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                         try {
+                              this.fileData = JSON.parse(e.target.result);
+                         } catch (error) {
+                              console.error('Ошибка чтения файла:', error);
+                              alert('Неверный формат файла');
+                         }
+                    };
+                    reader.readAsText(file);
+               },
+               submitFileData() {
+                    if (!this.fileData) {
+                         alert('Нет данных для отправки');
+                         return;
+                    }
+
+                    console.log('Данные из файла:', this.fileData);
+                    alert('Данные из файла готовы к отправке (см. консоль)');
+               },
+               updateCharCount(field, value) {
+                    // Проверка на существование поля в charLimits
+                    if (!this.charLimits[field]) {
+                         console.error(`Поле ${field} не найдено в charLimits`);
+                         return '0 / 0';
+                    }
+
+                    // Проверка что value существует
+                    const length = value ? value.length : 0;
+
+                    // Обновляем текущее количество символов
+                    this.charLimits[field].current = length;
+
+                    // Возвращаем строку с информацией
+                    const remaining = this.charLimits[field].max - length;
+                    return `${remaining} / ${this.charLimits[field].max}`;
+               },
+               showModalScanGTIN() {
+                    const myModalAlternative = new bootstrap.Modal('#scannerModal');
+                    this.scanGTIN();
+                    myModalAlternative.show();
+               },
+               scanGTIN() {
+                    this.codeReader
+                         .listVideoInputDevices()
+                         .then((videoInputDevices) => {
+                              this.videoInputDevices = videoInputDevices;
+                              this.selectedDeviceId = this.videoInputDevices[0].deviceId;
+
+                              this.codeReader.decodeFromVideoDevice(this.selectedDeviceId, 'video', (result, err) => {
+                                   if (result) {
+                                        // console.log(result);
+                                        this.newPosition.ean = result.text;
+                                   }
+                                   if (err && !(err instanceof ZXing.NotFoundException)) {
+                                        // console.error(err);
+                                        this.newPosition.ean = err;
+                                   }
+                              });
+                              // console.log(`Started continuous decode from camera with id ${selectedDeviceId}`);
+                         })
+                         .catch((err) => {
+                              console.error(err);
+                         });
+               },
+               addPositionFlag() {
+                    if (this.flagPosition) {
+                         this.flagPosition = false;
+                    } else {
+                         this.flagPosition = true;
+                    }
+               },
+          },
+          mounted() {
+               this.codeReader = new ZXing.BrowserMultiFormatReader();
+          },
+     }).mount('#app');
+</script>
