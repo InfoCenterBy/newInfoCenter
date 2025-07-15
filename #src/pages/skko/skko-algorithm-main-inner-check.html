@@ -1,136 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('../../html-comp/_head.html',{
-"title":"Сформировать счет на информационное обслуживание",
-})
+     @@include('../../html-comp/_head.html',{ "title":"Сформировать счет на информационное обслуживание", })
 
-<body>
-     @@include('../../html-comp/_header.html')
-     <main class="main">
-          <div class="container">
-               <nav class="breadcrumb">
-                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
-                         Главная
-                    </a>
-                    <a href="./skko-main.html" target="_blank" rel="noopener noreferrer">
-                         Система контроля кассового оборудования
-                    </a>
-                    <a href="./skko-algorithm-main.html" target="_blank" rel="noopener noreferrer">
-                         Алгоритм подключения программной кассы к СККО
-                    </a>
-                    <a href="" target="_blank" rel="noopener noreferrer">
-                         Сформировать счет на информационное обслуживание
-                    </a>
-               </nav>
-          </div>
-          <div class="container mt-12">
-               <div class="">
-                    <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">
-                         Сформировать счет на информационное обслуживание
-                    </h2>
+     <body>
+          @@include('../../html-comp/_header.html')
+          <main class="main">
+               <div class="container">
+                    <nav class="breadcrumb">
+                         <a href="./main.html" target="_blank" rel="noopener noreferrer"> Главная </a>
+                         <a href="./skko-main.html" target="_blank" rel="noopener noreferrer"> Система контроля кассового оборудования </a>
+                         <a href="./skko-algorithm-main.html" target="_blank" rel="noopener noreferrer"> Алгоритм подключения программной кассы к СККО </a>
+                         <a href="" target="_blank" rel="noopener noreferrer"> Сформировать счет на информационное обслуживание </a>
+                    </nav>
                </div>
-               <div class="col-md-8 col-lg-8 col-xl-6 mt-32">
-                    <div class="info-block bg-red-light align-items-center">
-                         <div class="info-block__icon color-red-attention">
-                              <i class="bi bi-exclamation-triangle"></i>
-                         </div>
-                         <div class="info-block__text">
-                              <p>
-                                   Для формирования счета необходимо <a href="" target="_blank" rel="noopener noreferrer"
-                                        class="link-activity">войти</a> или <a href="" target="_blank" rel="noopener noreferrer"
-                                        class="link-activity">зарегистрироваться</a>
-                              </p>
+               <div class="container mt-12">
+                    <div class="">
+                         <h2 class="h2 ff-exo fw-semibold fs-3 lh-normal text-uppercase">Сформировать счет на информационное обслуживание</h2>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xl-6 mt-32">
+                         <div class="info-block bg-red-light align-items-center">
+                              <div class="info-block__icon color-red-attention">
+                                   <i class="bi bi-exclamation-triangle"></i>
+                              </div>
+                              <div class="info-block__text">
+                                   <p>
+                                        Для формирования счета необходимо
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">войти</a> или
+                                        <a href="" target="_blank" rel="noopener noreferrer" class="link-activity">зарегистрироваться</a>
+                                   </p>
+                              </div>
                          </div>
                     </div>
+                    <form action="" class="col-md-8 col-lg-8 col-xl-6 d-flex flex-column gap-3 mt-4">
+                         <div class="">
+                              <div class="floating-label-content w-100">
+                                   <input class="floating-input disabled" type="text" placeholder="" required="" disabled="" />
+                                   <label class="floating-label">
+                                        <span>УНП организации / индивидуального предпринимателя</span>
+                                   </label>
+                              </div>
+                         </div>
+                         <div class="">
+                              <div class="floating-label-content w-100">
+                                   <input class="floating-input disabled" type="text" placeholder="" required="" disabled="" />
+                                   <label class="floating-label">
+                                        <span>Количество касс</span>
+                                   </label>
+                              </div>
+                         </div>
+                         <div class="">
+                              <p class="fs-16 mb-0 color-gray-txt fw-500">Выбор типа платежа</p>
+                         </div>
+                         <div class="d-flex flex-column gap-12">
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" disabled />
+                                   <label class="form-check-label" for="flexRadioDefault1"> обеспечительный платеж (с 01.07.2025)</label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled />
+                                   <label class="form-check-label" for="flexRadioDefault2"> регистрация ПК (с 01.07.2025) </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" disabled />
+                                   <label class="form-check-label" for="flexRadioDefault3"> информационное обслуживание ПК (с 01.07.2025)</label>
+                              </div>
+                         </div>
+                         <div class="mt-2 ff-roboto">
+                              <p class="mb-0">* При подключении каждой единицы программной кассы (ПК) обязательными являются следующие платежи:</p>
+                              <p class="mt-2 mb-0">- 4.08 руб. за регистрацию в СККО</p>
+                              <p class="mt-2 mb-0">- 33,30 руб. обеспечительный платеж (за 5 мес.)</p>
+                              <p class="mt-2 mb-0">- 39,96 руб. информационное обслуживание (6 мес.)</p>
+                         </div>
+                         <div class="mt-2 ff-roboto">При отсутствии любого из указанных платежей - подключение и регистрация ПК к СККО не осуществляются.</div>
+                         <div class="mt-2">
+                              <button type="button" disabled class="btn-default disabled">Сформировать счет</button>
+                         </div>
+                    </form>
+                    <form action="" class="col-md-8 col-lg-8 col-xl-6 d-flex flex-column gap-3 mt-4">
+                         <div class="">
+                              <div class="floating-label-content w-100">
+                                   <input class="floating-input" type="text" placeholder="" required="" />
+                                   <label class="floating-label">
+                                        <span>УНП организации / индивидуального предпринимателя</span>
+                                   </label>
+                              </div>
+                         </div>
+                         <div class="">
+                              <div class="floating-label-content w-100">
+                                   <input class="floating-input" type="text" placeholder="" required="" />
+                                   <label class="floating-label">
+                                        <span>Количество касс</span>
+                                   </label>
+                              </div>
+                         </div>
+                         <div class="">
+                              <p class="fs-16 mb-0 fw-500">Выбор типа платежа</p>
+                         </div>
+                         <div class="d-flex flex-column gap-12">
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                   <label class="form-check-label" for="flexRadioDefault1"> обеспечительный платеж (с 01.07.2025)</label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                   <label class="form-check-label" for="flexRadioDefault2"> регистрация ПК (с 01.07.2025) </label>
+                              </div>
+                              <div class="form-check">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                   <label class="form-check-label" for="flexRadioDefault3"> информационное обслуживание ПК (с 01.07.2025)</label>
+                              </div>
+                         </div>
+                         <div class="mt-2 ff-roboto">
+                              <p class="mb-0">* При подключении каждой единицы программной кассы (ПК) обязательными являются следующие платежи:</p>
+                              <p class="mt-2 mb-0">- 4.08 руб. за регистрацию в СККО</p>
+                              <p class="mt-2 mb-0">- 33,30 руб. обеспечительный платеж (за 5 мес.)</p>
+                              <p class="mt-2 mb-0">- 39,96 руб. информационное обслуживание (6 мес.)</p>
+                         </div>
+                         <div class="mt-2 ff-roboto">При отсутствии любого из указанных платежей - подключение и регистрация ПК к СККО не осуществляются.</div>
+                         <div class="mt-2">
+                              <button type="button" class="btn-default">Сформировать счет</button>
+                         </div>
+                    </form>
                </div>
-               <form action="" class="col-md-8 col-lg-8 col-xl-6 d-flex flex-column gap-3 mt-4">
-                    <div class="">
-                         <div class="floating-label-content w-100">
-                              <input class="floating-input disabled" type="text" placeholder="" required="" disabled="">
-                              <label class="floating-label">
-                                   <span>УНП организации / индивидуального предпринимателя</span>
-                              </label>
-                         </div>
-                    </div>
-                    <div class="">
-                         <div class="floating-label-content w-100">
-                              <input class="floating-input disabled" type="text" placeholder="" required="" disabled="">
-                              <label class="floating-label">
-                                   <span>Количество касс</span>
-                              </label>
-                         </div>
-                    </div>
-                    <div class="">
-                         <p class="fs-16 mb-0 color-gray-txt fw-500">
-                              Выбор периода обслуживания
-                         </p>
-                    </div>
-                    <div class="d-flex flex-row gap-12">
-                         <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" disabled>
-                              <label class="form-check-label" for="flexRadioDefault1">
-                                   На 6 месяцев
-                              </label>
-                         </div>
-                         <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled>
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                   На 12 месяцев
-                              </label>
-                         </div>
-                    </div>
-                    <div class="mt-2">
-                         <button type="button" disabled class="btn-default disabled">
-                              Сформировать счет
-                         </button>
-                    </div>
-               </form>
-               <form action="" class="col-md-8 col-lg-8 col-xl-6 d-flex flex-column gap-3 mt-4">
-                    <div class="">
-                         <div class="floating-label-content w-100">
-                              <input class="floating-input" type="text" placeholder="" required="">
-                              <label class="floating-label">
-                                   <span>УНП организации / индивидуального предпринимателя</span>
-                              </label>
-                         </div>
-                    </div>
-                    <div class="">
-                         <div class="floating-label-content w-100">
-                              <input class="floating-input" type="text" placeholder="" required="">
-                              <label class="floating-label">
-                                   <span>Количество касс</span>
-                              </label>
-                         </div>
-                    </div>
-                    <div class="">
-                         <p class="fs-16 mb-0 fw-500">
-                              Выбор периода обслуживания
-                         </p>
-                    </div>
-                    <div class="d-flex flex-row gap-12">
-                         <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                              <label class="form-check-label" for="flexRadioDefault1">
-                                   На 6 месяцев
-                              </label>
-                         </div>
-                         <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                   На 12 месяцев
-                              </label>
-                         </div>
-                    </div>
-                    <div class="mt-2">
-                         <button type="button" class="btn-default">
-                              Сформировать счет
-                         </button>
-                    </div>
-               </form>
-          </div>
-     </main>
-     @@include('../../html-comp/_footer.html')
-     @@include('../../html-comp/_script.html')
-</body>
-
+          </main>
+          @@include('../../html-comp/_footer.html') @@include('../../html-comp/_script.html')
+     </body>
 </html>
