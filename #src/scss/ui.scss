@@ -348,3 +348,9 @@ html:has(.ui-page) {
           resize: none;
      }
 }
+
+@layer component{
+     .top-120{
+          top: 7.5rem;
+     }
+}
