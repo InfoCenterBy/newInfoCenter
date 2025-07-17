@@ -82,7 +82,8 @@
                               <div class="mt-40">
                                    <div class="row">
                                         <div class="col-12 col-sm-6 col-xl-4 d-flex my-3">
-                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                             <div
+                                                  class="journal-card journal-card--preview d-flex flex-column p-3 gap-3 w-100">
                                                   <div class="journal-card__img">
                                                        <img src="./img/png/journal-card/journal-img.png"
                                                             alt="">
@@ -125,7 +126,8 @@
                                              </div>
                                         </div>
                                         <div class="col-12 col-sm-6 col-xl-4 d-flex my-3">
-                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                             <div
+                                                  class="journal-card journal-card--preview d-flex flex-column p-3 gap-3 w-100">
                                                   <div class="journal-card__img">
                                                        <img src="./img/png/journal-card/journal-img.png"
                                                             alt="">
@@ -168,7 +170,8 @@
                                              </div>
                                         </div>
                                         <div class="col-12 col-sm-6 col-xl-4 d-flex my-3">
-                                             <div class="journal-card d-flex flex-column p-3 gap-3 w-100">
+                                             <div
+                                                  class="journal-card journal-card--preview d-flex flex-column p-3 gap-3 w-100">
                                                   <div class="journal-card__img">
                                                        <img src="./img/png/journal-card/journal-img.png"
                                                             alt="">
@@ -210,7 +213,6 @@
                                                   </div>
                                              </div>
                                         </div>
-                                        @@include('../../html-comp/_journal-card.html')
 
                                    </div>
                               </div>
@@ -235,17 +237,25 @@
                </div>
           </div>
      </main>
-     <div class="modal modal-large fade" id="magazine-modal-1" tabindex="-1"
+     <div class="modal modal-large fade magazine-modal" id="magazine-modal-1" tabindex="-1"
           aria-labelledby="magazine-modal-label" aria-hidden="true">
           <div class="modal-dialog modal-fullscreen">
                <div class="modal-content p-0 m-0">
                     <div class="modal-header">
-                         <button type="button" class="btn-close" data-bs-dismiss="modal"
+                         <p class="d-none d-md-block color-white fst-italic mb-1 fs-20 ms-auto">Нажимайте на
+                              края страницы чтобы
+                              листать</p>
+                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                               aria-label="Close"></button>
                     </div>
-                    <div class="modal-body d-flex justify-content-center align-items-center">
-                         <div id="magazine-1" class="magazine-container"
-                              style="width: 100%; margin-inline: auto; margin-block: auto;">
+                    <div
+                         class="modal-body d-flex flex-column flex-md-row justify-content-center align-items-center">
+                         <i
+                              class="d-none d-lg-block align-self-start pe-0 pe-lg-3 bi bi-arrow-left color-white fs-34"></i>
+                         <p class="d-block d-md-none color-white fst-italic mb-1 fs-18">Нажимайте на
+                              края страницы чтобы
+                              листать</p>
+                         <div id="magazine-1" class="magazine-container">
                               <div class="page"><img src="./img/magazine/NB_17_2025 (1)-01.png" alt=""></div>
                               <div class="page"><img src="./img/magazine/NB_17_2025 (1)-02.png" alt=""></div>
                               <div class="page"><img src="./img/magazine/NB_17_2025 (1)-03.png" alt=""></div>
@@ -253,6 +263,10 @@
                               <div class="page"><img src="./img/magazine/NB_17_2025 (1)-05.png" alt=""></div>
                               <div class="page"><img src="./img/magazine/NB_17_2025 (1)-06.png" alt=""></div>
                          </div>
+                         <!-- <img class="align-self-end" src="./img/svg/editors/arrow-circle.svg" alt=""> -->
+                         <i
+                              class="d-none d-lg-block align-self-start ps-0 ps-lg-3 bi bi-arrow-right color-white fs-34"></i>
+
                     </div>
                </div>
           </div>
