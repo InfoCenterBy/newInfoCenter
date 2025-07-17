@@ -5961,6 +5961,12 @@ nav.breadcrumb a:last-child {
   .link-anchor-block__text p {
     margin-bottom: 0;
   }
+  .link-anchor-block.active .link-anchor-block__arrow {
+    color: var(--color-dark-violet);
+  }
+  .link-anchor-block.active .link-anchor-block__text {
+    color: var(--color-dark-violet);
+  }
 }
 @layer component {
   .link-anchor-block.link-anchor-block-accent {
