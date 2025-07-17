@@ -29,26 +29,34 @@
                     }
                }
           }
-               &__icon {
-               }
-               &__arrow{
-                    font-size: 1.75rem;
-                    transform: rotate(90deg) scale( -1, 1);
-                    color: var(--color-black);
-                    @include transition($transition-3);
-               }
+          &__icon {
+          }
+          &__arrow{
+               font-size: 1.75rem;
+               transform: rotate(90deg) scale( -1, 1);
+               color: var(--color-black);
+               @include transition($transition-3);
+          }
 
-               &__text {
-                    p{
-                         margin-bottom: 0;
-                    }
-                    font-family: $ff-roboto;
-                    font-weight: 400;
-                    font-size: 1rem;
-                    line-height: 130%;
-                    color: var(--color-black);
-                    @include transition($transition-3);
+          &__text {
+               p{
+                    margin-bottom: 0;
                }
+               font-family: $ff-roboto;
+               font-weight: 400;
+               font-size: 1rem;
+               line-height: 130%;
+               color: var(--color-black);
+               @include transition($transition-3);
+          }
+          &.active{
+               .link-anchor-block__arrow{
+                    color: var(--color-dark-violet);
+               }
+               .link-anchor-block__text{
+                    color: var(--color-dark-violet);
+               }
+          }
      }
 }
 

@@ -1,117 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('../../html-comp/_head.html',{
-"title":"Документы",
-})
+     @@include('../../html-comp/_head.html',{ "title":"Документы", })
 
-<body>
-     @@include('../../html-comp/_header.html')
-     <main class="main">
-          <div class="container">
-               <nav class="breadcrumb">
-                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
-                         Главная
-                    </a>
-                    <a href="" target="_blank" rel="noopener noreferrer">
-                         Документы
-                    </a>
-               </nav>
-          </div>
-          <div class="container">
-               <div class="fs-28 ff-exo fw-semibold color-black text-uppercase">
-                    Документы
+     <body>
+          @@include('../../html-comp/_header.html')
+          <main class="main">
+               <div class="container">
+                    <nav class="breadcrumb">
+                         <a href="./main.html" target="_blank" rel="noopener noreferrer"> Главная </a>
+                         <a href="" target="_blank" rel="noopener noreferrer"> Документы </a>
+                    </nav>
                </div>
-               <div class="row mt-32">
-                    <div class="col-12 order-0">
-                         <div class="d-flex flex-row overflow-auto flex-nowrap flex-lg-wrap gap-3 align-items-center nav-radio">
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Все</span> <span>(217)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Документы предприятия</span> <span>(22)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty  nav-radio__elem-active">
-                                   <span>Документы РЦ</span> <span>(33)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Информация для пользователей программных касс</span> <span>(22)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Документы СККО</span> <span>(14)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Информация для операторов программных кассовых систем</span> <span>(22)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Документы СКТА</span> <span>(19)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Нормативно-правовые акты</span> <span>(23)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Реклама</span> <span>(30)</span>
-                              </a>
-                              <a href="" target="_blank" rel="noopener noreferrer"
-                                   class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
-                                   <span>Услуги по налоговому консультированию</span> <span>(5)</span>
-                              </a>
-                         </div>
-                    </div>
-                    <div class="col-12 mt-32 order-1"></div>
-                    <div class="col-lg-9 d-flex my-lg-0 my-2 order-2">
-                         <div class="d-flex flex-column gap-5">
-                              <div class="d-flex flex-column gap-4">
-                                   <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">
-                                        Документы, регламентирующие деятельность РЦ
-                                   </div>
-                                   @@include('../../html-comp/_document-card.html')
-                              </div>
-                              <div class="d-flex flex-column gap-4">
-                                   <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">
-                                        Прейскуранты и счета-фактуры
-                                   </div>
-                                   @@include('../../html-comp/_document-card.html')
-                              </div>
-                              <div class="d-flex flex-column gap-4">
-                                   <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">
-                                        Публичные договоры на оказание услуг
-                                   </div>
-                                   @@include('../../html-comp/_document-card.html')
-                              </div>
-                              <div class="d-flex flex-column gap-4">
-                                   <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">
-                                        Документы для получения услуги
-                                   </div>
-                                   @@include('../../html-comp/_document-card.html')
-                              </div>
-                              <div class="d-flex flex-column gap-4">
-                                   <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">
-                                        Прочие документы
-                                   </div>
-                                   @@include('../../html-comp/_document-card.html')
+               <div class="container">
+                    <div class="fs-28 ff-exo fw-semibold color-black text-uppercase">Документы</div>
+                    <div class="row mt-32">
+                         <div class="col-12 order-0">
+                              <div class="d-flex flex-row overflow-auto flex-nowrap flex-lg-wrap gap-3 align-items-center nav-radio">
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Все</span> <span>(217)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Документы предприятия</span> <span>(22)</span>
+                                   </a>
+                                   <a
+                                        href=""
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty nav-radio__elem-active">
+                                        <span>Документы РЦ</span> <span>(33)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Информация для пользователей программных касс</span> <span>(22)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Документы СККО</span> <span>(14)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Информация для операторов программных кассовых систем</span> <span>(22)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Документы СКТА</span> <span>(19)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Нормативно-правовые акты</span> <span>(23)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Реклама</span> <span>(30)</span>
+                                   </a>
+                                   <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty">
+                                        <span>Услуги по налоговому консультированию</span> <span>(5)</span>
+                                   </a>
                               </div>
                          </div>
-                    </div>
-                    @@include('../../html-comp/_side-nav-banners.html')
-                    <div class="col-lg-9 col-12 d-flex justify-content-center mt-32 order-4">
-                         <a href="" target="_blank" class="btn-default">
-                              Еще
-                         </a>
+                         <div class="col-12 mt-32 order-1"></div>
+                         <div class="col-lg-9 d-flex my-lg-0 my-2 order-2">
+                              <div class="d-flex flex-column gap-5">
+                                   <div class="d-flex flex-column gap-4" id="documents-rc">
+                                        <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">Документы, регламентирующие деятельность РЦ</div>
+                                        @@include('../../html-comp/_document-card.html')
+                                   </div>
+                                   <div class="d-flex flex-column gap-4" id="documents-prey">
+                                        <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">Прейскуранты и счета-фактуры</div>
+                                        @@include('../../html-comp/_document-card.html')
+                                   </div>
+                                   <div class="d-flex flex-column gap-4" id="documents-public">
+                                        <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">Публичные договоры на оказание услуг</div>
+                                        @@include('../../html-comp/_document-card.html')
+                                   </div>
+                                   <div class="d-flex flex-column gap-4" id="documents-get">
+                                        <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">Документы для получения услуги</div>
+                                        @@include('../../html-comp/_document-card.html')
+                                   </div>
+                                   <div class="d-flex flex-column gap-4" id="documents-other">
+                                        <div class="fs-20 ff-exo fw-semibold color-black text-uppercase">Прочие документы</div>
+                                        @@include('../../html-comp/_document-card.html')
+                                   </div>
+                              </div>
+                         </div>
+                         @@include('../../html-comp/_side-nav-banners-links.html')
+                         <div class="col-lg-9 col-12 d-flex justify-content-center mt-32 order-4">
+                              <a href="" target="_blank" class="btn-default"> Еще </a>
+                         </div>
                     </div>
                </div>
-          </div>
-     </main>
-     @@include('../../html-comp/_footer.html')
-     @@include('../../html-comp/_script.html')
-</body>
-
+          </main>
+          @@include('../../html-comp/_footer.html') @@include('../../html-comp/_script.html')
+     </body>
 </html>
