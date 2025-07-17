@@ -2548,6 +2548,11 @@ html:has(.ui-page) {
     resize: none;
   }
 }
+@layer component {
+  .top-120 {
+    top: 7.5rem;
+  }
+}
 @layer base {
   button:not(.btn-close) {
     border: 0;
@@ -6631,6 +6636,11 @@ nav.breadcrumb a:last-child {
 
 .switch-input:checked ~ .accordion-button {
   color: var(--color-violet);
+}
+
+.side-nav-banner img, .side-nav-banner picture {
+  width: 100%;
+  max-width: 21.5rem;
 }
 
 html {
