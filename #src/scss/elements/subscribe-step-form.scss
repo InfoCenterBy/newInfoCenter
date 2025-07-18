@@ -1,0 +1,34 @@
+.form-step {
+     display: none;
+}
+.form-step.active {
+     display: block;
+}
+
+.year-option {
+     display: none;
+}
+
+.year-label {
+     display: inline-block;
+     padding: 10px 25px;
+     background-color: var(--color-white);
+     border: 1px solid var(--color-gray-stroke);
+     border-radius: 100px;
+     cursor: pointer;
+     text-align: center;
+     transition: all 0.3s ease;
+}
+
+.year-option:checked + .year-label {
+     background-color: var(--color-taxes-green);
+     color: var(--color-white);
+     border-color: var(--color-taxes-green);
+}
+
+.year-label:hover {
+     background-color: var(--color-mns-green-hover);
+     color: var(--color-white);
+     border-color: var(--color-mns-green-hover);
+
+}

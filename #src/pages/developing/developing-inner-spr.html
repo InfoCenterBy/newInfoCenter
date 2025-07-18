@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../../html-comp/_head.html',{
+"title":"Учреждение «Спортивный клуб Федерации профсоюзов Беларуси»",
+})
+
+<body>
+     @@include('../../html-comp/_header.html')
+     <main class="main">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./developing-list.html" target="_blank" rel="noopener noreferrer">
+                         Разработка сайтов
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Учреждение «Спортивный клуб Федерации профсоюзов Беларуси»
+                    </a>
+               </nav>
+          </div>
+          <div class="container mt-32">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/spr/developing-inner-main-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/spr/developing-inner-main-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-about.html', {
+               "textLeft": 'Учреждение «Спортивный клуб Федерации профсоюзов Беларуси» создано в целях реализации в рамках Федерации профсоюзов Беларуси единой политики в области физической культуры и спорта, упорядочения и повышения эффективности использования, находящихся в профсоюзной собственности спортивных, физкультурно-оздоровительных сооружений и объектов.',
+               "textRight": 'Создать единое информационное поле, которое объединит спортивные, физкультурно-оздоровительные сооружения и объекты, находящиеся в профсоюзной собственности. Для достижения поставленной цели компании понадобился современный и удобный в использовании сайт.'
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/spr/developing-inner-second-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/spr/developing-inner-second-banner-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-task-list.html', {
+               "taskList": ['Переделать структуру в соответствии с поставленной целью', 'Реализовать адаптивный сайт с необходимым функционалом в соответствии с тенденциями рынка']
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-two-banner.html', {
+               "imgPathX2first": "./img/png/developing/developing-inner/spr/developing-inner-two-banner-first-x2.png",
+               "imgPathX1first": "./img/png/developing/developing-inner/spr/developing-inner-two-banner-first-x1.png",
+               "imgPathX2second": "./img/png/developing/developing-inner/spr/developing-inner-two-banner-second-x2.png",
+               "imgPathX1second": "./img/png/developing/developing-inner/spr/developing-inner-two-banner-second-x1.png",
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-result-list.html', {
+               "resultList": ['Разработан сайт, объединяющий профсоюзные спортивные школы', 'Создан функционал для ознакомления с деятельностью организации: слайдеры в блоке новостей, календарь физкультурно-оздоровительных и спортивно-массовых мероприятий ФПБ, просмотр школ по видам спорта', 'Разработан дизайн с учетом требований заказчика и специфики учреждения', 'Сайт оптимизирован для мобильных устройств', 'Внедрена CMS «1С-Битрикс: Управление сайтом»']
+               })
+          </div>
+          <div class="container mt-64">
+               @@include('./developing-templates/_developing-banner-md.html', {
+               "imgPathX2": "./img/png/developing/developing-inner/spr/developing-inner-end-banner-x2.png",
+               "imgPathX1": "./img/png/developing/developing-inner/spr/developing-inner-end-banner-x1.png",
+               })
+          </div>
+     </main>
+     @@include('../../html-comp/_footer.html')
+     @@include('../../html-comp/_script.html')
+</body>
+
+</html>

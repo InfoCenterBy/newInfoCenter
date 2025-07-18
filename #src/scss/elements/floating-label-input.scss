@@ -13,7 +13,7 @@
           line-height: 120%;
           letter-spacing: 0%;
           color: var(--color-gray-txt);
-          @include adaptiv-value('font-size', 16, 12, 1);
+          @include adaptiv-value('font-size', 16, 14, 1);
           position: absolute;
           z-index: 2;
           pointer-events: none;
@@ -39,7 +39,7 @@
      }
 
      .floating-input {
-          @include adaptiv-value('font-size', 16, 12, 1);
+          @include adaptiv-value('font-size', 16, 14, 1);
           display: block;
           width: 100%;
           @include adaptiv-value('height', 48, 40, 1);
@@ -60,12 +60,48 @@
                     @include adaptiv-value('font-size', 12, 10, 1);
                }
           }
-          &.disabled, &:disabled{
+          &.disabled,
+          &:disabled {
                cursor: not-allowed;
                background-color: var(--color-gray-bg-illustr);
                color: var(--color-gray-txt);
                border-color: var(--color-gray-stroke);
-               ~ .floating-label{
+               ~ .floating-label {
+                    color: var(--color-gray-txt);
+                    background-color: var(--color-gray-bg-illustr);
+               }
+          }
+     }
+
+     .floating-input-green {
+          @include adaptiv-value('font-size', 16, 14, 1);
+          display: block;
+          width: 100%;
+          height: 48px;
+          padding: 0 1rem;
+          background-color: var(--color-white);
+          color: var(--color-gray-txt);
+          border: 1px solid var(--color-transparent);
+          border-color: var(--color-gray-stroke);
+          border-radius: 9.375rem;
+          box-sizing: border-box;
+          @include transition($transition-2);
+          font-size: 1rem;
+          &:focus {
+               outline: none;
+               border: 1.5px solid var(--color-taxes-green);
+               ~ .floating-label {
+                    top: -8px;
+                    @include adaptiv-value('font-size', 12, 10, 1);
+               }
+          }
+          &.disabled,
+          &:disabled {
+               cursor: not-allowed;
+               background-color: var(--color-gray-bg-illustr);
+               color: var(--color-gray-txt);
+               border-color: var(--color-gray-stroke);
+               ~ .floating-label {
                     color: var(--color-gray-txt);
                     background-color: var(--color-gray-bg-illustr);
                }
@@ -75,6 +111,12 @@
      .floating-label-content:not(.floating-input-error) {
           .floating-input:not(:focus, :disabled) {
                @include hover('border-color', var(--color-violet-hover));
+          }
+     }
+
+     .floating-label-content:not(.floating-input-error) {
+          .floating-input-green:not(:focus, :disabled) {
+               @include hover('border-color', var(--color-taxes-green));
           }
      }
 
@@ -88,7 +130,16 @@
           @include adaptiv-value('font-size', 12, 10, 1);
      }
 
+     .floating-input-green:not(:placeholder-shown) ~ .floating-label {
+          top: -8px;
+          @include adaptiv-value('font-size', 12, 10, 1);
+     }
+
      .floating-input:not(:placeholder-shown) {
+          color: var(--color-black);
+     }
+
+     .floating-input-green:not(:placeholder-shown) {
           color: var(--color-black);
      }
 
@@ -119,8 +170,8 @@
           color: var(--color-gray-txt);
      }
 
-     .floating-label-content.invalid{
-          .password-icon{
+     .floating-label-content.invalid {
+          .password-icon {
                top: -60px;
           }
      }

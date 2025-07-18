@@ -1,31 +1,52 @@
-
 .journal-card {
-     border: 1.5px solid var(--color-gray-stroke);
-     background-color: var(--color-white);
-     border-radius: .625rem;
-		&__img {
-               display: flex;
-               justify-content: center;
-               img{
-                    width: 100%;
-                    object-fit: contain;
-                    max-width: 23.75rem;
-               }
+	border: 1.5px solid var(--color-gray-stroke);
+	background-color: var(--color-white);
+	border-radius: 0.625rem;
+	&__img {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		img {
+			width: 100%;
+			object-fit: contain;
+			// max-width: 23.75rem;
 		}
+	}
 
-		&__title {
-               font-family: $ff-roboto;
-               font-weight: 600;
-               font-size: 1.125rem;
-               line-height: 1.2;
-               color: var(--color-black);
-		}
+	&__title {
+		font-family: $ff-roboto;
+		font-weight: 600;
+		font-size: 1.125rem;
+		line-height: 1.2;
+		color: var(--color-black);
+	}
 
-		&__date {
-               font-family: $ff-roboto;
-               font-weight: 400;
-               font-size: 1rem;
-               line-height: 1.3;
-               color: var(--color-gray-txt);
+	&__date {
+		font-family: $ff-roboto;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.3;
+		color: var(--color-gray-txt);
+	}
+	&__preview-btn {
+		width: 46px;
+		height: 46px;
+		min-width: 46px;
+		min-height: 46px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--color-violet-light);
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		font-size: 0;
+
+		@include hover('background-color', var(--color-violet));
+
+		&:hover svg path {
+			fill: var(--color-white);
 		}
+	}
 }

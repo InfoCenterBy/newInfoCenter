@@ -1,0 +1,53 @@
+@layer variations{
+     @each $name, $color in $colorsMap {
+          .bg-#{$name}{
+               background-color: #{$color} !important;
+          }
+          .color-#{$name}{
+               color: #{$color};
+          }
+          .hover-#{$name}{
+               @include hover('color', #{$color});
+          }
+          .hover-bg-#{$name}{
+               @include hover('background-color', #{$color});
+          }
+          .border-1-5-#{$name}{
+               border: 1.5px solid #{$color};
+          }
+          .border-1-color-#{$name}{
+               border: 1px solid #{$color};
+          }
+          .border-color-#{$name}{
+               border-color: #{$color} !important;
+          }
+     }
+     @each $name in $borderMap {
+          .border-#{$name}{
+               border-radius: #{$name}px;
+          }
+     }
+     @each $name, $time in $transitionMap {
+          .transition-#{$name}{
+               transition: all ease-out #{$time}s; 
+          }
+     }
+}
+
+@each $name in $fontSizeMap {
+          $result: calc($name / 16);
+          // $adaptiveResult: calc($name - 4);
+          .fs-#{$name}{
+               font-size: #{$result} + rem !important;
+          }
+          @each $nameBS, $size in $breakPointsMap{
+               .fs-#{$nameBS}-#{$name}{
+                    @media screen and (min-width: #{$size + 'px'}) {
+                         font-size: #{$result} + rem !important;
+                    }
+               }
+          }
+          // .fs-adaptive-#{$name}{
+          //      @include adaptiv-value('font-size', $name, $adaptiveResult, 1);
+          // }
+     }

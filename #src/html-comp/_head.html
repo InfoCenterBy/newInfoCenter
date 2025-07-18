@@ -13,15 +13,10 @@
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script> -->
      <script src="./js/bootstrap.bundle.min.js"></script>
-          <!-- bootstrap cdn -->
-     <!-- jquery cdn -->
-     <script src="./js/jquery.js"></script>
-     <!-- jquery cdn -->
-     <!-- swiper cdn -->
-     <link rel="stylesheet" href="">
-     <script src="./js/imask.js"></script>
-     <script src="./js/swiper-bundle.min.js"></script>
-     <!-- swiper cdn -->
+     <!-- bootstrap cdn -->
+     @@for(var i = 0; i < scriptList.length; i++){ 
+          <script src=`+scriptList[i]+`></script>
+     }
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Triodion&display=swap"

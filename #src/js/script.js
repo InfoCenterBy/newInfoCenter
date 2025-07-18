@@ -8,3 +8,6 @@
 @@include('phoneMask.js',{})
 @@include('fixAnchorScroll.js',{})
 @@include('fixModalBackdrop.js',{})
+@@include('checkAll.js',{})
+@@include('backToTopBtn.js',{})
+@@include('btnCollapseText.js',{})

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('../../html-comp/_head.html',{
+"title":"Выбор услуги",
+})
+
+<body>
+     @@include('../../html-comp/_header.html')
+     <main class="main main-container">
+          <div class="container">
+               <nav class="breadcrumb">
+                    <a href="./main.html" target="_blank" rel="noopener noreferrer">
+                         Главная
+                    </a>
+                    <a href="./reg-center-main.html" target="_blank" rel="noopener noreferrer">
+                         Регистрационный центр ГосСУОК
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                         Выбор услуги
+                    </a>
+               </nav>
+          </div>
+          <div class="container">
+               <div class="fs-28 ff-exo fw-semibold color-black text-uppercase">
+                    Выбор услуги
+               </div>
+               <div
+                    class="d-flex flex-row overflow-auto flex-nowrap gap-3 align-items-center justify-content-xxl-center nav-radio py-3 px-3 nav-radio-reg mt-4">
+                    <a href="./reg-center-choice.html" target="_blank" rel="noopener noreferrer"
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         <span>Выбрать услугу</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill"
+                         data-bs-toggle="modal" data-bs-target="#choiceForm">
+                         <span>Предварительная запись</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         <span>Новости РЦ</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         <span>Вопрос-ответ</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         <span>Документы РЦ</span>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer"
+                         class="nav-radio__elem nav-radio__elem-xxl nav-radio__elem-fill">
+                         <span>Адреса и контакты РЦ</span>
+                    </a>
+               </div>
+          </div>
+          <div class="container mt-40">
+               <div class="row">
+                    <div class="col-lg-9 d-flex flex-column pe-lg-4">
+                         <div class="w-100 bg-violet-light px-lg-5 p-lg-4 py-4 px-3 border-20">
+                              <div class="row">
+                                   <div class="col-xl-6 d-flex flex-column gap-3 ">
+                                        <div class="">
+                                             <b class="ff-exo fs-20">Не знаете какая услуга вам необходима?</b>
+                                        </div>
+                                        <div class="">
+                                             <p class="mb-0 ff-roboto">
+                                                  Ознакомьтесь с инструкцией по подбору услуги
+                                             </p>
+                                        </div>
+                                        <div class="">
+                                             <a href="" target="_blank" class="btn-default">
+                                                  Выбрать услугу
+                                             </a>
+                                        </div>
+                                   </div>
+                                   <div class="col-xl-6 d-xl-flex d-none">
+                                        <div class="contain">
+                                             <img src="./img/png/reg-center/reg-choice-banner.png" alt="" class="w-100">
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="d-lg-none d-flex flex-column mt-32">
+                              <div class="">
+                                   <b class="d-block ff-exo fs-18 color-black">
+                                        Поиск услуги по коду
+                                   </b>
+                                   <div class="search-block mt-3">
+                                        <div class="form-group d-flex flex-row align-items-center ">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="">
+                                                  <label class="floating-label">Введите код</label>
+                                             </div>
+                                             <div class="ms-2">
+                                                  <button class="button-serach" type="submit"></button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <button type="button" class="btn-default mt-4 w-100" data-bs-toggle="modal" data-bs-target="#choiceFormModal">
+                                   Фильтры
+                              </button>
+                         </div>
+                         <div class="d-flex flex-column gap-3 mt-32">
+                              @@for(var i = 0; i < 16; i++){
+                                   @@include('../../html-comp/_file-link.html')
+                              }
+                         </div>
+                    </div>
+                    <div class="col-lg-3 side-nav-step d-lg-flex d-none flex-column border-lg-0 border-start border-color-gray-stroke ps-lg-4">
+                         <form action="">
+                              <div class="">
+                                   <b class="d-block ff-exo fs-18 color-black">
+                                        Поиск услуги по коду
+                                   </b>
+                                   <div class="search-block mt-3">
+                                        <div class="form-group d-flex flex-row align-items-center ">
+                                             <div class="floating-label-content w-100">
+                                                  <input class="floating-input" type="text" placeholder="">
+                                                  <label class="floating-label">Введите код</label>
+                                             </div>
+                                             <div class="ms-2">
+                                                  <button class="button-serach" type="submit"></button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="bg-info-light border-10 p-3 d-flex flex-row gap-12 mt-4">
+                                   <i class="bi bi-info-circle fs-24 color-info"></i>
+                                   <div class="d-flex flex-column gap-2 ff-roboto fw-normal">
+                                        <p class="mb-0">Для подбора услуги необходимо выбирать фильтры по порядку.</p>
+                                        <p class="mb-0">Вы можете выбрать только 1 вариант в каждом фильтре.</p>
+                                   </div>
+                              </div>
+
+                              <div class="d-flex flex-column gap-4 mt-3">
+                                   <div class="radio-group-step">
+                                        <p class="d-flex flex-row align-items-start">
+                                             <b class="ff-exo fs-18 color-black">
+                                                  Организационно-правовая форма
+                                             </b>
+                                             <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                  <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                             </button>
+                                        </p>
+                                        <div class="d-flex flex-column gap-2">
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group1" id="radioStep1">
+                                                  <label class="form-check-label" for="radioStep1">
+                                                       Бюджетные организации (оплата через органы казначейства)
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group1" id="radioStep2">
+                                                  <label class="form-check-label" for="radioStep2">
+                                                       Юридические лица, индивидуальные предприниматели, бюджетные организации (оплата из собственных
+                                                       средств)
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group1" id="radioStep3">
+                                                  <label class="form-check-label" for="radioStep3">
+                                                       Физические лица
+                                                  </label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="radio-group-step">
+                                        <p class="d-flex flex-row align-items-start">
+                                             <b class="ff-exo fs-18 color-black ">
+                                                  Вид услуги
+                                             </b>
+                                             <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                  <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                             </button>
+                                        </p>
+                                        <div class="d-flex flex-column gap-2">
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group2" id="radioStep4">
+                                                  <label class="form-check-label" for="radioStep4">
+                                                       Издание
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group2" id="radioStep5">
+                                                  <label class="form-check-label" for="radioStep5">
+                                                       Продление
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group2" id="radioStep6">
+                                                  <label class="form-check-label" for="radioStep6">
+                                                       Обновление данных
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group2" id="radioStep7">
+                                                  <label class="form-check-label" for="radioStep7">
+                                                       Удаленное получение атрибутных сертификатов
+                                                  </label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="radio-group-step">
+                                        <p class="d-flex flex-row align-items-start">
+                                             <b class="ff-exo fs-18 color-black">
+                                                  Носитель
+                                             </b>
+                                             <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                  <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                             </button>
+                                        </p>
+                                        <div class="d-flex flex-column gap-2">
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group3" id="radioStep8">
+                                                  <label class="form-check-label" for="radioStep8">
+                                                       AvPass
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group3" id="radioStep9">
+                                                  <label class="form-check-label" for="radioStep9">
+                                                       AvBign
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group3" id="radioStep10">
+                                                  <label class="form-check-label" for="radioStep10">
+                                                       Без выдачи носителя
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group3" id="radioStep11">
+                                                  <label class="form-check-label" for="radioStep11">
+                                                       SIM-карта
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group3" id="radioStep12">
+                                                  <label class="form-check-label" for="radioStep12">
+                                                       ID-карта
+                                                  </label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="radio-group-step">
+                                        <p class="d-flex flex-row align-items-start">
+                                             <b class="ff-exo fs-18 color-black">
+                                                  Срок действия сертификата
+                                             </b>
+                                             <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                  <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                             </button>
+                                        </p>
+                                        <div class="d-flex flex-column gap-2">
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group4" id="radioStep13">
+                                                  <label class="form-check-label" for="radioStep13">
+                                                       1 год
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group4" id="radioStep14">
+                                                  <label class="form-check-label" for="radioStep14">
+                                                       2 года
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group4" id="radioStep15">
+                                                  <label class="form-check-label" for="radioStep15">
+                                                       3 года
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group4" id="radioStep16">
+                                                  <label class="form-check-label" for="radioStep16">
+                                                       SIM-карта
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group4" id="radioStep17">
+                                                  <label class="form-check-label" for="radioStep17">
+                                                       с сохранением срока действия
+                                                  </label>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="radio-group-step">
+                                        <p class="d-flex flex-row align-items-start">
+                                             <b class="ff-exo fs-18 color-black">
+                                                  Тип сертификата
+                                             </b>
+                                             <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                                  <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                             </button>
+                                        </p>
+                                        <div class="d-flex flex-column gap-2">
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group5" id="radioStep18">
+                                                  <label class="form-check-label" for="radioStep18">
+                                                       Основной сертификат
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group5" id="radioStep19">
+                                                  <label class="form-check-label" for="radioStep19">
+                                                       Основной сертификат с АС ФСЗН
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group5" id="radioStep20">
+                                                  <label class="form-check-label" for="radioStep20">
+                                                       Атрибутный сертификат ФСЗН
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group5" id="radioStep21">
+                                                  <label class="form-check-label" for="radioStep21">
+                                                       Базовый атрибутный сертификат
+                                                  </label>
+                                             </div>
+                                             <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="group5" id="radioStep22">
+                                                  <label class="form-check-label" for="radioStep22">
+                                                       ЭЦП-М
+                                                  </label>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="d-flex flex-column gap-4 mt-4">
+                                   <button type="button" class="btn-default w-100">
+                                        Применить
+                                   </button>
+                                   
+                                   <button type="button" onclick="form.reset(); window.location.reload()" class="btn-empty w-100">
+                                        Отменить
+                                   </button>
+                              </div>
+
+                         </form>
+                    </div>
+                    <div class="col-lg-9 col-12">
+                         <div class="d-flex justify-content-center">
+                              <a href="" target="_blank" class="btn-default mt-40">
+                                   Показать ещё
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </main>
+     <div class="modal fade" id="choiceFormModal" tabindex="-1" aria-labelledby="choiceFormModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content mt-92">
+                    <div class="modal-header">
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="bg-info-light border-10 p-3 d-flex flex-row gap-12">
+                              <i class="bi bi-info-circle fs-24 color-info"></i>
+                              <div class="d-flex flex-column gap-2 ff-roboto fw-normal">
+                                   <p class="mb-0">Для подбора услуги необходимо выбирать фильтры по порядку.</p>
+                                   <p class="mb-0">Вы можете выбрать только 1 вариант в каждом фильтре.</p>
+                              </div>
+                         </div>
+                         
+                         <div class="d-flex flex-column gap-4 mt-3">
+                              <div class="radio-group-step">
+                                   <p class="d-flex flex-row align-items-start">
+                                        <b class="ff-exo fs-18 color-black">
+                                             Организационно-правовая форма
+                                        </b>
+                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                             <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                        </button>
+                                   </p>
+                                   <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group1" id="radioStep1">
+                                             <label class="form-check-label" for="radioStep1">
+                                                  Бюджетные организации (оплата через органы казначейства)
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group1" id="radioStep2">
+                                             <label class="form-check-label" for="radioStep2">
+                                                  Юридические лица, индивидуальные предприниматели, бюджетные организации (оплата из собственных
+                                                  средств)
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group1" id="radioStep3">
+                                             <label class="form-check-label" for="radioStep3">
+                                                  Физические лица
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         
+                              <div class="radio-group-step">
+                                   <p class="d-flex flex-row align-items-start">
+                                        <b class="ff-exo fs-18 color-black ">
+                                             Вид услуги
+                                        </b>
+                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                             <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                        </button>
+                                   </p>
+                                   <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group2" id="radioStep4">
+                                             <label class="form-check-label" for="radioStep4">
+                                                  Издание
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group2" id="radioStep5">
+                                             <label class="form-check-label" for="radioStep5">
+                                                  Продление
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group2" id="radioStep6">
+                                             <label class="form-check-label" for="radioStep6">
+                                                  Обновление данных
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group2" id="radioStep7">
+                                             <label class="form-check-label" for="radioStep7">
+                                                  Удаленное получение атрибутных сертификатов
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         
+                              <div class="radio-group-step">
+                                   <p class="d-flex flex-row align-items-start">
+                                        <b class="ff-exo fs-18 color-black">
+                                             Носитель
+                                        </b>
+                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                             <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                        </button>
+                                   </p>
+                                   <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group3" id="radioStep8">
+                                             <label class="form-check-label" for="radioStep8">
+                                                  AvPass
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group3" id="radioStep9">
+                                             <label class="form-check-label" for="radioStep9">
+                                                  AvBign
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group3" id="radioStep10">
+                                             <label class="form-check-label" for="radioStep10">
+                                                  Без выдачи носителя
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group3" id="radioStep11">
+                                             <label class="form-check-label" for="radioStep11">
+                                                  SIM-карта
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group3" id="radioStep12">
+                                             <label class="form-check-label" for="radioStep12">
+                                                  ID-карта
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         
+                              <div class="radio-group-step">
+                                   <p class="d-flex flex-row align-items-start">
+                                        <b class="ff-exo fs-18 color-black">
+                                             Срок действия сертификата
+                                        </b>
+                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                             <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                        </button>
+                                   </p>
+                                   <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group4" id="radioStep13">
+                                             <label class="form-check-label" for="radioStep13">
+                                                  1 год
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group4" id="radioStep14">
+                                             <label class="form-check-label" for="radioStep14">
+                                                  2 года
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group4" id="radioStep15">
+                                             <label class="form-check-label" for="radioStep15">
+                                                  3 года
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group4" id="radioStep16">
+                                             <label class="form-check-label" for="radioStep16">
+                                                  SIM-карта
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group4" id="radioStep17">
+                                             <label class="form-check-label" for="radioStep17">
+                                                  с сохранением срока действия
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         
+                              <div class="radio-group-step">
+                                   <p class="d-flex flex-row align-items-start">
+                                        <b class="ff-exo fs-18 color-black">
+                                             Тип сертификата
+                                        </b>
+                                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                             <i class="bi bi-question-circle color-gray-inputs lh-lg"></i>
+                                        </button>
+                                   </p>
+                                   <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group5" id="radioStep18">
+                                             <label class="form-check-label" for="radioStep18">
+                                                  Основной сертификат
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group5" id="radioStep19">
+                                             <label class="form-check-label" for="radioStep19">
+                                                  Основной сертификат с АС ФСЗН
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group5" id="radioStep20">
+                                             <label class="form-check-label" for="radioStep20">
+                                                  Атрибутный сертификат ФСЗН
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group5" id="radioStep21">
+                                             <label class="form-check-label" for="radioStep21">
+                                                  Базовый атрибутный сертификат
+                                             </label>
+                                        </div>
+                                        <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="group5" id="radioStep22">
+                                             <label class="form-check-label" for="radioStep22">
+                                                  ЭЦП-М
+                                             </label>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         
+                         <div class="d-flex flex-column gap-4 mt-4">
+                              <button type="button" class="btn-default w-100">
+                                   Применить
+                              </button>
+                         
+                              <button type="button" onclick="form.reset(); window.location.reload()" class="btn-empty w-100">
+                                   Отменить
+                              </button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+@@include('../../html-comp/_footer.html')
+@@include('../../html-comp/_script.html')
+</body>
+
+</html>

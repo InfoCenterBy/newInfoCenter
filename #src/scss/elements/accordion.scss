@@ -30,6 +30,11 @@
           .accordion-item {
                border-radius: 15px;
           }
+          .accordion-taxes-brown {
+               background-color: var(--color-taxes-brown);
+               border-radius: 15px;
+          }
+          
           .accordion-button {
                font-family: $ff-exo;
                font-weight: 600;
