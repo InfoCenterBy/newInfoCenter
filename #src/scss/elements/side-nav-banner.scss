@@ -5,3 +5,27 @@
      }
 }
 
+.side-nav-banners-links{
+     max-height: 40rem;
+     overflow: auto;
+     &::-webkit-scrollbar {
+          width: 6px;
+     }
+
+     /* Track */
+     &::-webkit-scrollbar-track {
+          background: var(--color-transparent);
+     }
+     
+     /* Handle */
+     &::-webkit-scrollbar-thumb {
+          background: rgb(251, 251, 251, .60);
+          border-radius: 8px;
+     }
+
+     /* Handle on hover */
+     &::-webkit-scrollbar-thumb:hover {
+          background: var(--color-dark-violet);
+     }
+}
+
