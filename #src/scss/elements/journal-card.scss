@@ -1,52 +1,105 @@
 .journal-card {
-	border: 1.5px solid var(--color-gray-stroke);
-	background-color: var(--color-white);
-	border-radius: 0.625rem;
-	&__img {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		img {
-			width: 100%;
-			object-fit: contain;
-			// max-width: 23.75rem;
-		}
-	}
+     border: 1.5px solid var(--color-gray-stroke);
+     background-color: var(--color-white);
+     border-radius: 0.625rem;
 
-	&__title {
-		font-family: $ff-roboto;
-		font-weight: 600;
-		font-size: 1.125rem;
-		line-height: 1.2;
-		color: var(--color-black);
-	}
+     &__img {
+          position: relative;
+          display: flex;
+          justify-content: center;
 
-	&__date {
-		font-family: $ff-roboto;
-		font-weight: 400;
-		font-size: 1rem;
-		line-height: 1.3;
-		color: var(--color-gray-txt);
-	}
-	&__preview-btn {
-		width: 46px;
-		height: 46px;
-		min-width: 46px;
-		min-height: 46px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: var(--color-violet-light);
-		position: absolute;
-		right: 10px;
-		bottom: 10px;
-		font-size: 0;
+          img {
+               width: 100%;
+               object-fit: contain;
+               transition: fill 0.3s ease;
+          }
+     }
 
-		@include hover('background-color', var(--color-violet));
+     &__title {
+          font-family: $ff-roboto;
+          font-weight: 600;
+          font-size: 1.125rem;
+          line-height: 1.2;
+          color: var(--color-black);
+     }
 
-		&:hover svg path {
-			fill: var(--color-white);
-		}
-	}
+     &__date {
+          font-family: $ff-roboto;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.3;
+          color: var(--color-gray-txt);
+     }
+     &--preview {
+          .journal-card {
+               &__preview-btn {
+                    width: 60px;
+                    height: 60px;
+                    min-width: 60px;
+                    min-height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--color-violet-light);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+               }
+
+               &__preview-btn svg {
+                    width: 30px;
+                    height: 30px;
+               }
+
+               &__preview-btn svg path {
+                    fill: var(--color-violet);
+                    transition: fill 0.3s ease;
+               }
+
+               &__img:hover .journal-card__preview-btn {
+                    opacity: 1;
+               }
+
+               &__img:hover img {
+                    filter: blur(4px);
+               }
+
+               &__preview-btn:hover {
+                    background-color: var(--color-violet);
+               }
+
+               &__preview-btn:hover svg path {
+                    fill: var(--color-white);
+               }
+
+               @media (max-width: 768px) {
+                    &__preview-btn {
+                         width: 46px;
+                         height: 46px;
+                         min-width: 46px;
+                         min-height: 46px;
+                         right: 10px;
+                         bottom: 10px;
+                         top: auto;
+                         left: auto;
+                         transform: none;
+                         opacity: 1;
+                    }
+
+                    &__preview-btn svg {
+                         width: 20px;
+                         height: 20px;
+                    }
+
+                    &__img:hover img {
+                         filter: none;
+                    }
+               }
+          }
+     }
 }
