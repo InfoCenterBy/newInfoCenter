@@ -6643,6 +6643,27 @@ nav.breadcrumb a:last-child {
   max-width: 21.5rem;
 }
 
+.side-nav-banners-links {
+  max-height: 20rem;
+  overflow: auto;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.side-nav-banners-links::-webkit-scrollbar {
+  width: 6px;
+}
+.side-nav-banners-links::-webkit-scrollbar-track {
+  background: var(--color-transparent);
+}
+.side-nav-banners-links::-webkit-scrollbar-thumb {
+  background: var(--color-dark-violet);
+  border-radius: 8px;
+}
+.side-nav-banners-links::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-violet);
+}
+
 html {
   height: auto;
   scroll-behavior: smooth;
