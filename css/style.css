@@ -6644,7 +6644,7 @@ nav.breadcrumb a:last-child {
 }
 
 .side-nav-banners-links {
-  max-height: 20rem;
+  max-height: 40rem;
   overflow: auto;
   /* Track */
   /* Handle */
@@ -6657,7 +6657,7 @@ nav.breadcrumb a:last-child {
   background: var(--color-transparent);
 }
 .side-nav-banners-links::-webkit-scrollbar-thumb {
-  background: var(--color-dark-violet);
+  background: rgba(251, 251, 251, 0.6);
   border-radius: 8px;
 }
 .side-nav-banners-links::-webkit-scrollbar-thumb:hover {
