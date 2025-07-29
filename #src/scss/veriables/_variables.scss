@@ -49,12 +49,41 @@ $colorsMap: (
 //? *Sizing*
 @layer component {
      .px-12 {
-          padding-left: 12px;
-          padding-right: 12px;
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
      }
 
      .py-12 {
-          padding-block: 12px;
+          padding-block: 0.75rem;
+     }
+
+     .p-32 {
+          padding-inline: 2rem;
+          padding-block: 2rem;
+     }
+
+     .pt-32 {
+          padding-top: 2rem;
+     }
+
+     .pb-32 {
+          padding-bottom: 2rem;
+     }
+
+     .ps-32 {
+          padding-left: 2rem;
+     }
+
+     .ps-40 {
+          padding-left: 2.5rem;
+     }
+
+     .pe-40 {
+          padding-right: 2.5rem;
+     }
+
+     .pe-32 {
+          padding-right: 2rem;
      }
 
      .mt-12 {
@@ -111,6 +140,14 @@ $colorsMap: (
 
      .p-40 {
           padding: 40px;
+     }
+
+     .rounded-100-desktop {
+          border-radius: 100px;
+
+          @media (max-width: 992px) {
+               border-radius: 20px;
+          }
      }
 }
 

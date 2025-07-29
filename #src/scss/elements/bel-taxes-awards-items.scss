@@ -1,0 +1,31 @@
+.taxes-awards {
+     &__date {
+          min-width: 170px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-inline: 8px;
+          text-align: center;
+          background-color: var(--color-taxes-brown);
+          color: var(--color-taxes-green);
+          border-radius: 10px;
+          font-family: $ff-exo;
+          font-weight: 600;
+          font-size: 28px;
+
+          @media (max-width: 576px) {
+               width: 100%;
+               padding-block: 12px;
+          }
+     }
+
+     &__description {
+          border: 1px solid var(--color-gray-stroke);
+          padding-inline: 24px;
+          padding-block: 16px;
+          border-radius: 10px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+     }
+}
