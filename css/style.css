@@ -3,7 +3,6 @@
 @import url("./font-exo-2.css");
 @import url("./font-roboto.css");
 @import url("./bootstrap-icons.css");
-@import url("./datepicker.css") layer(vendor);
 @layer base, vendor, component, variations;
 :root {
   --color-black: #030303;
@@ -43,8 +42,33 @@
 
 @layer component {
   .px-12 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .py-12 {
+    padding-block: 0.75rem;
+  }
+  .p-32 {
+    padding-inline: 2rem;
+    padding-block: 2rem;
+  }
+  .pt-32 {
+    padding-top: 2rem;
+  }
+  .pb-32 {
+    padding-bottom: 2rem;
+  }
+  .ps-32 {
+    padding-left: 2rem;
+  }
+  .ps-40 {
+    padding-left: 2.5rem;
+  }
+  .pe-40 {
+    padding-right: 2.5rem;
+  }
+  .pe-32 {
+    padding-right: 2rem;
   }
   .mt-12 {
     margin-top: 12px;
@@ -87,6 +111,14 @@
   }
   .p-40 {
     padding: 40px;
+  }
+  .rounded-100-desktop {
+    border-radius: 100px;
+  }
+  @media (max-width: 992px) {
+    .rounded-100-desktop {
+      border-radius: 20px;
+    }
   }
 }
 @layer variations {
@@ -205,15 +237,6 @@
   margin-inline: -16px;
 }
 
-.border-left-desktop {
-  border-left: 1px solid var(--color-gray-stroke);
-}
-@media (max-width: 768px) {
-  .border-left-desktop {
-    border-left: 0;
-  }
-}
-
 @layer component {
   @media screen and (min-width: 1200px) {
     .px-xl-100 {
@@ -254,7 +277,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .mobile-w-100 {
     width: 100%;
   }
@@ -2305,7 +2328,6 @@ html:has(.ui-page) {
     border-radius: 1.25rem;
     -webkit-transition: all ease-out 0.3s;
     transition: all ease-out 0.3s;
-    max-height: 12.875rem;
   }
   .news-element__img img {
     max-width: 29rem;
@@ -2546,11 +2568,6 @@ html:has(.ui-page) {
 @layer base {
   .textarea-resize-no {
     resize: none;
-  }
-}
-@layer component {
-  .top-120 {
-    top: 7.5rem;
   }
 }
 @layer base {
@@ -2840,51 +2857,6 @@ html:has(.ui-page) {
   .btn-up.show {
     opacity: 1;
     visibility: visible;
-  }
-  @media screen and (min-width: 576px) {
-    .btn-up {
-      left: 90%;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    .btn-up {
-      left: 94%;
-    }
-  }
-}
-@layer component {
-  .btn-up {
-    position: fixed;
-    width: 2.625rem;
-    height: 42px;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border: 1.5px solid var(--color-gray-stroke);
-    color: var(--color-violet);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    bottom: 27%;
-    left: 86%;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-    background: var(--color-white);
-    /* Hide default border when progress is visible */
-  }
-  .btn-up.progress-active {
-    border-color: transparent;
-  }
-  .btn-up .bi {
-    line-height: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .btn-up.show {
-    opacity: 1;
-    visibility: visible;
-    z-index: 3;
   }
   @media screen and (min-width: 576px) {
     .btn-up {
@@ -3245,26 +3217,6 @@ html:has(.ui-page) {
   @media (hover: none) {
     .link-activity:active {
       color: var(--color-black);
-    }
-  }
-  .link-black {
-    color: var(--color-black);
-    font-family: "Roboto";
-    line-height: 130%;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .link-black:hover {
-      color: var(--color-dark-violet);
-    }
-  }
-  @media (hover: none) {
-    .link-black:active {
-      color: var(--color-dark-violet);
     }
   }
   .link-green {
@@ -4674,7 +4626,7 @@ nav.breadcrumb a:last-child {
   }
   .choice-form :root {
     /*General*/
-    --dp-font-family: "Roboto";
+    --dp-font-family: $ff-roboto;
     --dp-border-radius: 150px; /*Configurable border-radius*/
     --dp-cell-border-radius: 4px; /*Specific border radius for the calendar cell*/
     --dp-common-transition: all 0.1s ease-in; /*Generic transition applied on buttons and calendar cells*/
@@ -5188,134 +5140,6 @@ nav.breadcrumb a:last-child {
             box-shadow: none;
     border-color: var(--color-violet);
   }
-  .form-control.is-invalid, .was-validated .floating-input:invalid {
-    border-color: var(--color-red-error);
-  }
-  .form-input.invalid .form-control, .form-input.invalid .form-select {
-    border-color: var(--color-red-error);
-  }
-  .form-input.invalid .input-label-error {
-    display: block;
-    color: var(--color-red-attention);
-    font-size: 0.875rem;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  .form-input:not(.invalid) .input-label-error {
-    display: none;
-  }
-  .form-select {
-    border-radius: 9.375rem;
-    font-family: "Roboto";
-    border: 1.5px solid var(--color-gray-stroke);
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-    padding: 0.6563rem 1rem;
-    background-color: var(--color-white);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 2rem;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .form-select:hover {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  @media (hover: none) {
-    .form-select:active {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  .form-select:focus {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    border-color: var(--color-violet);
-  }
-  .form-control:focus {
-    color: var(--color-black);
-    border-color: var(--color-violet);
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-}
-@layer component {
-  .input {
-    border-radius: 100px;
-    padding-inline: 20px;
-    border-color: var(--color-gray-stroke);
-    border-style: solid;
-    outline: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-    height: 45px;
-    background-color: var(--color-white);
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .input:hover {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  @media (hover: none) {
-    .input:active {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  .input:focus {
-    border-color: var(--color-violet);
-  }
-  input[type=search]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-            appearance: none;
-    width: 12px;
-    height: 12px;
-    --weight: 0.5px;
-    --aa: 1px;
-    --color: var(--color-gray-txt);
-    border-radius: 1px;
-    background-color: var(--color-gray-txt);
-    background: linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))), linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
-    cursor: pointer;
-  }
-  .form-date {
-    position: relative;
-  }
-  .form-date label {
-    position: absolute;
-    top: 10.5px;
-    left: 1rem;
-    color: var(--color-gray-txt);
-  }
-  .form-date input.form-control {
-    border-radius: 9.375rem;
-    padding: 10.5px;
-    padding-left: 2.375rem;
-    font-family: "Roboto";
-    border: 1.5px solid --color-gray-stroke;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-    background-color: var(--color-white);
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .form-date input.form-control:hover {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  @media (hover: none) {
-    .form-date input.form-control:active {
-      border-color: var(--color-violet-hover);
-    }
-  }
-  .form-date input.form-control:focus {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    border-color: var(--color-violet);
-  }
   .form-date input.form-control-green {
     border-radius: 9.375rem;
     padding: 10.5px;
@@ -5341,8 +5165,7 @@ nav.breadcrumb a:last-child {
             box-shadow: none;
     border-color: var(--color-taxes-green);
   }
-  .form-input.invalid .form-control,
-  .form-input.invalid .form-select {
+  .form-input.invalid .form-control, .form-input.invalid .form-select {
     border-color: var(--color-red-error);
   }
   .form-input.invalid .input-label-error {
@@ -5966,12 +5789,6 @@ nav.breadcrumb a:last-child {
   .link-anchor-block__text p {
     margin-bottom: 0;
   }
-  .link-anchor-block.active .link-anchor-block__arrow {
-    color: var(--color-dark-violet);
-  }
-  .link-anchor-block.active .link-anchor-block__text {
-    color: var(--color-dark-violet);
-  }
 }
 @layer component {
   .link-anchor-block.link-anchor-block-accent {
@@ -6004,7 +5821,6 @@ nav.breadcrumb a:last-child {
   }
   .table-default table {
     min-width: 50rem;
-    width: 100%;
   }
   .table-default thead th {
     padding: 0.5rem 0.75rem;
@@ -6431,55 +6247,6 @@ nav.breadcrumb a:last-child {
     color: var(--color-mns-green);
   }
 }
-@layer component {
-  .char-counter-wrapper {
-    position: relative;
-  }
-  .char-counter-wrapper .char-counter {
-    font-family: "Roboto";
-    width: 2.875rem;
-    font-size: 0.625rem;
-    color: var(--color-gray-txt);
-    white-space: nowrap;
-    position: absolute;
-    bottom: 0;
-    text-align: end;
-    z-index: 2;
-    right: 1.25rem;
-  }
-  .ecp-history .btn-list {
-    text-align: start;
-    border-radius: 0.25rem;
-  }
-  .ecp-history .btn-list, .ecp-history .btn-list * {
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .ecp-history .btn-list:hover {
-      background-color: var(--color-violet-hover);
-      opacity: 80;
-    }
-    .ecp-history .btn-list:hover, .ecp-history .btn-list:hover * {
-      color: var(--color-white);
-    }
-  }
-  @media (hover: none) {
-    .ecp-history .btn-list:active {
-      background-color: var(--color-violet-hover);
-      opacity: 80;
-    }
-    .ecp-history .btn-list:active, .ecp-history .btn-list:active * {
-      color: var(--color-white);
-    }
-  }
-  .ecp-history .btn-list.active {
-    background-color: var(--color-violet);
-  }
-  .ecp-history .btn-list.active, .ecp-history .btn-list.active * {
-    color: var(--color-white);
-  }
-}
 .author-avatar {
   width: 120px;
   height: 120px;
@@ -6496,18 +6263,18 @@ nav.breadcrumb a:last-child {
   --bs-tooltip-arrow-color: var(--color-taxes-gold);
 }
 
-.custom-tooltip .tooltip-inner {
+.tooltip-inner {
   border: 1px solid var(--color-taxes-gold);
   border-color: var(--color-taxes-gold);
   padding: 16px;
   font-family: "Roboto";
 }
 
-.custom-tooltip.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
   border-top-color: var(--color-taxes-gold);
 }
 
-.custom-tooltip.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
   border-right-color: var(--color-taxes-gold);
 }
 
@@ -6582,86 +6349,44 @@ nav.breadcrumb a:last-child {
           box-shadow: inset -17px 0 30px -17px rgba(0, 0, 0, 0.4);
 }
 
-.switch {
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 34px;
+.taxes-awards__date {
+  min-width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-inline: 8px;
+  text-align: center;
+  background-color: var(--color-taxes-brown);
+  color: var(--color-taxes-green);
+  border-radius: 10px;
+  font-family: "Exo 2";
+  font-weight: 600;
+  font-size: 28px;
 }
-
-.switch-input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+@media (max-width: 576px) {
+  .taxes-awards__date {
+    width: 100%;
+    padding-block: 12px;
+  }
 }
-
-.switch-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 11px;
-  left: 12px;
-  right: 12px;
-  bottom: 11px;
-  background-color: var(--color-gray-stroke);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 34px;
-  border: 2px solid transparent;
-}
-
-.switch-slider:before {
-  position: absolute;
-  content: "";
-  height: 21px;
-  width: 21px;
-  left: -2px;
-  bottom: -6px;
-  background-color: var(--color-gray-inputs);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-.switch-input:checked + .switch-slider {
-  border: 2px solid var(--color-violet);
-  background-color: transparent;
-}
-
-.switch-input:checked + .switch-slider:before {
-  -webkit-transform: translateX(16px);
-      -ms-transform: translateX(16px);
-          transform: translateX(16px);
-  background-color: var(--color-violet);
-}
-
-.switch-input:checked ~ .accordion-button {
-  color: var(--color-violet);
-}
-
-.side-nav-banner img, .side-nav-banner picture {
+.taxes-awards__description {
+  border: 1px solid var(--color-gray-stroke);
+  padding-inline: 24px;
+  padding-block: 16px;
+  border-radius: 10px;
   width: 100%;
-  max-width: 21.5rem;
-}
-
-.side-nav-banners-links {
-  max-height: 40rem;
-  overflow: auto;
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
-}
-.side-nav-banners-links::-webkit-scrollbar {
-  width: 6px;
-}
-.side-nav-banners-links::-webkit-scrollbar-track {
-  background: var(--color-transparent);
-}
-.side-nav-banners-links::-webkit-scrollbar-thumb {
-  background: rgba(251, 251, 251, 0.6);
-  border-radius: 8px;
-}
-.side-nav-banners-links::-webkit-scrollbar-thumb:hover {
-  background: var(--color-dark-violet);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 html {
