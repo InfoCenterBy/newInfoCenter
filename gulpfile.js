@@ -13,10 +13,7 @@ let path = {
           audio: project_folder + '/audio/',
      },
      src: {
-          html: [
-               source_folder + '/**/*.html',
-               '!' + source_folder + '/_*.html',
-          ],
+          html: [source_folder + '/**/*.html', '!' + source_folder + '/_*.html'],
           css: source_folder + '/scss/**/*.scss',
           js: source_folder + '/js/**/*.js',
           img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
@@ -80,10 +77,7 @@ function html() {
                rename(function (file) {
                     const pathParts = file.dirname.split(path.sep);
 
-                    const hasExcludedFolder = pathParts.some(
-                         (part) =>
-                              part === 'html-comp' || part === 'html-elements'
-                    );
+                    const hasExcludedFolder = pathParts.some((part) => part === 'html-comp' || part === 'html-elements');
 
                     if (!hasExcludedFolder) {
                          file.dirname = '';
@@ -139,23 +133,23 @@ function js() {
 }
 
 function images() {
-     return src(path.src.img)
-          .pipe(
-               imagemin({
-                    progressive: true,
-                    svgoPlugins: [{ removeViewBox: false }],
-                    interlaced: true,
-                    // optimizationLevel: 3, // 0 to 7
-               })
-          )
-          .pipe(dest(path.build.img))
-          .pipe(browsersync.stream());
+     return (
+          src(path.src.img)
+               // .pipe(
+               //      imagemin({
+               //           progressive: true,
+               //           svgoPlugins: [{ removeViewBox: false }],
+               //           interlaced: true,
+               //           // optimizationLevel: 3, // 0 to 7
+               //      })
+               // )
+               .pipe(dest(path.build.img))
+               .pipe(browsersync.stream())
+     );
 }
 
 function audio() {
-     return src(path.src.audio)
-          .pipe(dest(path.build.audio))
-          .pipe(browsersync.stream());
+     return src(path.src.audio).pipe(dest(path.build.audio)).pipe(browsersync.stream());
 }
 
 function fonts() {
@@ -205,10 +199,7 @@ function clean(params) {
      return del(path.clean);
 }
 
-let build = gulp.series(
-     clean,
-     gulp.parallel(js, css, html, images, fonts, audio)
-);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, audio));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fonts = fonts;
