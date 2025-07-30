@@ -1,7 +1,1 @@
-<svg width="9.600006" height="18.399902" viewBox="0 0 9.60001 18.3999" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<desc>
-			Created with Pixso.
-	</desc>
-	<defs/>
-	<path id="Vector" d="M6.12 9.89L9.1 9.89L9.57 6.84L6.12 6.84L6.12 5.18C6.12 3.92 6.53 2.79 7.71 2.79L9.6 2.79L9.6 0.14C9.26 0.09 8.56 0 7.23 0C4.47 0 2.84 1.47 2.84 4.82L2.84 6.84L0 6.84L0 9.89L2.84 9.89L2.84 18.25C3.41 18.34 3.98 18.39 4.56 18.39C5.09 18.39 5.61 18.35 6.12 18.28L6.12 9.89Z" fill="#5E60CE" fill-opacity="1.000000" fill-rule="nonzero"/>
-</svg>
+<svg width="9.6" height="18.4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.12 9.89H9.1l.47-3.05H6.12V5.18c0-1.26.41-2.39 1.59-2.39H9.6V.14C9.26.09 8.56 0 7.23 0 4.47 0 2.84 1.47 2.84 4.82v2.02H0v3.05h2.84v8.36c.57.09 1.14.14 1.72.14.53 0 1.05-.04 1.56-.11V9.89z" fill="#5E60CE"/></svg>

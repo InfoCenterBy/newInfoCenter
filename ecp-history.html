@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+     <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="format-detection" content="telephone=no" />
+     <meta property="og:image" content="../img/png/logo-header.png" />
+     <meta name="description" content="Республиканское унитарное предприятие «Информационно-издательский центр по налогам и сборам»">
+     <script src="./js/bootstrap.bundle.min.js"></script>
+
+                <script src=./js/vue.js></script>
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Triodion&display=swap"
+          rel="stylesheet">
+
+     <link rel="stylesheet" @@style-path />
+     <link rel="stylesheet" href="css/style.css" />
+     <title>ЭЦП</title>
+</head> <style>
+     .main.main-container {
+          margin-top: 2.5rem;
+     }
+     /* @media screen and (min-width: 992px) {
+          .main.main-container {
+               margin-top: 0;
+          }
+     } */
+     .header,
+     .header-container {
+          --header-height: 260px;
+          min-height: var(--header-height);
+          max-height: var(--header-height);
+     }
+     .offcanvas.offcanvas-start {
+          top: 260px;
+     }
+
+     @media screen and (min-width: 576px) {
+          .header,
+          .header-container {
+               --header-height: 160px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 160px;
+          }
+     }
+     @media screen and (min-width: 768px) {
+          .header,
+          .header-container {
+               --header-height: 180px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 180px;
+          }
+     }
+     @media screen and (min-width: 992px) {
+          .header,
+          .header-container {
+               --header-height: 100px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 100px;
+          }
+     }
+     @media screen and (min-width: 1200px) {
+          .header,
+          .header-container {
+               --header-height: 140px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 3rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 140px;
+          }
+     }
+     @media screen and (min-width: 1400px) {
+          .header,
+          .header-container {
+               --header-height: 110px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 110px;
+          }
+     }
+     @media screen and (min-width: 1600px) {
+          .header,
+          .header-container {
+               --header-height: 110px;
+               min-height: var(--header-height);
+               max-height: var(--header-height);
+          }
+          .main.main-container {
+               margin-top: 2.5rem;
+          }
+          .offcanvas.offcanvas-start {
+               top: 110px;
+          }
+     }
+</style>
+
+     <body>
+          <header class="header">
+     <div class="header-container w-100 py-4 h-100">
+          <div class="container">
+               <div class="row justify-content-between row-gap-3">
+                    <div class="col-xl-3 col-lg-6 d-flex">
+                         <a href="" target="_blank" class="d-flex flex-row gap-xl-3 gap-1 align-items-center color-dark-violet">
+                              <img src="./img/png/logo/logo-header-x2.png" alt="" class="col-1 col-xl-2" />
+                              <p class="mb-0 ff-exo fs-lg-16 fs-14 lh-1">
+                                   Республиканское унитарное предприятие «Информационно-издательский центр по налогам и сборам»
+                              </p>
+                         </a>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end">
+                         <div class="d-flex flex-row flex-sm-wrap flex-sm-row flex-column gap-2 align-items-sm-center align-items-start">
+                              <a href="./ecp-login.html" target="_self" class="btn-default d-flex flex-row gap-1">
+                                   <i class="bi bi-person"></i>
+                                   <span>Войти</span>
+                              </a>
+                              <a href="./ecp-main.html" target="_self" class="btn-default d-flex flex-row gap-1">
+                                   <i class="bi bi-input-cursor-text"></i>
+                                   <span>Ввод данных</span>
+                              </a>
+                              <a href="./ecp-history.html" target="_self" class="btn-empty d-flex flex-row gap-1">
+                                   <i class="bi bi-clock-history"></i>
+                                   <span>История</span>
+                              </a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</header>
+
+          <main class="main main-container"><div class="ecp-history" id="app">
+     <div class="container mt-0">
+          <button class="btn-default" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHistory" aria-controls="offcanvasHistory">
+               Отобразить историю
+          </button>
+          <div class="mt-5">
+               <h3 class="h3 ff-exo">Загруженные данные</h3>
+          </div>
+          <div class="">
+               <div class="">
+                    <div class="table-default accent-table">
+                         <table>
+                              <thead>
+                                   <tr>
+                                        <th>№</th>
+                                        <th>Наименование</th>
+                                        <th>Количество</th>
+                                        <th>Стоимость</th>
+                                        <th>Сумма скидки</th>
+                                        <th>GTIN</th>
+                                        <th>Код маркировки</th>
+                                        <th>Тип маркировки</th>
+                                        <th>Сумма надбавки</th>
+                                        <th>Код УКЗ</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   <tr v-for="(position, index) in selectedPosition" :key="index">
+                                        <td>{{index + 1}}</td>
+                                        <td>{{position?.name}}</td>
+                                        <td>{{position?.productCount}}</td>
+                                        <td>{{position?.amount}}</td>
+                                        <td>{{position?.discount}}</td>
+                                        <td>{{position?.ean}}</td>
+                                        <td>{{position?.markingCode}}</td>
+                                        <td>{{position?.markingType}}</td>
+                                        <td>{{position?.surcharge}}</td>
+                                        <td>{{position?.ukzCode}}</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasHistory" aria-labelledby="offcanvasHistoryLabel">
+          <div class="offcanvas-header">
+               <h5 class="h5 ff-exo" id="offcanvasHistoryLabel">Дата последних загрузок</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+               <ol class="list-group list-group-numbered gap-2">
+                    <li
+                         v-for="(position, index) in historyData"
+                         :key="index"
+                         class="list-group-item d-flex flex-row flex-nowrap btn-list"
+                         :class="[index == selectedPosition.index ? 'active' : '']">
+                         <button class="w-100 text-start" @click="selectPosition(index)">{{position.date}}</button>
+                    </li>
+               </ol>
+          </div>
+     </div>
+</div>
+
+<script>
+     const { createApp, ref } = Vue;
+
+     createApp({
+          data() {
+               return {
+                    test: true,
+                    historyData: [
+                         {
+                              date: '10-06-2025',
+                              data: [
+                                   {
+                                        name: 'testName1',
+                                        productCount: '1111', //Количество товара
+                                        amount: '1111', //Стоимость продажи единицы маркированного товара
+                                        discount: '111', //Сумма скидки для маркированного товара
+                                        ean: '1111111111111', //GTIN товара
+                                        markingCode: '111', //Код маркировки
+                                        markingType: '111', //Тип маркировки
+                                        surcharge: '111', //Сумма надбавки для маркированного товара
+                                        ukzCode: '111', //Код УКЗ -унифицированный контрольный знак
+                                   },
+                                   {
+                                        name: 'testName2',
+                                        productCount: '2222', //Количество товара
+                                        amount: '2222', //Стоимость продажи единицы маркированного товара
+                                        discount: '222', //Сумма скидки для маркированного товара
+                                        ean: '2222222222222', //GTIN товара
+                                        markingCode: '222', //Код маркировки
+                                        markingType: '222', //Тип маркировки
+                                        surcharge: '222', //Сумма надбавки для маркированного товара
+                                        ukzCode: '222', //Код УКЗ -унифицированный контрольный знак
+                                   },
+                                   {
+                                        name: 'testName1',
+                                        productCount: '1111', //Количество товара
+                                        amount: '1111', //Стоимость продажи единицы маркированного товара
+                                        discount: '111', //Сумма скидки для маркированного товара
+                                        ean: '1111111111111', //GTIN товара
+                                        markingCode: '111', //Код маркировки
+                                        markingType: '111', //Тип маркировки
+                                        surcharge: '111', //Сумма надбавки для маркированного товара
+                                        ukzCode: '111', //Код УКЗ -унифицированный контрольный знак
+                                   },
+                              ],
+                         },
+                         {
+                              date: '13-06-2025',
+                              data: [
+                                   {
+                                        name: 'testName2',
+                                        productCount: '2222', //Количество товара
+                                        amount: '2222', //Стоимость продажи единицы маркированного товара
+                                        discount: '222', //Сумма скидки для маркированного товара
+                                        ean: '2222222222222', //GTIN товара
+                                        markingCode: '222', //Код маркировки
+                                        markingType: '222', //Тип маркировки
+                                        surcharge: '222', //Сумма надбавки для маркированного товара
+                                        ukzCode: '222', //Код УКЗ -унифицированный контрольный знак
+                                   },
+                                   {
+                                        name: 'testName1',
+                                        productCount: '1111', //Количество товара
+                                        amount: '1111', //Стоимость продажи единицы маркированного товара
+                                        discount: '111', //Сумма скидки для маркированного товара
+                                        ean: '1111111111111', //GTIN товара
+                                        markingCode: '111', //Код маркировки
+                                        markingType: '111', //Тип маркировки
+                                        surcharge: '111', //Сумма надбавки для маркированного товара
+                                        ukzCode: '111', //Код УКЗ -унифицированный контрольный знак
+                                   },
+                              ],
+                         },
+                    ],
+                    selectedPosition: {
+                         name: null,
+                         productCount: null, //Количество товара
+                         amount: null, //Стоимость продажи единицы маркированного товара
+                         discount: null, //Сумма скидки для маркированного товара
+                         ean: null, //GTIN товара
+                         markingCode: null, //Код маркировки
+                         markingType: null, //Тип маркировки
+                         surcharge: null, //Сумма надбавки для маркированного товара
+                         ukzCode: null, //Код УКЗ -унифицированный контрольный знак
+                         index: null,
+                    },
+               };
+          },
+          watch: {},
+          computed: {},
+          methods: {
+               selectPosition(index) {
+                    this.selectedPosition = this.historyData[index].data;
+                    this.selectedPosition.index = index;
+               },
+          },
+          mounted() {
+               this.selectedPosition = this.historyData[0].data;
+               this.selectedPosition.index = 0;
+          },
+     }).mount('#app');
+</script>
+</main>
+          <div class="position-relative">
+     <button class="btn-up" id="btnUp">
+          <i class="bi bi-arrow-up"></i>
+          <svg class="btn-up-progress" width="42" height="42" viewBox="0 0 42 42">
+               <circle class="btn-up-progress-track" cx="21" cy="21" r="19" fill="none" />
+               <circle class="btn-up-progress-fill" cx="21" cy="21" r="19" fill="none" stroke="var(--color-violet)"
+                    stroke-width="1.5" stroke-dasharray="119.38" stroke-dashoffset="119.38"
+                    transform="rotate(-90 21 21)" />
+          </svg>
+     </button>
+</div>
+
+<footer class="footer">
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-3 d-flex flex-column">
+                    <a href="" target="_blank" class="footer-logo d-flex flex-row align-items-center">
+                         <picture>
+                              <source media="(min-width: 960px)" srcset="./img/png/logo/footer-logo-white.png" />
+                              <img src="./img/svg/logo/footer-logo-white.svg" alt="" />
+                         </picture>
+                         <p class="mb-0">Республиканское унитарное предприятие «Информационно-издательский центр по налогам и сборам»</p>
+                    </a>
+               </div>
+               <div class="col-12 mt-4 d-flex flex-row flex-wrap align-items-center justify-content-between gap-3">
+                    <span class="color-white ff-roboto fs-16 order-lg-1 order-2">© 2025 Все права защищены</span>
+               </div>
+          </div>
+     </div>
+</footer>
+<script src="js/script.js"></script>
+<script>
+     (() => {
+          'use strict';
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          const forms = document.querySelectorAll('.needs-validation.skko-form');
+
+          // Loop over them and prevent submission
+          Array.from(forms).forEach((form) => {
+               form.addEventListener(
+                    'submit',
+                    (event) => {
+                         if (!form.checkValidity()) {
+                              event.preventDefault();
+                              event.stopPropagation();
+                         }
+
+                         form.classList.add('was-validated');
+                    },
+                    false
+               );
+          });
+     })();
+     const fileBlock = document.getElementById('file-input');
+     if (fileBlock) {
+          try {
+               fileBlock.addEventListener('change', function (event) {
+                    let fileNameToDisplay = [];
+                    const rootBlock = document.getElementById('file-name');
+                    rootBlock.innerHTML = '';
+                    let targetFiles = new Array(...event.target.files);
+                    targetFiles.forEach((element) => {
+                         fileNameToDisplay.push(element.name);
+                    });
+                    //if classes needed
+                    // const classesForFileElement = 'fs-14,color-gray-txt';
+                    // fileNameToDisplay.forEach((element) => {
+                    //      let fileElement = document.createElement('span');
+                    //      fileElement.innerHTML = element;
+                    //      fileElement.classList.add(classesForFileElement);
+                    //      rootBlock.appendChild(fileElement);
+                    // });
+                    console.log('targetFiles', fileNameToDisplay);
+                    rootBlock.textContent = fileNameToDisplay;
+               });
+          } catch (error) {}
+     }
+</script>
+
+     </body>
+</html>
