@@ -28,13 +28,4 @@ if (phoneInputs) {
                }
           });
      });
-
-     phoneInputs.forEach((input) => {
-          input.addEventListener('blur', function () {
-               if (mask && !input.value) {
-                    mask.destroy();
-                    mask = null;
-               }
-          });
-     });
 }

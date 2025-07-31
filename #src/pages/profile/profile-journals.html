@@ -79,6 +79,36 @@
                                         </div>
                                    </form>
                               </div>
+
+                              <div class="mt-40 border-1-5-taxes-green p-32 border-20">
+                                   <div class="d-flex gap-4 align-items-center flex-wrap flex-md-nowrap justify-content-center"
+                                        bis_skin_checked="1">
+                                        <div class="d-flex gap-2 align-items-center" bis_skin_checked="1">
+                                             <img src="./img/svg/editors/star-check.svg" width="48"
+                                                  height="48" alt="">
+                                             <img src="./img/png/editors/pdf-file.png" width="44" height="44"
+                                                  alt="">
+                                        </div>
+                                        <div bis_skin_checked="1">
+                                             <p class="mb-0">Если у вас нет активной подписки<span
+                                                       class="fw-semibold"> на электронный журнал
+                                                       «Налоги Беларуси»</span>, оформите подписку на любой
+                                                  срок или отправьте заявку для переноса действующей подписки
+                                             </p>
+                                        </div>
+                                        <div class="d-flex flex-column gap-3 flex-shrink-0 mobile-w-100"
+                                             bis_skin_checked="1">
+                                             <a href="bel-taxes.html"
+                                                  class="btn-default btn-default-green w-100">Оформить
+                                                  подписку</a>
+                                             <button data-bs-target="#requestSubscription"
+                                                  data-bs-toggle="modal"
+                                                  class="btn-empty btn-empty-green w-100">Отправить
+                                                  заявку</button>
+                                        </div>
+                                   </div>
+                              </div>
+
                               <div class="mt-40">
                                    <div class="row">
                                         <div class="col-12 col-sm-6 col-xl-4 d-flex my-3">
@@ -181,6 +211,72 @@
           </div>
      </div>
 
+     <div class="modal modal-large fade" id="requestSubscription" tabindex="-1"
+          aria-labelledby="requestSubscriptionModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+               <div class="modal-content mt-92">
+                    <div class="modal-header d-flex flex-column gap-2">
+                         <div class="d-flex justify-content-between align-items-center w-100">
+                              <p class="fs-20 fw-semibold mb-0 ff-exo">Отправить заявку</p>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                         </div>
+                    </div>
+                    <div class="modal-body">
+                         <div class="tab-content" id="myTabContent">
+                              <div class="tab-pane fade show active" id="ip-pane" role="tabpanel"
+                                   aria-labelledby="ip" tabindex="0">
+                                   <form class="pending-check-block d-flex flex-column gap-3 pb-3 mt-4"
+                                        action="">
+                                        <div class="floating-label-content w-100">
+                                             <input class="floating-input" type="text" placeholder=""
+                                                  required />
+                                             <label class="floating-label">
+                                                  <span>Ф.И.О.</span><span
+                                                       class="color-red-attention">*</span>
+                                             </label>
+                                        </div>
+                                        <div class="floating-label-content w-100">
+                                             <input class="floating-input" type="text" placeholder=""
+                                                  pattern="[A-Za-z0-9]{9}" required />
+                                             <label class="floating-label"> <span>УНП</span><span
+                                                       class="color-red-attention">*</span> </label>
+                                        </div>
+                                        <div class="floating-label-content w-100">
+                                             <input class="floating-input" type="email" placeholder=""
+                                                  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" autocomplete="email"
+                                                  required />
+                                             <label class="floating-label"> <span>E-mail</span><span
+                                                       class="color-red-attention">*</span> </label>
+                                        </div>
+                                        <div class="floating-label-content w-100">
+                                             <input class="tel-with-mask floating-input" type="tel"
+                                                  placeholder="" autocomplete="tel" required />
+                                             <label class="floating-label tel-with-mask">
+                                                  <span>Телефон</span><span
+                                                       class="color-red-attention">*</span> </label>
+                                        </div>
+                                        <div class="floating-label-content w-100">
+                                             <textarea class="floating-input border-20" name="" id=""
+                                                  placeholder=""
+                                                  style="height: 100px; resize: none"></textarea>
+                                             <label class="floating-label">
+                                                  <span>Комментарий</span>
+                                             </label>
+                                        </div>
+                                        <hr class="border-color-gray-stroke my-0" />
+
+                                        <button class="btn-default mx-auto delete-agree-btn"
+                                             id="sendRequestSubscription">
+                                             Отправить заявку
+                                        </button>
+                                   </form>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
      <script>
           document.querySelectorAll('.pdf-opener').forEach(btn => {
                btn.addEventListener('click', function (e) {
@@ -191,6 +287,7 @@
           });
      </script>
      @@include('../../html-comp/_footer.html')
+     <script src="./js/imask.js"></script>
      <script src="./js/page-flip.browser.js"></script>
      <script src="./js/page-flip-settings.js"></script>
      @@include('../../html-comp/_script.html')
