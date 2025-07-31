@@ -1,1 +1,5 @@
-<svg width="1029" height="1" fill="none" xmlns="http://www.w3.org/2000/svg"><path stroke="#DADADA" d="M0 .5h297m69 0h297m69 0h297"/></svg>
+<svg width="1029" height="1" viewBox="0 0 1029 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="0.5" x2="297" y2="0.5" stroke="#DADADA"/>
+<line x1="366" y1="0.5" x2="663" y2="0.5" stroke="#DADADA"/>
+<line x1="732" y1="0.5" x2="1029" y2="0.5" stroke="#DADADA"/>
+</svg>
